@@ -3,14 +3,24 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 
-var SPEED: float = 250
+var SPEED: float = 100
 var previous_velocity: Vector2
+var dead: bool = false
+var chasing: bool = true
+var direction: Vector2
+
+func _process(delta: float) -> void:
+	Global.ghost_position = global_position
 
 func _physics_process(delta: float) -> void:
 	
-	var direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down").normalized()
+	var player_direction: Vector2 = Global.player_position - global_position
 	
-	if direction:
+	if chasing:
+		Global.ghost_detected = true
+		direction = (player_direction).normalized()
+	
+	if direction and vec_len(player_direction) > 50:
 		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
@@ -30,3 +40,6 @@ func update_animation() -> void:
 		animated_sprite_2d.flip_h = true
 	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = false
+
+func vec_len(vector: Vector2) -> float:
+	return sqrt((vector.x ** 2) + (vector.y ** 2))

@@ -340,6 +340,7 @@ transitions = ["Idle", "Death", SubResource("AnimationNodeStateMachineTransition
 script = ExtResource("1_fksj7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -71)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bg4m4")
 animation = &"idle"
@@ -347,7 +348,6 @@ autoplay = "idle"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 71)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_kcmps")
 metadata/_edit_group_ = true
@@ -364,6 +364,6 @@ root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_xiqdj")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Death/blend_position = Vector2(0, 0)
-parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(-0.402315, 0.130612)
+parameters/Death/blend_position = 0.006961
+parameters/Idle/blend_position = 0.194172
+parameters/Walk/blend_position = 0.194172

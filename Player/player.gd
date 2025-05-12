@@ -12,6 +12,9 @@ func _ready() -> void:
 	update_animation()
 	hud.position = get_viewport_rect().size * -1 / 2
 
+func _process(delta: float) -> void:
+	Global.player_position = global_position
+
 func _physics_process(_delta: float) -> void:
 	
 	var direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down").normalized()
