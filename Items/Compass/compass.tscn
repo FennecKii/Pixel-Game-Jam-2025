@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://coxniugqrm44q"]
+
+[ext_resource type="Script" uid="uid://ce4mkvl0iysi1" path="res://Items/Compass/compass.gd" id="1_25tiv"]
+[ext_resource type="Texture2D" uid="uid://oaxh12gr52we" path="res://Items/Compass/Compass Base (PGJ 2025).png" id="1_allfm"]
+[ext_resource type="Texture2D" uid="uid://bo84c1m8blg5v" path="res://Items/Compass/Compass Needle (PGJ 2025).png" id="2_25tiv"]
+
+[node name="Compass" type="Node2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_25tiv")
+
+[node name="Compass Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_allfm")
+
+[node name="Compass Needle" type="Sprite2D" parent="."]
+texture = ExtResource("2_25tiv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+enabled = false
