@@ -336,7 +336,7 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_324nn")
 states/Walk/position = Vector2(549, 97.4)
 transitions = ["Idle", "Death", SubResource("AnimationNodeStateMachineTransition_n61th"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_v5o3e"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_m3vdf"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_x3kaf"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ww0yl")]
 
-[node name="Yuki-Onna" type="CharacterBody2D"]
+[node name="Yuki-Onna" type="CharacterBody2D" groups=["Ghost"]]
 script = ExtResource("1_fksj7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -364,6 +364,6 @@ root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_xiqdj")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Death/blend_position = 0.00686944
-parameters/Idle/blend_position = 0.476355
-parameters/Walk/blend_position = 0.476355
+parameters/Death/blend_position = 0.00694444
+parameters/Idle/blend_position = 0.238889
+parameters/Walk/blend_position = 0.238889

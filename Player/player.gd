@@ -39,3 +39,11 @@ func update_animation() -> void:
 		animated_sprite_2d.flip_h = true
 	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = false
+
+func _on_detection_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Ghost"):
+		Global.ghost_detected = true
+
+func _on_detection_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Ghost"):
+		Global.ghost_detected = false

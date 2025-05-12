@@ -6,7 +6,7 @@ extends CharacterBody2D
 var SPEED: float = 100
 var previous_velocity: Vector2
 var dead: bool = false
-var chasing: bool = true
+var chasing: bool = false
 var direction: Vector2
 
 func _process(delta: float) -> void:
@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 	var player_direction: Vector2 = Global.player_position - global_position
 	
 	if chasing:
-		Global.ghost_detected = true
 		direction = (player_direction).normalized()
 	
 	if direction and vec_len(player_direction) > 70:

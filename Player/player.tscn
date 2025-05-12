@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dvs2smsibprdv"]
+[gd_scene load_steps=64 format=3 uid="uid://dvs2smsibprdv"]
 
 [ext_resource type="Texture2D" uid="uid://ps2c2oyuy552" path="res://Player/Animations/Idle/Idle_Down-Sheet.png" id="1_fhl08"]
 [ext_resource type="Script" uid="uid://cy6m8glbgkhs4" path="res://Player/player.gd" id="1_vtle1"]
@@ -541,6 +541,9 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_5htga")
 states/Walk/position = Vector2(703.4, 94.0989)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_od3ui"]
+radius = 517.078
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_vtle1")
 
@@ -580,3 +583,11 @@ offset_top = -360.0
 offset_right = -640.0
 offset_bottom = -360.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="Detection Shape" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_od3ui")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
