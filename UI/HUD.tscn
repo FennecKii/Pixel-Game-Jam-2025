@@ -11,5 +11,5 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Compass" parent="." instance=ExtResource("1_yixhe")]
-position = Vector2(641, 652)
+position = Vector2(640, 652)
 scale = Vector2(3, 3)

@@ -574,7 +574,8 @@ parameters/Walk/blend_position = Vector2(-0.700579, 0.272048)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HUD" parent="Camera2D" instance=ExtResource("8_od3ui")]
-offset_left = -641.0
+offset_left = -640.0
 offset_top = -360.0
-offset_right = -641.0
+offset_right = -640.0
 offset_bottom = -360.0
+metadata/_edit_use_anchors_ = true

@@ -2,17 +2,11 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var hud: Control = $Camera2D/HUD
 
 var SPEED: float = 250
 var previous_velocity: Vector2
 
-func _ready() -> void:
-	animation_tree.active = true
-	update_animation()
-	hud.position = get_viewport_rect().size * -1 / 2
-
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	var direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down").normalized()
 	
