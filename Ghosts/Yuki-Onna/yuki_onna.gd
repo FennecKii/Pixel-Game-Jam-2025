@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 
-var SPEED: float = 100
+var SPEED: float = 350
 var previous_velocity: Vector2
 var dead: bool = false
 var chasing: bool = false

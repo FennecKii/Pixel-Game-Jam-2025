@@ -342,15 +342,16 @@ collision_mask = 4
 script = ExtResource("1_fksj7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -71)
-scale = Vector2(3, 3)
+position = Vector2(-1, -64)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_bg4m4")
 animation = &"idle"
 autoplay = "idle"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_kcmps")
 metadata/_edit_group_ = true
 
@@ -366,6 +367,6 @@ root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_xiqdj")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Death/blend_position = 0.00666667
-parameters/Idle/blend_position = 0.318454
-parameters/Walk/blend_position = 0.318454
+parameters/Death/blend_position = 0.00694444
+parameters/Idle/blend_position = 0.00220041
+parameters/Walk/blend_position = 0.00220041

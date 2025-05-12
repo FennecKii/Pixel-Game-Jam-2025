@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hud: Control = $Camera2D/HUD
 
-var SPEED: float = 250
+var SPEED: float = 400
 var previous_velocity: Vector2
 
 func _ready() -> void:

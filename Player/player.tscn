@@ -542,7 +542,7 @@ states/Walk/position = Vector2(703.4, 94.0989)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_od3ui"]
-radius = 615.013
+radius = 534.023
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 0
@@ -550,7 +550,7 @@ script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -30)
-scale = Vector2(3, 3)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_6pogt")
 animation = &"idle_down"
 autoplay = "idle_down"
@@ -558,7 +558,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.333328)
-scale = Vector2(3, 3)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_vtle1")
 metadata/_edit_group_ = true
 
@@ -575,8 +575,14 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.00242496, 0.967185)
 parameters/Walk/blend_position = Vector2(-0.700579, 0.272048)
 
+[node name="Detection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Detection Shape" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_od3ui")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
 
 [node name="HUD" parent="Camera2D" instance=ExtResource("8_od3ui")]
 z_index = 1
@@ -585,13 +591,6 @@ offset_top = -360.0
 offset_right = -640.0
 offset_bottom = -360.0
 metadata/_edit_use_anchors_ = true
-
-[node name="Detection" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 2
-
-[node name="Detection Shape" type="CollisionShape2D" parent="Detection"]
-shape = SubResource("CircleShape2D_od3ui")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
