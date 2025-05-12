@@ -12,8 +12,7 @@ script = ExtResource("1_25tiv")
 texture = ExtResource("1_allfm")
 
 [node name="Compass Needle" type="Sprite2D" parent="."]
+position = Vector2(-3.55271e-15, 0)
 texture = ExtResource("2_25tiv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-enabled = false

@@ -20,10 +20,13 @@ func _physics_process(delta: float) -> void:
 		Global.ghost_detected = true
 		direction = (player_direction).normalized()
 	
-	if direction and vec_len(player_direction) > 50:
+	if direction and vec_len(player_direction) > 70:
 		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
+	
+	if vec_len(player_direction) < 60 and velocity == Vector2.ZERO:
+		global_position -= Vector2(player_direction.normalized())
 	
 	update_animation()
 	

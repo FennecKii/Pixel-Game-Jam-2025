@@ -545,7 +545,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2.33333)
+position = Vector2(0, -30)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_6pogt")
 animation = &"idle_down"
@@ -553,7 +553,7 @@ autoplay = "idle_down"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 28)
+position = Vector2(0, 0.333328)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_vtle1")
 metadata/_edit_group_ = true
@@ -574,6 +574,7 @@ parameters/Walk/blend_position = Vector2(-0.700579, 0.272048)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HUD" parent="Camera2D" instance=ExtResource("8_od3ui")]
+z_index = 1
 offset_left = -640.0
 offset_top = -360.0
 offset_right = -640.0

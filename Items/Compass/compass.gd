@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 		random_direction = global_position + Vector2.from_angle(deg_to_rad(randf_range(0, 360)))
 		compass_needle.look_at(random_direction)
 	elif Global.ghost_detected:
-		compass_needle.look_at((Global.ghost_direction - Global.player_position).normalized())
+		compass_needle.look_at(global_position + (Global.ghost_position - Global.player_position).normalized())
