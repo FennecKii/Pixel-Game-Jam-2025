@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dvs2smsibprdv"]
+[gd_scene load_steps=67 format=3 uid="uid://dvs2smsibprdv"]
 
 [ext_resource type="Texture2D" uid="uid://ps2c2oyuy552" path="res://Player/Animations/Idle/Idle_Down-Sheet.png" id="1_fhl08"]
 [ext_resource type="Script" uid="uid://cy6m8glbgkhs4" path="res://Player/player.gd" id="1_vtle1"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://btieqhc4gnwr0" path="res://Player/Animations/Walk/Walk_Down-Sheet.png" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://cfpf1ay8dx1au" path="res://Player/Animations/Walk/Walk_Side-Sheet.png" id="5_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://60lhd6s4rh1j" path="res://Player/Animations/Walk/Walk_Up-Sheet.png" id="6_apopc"]
+[ext_resource type="PackedScene" uid="uid://bs87s8ufsum54" path="res://Items/Bell/bell.tscn" id="8_00tjw"]
 [ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/HUD.tscn" id="8_od3ui"]
+[ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="9_x3vf3"]
+[ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="10_apopc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
 atlas = ExtResource("1_fhl08")
@@ -574,6 +577,22 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Bell" parent="Items" instance=ExtResource("8_00tjw")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Ofuda" parent="Items" instance=ExtResource("9_x3vf3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Ofuda Outline" type="Sprite2D" parent="Items"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.666667, 0.666667, 0.666667, 0.705882)
+texture = ExtResource("10_apopc")
 
 [node name="Detection" type="Area2D" parent="."]
 collision_layer = 4

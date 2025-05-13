@@ -11,4 +11,5 @@ func point_spawn():
 	var ghost_instance = ghost.instantiate()
 	ghost_instance.global_position = spawn_point.global_position
 	#ghost_instance.visible = false
-	root_node.add_child(ghost_instance)
+	if root_node != null:
+		root_node.add_child(ghost_instance)
