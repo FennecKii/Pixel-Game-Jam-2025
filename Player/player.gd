@@ -19,19 +19,19 @@ func _ready() -> void:
 	animation_tree.active = true
 	hud.position = get_viewport_rect().size * -1 / 2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Global.player_position = global_position
 	
 	_update_item_states()
 	
 	_handle_item_input()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	var direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down").normalized()
 	
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
 	

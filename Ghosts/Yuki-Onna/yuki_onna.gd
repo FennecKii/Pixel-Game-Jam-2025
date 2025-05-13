@@ -9,7 +9,7 @@ var dead: bool = false
 var chasing: bool = false
 var direction: Vector2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
 
 func _physics_process(delta: float) -> void:
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		direction = (player_direction).normalized()
 	
 	if direction and Global.vec_len(player_direction) > 70:
-		velocity = direction * SPEED
+		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
 	

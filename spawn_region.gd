@@ -18,7 +18,7 @@ func _ready() -> void:
 		process_mode = Node.PROCESS_MODE_DISABLED
 	rect_region.position = Vector2.ZERO
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	rect_region.size = rect_size
 	queue_redraw()
 
