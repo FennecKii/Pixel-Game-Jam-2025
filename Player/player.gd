@@ -22,9 +22,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	Global.player_position = global_position
 	
-	update_item_states()
+	_update_item_states()
 	
-	handle_item_input()
+	_handle_item_input()
 
 func _physics_process(_delta: float) -> void:
 	
@@ -35,11 +35,11 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	
-	update_animation()
+	_update_animation()
 	
 	move_and_slide()
 
-func update_animation() -> void:
+func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
 		animation_tree.set("parameters/Walk/blend_position", velocity)
 		previous_velocity = velocity
@@ -51,7 +51,7 @@ func update_animation() -> void:
 	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = false
 
-func update_item_states() -> void:
+func _update_item_states() -> void:
 	if ofuda_count == 2:
 		ofuda_outline.self_modulate.b = 0
 		ofuda_outline.self_modulate.g = 0
@@ -60,7 +60,7 @@ func update_item_states() -> void:
 	ofuda_equiped = ofuda.visible
 	ofuda_outline.global_position = get_global_mouse_position()
 
-func handle_item_input() -> void:
+func _handle_item_input() -> void:
 	# Equip or Switch Items
 	if Input.is_action_just_pressed("Equip Bell") and not bell_equiped:
 		bell.visible = true
@@ -85,9 +85,9 @@ func handle_item_input() -> void:
 		if ofuda_count < 2:
 			ofuda_count += 1
 			SignalBus.ofuda_placed.emit(ofuda_count)
-			place_ofuda(get_global_mouse_position())
+			_place_ofuda(get_global_mouse_position())
 
-func place_ofuda(map_position: Vector2) -> void:
+func _place_ofuda(map_position: Vector2) -> void:
 	var ofuda_scene: PackedScene = Global.ofuda
 	var ofuda_instance = ofuda_scene.instantiate()
 	ofuda_instance.global_position = map_position

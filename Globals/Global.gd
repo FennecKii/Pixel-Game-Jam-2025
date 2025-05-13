@@ -12,3 +12,6 @@ var ghost_detected: bool = false
 var ghost_direction: Vector2
 var player_position: Vector2
 var ghost_position: Vector2
+
+func vec_len(vector: Vector2) -> float:
+	return sqrt((vector.x ** 2) + (vector.y ** 2))
