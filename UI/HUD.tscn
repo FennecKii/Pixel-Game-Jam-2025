@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bueua6lfoyef6"]
+[gd_scene load_steps=3 format=3 uid="uid://bueua6lfoyef6"]
 
+[ext_resource type="Script" uid="uid://e1wjrlavk6bg" path="res://UI/hud.gd" id="1_ijstf"]
 [ext_resource type="PackedScene" uid="uid://coxniugqrm44q" path="res://Items/Compass/compass.tscn" id="1_yixhe"]
 
 [node name="HUD" type="Control"]
@@ -9,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ijstf")
 
 [node name="Compass" parent="." instance=ExtResource("1_yixhe")]
-position = Vector2(640, 660)
 scale = Vector2(2.25, 2.25)

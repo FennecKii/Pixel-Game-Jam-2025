@@ -260,26 +260,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [&"idle_down"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"idle_down"]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_vtle1"]
@@ -549,7 +549,7 @@ collision_mask = 0
 script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -25)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_6pogt")
 animation = &"idle_down"
@@ -557,7 +557,7 @@ autoplay = "idle_down"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.333328)
+position = Vector2(0, 9.53674e-07)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_vtle1")
 metadata/_edit_group_ = true
@@ -572,8 +572,8 @@ autoplay = "idle_down"
 tree_root = SubResource("AnimationNodeStateMachine_lfmf2")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(-0.00242496, 0.967185)
-parameters/Walk/blend_position = Vector2(-0.700579, 0.272048)
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Detection" type="Area2D" parent="."]
 collision_layer = 4

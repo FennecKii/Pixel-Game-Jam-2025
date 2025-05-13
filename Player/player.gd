@@ -9,7 +9,6 @@ var previous_velocity: Vector2
 
 func _ready() -> void:
 	animation_tree.active = true
-	update_animation()
 	hud.position = get_viewport_rect().size * -1 / 2
 
 func _process(delta: float) -> void:
