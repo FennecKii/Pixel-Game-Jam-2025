@@ -1,5 +1,6 @@
 extends Node
 
+@onready var ofuda: PackedScene = preload("res://Items/Ofuda/ofuda.tscn")
 @onready var yuki_onna: PackedScene = preload("res://Ghosts/Yuki-Onna/yuki_onna.tscn")
 
 @onready var ghost_scene_array: Array[PackedScene] = [

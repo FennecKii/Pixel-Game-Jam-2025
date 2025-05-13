@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c50xxvlfo42jg"]
+
+[ext_resource type="Script" uid="uid://nr8o63il26td" path="res://Items/Ofuda/ofuda.gd" id="1_2t8uu"]
+[ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="1_we6hw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2t8uu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_we6hw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ofuda" type="Node2D"]
+script = ExtResource("1_2t8uu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2t8uu")
+
+[node name="Ofuda Placed" type="Label" parent="."]
+visible = false
+offset_left = -35.0
+offset_top = 15.0
+offset_right = 35.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+text = "*Placed*"
