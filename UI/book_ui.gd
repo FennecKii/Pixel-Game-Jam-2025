@@ -64,18 +64,26 @@ func _ready():
 	
 	
 func _on_left_page():
-	if current_page > 0:
-		current_page -= 1
+	if current_page >= 2:
+		current_page -= 2
 		_update_page()
 
 func _on_right_page():
-	if current_page < pages.size() - 1:
-		current_page += 1
+	if current_page + 2 < pages.size():
+		current_page += 2
 		_update_page()
 
+
 func _update_page():
-	for i in pages.size():
-		pages[i].visible = (i == current_page or i == current_page + 1)
+	for i in range(pages.size()):
+		pages[i].visible = false
+
+	# Show the current page pair
+	if current_page < pages.size():
+		pages[current_page].visible = true
+	if current_page + 1 < pages.size():
+		pages[current_page + 1].visible = true
+
 
 func _on_option_toggled(button_pressed: bool, toggled_button: Button):
 	if button_pressed:
@@ -120,3 +128,9 @@ func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
 
 func _on_mirror_shows_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed()
+
+func _on_LeftPageButton_pressed():
+	_on_left_page()
+
+func _on_RightPageButton_pressed():
+	_on_right_page()
