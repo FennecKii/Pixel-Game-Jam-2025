@@ -10,17 +10,20 @@ extends Node2D
 
 var rect_region: Rect2
 
+func _enter_tree() -> void:
+	add_to_group("spawn regions")
+
 func _ready() -> void:
-	if runtime_render:
+	if not (Engine.is_editor_hint() or runtime_render):
 		process_mode = Node.PROCESS_MODE_DISABLED
 	rect_region.position = Vector2.ZERO
 
 func _process(delta: float) -> void:
 	rect_region.size = rect_size
 	queue_redraw()
-	if rect_region.has_point(get_global_mouse_position()):
-		EditorInterface.edit_node(self)
-		EditorSelection.new()
 
 func _draw() -> void:
-	draw_rect(rect_region, outline_color, filled, outline_width)
+	if filled:
+		draw_rect(rect_region, outline_color, filled)
+	else:
+		draw_rect(rect_region, outline_color, filled, outline_width)

@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://spawn_region.gd" id="5_yi8h1"]
 
-[node name="Map" type="Node2D"]
+[node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component")]
 script = ExtResource("1_082kc")
+spawner_component = NodePath("SpawnerComponent")
 
 [node name="SpawnerComponent" parent="." instance=ExtResource("2_yi8h1")]
 
@@ -17,12 +18,29 @@ tile_map_data = PackedByteArray("AAAHAAUAAAABAAEAAAAHAAQAAAABAAEAAAAHAAMAAAABAAE
 
 [node name="Player" parent="." instance=ExtResource("2_njmqy")]
 
-[node name="Spawn Points" type="Node2D" parent="."]
+[node name="Spawn Regions" type="Node2D" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="Spawn Points"]
-position = Vector2(1, -780)
+[node name="SpawnerRect2D3" type="Node2D" parent="Spawn Regions"]
+position = Vector2(596, -554)
+script = ExtResource("5_yi8h1")
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
-[node name="SpawnerRect2D" type="Node2D" parent="Spawn Points"]
-position = Vector2(-48, -828)
+[node name="SpawnerRect2D2" type="Node2D" parent="Spawn Regions"]
+position = Vector2(237, -814)
+script = ExtResource("5_yi8h1")
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="SpawnerRect2D" type="Node2D" parent="Spawn Regions"]
+position = Vector2(-212, -939)
+script = ExtResource("5_yi8h1")
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="SpawnerRect2D4" type="Node2D" parent="Spawn Regions"]
+position = Vector2(-871, -226)
+script = ExtResource("5_yi8h1")
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="SpawnerRect2D5" type="Node2D" parent="Spawn Regions"]
+position = Vector2(-652, -686)
 script = ExtResource("5_yi8h1")
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"

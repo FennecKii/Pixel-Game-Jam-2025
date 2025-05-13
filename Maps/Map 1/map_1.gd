@@ -1,7 +1,7 @@
+class_name Map
 extends Node2D
 
-@onready var spawner_component: SpawnerComponent = $SpawnerComponent
+@export var spawner_component: SpawnerComponent
 
 func _ready() -> void:
-	pass
-	#spawner_component.point_spawn()
+	spawner_component.point_spawn()
