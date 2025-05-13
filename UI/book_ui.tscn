@@ -1,0 +1,131 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl060iceibg6o"]
+
+[ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="BookUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_t2tou")
+
+[node name="PageDisplay" type="TextureRect" parent="BookUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPageButton" type="Button" parent="BookUI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 618.0
+offset_right = 144.0
+offset_bottom = 699.0
+
+[node name="RightPageButton" type="Button" parent="BookUI"]
+offset_left = 1155.0
+offset_top = 617.0
+offset_right = 1262.0
+offset_bottom = 699.0
+
+[node name="PageContainer" type="Control" parent="BookUI"]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 6.0
+offset_right = 805.0
+offset_bottom = 389.0
+
+[node name="AnswerPage" type="Control" parent="BookUI/PageContainer"]
+anchors_preset = 0
+offset_left = 542.0
+offset_top = -1.0
+offset_right = 1200.0
+offset_bottom = 708.0
+
+[node name="AnswerButtons" type="VBoxContainer" parent="BookUI/PageContainer/AnswerPage"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 106.0
+offset_right = 440.0
+offset_bottom = 252.0
+alignment = 1
+
+[node name="OptionA" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
+layout_mode = 2
+toggle_mode = true
+text = "Ghost1"
+
+[node name="OptionB" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
+layout_mode = 2
+toggle_mode = true
+text = "Ghost2"
+
+[node name="OptionC" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
+layout_mode = 2
+toggle_mode = true
+text = "Ghost3"
+
+[node name="LockInButton" type="Button" parent="BookUI/PageContainer/AnswerPage"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 243.0
+offset_right = 399.0
+offset_bottom = 273.0
+
+[node name="GhostChecklistPage" type="Control" parent="BookUI/PageContainer"]
+anchors_preset = 0
+offset_left = -78.0
+offset_right = 549.0
+offset_bottom = 708.0
+
+[node name="BehaviourChecklist" type="VBoxContainer" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 189.0
+offset_right = 393.0
+offset_bottom = 401.0
+alignment = 1
+
+[node name="Bell" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
+layout_mode = 2
+text = "Bell Sounds Muted"
+
+[node name="BellMuted" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
+layout_mode = 2
+
+[node name="Ofuda" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
+layout_mode = 2
+text = "Ofuda Burns"
+
+[node name="OfudaBurns" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
+layout_mode = 2
+
+[node name="Mirror" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
+layout_mode = 2
+text = "Mirror Response"
+
+[node name="MirrorShows" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
+layout_mode = 2
+
+[node name="GhostDisplay" type="HBoxContainer" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 400.0
+offset_right = 306.0
+offset_bottom = 539.0
+
+[node name="Ghost1" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
+layout_mode = 2
+text = "Ghost1"
+
+[node name="Ghost2" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
+layout_mode = 2
+text = "Ghost2"
+
+[node name="Ghost3" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
+layout_mode = 2
+text = "Ghost3"
+
+[connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted" to="BookUI" method="_on_bell_muted_toggled"]
+[connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns" to="BookUI" method="_on_ofuda_burns_toggled"]
+[connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows" to="BookUI" method="_on_mirror_shows_toggled"]
