@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl060iceibg6o"]
+
+[ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="BookUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_t2tou")
+
+[node name="PageDisplay" type="TextureRect" parent="BookUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPageButton" type="Button" parent="BookUI"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 298.0
+offset_right = 711.0
+offset_bottom = 346.0
+
+[node name="RightPageButton" type="Button" parent="BookUI"]
+offset_left = 200.0
+offset_top = 292.0
+offset_right = 256.0
+offset_bottom = 335.0
+
+[node name="PageContainer" type="Control" parent="BookUI"]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 6.0
+offset_right = 805.0
+offset_bottom = 389.0
+
+[node name="AnswerPage" type="Control" parent="BookUI/PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnswerButtons" type="VBoxContainer" parent="BookUI/PageContainer/AnswerPage"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 106.0
+offset_right = 440.0
+offset_bottom = 252.0
+alignment = 1
+
+[node name="OptionA" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
+layout_mode = 2
+toggle_mode = true
+text = "Ghost1"
+
+[node name="OptionB" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
+layout_mode = 2
+toggle_mode = true
+text = "Ghost2"
+
+[node name="OptionC" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
+layout_mode = 2
+toggle_mode = true
+text = "Ghost3"
+
+[node name="LockInButton" type="Button" parent="BookUI/PageContainer/AnswerPage"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 243.0
+offset_right = 399.0
+offset_bottom = 273.0
