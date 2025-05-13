@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cbjy68oekfevd"]
+[gd_scene load_steps=7 format=4 uid="uid://cbjy68oekfevd"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_082kc"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Maps/tilemap_layer.tscn" id="1_gk4et"]
@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://spawn_region.gd" id="5_yi8h1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_082kc"]
+
 [node name="Map" type="Node2D"]
 script = ExtResource("1_082kc")
 
 [node name="SpawnerComponent" parent="." instance=ExtResource("2_yi8h1")]
+region = Array[RectangleShape2D]([SubResource("RectangleShape2D_082kc")])
 
 [node name="Ground" parent="." instance=ExtResource("1_gk4et")]
 scale = Vector2(3, 3)
@@ -23,6 +26,9 @@ tile_map_data = PackedByteArray("AAAHAAUAAAABAAEAAAAHAAQAAAABAAEAAAAHAAMAAAABAAE
 position = Vector2(1, -780)
 
 [node name="SpawnerRect2D" type="Node2D" parent="Spawn Points"]
-position = Vector2(-48, -828)
+position = Vector2(-27, -418)
 script = ExtResource("5_yi8h1")
+outline_color = Color(1, 1, 1, 1)
+outline_width = 6.0
+rect_region = Rect2(-27, -418, 100, 100)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"

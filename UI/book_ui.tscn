@@ -12,6 +12,7 @@ offset_bottom = 40.0
 script = ExtResource("1_t2tou")
 
 [node name="PageDisplay" type="TextureRect" parent="BookUI"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -23,6 +24,7 @@ offset_right = 144.0
 offset_bottom = 699.0
 
 [node name="RightPageButton" type="Button" parent="BookUI"]
+layout_mode = 0
 offset_left = 1155.0
 offset_top = 617.0
 offset_right = 1262.0
