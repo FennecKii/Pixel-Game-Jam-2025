@@ -44,5 +44,19 @@ position = Vector2(0, 11)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_2t8uu")
 
+[node name="Pickup" type="Label" parent="."]
+visible = false
+offset_left = -50.0
+offset_top = -41.0
+offset_right = 50.0
+offset_bottom = -18.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 11
+text = "Press \"E\" to pickup"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Pickup Area" to="." method="_on_pickup_area_body_entered"]
 [connection signal="body_exited" from="Pickup Area" to="." method="_on_pickup_area_body_exited"]

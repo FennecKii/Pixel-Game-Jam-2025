@@ -6,6 +6,7 @@ extends Node2D
 @onready var pickup_area: Area2D = $"Pickup Area"
 @onready var pickup_collision: CollisionShape2D = $"Pickup Area/Pickup Collision"
 @onready var ofuda_placed_label: Label = $"Ofuda Placed"
+@onready var pickup_label: Label = $Pickup
 
 var ofuda_placed: bool = false
 var can_pickup: bool = false
@@ -33,6 +34,11 @@ func _process(delta: float) -> void:
 	if ofuda_placed and not display_item:
 		pickup_area.process_mode = Node.PROCESS_MODE_INHERIT
 		pickup_collision.visible = true
+	
+	if can_pickup:
+		pickup_label.visible = true
+	else:
+		pickup_label.visible = false
 
 func _update_ofuda_label() -> void:
 	if ofuda_count_lable != null:
@@ -41,7 +47,7 @@ func _update_ofuda_label() -> void:
 	if ofuda_count_lable != null and ofuda_count == 2:
 		ofuda_count_lable.add_theme_color_override("font_color", Color.RED) 
 
-func _on_ofuda_placed():
+func _on_ofuda_placed() -> void:
 	if display_item:
 		return
 	
