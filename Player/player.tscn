@@ -590,6 +590,7 @@ visible = false
 
 [node name="Ofuda Outline" type="Sprite2D" parent="Items"]
 unique_name_in_owner = true
+visible = false
 self_modulate = Color(0.666667, 0.666667, 0.666667, 0.705882)
 texture = ExtResource("10_apopc")
 
