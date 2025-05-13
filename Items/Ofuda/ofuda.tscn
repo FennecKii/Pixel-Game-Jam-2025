@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50xxvlfo42jg"]
+[gd_scene load_steps=5 format=3 uid="uid://c50xxvlfo42jg"]
 
 [ext_resource type="Script" uid="uid://nr8o63il26td" path="res://Items/Ofuda/ofuda.gd" id="1_2t8uu"]
 [ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="1_we6hw"]
@@ -13,6 +13,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t8uu"]
+radius = 53.0094
 
 [node name="Ofuda" type="Node2D"]
 script = ExtResource("1_2t8uu")
@@ -30,3 +33,16 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
 text = "*Placed*"
+
+[node name="Pickup Area" type="Area2D" parent="."]
+process_mode = 4
+collision_layer = 8
+
+[node name="Pickup Collision" type="CollisionShape2D" parent="Pickup Area"]
+visible = false
+position = Vector2(0, 11)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_2t8uu")
+
+[connection signal="body_entered" from="Pickup Area" to="." method="_on_pickup_area_body_entered"]
+[connection signal="body_exited" from="Pickup Area" to="." method="_on_pickup_area_body_exited"]

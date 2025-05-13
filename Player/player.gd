@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d:  AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hud: Control = $Camera2D/HUD
 @onready var bell: Node2D = %Bell
@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
 @onready var root_node: Node2D = get_tree().get_root().get_node("Map")
 
-var SPEED: float = 400
+var SPEED: float = 10000
 var previous_velocity: Vector2
 var bell_equiped: bool = false
 var ofuda_equiped: bool = false
@@ -16,6 +16,8 @@ var bell_volume: float
 var ofuda_count: int = 0
 
 func _ready() -> void:
+	Global.player_node = self
+	SignalBus.ofuda_pickedup.connect(_on_ofuda_pickedup)
 	animation_tree.active = true
 	hud.position = get_viewport_rect().size * -1 / 2
 
@@ -84,12 +86,12 @@ func _handle_item_input() -> void:
 	elif Input.is_action_just_pressed("Use Item") and ofuda_equiped:
 		if ofuda_count < 2:
 			ofuda_count += 1
-			SignalBus.ofuda_placed.emit(ofuda_count)
+			SignalBus.ofuda_placed.emit()
+			SignalBus.ofuda_count_changed.emit(ofuda_count)
 			_place_ofuda(get_global_mouse_position())
 
 func _place_ofuda(map_position: Vector2) -> void:
-	var ofuda_scene: PackedScene = Global.ofuda
-	var ofuda_instance = ofuda_scene.instantiate()
+	var ofuda_instance = Global.ofuda.instantiate()
 	ofuda_instance.global_position = map_position
 	ofuda_instance.ofuda_placed = true
 	if root_node != null:
@@ -102,3 +104,7 @@ func _on_detection_body_entered(body: Node2D) -> void:
 func _on_detection_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Ghost"):
 		Global.ghost_detected = false
+
+func _on_ofuda_pickedup() -> void:
+	ofuda_count -= 1
+	SignalBus.ofuda_count_changed.emit(ofuda_count)

@@ -548,7 +548,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 radius = 534.023
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -587,6 +587,7 @@ visible = false
 [node name="Ofuda" parent="Items" instance=ExtResource("9_x3vf3")]
 unique_name_in_owner = true
 visible = false
+held_item = true
 
 [node name="Ofuda Outline" type="Sprite2D" parent="Items"]
 unique_name_in_owner = true
