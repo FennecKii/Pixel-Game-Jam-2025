@@ -1,31 +1,31 @@
 [gd_scene load_steps=3 format=3 uid="uid://daqyk52il81xc"]
 
-[ext_resource type="Texture2D" uid="uid://cj8fsgxw7t78t" path="res://UI/Titlescreen.png" id="1_p8ccj"]
 [ext_resource type="Script" uid="uid://c64opyjvamn5p" path="res://UI/main_menu.gd" id="1_tk8dj"]
+[ext_resource type="Texture2D" uid="uid://ddta046wmyvyh" path="res://UI/TitleScreen.png" id="2_tk8dj"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_tk8dj")
 
-[node name="Titlescreen" type="Sprite2D" parent="."]
-position = Vector2(640, 357)
-scale = Vector2(1.24805, 0.697266)
-texture = ExtResource("1_p8ccj")
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(638.5, 357.75)
+scale = Vector2(1.23926, 0.693848)
+texture = ExtResource("2_tk8dj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Titlescreen"]
-offset_left = -130.604
-offset_top = 230.902
-offset_right = 103.396
-offset_bottom = 396.902
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen"]
+offset_left = -119.023
+offset_top = 272.754
+offset_right = 114.977
+offset_bottom = 438.754
 
-[node name="Play" type="Button" parent="Titlescreen/VBoxContainer"]
+[node name="Play" type="Button" parent="TitleScreen/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Play"
 
-[node name="Quit" type="Button" parent="Titlescreen/VBoxContainer"]
+[node name="Quit" type="Button" parent="TitleScreen/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[connection signal="pressed" from="Titlescreen/VBoxContainer/Play" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="Titlescreen/VBoxContainer/Quit" to="." method="_on_pressed_quit"]
+[connection signal="pressed" from="TitleScreen/VBoxContainer/Play" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/VBoxContainer/Quit" to="." method="_on_pressed_quit"]
