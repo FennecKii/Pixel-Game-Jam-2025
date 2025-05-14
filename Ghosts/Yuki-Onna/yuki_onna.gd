@@ -6,7 +6,7 @@ extends CharacterBody2D
 var SPEED: float = 9750
 var previous_velocity: Vector2
 var dead: bool = false
-var chasing: bool = false
+var chasing: bool = true
 var direction: Vector2
 
 func _process(_delta: float) -> void:
