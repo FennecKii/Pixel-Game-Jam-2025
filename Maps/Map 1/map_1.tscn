@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cbjy68oekfevd"]
+[gd_scene load_steps=8 format=4 uid="uid://cbjy68oekfevd"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_082kc"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="1_gk4et"]
@@ -7,9 +7,13 @@
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://spawn_region.gd" id="5_yi8h1"]
 [ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="6_uihyl"]
 
-[node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uihyl"]
+size = Vector2(243.5, 219)
+
+[node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "roof_tilemap")]
 script = ExtResource("1_082kc")
 spawner_component = NodePath("SpawnerComponent")
+roof_tilemap = NodePath("Roof")
 
 [node name="SpawnerComponent" parent="." node_paths=PackedStringArray("world_objects") instance=ExtResource("2_yi8h1")]
 world_objects = NodePath("../World Objects")
@@ -64,3 +68,12 @@ metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_uihyl")]
 visible = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(650, -526.5)
+shape = SubResource("RectangleShape2D_uihyl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
