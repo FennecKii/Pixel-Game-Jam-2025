@@ -256,7 +256,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtle1"]
-radius = 5.67646
+radius = 5.21536
 
 [sub_resource type="Animation" id="Animation_od3ui"]
 length = 0.001
@@ -551,19 +551,20 @@ radius = 534.023
 radius = 98.1275
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_mask = 8
 script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -25)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_6pogt")
 animation = &"idle_down"
 autoplay = "idle_down"
+offset = Vector2(0, -15)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.53674e-07)
+position = Vector2(0, -8)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_vtle1")
 metadata/_edit_group_ = true
@@ -582,6 +583,8 @@ parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Items" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(0, -84)
 
 [node name="Bell" parent="Items" instance=ExtResource("8_00tjw")]
 unique_name_in_owner = true
@@ -613,6 +616,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Detection" type="Area2D" parent="."]
+position = Vector2(0, -8)
 collision_layer = 4
 collision_mask = 2
 
@@ -620,9 +624,9 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_od3ui")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
 
 [node name="HUD" parent="Camera2D" instance=ExtResource("8_od3ui")]
-z_index = 1
 offset_left = -640.0
 offset_top = -360.0
 offset_right = -640.0
@@ -631,6 +635,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Ofuda Radius" type="Area2D" parent="."]
+position = Vector2(0, -8)
 collision_layer = 32768
 collision_mask = 32768
 

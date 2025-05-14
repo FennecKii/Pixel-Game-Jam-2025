@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://rpj38y4qwvue" path="res://Resources/item_container_stylebox.tres" id="4_gppie"]
 
 [node name="HUD" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +24,7 @@ position = Vector2(640, 675)
 scale = Vector2(1.25, 1.25)
 
 [node name="Bell" parent="Items" instance=ExtResource("3_uk570")]
+z_index = 1
 position = Vector2(-70, 0)
 display_item = true
 
@@ -52,6 +54,7 @@ theme_override_colors/font_color = Color(1, 0.789639, 0.693494, 1)
 text = "%"
 
 [node name="Ofuda" parent="Items" instance=ExtResource("4_f2wx0")]
+z_index = 1
 position = Vector2(70, 0)
 display_item = true
 
