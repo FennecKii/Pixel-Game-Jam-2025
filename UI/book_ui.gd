@@ -22,7 +22,6 @@ extends Control
 ]
 @onready var lock_in_button := $PageContainer/AnswerPage/LockInButton
 
-@onready var book_ui = get_node("/root/Main/CanvasLayer/BookUI")  # Adjust path
 var book_open := false
 
 @onready var bell_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted
