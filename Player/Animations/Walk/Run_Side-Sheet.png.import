@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btieqhc4gnwr0"
-path="res://.godot/imported/Walk_Down-Sheet.png-76fa7a396c1ad8a131ad42c988660b06.ctex"
+uid="uid://cfpf1ay8dx1au"
+path="res://.godot/imported/Run_Side-Sheet.png-b277564bc92056220eb4c5235132a5b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Animations/Walk/Walk_Down-Sheet.png"
-dest_files=["res://.godot/imported/Walk_Down-Sheet.png-76fa7a396c1ad8a131ad42c988660b06.ctex"]
+source_file="res://Player/Animations/Walk/Run_Side-Sheet.png"
+dest_files=["res://.godot/imported/Run_Side-Sheet.png-b277564bc92056220eb4c5235132a5b4.ctex"]
 
 [params]
 

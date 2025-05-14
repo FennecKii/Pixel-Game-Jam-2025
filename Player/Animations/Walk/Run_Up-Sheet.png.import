@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://60lhd6s4rh1j"
-path="res://.godot/imported/Walk_Up-Sheet.png-3ff0375fe493b292dc1d0c6f23fb9dbc.ctex"
+path="res://.godot/imported/Run_Up-Sheet.png-a8003dbbbf2c40032cf6fd42e2014303.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Animations/Walk/Walk_Up-Sheet.png"
-dest_files=["res://.godot/imported/Walk_Up-Sheet.png-3ff0375fe493b292dc1d0c6f23fb9dbc.ctex"]
+source_file="res://Player/Animations/Walk/Run_Up-Sheet.png"
+dest_files=["res://.godot/imported/Run_Up-Sheet.png-a8003dbbbf2c40032cf6fd42e2014303.ctex"]
 
 [params]
 
