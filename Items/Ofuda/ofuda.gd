@@ -23,7 +23,7 @@ func _ready() -> void:
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
 		pickup_collision.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_update_ofuda_label()
 	
 	_ofuda_pickup()
