@@ -16,10 +16,10 @@ func _process(delta: float) -> void:
 		random_direction = global_position.rotated(random_angle)
 		compass_needle.look_at(random_direction)
 	elif Global.ghost_detected:
-		_smooth_tracking(delta)
+		#_noisy_tracking()
 		# Lagged tracking
 		#if not tracking:
-		#	_lagged_tracking(delta)
+		_lagged_tracking(delta)
 
 func _smooth_tracking(delta_time: float, tracking_speed: float = 4.5, angle_deviation: float = 115):
 	ghost_direction = (Global.ghost_position - Global.player_position).normalized()

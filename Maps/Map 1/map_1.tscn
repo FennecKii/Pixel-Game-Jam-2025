@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cbjy68oekfevd"]
+[gd_scene load_steps=7 format=4 uid="uid://cbjy68oekfevd"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_082kc"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Maps/tilemap_layer.tscn" id="1_gk4et"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="2_njmqy"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://spawn_region.gd" id="5_yi8h1"]
+[ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="6_uihyl"]
 
 [node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component")]
 script = ExtResource("1_082kc")
@@ -44,3 +45,6 @@ metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 position = Vector2(-652, -686)
 script = ExtResource("5_yi8h1")
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_uihyl")]
+visible = false

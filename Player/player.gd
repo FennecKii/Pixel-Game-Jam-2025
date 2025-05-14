@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var root_node: Node2D = get_tree().get_root().get_node("Map")
 @onready var error_message: Label = $"Items/Ofuda Outline/Error Message"
 
-var SPEED: float = 10000
+var SPEED: float = 30000
 var previous_velocity: Vector2
 var bell_equiped: bool = false
 var ofuda_equiped: bool = false

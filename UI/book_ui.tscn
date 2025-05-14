@@ -122,12 +122,14 @@ offset_right = 527.0
 offset_bottom = 686.0
 
 [node name="Page2_Menu" type="Panel" parent="BookUI/PageContainer"]
+layout_mode = 0
 offset_left = 662.0
 offset_top = 37.0
 offset_right = 1177.0
 offset_bottom = 662.0
 
 [node name="Page3_Story" type="Panel" parent="BookUI/PageContainer"]
+layout_mode = 0
 offset_left = -23.0
 offset_top = 22.0
 offset_right = 543.0
@@ -147,18 +149,21 @@ layout_mode = 2
 text = "test test test text"
 
 [node name="Page4_Story" type="Panel" parent="BookUI/PageContainer"]
+layout_mode = 0
 offset_left = 650.0
 offset_top = 24.0
 offset_right = 1186.0
 offset_bottom = 686.0
 
 [node name="Page5_Story" type="Panel" parent="BookUI/PageContainer"]
+layout_mode = 0
 offset_left = -7.0
 offset_top = 15.0
 offset_right = 543.0
 offset_bottom = 684.0
 
 [node name="Page6_Story" type="Panel" parent="BookUI/PageContainer"]
+layout_mode = 0
 offset_left = 654.0
 offset_top = 25.0
 offset_right = 1188.0
