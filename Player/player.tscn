@@ -598,6 +598,20 @@ visible = false
 self_modulate = Color(0.666667, 0.666667, 0.666667, 0.745098)
 texture = ExtResource("10_apopc")
 
+[node name="Error Message" type="Label" parent="Items/Ofuda Outline"]
+visible = false
+offset_left = -91.0
+offset_top = -30.0
+offset_right = 91.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 11
+text = "Message"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Detection" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2

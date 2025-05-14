@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
 @onready var ofuda_radius: Area2D = $"Ofuda Radius"
 @onready var root_node: Node2D = get_tree().get_root().get_node("Map")
+@onready var error_message: Label = $"Items/Ofuda Outline/Error Message"
 
 var SPEED: float = 10000
 var previous_velocity: Vector2
@@ -99,6 +100,16 @@ func _handle_item_input() -> void:
 			SignalBus.ofuda_placed.emit()
 			SignalBus.ofuda_count_changed.emit(ofuda_count)
 			_place_ofuda(get_global_mouse_position())
+		elif ofuda_count == 2 and not error_message.visible:
+			error_message.visible = true
+			error_message.text = "No more Ofuda left!"
+			await get_tree().create_timer(2).timeout
+			error_message.visible = false
+		elif not can_place and not error_message.visible:
+			error_message.visible = true
+			error_message.text = "Too far!"
+			await get_tree().create_timer(1).timeout
+			error_message.visible = false
 
 func _place_ofuda(map_position: Vector2) -> void:
 	var ofuda_instance = Global.ofuda.instantiate()
@@ -120,9 +131,7 @@ func _on_ofuda_pickedup() -> void:
 	SignalBus.ofuda_count_changed.emit(ofuda_count)
 
 func _on_ofuda_radius_mouse_entered() -> void:
-	print("Can place Ofuda")
 	can_place = true
 
 func _on_ofuda_radius_mouse_exited() -> void:
-	print("Can't place Ofuda")
 	can_place = false
