@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cbjy68oekfevd"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_082kc"]
-[ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Maps/tilemap_layer.tscn" id="1_gk4et"]
+[ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="1_gk4et"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="2_njmqy"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://spawn_region.gd" id="5_yi8h1"]
