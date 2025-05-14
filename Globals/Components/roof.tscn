@@ -12,7 +12,7 @@ scale = Vector2(3, 3)
 
 [node name="Roof Detection" type="Area2D" parent="."]
 
-[node name="Roof Detection" type="CollisionShape2D" parent="Roof Detection"]
+[node name="Roof Collision" type="CollisionShape2D" parent="Roof Detection"]
 z_index = 1
 
 [connection signal="body_entered" from="Roof Detection" to="." method="_on_area_2d_body_entered"]

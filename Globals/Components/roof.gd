@@ -5,7 +5,7 @@ extends Node2D
 @export var occlusion_time: float = 0.5
 @export var occlusion_color: Color = Color(1, 1, 1, 0.5)
 
-@onready var roof_detection: CollisionShape2D = $"Roof Detection/Roof Detection"
+@onready var roof_detection: CollisionShape2D = $"Roof Detection/Roof Collision"
 @onready var roof_tilemap: TileMapLayer = $"Roof Tilemap"
 
 var original_color: Color = Color(1, 1, 1, 1)
