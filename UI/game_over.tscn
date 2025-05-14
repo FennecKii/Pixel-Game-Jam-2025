@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs87dibm1cwym"]
+
+[ext_resource type="Script" uid="uid://dp6bwgk1biwmi" path="res://UI/game_over.gd" id="1_3y5qq"]
+[ext_resource type="Texture2D" uid="uid://df23j40i6vg71" path="res://UI/GameOver.png" id="1_jawqf"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_3y5qq")
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(645, 360)
+scale = Vector2(1.25781, 0.705078)
+texture = ExtResource("1_jawqf")
+
+[node name="Play Again" type="Button" parent="GameOver"]
+offset_left = -126.41
+offset_top = 292.166
+offset_right = 95.5901
+offset_bottom = 351.166
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="GameOver"]
+offset_left = -125.615
+offset_top = 377.263
+offset_right = 96.3851
+offset_bottom = 436.263
+text = "Quit"
+
+[connection signal="pressed" from="GameOver/Play Again" to="." method="_on_pressed_play_again"]
+[connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_quit"]
