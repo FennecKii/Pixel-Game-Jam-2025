@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="6_uihyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emtie"]
-size = Vector2(270, 223.5)
+size = Vector2(210, 144)
 
 [node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component")]
 script = ExtResource("1_082kc")
@@ -44,8 +44,8 @@ tile_map_data = PackedByteArray("AAAMAPP/AgADAAIAAAANAPP/AgABAAAAAAAOAPP/AgABAAA
 [node name="Roof Tilemap" parent="Roofs/Roof" index="0"]
 tile_map_data = PackedByteArray("AAALAPP/BAABAAEAAAAMAPP/BAABAAEAAAANAPP/BAABAAEAAAAOAPP/BAABAAEAAAAPAPP/BAABAAEAAAALAPT/BAABAAIAAAAMAPT/BAABAAIAAAANAPT/BAABAAIAAAAOAPT/BAABAAIAAAAPAPT/BAABAAIAAAALAPX/BAABAAMAAAAMAPX/BAABAAMAAAANAPX/BAABAAMAAAAOAPX/BAABAAMAAAAPAPX/BAABAAMAAAALAPb/BAABAAQAAAAMAPb/BAABAAQAAAANAPb/BAABAAQAAAAOAPb/BAABAAQAAAAPAPb/BAABAAQAAAAQAPb/BAACAAQAAAAQAPX/BAACAAMAAAAQAPT/BAACAAIAAAAQAPP/BAACAAEAAAAQAPL/BAACAAAAAAAPAPL/BAABAAAAAAAOAPL/BAABAAAAAAANAPL/BAABAAAAAAAMAPL/BAABAAAAAAALAPL/BAABAAAAAAAKAPL/BAAAAAAAAAAKAPP/BAAAAAEAAAAKAPT/BAAAAAIAAAAKAPX/BAAAAAMAAAAKAPb/BAAAAAQAAAA=")
 
-[node name="Roof Detection" parent="Roofs/Roof/Roof Detection" index="0"]
-position = Vector2(648, -543.25)
+[node name="Roof Collision" parent="Roofs/Roof/Roof Detection" index="0"]
+position = Vector2(648, -504)
 shape = SubResource("RectangleShape2D_emtie")
 
 [node name="Spawn Regions" type="Node2D" parent="."]
