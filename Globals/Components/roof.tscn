@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://gr1sptjguxr3"]
+
+[ext_resource type="Script" uid="uid://dquwkxq2uidiy" path="res://Globals/Components/roof.gd" id="1_vi7cn"]
+[ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="2_ri8wi"]
+
+[node name="Roof" type="Node2D"]
+z_index = 1
+script = ExtResource("1_vi7cn")
+
+[node name="Roof Tilemap" parent="." instance=ExtResource("2_ri8wi")]
+scale = Vector2(3, 3)
+
+[node name="Roof Detection" type="Area2D" parent="."]
+
+[node name="Roof Detection" type="CollisionShape2D" parent="Roof Detection"]
+z_index = 1
+
+[connection signal="body_entered" from="Roof Detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Roof Detection" to="." method="_on_area_2d_body_exited"]
