@@ -1,5 +1,5 @@
 @tool
-class_name Roof
+class_name RoofComponent
 extends Node2D
 
 @export var occlusion_time: float = 0.5
