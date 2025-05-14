@@ -552,7 +552,7 @@ radius = 98.1275
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_mask = 8
+collision_mask = 24
 script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -616,7 +616,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Detection" type="Area2D" parent="."]
-position = Vector2(0, -8)
 collision_layer = 4
 collision_mask = 2
 
@@ -624,7 +623,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_od3ui")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -8)
 
 [node name="HUD" parent="Camera2D" instance=ExtResource("8_od3ui")]
 offset_left = -640.0
@@ -635,7 +633,6 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Ofuda Radius" type="Area2D" parent="."]
-position = Vector2(0, -8)
 collision_layer = 32768
 collision_mask = 32768
 
