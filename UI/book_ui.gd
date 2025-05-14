@@ -53,15 +53,9 @@ const GHOST_BEHAVIORS = {
 	}
 }
 
-func _process(_delta):
-	if Input.is_action_just_pressed("toggle_panel"):
-		book_open = !book_open
-		book_ui.visible = book_open
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if book_open else Input.MOUSE_MODE_CAPTURED)
-
 var current_page := 0
 
-func _ready():
+func _ready() -> void:
 	_update_page()
 	left_button.pressed.connect(_on_left_page)
 	right_button.pressed.connect(_on_right_page)
@@ -80,18 +74,18 @@ func _ready():
 	
 	
 	
-func _on_left_page():
+func _on_left_page() -> void:
 	if current_page >= 2:
 		current_page -= 2
 		_update_page()
 
-func _on_right_page():
+func _on_right_page() -> void:
 	if current_page + 2 < pages.size():
 		current_page += 2
 		_update_page()
 
 
-func _update_page():
+func _update_page() -> void:
 	for i in range(pages.size()):
 		pages[i].visible = false
 
@@ -105,13 +99,13 @@ func _update_page():
 
 
 
-func _on_option_toggled(button_pressed: bool, toggled_button: Button):
+func _on_option_toggled(button_pressed: bool, toggled_button: Button) -> void:
 	if button_pressed:
 		for b in option_buttons:
 			if b != toggled_button:
 				b.button_pressed = false
 
-func _on_lock_in_pressed():
+func _on_lock_in_pressed() -> void:
 	var selected = null
 	for b in option_buttons:
 		if b.button_pressed:
@@ -119,7 +113,7 @@ func _on_lock_in_pressed():
 			return
 	print("Please select a ghost first.")
 
-func _on_behavior_changed():
+func _on_behavior_changed() -> void:
 	print("Bell Muted Toggled: ", bell_cb.button_pressed)
 	print("Ofuda Burns Toggled: ", ofuda_cb.button_pressed)
 	print("Mirror Shows Toggled: ", mirror_cb.button_pressed)
