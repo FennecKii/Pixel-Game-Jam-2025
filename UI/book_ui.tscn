@@ -16,20 +16,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LeftPageButton" type="Button" parent="BookUI"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 618.0
-offset_right = 144.0
-offset_bottom = 699.0
-
-[node name="RightPageButton" type="Button" parent="BookUI"]
-layout_mode = 0
-offset_left = 1155.0
-offset_top = 617.0
-offset_right = 1262.0
-offset_bottom = 699.0
-
 [node name="PageContainer" type="Control" parent="BookUI"]
 anchors_preset = 0
 offset_left = 80.0
@@ -178,8 +164,24 @@ offset_top = 25.0
 offset_right = 1188.0
 offset_bottom = 684.0
 
-[connection signal="pressed" from="BookUI/LeftPageButton" to="BookUI" method="_on_left_page_button_pressed"]
-[connection signal="pressed" from="BookUI/RightPageButton" to="BookUI" method="_on_right_page_button_pressed"]
+[node name="LeftPageButton" type="Button" parent="BookUI"]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 618.0
+offset_right = 144.0
+offset_bottom = 699.0
+text = "left"
+
+[node name="RightPageButton" type="Button" parent="BookUI"]
+z_index = 1
+layout_mode = 0
+offset_left = 1155.0
+offset_top = 617.0
+offset_right = 1262.0
+offset_bottom = 699.0
+text = "right"
+
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted" to="BookUI" method="_on_bell_muted_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns" to="BookUI" method="_on_ofuda_burns_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows" to="BookUI" method="_on_mirror_shows_toggled"]

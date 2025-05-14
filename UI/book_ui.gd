@@ -1,6 +1,17 @@
 extends Control
 
-@onready var pages = $PageContainer.get_children()
+@onready var pages := [
+	$PageContainer/Page1Blank,
+	$PageContainer/Page2_Menu,
+	$PageContainer/Page3_Story,
+	$PageContainer/Page4_Story,
+	$PageContainer/Page5_Story,
+	$PageContainer/Page6_Story,
+	$PageContainer/GhostChecklistPage,
+	$PageContainer/AnswerPage
+]
+
+
 @onready var left_button = $LeftPageButton
 @onready var right_button = $RightPageButton
 
@@ -55,6 +66,12 @@ func _ready():
 	left_button.pressed.connect(_on_left_page)
 	right_button.pressed.connect(_on_right_page)
 
+	print("Left button is: ", left_button)
+	left_button.pressed.connect(func():
+		print("LEFT BUTTON WORKS!")
+	)
+
+
 	_on_behavior_changed()
 
 	for button in option_buttons:
@@ -78,11 +95,14 @@ func _update_page():
 	for i in range(pages.size()):
 		pages[i].visible = false
 
-	# Show the current page pair
 	if current_page < pages.size():
 		pages[current_page].visible = true
 	if current_page + 1 < pages.size():
 		pages[current_page + 1].visible = true
+
+	left_button.disabled = current_page == 0
+	right_button.disabled = current_page + 2 >= pages.size()
+
 
 
 func _on_option_toggled(button_pressed: bool, toggled_button: Button):
@@ -128,9 +148,3 @@ func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
 
 func _on_mirror_shows_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed()
-
-func _on_LeftPageButton_pressed():
-	_on_left_page()
-
-func _on_RightPageButton_pressed():
-	_on_right_page()
