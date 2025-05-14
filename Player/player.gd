@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 
 func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
-		animation_tree.set("parameters/Walk/blend_position", velocity)
+		animation_tree.set("parameters/Run/blend_position", velocity)
 		previous_velocity = velocity
 	elif velocity == Vector2.ZERO:
 		animation_tree.set("parameters/Idle/blend_position", previous_velocity)

@@ -10,5 +10,5 @@ func _ready() -> void:
 
 func _process(_delta):
 	if Input.is_action_just_pressed("toggle_journal"):
-		book_ui.visible = !book_ui.visible
+		book_ui.visible = !book_ui.visiblawe
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if book_ui.visible else Input.MOUSE_MODE_CAPTURED)
