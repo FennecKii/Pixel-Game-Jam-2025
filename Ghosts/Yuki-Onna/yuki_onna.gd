@@ -9,7 +9,7 @@ var dead: bool = false
 var chasing: bool = false
 var direction: Vector2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
 
 func _physics_process(delta: float) -> void:
@@ -19,19 +19,19 @@ func _physics_process(delta: float) -> void:
 	if chasing:
 		direction = (player_direction).normalized()
 	
-	if direction and vec_len(player_direction) > 70:
-		velocity = direction * SPEED
+	if direction and Global.vec_len(player_direction) > 70:
+		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
 	
-	if vec_len(player_direction) < 60 and velocity == Vector2.ZERO:
+	if Global.vec_len(player_direction) < 60 and velocity == Vector2.ZERO:
 		global_position -= Vector2(player_direction.normalized())
 	
-	update_animation()
+	_update_animation()
 	
 	move_and_slide()
 
-func update_animation() -> void:
+func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
 		animation_tree.set("parameters/Walk/blend_position", velocity)
 		previous_velocity = velocity
@@ -42,6 +42,3 @@ func update_animation() -> void:
 		animated_sprite_2d.flip_h = true
 	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = false
-
-func vec_len(vector: Vector2) -> float:
-	return sqrt((vector.x ** 2) + (vector.y ** 2))

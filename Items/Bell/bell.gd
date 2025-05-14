@@ -7,7 +7,7 @@ extends Node2D
 func _ready() -> void:
 	SignalBus.bell_rang.connect(_on_bell_rang)
 
-func _on_bell_rang(volume: float):
+func _on_bell_rang(_volume: float):
 	if display_item:
 		return
 	bell_rang_label.visible = true

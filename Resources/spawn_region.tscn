@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bim5j1eqy7rrb"]
+
+[ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://spawn_region.gd" id="1_ldkn2"]
+
+[node name="Spawn Region" type="Node2D"]
+z_index = -1
+script = ExtResource("1_ldkn2")
