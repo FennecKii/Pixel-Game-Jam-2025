@@ -1,21 +1,26 @@
 extends CharacterBody2D
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d:  AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hud: Control = $Camera2D/HUD
 @onready var bell: Node2D = %Bell
 @onready var ofuda: Node2D = %Ofuda
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
+@onready var ofuda_radius: Area2D = $"Ofuda Radius"
 @onready var root_node: Node2D = get_tree().get_root().get_node("Map")
+@onready var error_message: Label = $"Items/Ofuda Outline/Error Message"
 
-var SPEED: float = 400
+var SPEED: float = 10000
 var previous_velocity: Vector2
 var bell_equiped: bool = false
 var ofuda_equiped: bool = false
+var can_place: bool = false
 var bell_volume: float
 var ofuda_count: int = 0
 
 func _ready() -> void:
+	Global.player_node = self
+	SignalBus.ofuda_pickedup.connect(_on_ofuda_pickedup)
 	animation_tree.active = true
 	hud.position = get_viewport_rect().size * -1 / 2
 
@@ -52,9 +57,17 @@ func _update_animation() -> void:
 		animated_sprite_2d.flip_h = false
 
 func _update_item_states() -> void:
-	if ofuda_count == 2:
+	if ofuda_count == 2 or not can_place:
+		ofuda_outline.self_modulate.r = 0.75
 		ofuda_outline.self_modulate.b = 0
 		ofuda_outline.self_modulate.g = 0
+		ofuda_outline.self_modulate.a = 0.75
+	
+	if ofuda_count < 2 and can_place:
+		ofuda_outline.self_modulate.b = 0
+		ofuda_outline.self_modulate.r = 0
+		ofuda_outline.self_modulate.g = 0.75
+		ofuda_outline.self_modulate.a = 0.75
 	
 	bell_equiped = bell.visible
 	ofuda_equiped = ofuda.visible
@@ -82,14 +95,24 @@ func _handle_item_input() -> void:
 	if Input.is_action_just_pressed("Use Item") and bell_equiped:
 		SignalBus.bell_rang.emit(bell_volume)
 	elif Input.is_action_just_pressed("Use Item") and ofuda_equiped:
-		if ofuda_count < 2:
+		if ofuda_count < 2 and can_place:
 			ofuda_count += 1
-			SignalBus.ofuda_placed.emit(ofuda_count)
+			SignalBus.ofuda_placed.emit()
+			SignalBus.ofuda_count_changed.emit(ofuda_count)
 			_place_ofuda(get_global_mouse_position())
+		elif ofuda_count == 2 and not error_message.visible:
+			error_message.visible = true
+			error_message.text = "No more Ofuda left!"
+			await get_tree().create_timer(2).timeout
+			error_message.visible = false
+		elif not can_place and not error_message.visible:
+			error_message.visible = true
+			error_message.text = "Too far!"
+			await get_tree().create_timer(1).timeout
+			error_message.visible = false
 
 func _place_ofuda(map_position: Vector2) -> void:
-	var ofuda_scene: PackedScene = Global.ofuda
-	var ofuda_instance = ofuda_scene.instantiate()
+	var ofuda_instance = Global.ofuda.instantiate()
 	ofuda_instance.global_position = map_position
 	ofuda_instance.ofuda_placed = true
 	if root_node != null:
@@ -102,3 +125,13 @@ func _on_detection_body_entered(body: Node2D) -> void:
 func _on_detection_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Ghost"):
 		Global.ghost_detected = false
+
+func _on_ofuda_pickedup() -> void:
+	ofuda_count -= 1
+	SignalBus.ofuda_count_changed.emit(ofuda_count)
+
+func _on_ofuda_radius_mouse_entered() -> void:
+	can_place = true
+
+func _on_ofuda_radius_mouse_exited() -> void:
+	can_place = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dvs2smsibprdv"]
+[gd_scene load_steps=68 format=3 uid="uid://dvs2smsibprdv"]
 
 [ext_resource type="Texture2D" uid="uid://ps2c2oyuy552" path="res://Player/Animations/Idle/Idle_Down-Sheet.png" id="1_fhl08"]
 [ext_resource type="Script" uid="uid://cy6m8glbgkhs4" path="res://Player/player.gd" id="1_vtle1"]
@@ -547,8 +547,11 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="CircleShape2D" id="CircleShape2D_od3ui"]
 radius = 534.023
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_apopc"]
+radius = 98.1275
+
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_vtle1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -587,12 +590,27 @@ visible = false
 [node name="Ofuda" parent="Items" instance=ExtResource("9_x3vf3")]
 unique_name_in_owner = true
 visible = false
+held_item = true
 
 [node name="Ofuda Outline" type="Sprite2D" parent="Items"]
 unique_name_in_owner = true
 visible = false
-self_modulate = Color(0.666667, 0.666667, 0.666667, 0.705882)
+self_modulate = Color(0.666667, 0.666667, 0.666667, 0.745098)
 texture = ExtResource("10_apopc")
+
+[node name="Error Message" type="Label" parent="Items/Ofuda Outline"]
+visible = false
+offset_left = -91.0
+offset_top = -30.0
+offset_right = 91.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 11
+text = "Message"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Detection" type="Area2D" parent="."]
 collision_layer = 4
@@ -609,7 +627,17 @@ offset_left = -640.0
 offset_top = -360.0
 offset_right = -640.0
 offset_bottom = -360.0
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Ofuda Radius" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Ofuda Radius" type="CollisionShape2D" parent="Ofuda Radius"]
+shape = SubResource("CircleShape2D_apopc")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="mouse_entered" from="Ofuda Radius" to="." method="_on_ofuda_radius_mouse_entered"]
+[connection signal="mouse_exited" from="Ofuda Radius" to="." method="_on_ofuda_radius_mouse_exited"]
