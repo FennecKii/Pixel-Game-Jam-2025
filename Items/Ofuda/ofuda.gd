@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 func _update_ofuda_label() -> void:
 	if ofuda_count_lable != null:
 		ofuda_count_lable.text = str(2-ofuda_count)
-		ofuda_count_lable.add_theme_color_override("font_color", Color.WHITE) 
+		ofuda_count_lable.add_theme_color_override("font_color", Color.LIME_GREEN) 
 	if ofuda_count_lable != null and ofuda_count == 2:
 		ofuda_count_lable.add_theme_color_override("font_color", Color.RED) 
 
@@ -52,7 +52,6 @@ func _on_ofuda_placed() -> void:
 		return
 	
 	if ofuda_placed or held_item:
-		print("ofuda placed!")
 		return
 	
 	ofuda_placed_label.visible = true

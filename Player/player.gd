@@ -6,12 +6,14 @@ extends CharacterBody2D
 @onready var bell: Node2D = %Bell
 @onready var ofuda: Node2D = %Ofuda
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
+@onready var ofuda_radius: Area2D = $"Ofuda Radius"
 @onready var root_node: Node2D = get_tree().get_root().get_node("Map")
 
 var SPEED: float = 10000
 var previous_velocity: Vector2
 var bell_equiped: bool = false
 var ofuda_equiped: bool = false
+var can_place: bool = false
 var bell_volume: float
 var ofuda_count: int = 0
 
@@ -54,9 +56,17 @@ func _update_animation() -> void:
 		animated_sprite_2d.flip_h = false
 
 func _update_item_states() -> void:
-	if ofuda_count == 2:
+	if ofuda_count == 2 or not can_place:
+		ofuda_outline.self_modulate.r = 0.75
 		ofuda_outline.self_modulate.b = 0
 		ofuda_outline.self_modulate.g = 0
+		ofuda_outline.self_modulate.a = 0.75
+	
+	if ofuda_count < 2 and can_place:
+		ofuda_outline.self_modulate.b = 0
+		ofuda_outline.self_modulate.r = 0
+		ofuda_outline.self_modulate.g = 0.75
+		ofuda_outline.self_modulate.a = 0.75
 	
 	bell_equiped = bell.visible
 	ofuda_equiped = ofuda.visible
@@ -84,7 +94,7 @@ func _handle_item_input() -> void:
 	if Input.is_action_just_pressed("Use Item") and bell_equiped:
 		SignalBus.bell_rang.emit(bell_volume)
 	elif Input.is_action_just_pressed("Use Item") and ofuda_equiped:
-		if ofuda_count < 2:
+		if ofuda_count < 2 and can_place:
 			ofuda_count += 1
 			SignalBus.ofuda_placed.emit()
 			SignalBus.ofuda_count_changed.emit(ofuda_count)
@@ -108,3 +118,11 @@ func _on_detection_body_exited(body: Node2D) -> void:
 func _on_ofuda_pickedup() -> void:
 	ofuda_count -= 1
 	SignalBus.ofuda_count_changed.emit(ofuda_count)
+
+func _on_ofuda_radius_mouse_entered() -> void:
+	print("Can place Ofuda")
+	can_place = true
+
+func _on_ofuda_radius_mouse_exited() -> void:
+	print("Can't place Ofuda")
+	can_place = false
