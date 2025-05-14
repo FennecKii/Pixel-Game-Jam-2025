@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qtmxkuwk7fr0"
-path="res://.godot/imported/Idle-Sheet.png-2bac06079c08de129f911d86fd14474f.ctex"
+uid="uid://cgyg5t5reoba6"
+path="res://.godot/imported/yuki-run.png-bb202d37d9bee7e0fa7438a4ece8cf85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ghosts/Jikininki/Assets/Idle-Sheet.png"
-dest_files=["res://.godot/imported/Idle-Sheet.png-2bac06079c08de129f911d86fd14474f.ctex"]
+source_file="res://Ghosts/Yuki-Onna/Assests/yuki-run.png"
+dest_files=["res://.godot/imported/yuki-run.png-bb202d37d9bee7e0fa7438a4ece8cf85.ctex"]
 
 [params]
 
