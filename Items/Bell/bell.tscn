@@ -34,4 +34,5 @@ theme_override_constants/outline_size = 11
 text = "*Ring!*"
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("3_3u4i5")]
+visible = false
 scale = Vector2(0.6, 0.6)

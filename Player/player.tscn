@@ -534,9 +534,6 @@ vertical_alignment = 1
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("11_5htga")]
 
-[node name="Detection Collision" parent="Ghost Detection Component" index="0"]
-scale = Vector2(1.00141, 0.992798)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
 

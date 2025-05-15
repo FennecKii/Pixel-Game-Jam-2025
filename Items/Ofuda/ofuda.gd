@@ -27,6 +27,7 @@ func _ready() -> void:
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
 		pickup_collision.visible = false
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_DISABLED
+		ghost_detection_component.visible = false
 		ghost_detection_component.collision.visible = false
 
 func _process(_delta: float) -> void:
@@ -41,6 +42,7 @@ func _process(_delta: float) -> void:
 		pickup_area.process_mode = Node.PROCESS_MODE_INHERIT
 		pickup_collision.visible = true
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
+		ghost_detection_component.visible = true
 		ghost_detection_component.collision.visible = true
 		_update_item_response()
 	

@@ -14,11 +14,13 @@ func _ready() -> void:
 	SignalBus.bell_rang.connect(_on_bell_rang)
 	if display_item and not Global.bell_equipped:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_DISABLED
+		ghost_detection_component.visible = false
 		ghost_detection_component.collision.visible = false
 
 func _process(_delta: float) -> void:
 	if not display_item and Global.bell_equipped:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
+		ghost_detection_component.visible = true
 		ghost_detection_component.collision.visible = true
 		_update_item_response()
 
