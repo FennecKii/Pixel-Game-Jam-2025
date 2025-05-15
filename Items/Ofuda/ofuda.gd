@@ -86,10 +86,10 @@ func _ofuda_pickup() -> void:
 
 func _update_item_response() -> void:
 	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
-		print("Yuki Ofuda Entered")
+		print("Yuki Ofuda Entered", ", *No Burn*")
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
-		print("Onryo Ofuda Entered")
+		print("Onryo Ofuda Entered", ", *Burns*")
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
-		print("Jikininki Ofuda Entered")
+		print("Jikininki Ofuda Entered", ", *Burns*")
 	elif not ghost_detection_component.ghost_detected:
 		print("Ghost not detected")
