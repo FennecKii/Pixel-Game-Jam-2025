@@ -3,7 +3,7 @@ extends Node2D
 @export var ghost_detection_component: GhostDetectionComponent
 @export var display_item: bool = false
 
-@onready var bell_rang_label: Label = $"Bell Rang"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var bell_rang: bool = false
 
@@ -27,10 +27,9 @@ func _process(_delta: float) -> void:
 func _on_bell_rang(_volume: float):
 	if display_item:
 		return
-	bell_rang_label.visible = true
 	bell_rang = true
-	await get_tree().create_timer(1).timeout
-	bell_rang_label.visible = false
+	animation_player.play("ring")
+	await animation_player.animation_finished
 	bell_rang = false
 
 func _update_item_response() -> void:

@@ -277,7 +277,7 @@ offset = Vector2(0, -20)
 flip_h = true
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("4_ms2q8")]
-position = Vector2(0, 48)
+position = Vector2(0, 32)
 scale = Vector2(0.213627, 0.134499)
 
 [node name="Player Detection" type="Area2D" parent="."]
@@ -290,6 +290,7 @@ shape = SubResource("CircleShape2D_maca8")
 [node name="Mirror UI" type="CanvasLayer" parent="."]
 
 [node name="UI Animated Sprite" type="AnimatedSprite2D" parent="Mirror UI"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1210, 610)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ottcr")

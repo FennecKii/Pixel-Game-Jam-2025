@@ -23,15 +23,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
-		pass
+		if mirror_showing:
+			_update_mirror_response()
+		elif not mirror_showing:
+			ui_animation_player.stop()
 	else:
 		_update_mirror_sprite()
 		ui_animated_sprite.self_modulate = Color(1, 1, 1, 1)
-	
-	if mirror_showing:
-		_update_mirror_response()
-	elif not mirror_showing:
-		ui_animation_player.stop()
+
 
 func _update_mirror_sprite() -> void:
 	if mirror_type == MirrorDirection.FRONT:

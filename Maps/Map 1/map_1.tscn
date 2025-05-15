@@ -41,7 +41,7 @@ tile_map_data = PackedByteArray("AAAMAPP/AgADAAIAAAANAPP/AgABAAAAAAAOAPP/AgABAAA
 [node name="Player" parent="World Objects" instance=ExtResource("2_njmqy")]
 
 [node name="Mirror" parent="World Objects" instance=ExtResource("5_4amjw")]
-position = Vector2(923, -4)
+position = Vector2(839, -122)
 
 [node name="Roofs" type="Node2D" parent="."]
 
