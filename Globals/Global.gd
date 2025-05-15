@@ -18,6 +18,7 @@ extends Node
 ]
 
 var player_ghost_detected: bool = false
-var ghost_direction: Vector2
 var player_position: Vector2
 var ghost_position: Vector2
+var bell_equiped: bool = false
+var ofuda_equiped: bool = false
