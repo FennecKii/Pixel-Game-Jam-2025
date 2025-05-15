@@ -12,12 +12,12 @@ func _ready() -> void:
 		assert(false, "Ghost Detection Component not found.")
 	
 	SignalBus.bell_rang.connect(_on_bell_rang)
-	if display_item and not Global.bell_equiped:
+	if display_item and not Global.bell_equipped:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_DISABLED
 		ghost_detection_component.collision.visible = false
 
 func _process(delta: float) -> void:
-	if not display_item and Global.bell_equiped:
+	if not display_item and Global.bell_equipped:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
 		ghost_detection_component.collision.visible = true
 		_update_item_response()

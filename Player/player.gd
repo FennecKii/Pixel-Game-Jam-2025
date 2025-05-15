@@ -70,32 +70,32 @@ func _update_item_states() -> void:
 		ofuda_outline.self_modulate.g = 0.75
 		ofuda_outline.self_modulate.a = 0.75
 	
-	Global.bell_equiped = bell.visible
-	Global.ofuda_equiped = ofuda.visible
+	Global.bell_equipped = bell.visible
+	Global.ofuda_equipped = ofuda.visible
 	ofuda_outline.global_position = get_global_mouse_position()
 
 func _handle_item_input() -> void:
 	# Equip or Switch Items
-	if Input.is_action_just_pressed("Equip Bell") and not Global.bell_equiped:
+	if Input.is_action_just_pressed("Equip Bell") and not Global.bell_equipped:
 		bell.visible = true
 		ofuda.visible = false
 		ofuda_outline.visible = false
-	elif Input.is_action_just_pressed("Equip Ofuda") and not Global.ofuda_equiped:
+	elif Input.is_action_just_pressed("Equip Ofuda") and not Global.ofuda_equipped:
 		ofuda.visible = true
 		bell.visible = false
 		ofuda_outline.visible = true
 	
 	# Unequip Items
-	if Input.is_action_just_pressed("Equip Bell") and Global.bell_equiped:
+	if Input.is_action_just_pressed("Equip Bell") and Global.bell_equipped:
 		bell.visible = false
-	elif Input.is_action_just_pressed("Equip Ofuda") and Global.ofuda_equiped:
+	elif Input.is_action_just_pressed("Equip Ofuda") and Global.ofuda_equipped:
 		ofuda.visible = false
 		ofuda_outline.visible = false
 	
 	# Use Items
-	if Input.is_action_just_pressed("Use Item") and Global.bell_equiped:
+	if Input.is_action_just_pressed("Use Item") and Global.bell_equipped:
 		SignalBus.bell_rang.emit(bell_volume)
-	elif Input.is_action_just_pressed("Use Item") and Global.ofuda_equiped:
+	elif Input.is_action_just_pressed("Use Item") and Global.ofuda_equipped:
 		if ofuda_count < 2 and can_place:
 			ofuda_count += 1
 			SignalBus.ofuda_placed.emit()
