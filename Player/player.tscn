@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://60lhd6s4rh1j" path="res://Player/Animations/Walk/Run_Up-Sheet.png" id="7_p5o4e"]
 [ext_resource type="PackedScene" uid="uid://bs87s8ufsum54" path="res://Items/Bell/bell.tscn" id="8_00tjw"]
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="9_x3vf3"]
-[ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="10_apopc"]
+[ext_resource type="Texture2D" uid="uid://bafotd4fbkgww" path="res://Items/Ofuda/Ofuda (16x16).png" id="10_apopc"]
 [ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="11_5htga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
@@ -500,7 +500,8 @@ parameters/Run/blend_position = Vector2(0.00320601, 0.985879)
 
 [node name="Items" type="Node2D" parent="."]
 z_index = 1
-position = Vector2(0, -110)
+position = Vector2(0, -130)
+scale = Vector2(3, 3)
 
 [node name="Bell" parent="Items" instance=ExtResource("8_00tjw")]
 unique_name_in_owner = true

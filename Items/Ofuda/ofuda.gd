@@ -8,6 +8,7 @@ extends Node2D
 @onready var pickup_collision: CollisionShape2D = $"Pickup Area/Pickup Collision"
 @onready var ofuda_placed_label: Label = $"Ofuda Placed"
 @onready var pickup_label: Label = $Pickup
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var ofuda_placed: bool = false
 var can_pickup: bool = false
@@ -89,9 +90,20 @@ func _ofuda_pickup() -> void:
 func _update_item_response() -> void:
 	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
 		print("Yuki Ofuda Entered", ", *No Burn*")
+		animation_player.play("glow")
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
 		print("Onryo Ofuda Entered", ", *Burns*")
+		animation_player.play("burn")
+		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
+		pickup_collision.visible = false
+		await animation_player.animation_finished
+		queue_free()
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
 		print("Jikininki Ofuda Entered", ", *Burns*")
+		animation_player.play("burn")
+		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
+		pickup_collision.visible = false
+		await animation_player.animation_finished
+		queue_free()
 	elif not ghost_detection_component.ghost_detected:
 		print("Ghost not detected")
