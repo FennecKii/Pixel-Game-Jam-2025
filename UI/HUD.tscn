@@ -10,69 +10,71 @@
 script = ExtResource("1_ijstf")
 
 [node name="Compass" parent="." instance=ExtResource("1_yixhe")]
-position = Vector2(640, 660)
-scale = Vector2(3, 3)
+position = Vector2(640, 655)
+scale = Vector2(3.5, 3.5)
 
 [node name="Items" type="Node2D" parent="."]
 position = Vector2(640, 665)
-scale = Vector2(1.4, 1.4)
+scale = Vector2(2.5, 2.5)
 
 [node name="Bell" parent="Items" instance=ExtResource("3_uk570")]
 z_index = 5
-position = Vector2(-65, 0)
+position = Vector2(-40, 0)
 display_item = true
 
 [node name="Container" type="Panel" parent="Items/Bell"]
 z_index = -1
-offset_left = -24.0
-offset_top = -20.0
-offset_right = 24.0
-offset_bottom = 28.0
+offset_left = -16.0
+offset_top = -15.0
+offset_right = 16.0
+offset_bottom = 17.0
 theme_override_styles/panel = ExtResource("4_gppie")
 
 [node name="Labels" type="Node2D" parent="Items/Bell"]
-position = Vector2(0, 9)
+position = Vector2(0, 6)
+scale = Vector2(0.5, 0.5)
 
 [node name="Keybind" type="Label" parent="Items/Bell/Labels"]
-offset_left = -17.0
-offset_right = -4.0
+offset_left = -20.0
+offset_right = -7.0
 offset_bottom = 23.0
 text = "1"
 horizontal_alignment = 1
 
 [node name="Value" type="Label" parent="Items/Bell/Labels"]
-offset_left = 5.0
-offset_right = 19.0
+offset_left = 7.0
+offset_right = 21.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0.789639, 0.693494, 1)
 text = "%"
 
 [node name="Ofuda" parent="Items" instance=ExtResource("4_f2wx0")]
 z_index = 5
-position = Vector2(65, 10)
+position = Vector2(40, 0)
 display_item = true
 
 [node name="Container" type="Panel" parent="Items/Ofuda"]
 z_index = -1
-offset_left = -24.0
-offset_top = -30.0
-offset_right = 24.0
-offset_bottom = 18.0
+offset_left = -16.0
+offset_top = -15.0
+offset_right = 16.0
+offset_bottom = 17.0
 theme_override_styles/panel = ExtResource("4_gppie")
 
 [node name="Labels" type="Node2D" parent="Items/Ofuda"]
-position = Vector2(0, -1)
+position = Vector2(0, 6)
+scale = Vector2(0.5, 0.5)
 
 [node name="Keybind" type="Label" parent="Items/Ofuda/Labels"]
-offset_left = -17.0
-offset_right = -4.0
+offset_left = -20.0
+offset_right = -7.0
 offset_bottom = 23.0
 text = "2"
 horizontal_alignment = 1
 
 [node name="Value" type="Label" parent="Items/Ofuda/Labels"]
-offset_left = 7.0
-offset_right = 21.0
+offset_left = 10.0
+offset_right = 24.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0.770089, 0.615063, 1)
 text = "2"
