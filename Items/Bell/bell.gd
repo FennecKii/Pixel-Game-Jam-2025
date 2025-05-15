@@ -16,12 +16,11 @@ func _ready() -> void:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_DISABLED
 		ghost_detection_component.collision.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not display_item and Global.bell_equipped:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
 		ghost_detection_component.collision.visible = true
 		_update_item_response()
-
 
 func _on_bell_rang(_volume: float):
 	if display_item:

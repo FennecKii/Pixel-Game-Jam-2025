@@ -16,7 +16,7 @@ func _ready() -> void:
 		add_child(world_objects_node)
 	spawner_component.point_spawn()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_journal") and book_ui:
 		book_ui.visible = !book_ui.visible
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if book_ui.visible else Input.MOUSE_MODE_CAPTURED)
