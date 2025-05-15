@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs87s8ufsum54"]
+[gd_scene load_steps=5 format=3 uid="uid://bs87s8ufsum54"]
 
 [ext_resource type="Texture2D" uid="uid://df0t7u64twlu" path="res://Items/Bell/Bell (PGJ 2025).png" id="1_d77j5"]
 [ext_resource type="Script" uid="uid://d3t60bioyruos" path="res://Items/Bell/bell.gd" id="1_yll56"]
+[ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="3_3u4i5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3u4i5"]
 animations = [{
@@ -14,8 +15,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bell" type="Node2D"]
+[node name="Bell" type="Node2D" node_paths=PackedStringArray("ghost_detection_component")]
 script = ExtResource("1_yll56")
+ghost_detection_component = NodePath("Ghost Detection Component")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3u4i5")
@@ -30,3 +32,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
 text = "*Ring!*"
+
+[node name="Ghost Detection Component" parent="." instance=ExtResource("3_3u4i5")]
+scale = Vector2(0.6, 0.6)

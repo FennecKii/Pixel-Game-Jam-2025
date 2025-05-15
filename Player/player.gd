@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var ghost_detection_component: GhostDetectionComponent
+
 @onready var animated_sprite_2d:  AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hud: Control = $Camera2D/HUD
@@ -7,7 +9,6 @@ extends CharacterBody2D
 @onready var ofuda: Node2D = %Ofuda
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
 @onready var ofuda_radius: Area2D = $"Ofuda Radius"
-@onready var root_node: Node2D = get_tree().get_root().get_node("Map")
 @onready var error_message: Label = $"Items/Ofuda Outline/Error Message"
 
 var SPEED: float = 30000
@@ -20,12 +21,14 @@ var ofuda_count: int = 0
 
 func _ready() -> void:
 	Global.player_node = self
+	Global.player_ghost_detected = ghost_detection_component.ghost_detected
 	SignalBus.ofuda_pickedup.connect(_on_ofuda_pickedup)
 	animation_tree.active = true
 	hud.position = get_viewport_rect().size * -1 / 2
 
 func _process(_delta: float) -> void:
 	Global.player_position = global_position
+	Global.player_ghost_detected = ghost_detection_component.ghost_detected
 	
 	_update_item_states()
 	
@@ -112,19 +115,21 @@ func _handle_item_input() -> void:
 			error_message.visible = false
 
 func _place_ofuda(map_position: Vector2) -> void:
-	var ofuda_instance = Global.ofuda.instantiate()
+	var ofuda_instance := Global.ofuda_scene.instantiate()
 	ofuda_instance.global_position = map_position
 	ofuda_instance.ofuda_placed = true
-	if root_node != null:
-		root_node.add_child(ofuda_instance)
+	if Global.world_objects_node:
+		Global.world_objects_node.add_child(ofuda_instance)
+	elif Global.world_node:
+		Global.world_node.add_child(ofuda_instance)
 
 func _on_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Ghost"):
-		Global.ghost_detected = true
+		Global.player_ghost_detected = true
 
 func _on_detection_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Ghost"):
-		Global.ghost_detected = false
+		Global.player_ghost_detected = false
 
 func _on_ofuda_pickedup() -> void:
 	ofuda_count -= 1

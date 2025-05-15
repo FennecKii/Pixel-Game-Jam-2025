@@ -9,6 +9,9 @@ var dead: bool = false
 var chasing: bool = true
 var direction: Vector2
 
+func _ready() -> void:
+	Global.yuki_onna_node = self
+
 func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
 

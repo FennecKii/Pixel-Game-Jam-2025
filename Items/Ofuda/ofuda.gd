@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var ghost_detection_component: GhostDetectionComponent
 @export var display_item: bool = false
 @export var held_item: bool = false
 
@@ -14,16 +15,24 @@ var ofuda_count_lable: Label
 var ofuda_count: int = 0
 
 func _ready() -> void:
+	if not ghost_detection_component:
+		assert(false, "Ghost Detection Component not found.")
+	
 	SignalBus.ofuda_placed.connect(_on_ofuda_placed)
 	SignalBus.ofuda_count_changed.connect(_on_ofuda_count_changed)
 	if display_item:
 		ofuda_count_lable = $Labels/Value
 	
-	if not ofuda_placed or not display_item:
+	if not ofuda_placed or display_item:
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
 		pickup_collision.visible = false
+		ghost_detection_component.process_mode = Node.PROCESS_MODE_DISABLED
+		ghost_detection_component.collision.visible = false
 
 func _process(_delta: float) -> void:
+	if not display_item and not held_item:
+		_update_item_response()
+	
 	_update_ofuda_label()
 	
 	_ofuda_pickup()
@@ -34,6 +43,8 @@ func _process(_delta: float) -> void:
 	if ofuda_placed and not display_item:
 		pickup_area.process_mode = Node.PROCESS_MODE_INHERIT
 		pickup_collision.visible = true
+		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
+		ghost_detection_component.collision.visible = true
 	
 	if can_pickup:
 		pickup_label.visible = true
@@ -74,3 +85,13 @@ func _ofuda_pickup() -> void:
 	if can_pickup and Input.is_action_just_pressed("Interact"):
 		SignalBus.ofuda_pickedup.emit()
 		queue_free()
+
+func _update_item_response() -> void:
+	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
+		print("Yuki Ofuda Entered")
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
+		print("Onryo Ofuda Entered")
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
+		print("Jikininki Ofuda Entered")
+	elif not ghost_detection_component.ghost_detected:
+		print("Ghost not detected")

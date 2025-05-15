@@ -1,18 +1,23 @@
 extends Node
 
+@onready var world_node: Node2D
 @onready var player_node: Node2D
-@onready var ofuda: PackedScene = preload("res://Items/Ofuda/ofuda.tscn")
-@onready var yuki_onna: PackedScene = preload("res://Ghosts/Yuki-Onna/yuki_onna.tscn")
-@onready var onryo: PackedScene = preload("res://Ghosts/Onryo/onryo.tscn")
-@onready var jikininki: PackedScene = preload("res://Ghosts/Jikininki/jikininki.tscn")
+@onready var yuki_onna_node: Node2D
+@onready var onryo_node: Node2D
+@onready var jikininki_node: Node2D
+@onready var world_objects_node: Node2D
+@onready var ofuda_scene: PackedScene = preload("res://Items/Ofuda/ofuda.tscn")
+@onready var yuki_onna_scene: PackedScene = preload("res://Ghosts/Yuki-Onna/yuki_onna.tscn")
+@onready var onryo_scene: PackedScene = preload("res://Ghosts/Onryo/onryo.tscn")
+@onready var jikininki_scene: PackedScene = preload("res://Ghosts/Jikininki/jikininki.tscn")
 
 @onready var ghost_scene_array: Array[PackedScene] = [
-	yuki_onna,
-	onryo,
-	jikininki
+	yuki_onna_scene,
+	onryo_scene,
+	jikininki_scene
 ]
 
-var ghost_detected: bool = false
+var player_ghost_detected: bool = false
 var ghost_direction: Vector2
 var player_position: Vector2
 var ghost_position: Vector2
