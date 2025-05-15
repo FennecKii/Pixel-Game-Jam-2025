@@ -30,9 +30,6 @@ func _ready() -> void:
 		ghost_detection_component.collision.visible = false
 
 func _process(_delta: float) -> void:
-	if not display_item and not held_item:
-		_update_item_response()
-	
 	_update_ofuda_label()
 	
 	_ofuda_pickup()
@@ -45,6 +42,7 @@ func _process(_delta: float) -> void:
 		pickup_collision.visible = true
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
 		ghost_detection_component.collision.visible = true
+		_update_item_response()
 	
 	if can_pickup:
 		pickup_label.visible = true
