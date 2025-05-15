@@ -14,12 +14,12 @@ position = Vector2(640, 655)
 scale = Vector2(3.5, 3.5)
 
 [node name="Items" type="Node2D" parent="."]
-position = Vector2(640, 665)
-scale = Vector2(2.5, 2.5)
+position = Vector2(640, 660)
+scale = Vector2(3, 3)
 
 [node name="Bell" parent="Items" instance=ExtResource("3_uk570")]
 z_index = 5
-position = Vector2(-40, 0)
+position = Vector2(-35, 0)
 display_item = true
 
 [node name="Container" type="Panel" parent="Items/Bell"]
@@ -50,7 +50,7 @@ text = "%"
 
 [node name="Ofuda" parent="Items" instance=ExtResource("4_f2wx0")]
 z_index = 5
-position = Vector2(40, 0)
+position = Vector2(35, 0)
 display_item = true
 
 [node name="Container" type="Panel" parent="Items/Ofuda"]
