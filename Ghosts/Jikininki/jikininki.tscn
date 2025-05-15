@@ -328,6 +328,7 @@ parameters/Idle/blend_position = Vector2(-0.000582933, 0.990704)
 parameters/Run/blend_position = 0.456172
 
 [node name="Name" type="Label" parent="."]
+z_index = 1
 offset_left = -31.0
 offset_top = -110.0
 offset_right = 31.0

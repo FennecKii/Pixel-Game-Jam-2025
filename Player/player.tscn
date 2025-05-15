@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/HUD.tscn" id="8_od3ui"]
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="9_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="10_apopc"]
+[ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="11_5htga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
 atlas = ExtResource("1_fhl08")
@@ -462,16 +463,14 @@ states/Start/position = Vector2(228.8, 94.72)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta")]
 graph_offset = Vector2(-189, -40)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_od3ui"]
-radius = 534.023
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_apopc"]
 radius = 98.1275
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ghost_detection_component")]
 y_sort_enabled = true
 collision_mask = 24
 script = ExtResource("1_vtle1")
+ghost_detection_component = NodePath("Ghost Detection Component")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -533,12 +532,7 @@ text = "Message"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Detection" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 2
-
-[node name="Detection Shape" type="CollisionShape2D" parent="Detection"]
-shape = SubResource("CircleShape2D_od3ui")
+[node name="Ghost Detection Component" parent="." instance=ExtResource("11_5htga")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
@@ -558,7 +552,7 @@ collision_mask = 32768
 [node name="Ofuda Radius" type="CollisionShape2D" parent="Ofuda Radius"]
 shape = SubResource("CircleShape2D_apopc")
 
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
-[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="mouse_entered" from="Ofuda Radius" to="." method="_on_ofuda_radius_mouse_entered"]
 [connection signal="mouse_exited" from="Ofuda Radius" to="." method="_on_ofuda_radius_mouse_exited"]
+
+[editable path="Ghost Detection Component"]
