@@ -78,6 +78,16 @@ toggle_journal={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Ghosts"
+2d_physics/layer_3="Ghost Detections"
+2d_physics/layer_4="Ofuda Pickup"
+2d_physics/layer_5="Tilemap Objects"
+2d_physics/layer_6="Ofuda Placement"
+2d_physics/layer_16="Layer 16"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
