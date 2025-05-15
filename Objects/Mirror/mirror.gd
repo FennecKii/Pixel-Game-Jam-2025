@@ -9,16 +9,21 @@ enum MirrorDirection {FRONT, LEFT, RIGHT}
 @onready var mirror_side: Sprite2D = $"Mirror Side"
 @onready var ui_animated_sprite: AnimatedSprite2D = $"Mirror UI/UI Animated Sprite"
 @onready var detection_collision: CollisionShape2D = $"Player Detection/Detection"
+@onready var ghost_silhouette_sprite: Sprite2D = $"Mirror UI/Mirror Ghost Silhouette"
+
+var silhouette_rgb_value: float = 48/255
 
 func _ready() -> void:
 	ui_animated_sprite.self_modulate = Color(1, 1, 1, 0)
+	ghost_silhouette_sprite.self_modulate = Color(silhouette_rgb_value, silhouette_rgb_value, silhouette_rgb_value, 0) 
 	_update_mirror_sprite()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		pass
 	else:
 		_update_mirror_sprite()
+		ui_animated_sprite.self_modulate = Color(1, 1, 1, 1)
 
 func _update_mirror_sprite() -> void:
 	if mirror_type == MirrorDirection.FRONT:

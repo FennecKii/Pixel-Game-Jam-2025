@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d:  AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var hud: Control = $Camera2D/HUD
 @onready var bell: Node2D = %Bell
 @onready var ofuda: Node2D = %Ofuda
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
@@ -22,7 +21,6 @@ func _ready() -> void:
 	Global.player_ghost_detected = ghost_detection_component.ghost_detected
 	SignalBus.ofuda_pickedup.connect(_on_ofuda_pickedup)
 	animation_tree.active = true
-	hud.position = get_viewport_rect().size * -1 / 2
 
 func _process(_delta: float) -> void:
 	Global.player_position = global_position

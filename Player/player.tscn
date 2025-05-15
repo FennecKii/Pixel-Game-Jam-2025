@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dvs2smsibprdv"]
+[gd_scene load_steps=55 format=3 uid="uid://dvs2smsibprdv"]
 
 [ext_resource type="Texture2D" uid="uid://ps2c2oyuy552" path="res://Player/Animations/Idle/Idle_Down-Sheet.png" id="1_fhl08"]
 [ext_resource type="Script" uid="uid://cy6m8glbgkhs4" path="res://Player/player.gd" id="1_vtle1"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cfpf1ay8dx1au" path="res://Player/Animations/Walk/Run_Side-Sheet.png" id="6_5htga"]
 [ext_resource type="Texture2D" uid="uid://60lhd6s4rh1j" path="res://Player/Animations/Walk/Run_Up-Sheet.png" id="7_p5o4e"]
 [ext_resource type="PackedScene" uid="uid://bs87s8ufsum54" path="res://Items/Bell/bell.tscn" id="8_00tjw"]
-[ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/HUD.tscn" id="8_od3ui"]
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="9_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="10_apopc"]
 [ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="11_5htga"]
@@ -536,14 +535,6 @@ vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
-
-[node name="HUD" parent="Camera2D" instance=ExtResource("8_od3ui")]
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -640.0
-offset_bottom = -360.0
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Ofuda Radius" type="Area2D" parent="."]
 collision_layer = 32

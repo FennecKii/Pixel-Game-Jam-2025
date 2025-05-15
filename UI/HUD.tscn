@@ -6,14 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="4_f2wx0"]
 [ext_resource type="StyleBox" uid="uid://rpj38y4qwvue" path="res://Resources/item_container_stylebox.tres" id="4_gppie"]
 
-[node name="HUD" type="Control"]
-z_index = 5
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ijstf")
 
 [node name="Compass" parent="." instance=ExtResource("1_yixhe")]
