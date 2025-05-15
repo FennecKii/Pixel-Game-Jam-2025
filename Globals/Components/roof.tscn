@@ -10,10 +10,10 @@ script = ExtResource("1_vi7cn")
 [node name="Roof Tilemap" parent="." instance=ExtResource("2_ri8wi")]
 scale = Vector2(3, 3)
 
-[node name="Roof Detection" type="Area2D" parent="."]
+[node name="Player Detection" type="Area2D" parent="."]
 
-[node name="Roof Collision" type="CollisionShape2D" parent="Roof Detection"]
+[node name="Roof Collision" type="CollisionShape2D" parent="Player Detection"]
 z_index = 1
 
-[connection signal="body_entered" from="Roof Detection" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Roof Detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Player Detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Player Detection" to="." method="_on_area_2d_body_exited"]
