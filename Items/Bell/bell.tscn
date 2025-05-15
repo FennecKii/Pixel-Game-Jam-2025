@@ -1,7 +1,104 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs87s8ufsum54"]
+[gd_scene load_steps=10 format=3 uid="uid://bs87s8ufsum54"]
 
 [ext_resource type="Texture2D" uid="uid://df0t7u64twlu" path="res://Items/Bell/Bell (PGJ 2025).png" id="1_d77j5"]
 [ext_resource type="Script" uid="uid://d3t60bioyruos" path="res://Items/Bell/bell.gd" id="1_yll56"]
+[ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="3_3u4i5"]
+
+[sub_resource type="Animation" id="Animation_o57o5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Bell Static:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3u4i5"]
+resource_name = "idle"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jxxmf"]
+resource_name = "ring"
+length = 1.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Bell Static:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.10472, -0.261799, 0.349066, -0.174533, 0.0872665, -0.0523599, 0.0174533, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o57o5"]
+_data = {
+&"RESET": SubResource("Animation_o57o5"),
+&"idle": SubResource("Animation_3u4i5"),
+&"ring": SubResource("Animation_jxxmf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u4i5"]
+atlas = ExtResource("1_d77j5")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3u4i5"]
 animations = [{
@@ -10,23 +107,40 @@ animations = [{
 "texture": ExtResource("1_d77j5")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u4i5")
+}],
+"loop": true,
+"name": &"ring",
 "speed": 5.0
 }]
 
-[node name="Bell" type="Node2D"]
+[node name="Bell" type="Node2D" node_paths=PackedStringArray("ghost_detection_component")]
 script = ExtResource("1_yll56")
+ghost_detection_component = NodePath("Ghost Detection Component")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_o57o5")
+}
+autoplay = "idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3u4i5")
-
-[node name="Bell Rang" type="Label" parent="."]
 visible = false
-offset_left = -26.0
-offset_top = 15.0
-offset_right = 27.0
-offset_bottom = 38.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 11
-text = "*Ring!*"
+sprite_frames = SubResource("SpriteFrames_3u4i5")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Bell Static" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+texture = ExtResource("1_d77j5")
+offset = Vector2(0, 11)
+
+[node name="Ghost Detection Component" parent="." instance=ExtResource("3_3u4i5")]
+visible = false
+scale = Vector2(0.6, 0.6)

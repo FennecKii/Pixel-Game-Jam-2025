@@ -1,16 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://cbjy68oekfevd"]
+[gd_scene load_steps=9 format=4 uid="uid://cbjy68oekfevd"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_082kc"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="1_gk4et"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="2_njmqy"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
-[ext_resource type="PackedScene" uid="uid://da7k3e745ih08" path="res://Objects/Mirror/mirror.tscn" id="5_4amjw"]
 [ext_resource type="PackedScene" uid="uid://gr1sptjguxr3" path="res://Globals/Components/roof.tscn" id="5_emtie"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://Globals/Components/spawn_region.gd" id="5_yi8h1"]
 [ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="6_uihyl"]
-[ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/HUD.tscn" id="9_iekto"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4amjw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emtie"]
 size = Vector2(210, 144)
 
 [node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "book_ui")]
@@ -40,9 +38,6 @@ tile_map_data = PackedByteArray("AAAMAPP/AgADAAIAAAANAPP/AgABAAAAAAAOAPP/AgABAAA
 
 [node name="Player" parent="World Objects" instance=ExtResource("2_njmqy")]
 
-[node name="Mirror" parent="World Objects" instance=ExtResource("5_4amjw")]
-position = Vector2(839, -122)
-
 [node name="Roofs" type="Node2D" parent="."]
 
 [node name="Roof" parent="Roofs" instance=ExtResource("5_emtie")]
@@ -50,9 +45,9 @@ position = Vector2(839, -122)
 [node name="Roof Tilemap" parent="Roofs/Roof" index="0"]
 tile_map_data = PackedByteArray("AAALAPP/BAABAAEAAAAMAPP/BAABAAEAAAANAPP/BAABAAEAAAAOAPP/BAABAAEAAAAPAPP/BAABAAEAAAALAPT/BAABAAIAAAAMAPT/BAABAAIAAAANAPT/BAABAAIAAAAOAPT/BAABAAIAAAAPAPT/BAABAAIAAAALAPX/BAABAAMAAAAMAPX/BAABAAMAAAANAPX/BAABAAMAAAAOAPX/BAABAAMAAAAPAPX/BAABAAMAAAALAPb/BAABAAQAAAAMAPb/BAABAAQAAAANAPb/BAABAAQAAAAOAPb/BAABAAQAAAAPAPb/BAABAAQAAAAQAPb/BAACAAQAAAAQAPX/BAACAAMAAAAQAPT/BAACAAIAAAAQAPP/BAACAAEAAAAQAPL/BAACAAAAAAAPAPL/BAABAAAAAAAOAPL/BAABAAAAAAANAPL/BAABAAAAAAAMAPL/BAABAAAAAAALAPL/BAABAAAAAAAKAPL/BAAAAAAAAAAKAPP/BAAAAAEAAAAKAPT/BAAAAAIAAAAKAPX/BAAAAAMAAAAKAPb/BAAAAAQAAAA=")
 
-[node name="Roof Collision" parent="Roofs/Roof/Player Detection" index="0"]
+[node name="Roof Collision" parent="Roofs/Roof/Roof Detection" index="0"]
 position = Vector2(648, -504)
-shape = SubResource("RectangleShape2D_4amjw")
+shape = SubResource("RectangleShape2D_emtie")
 
 [node name="Spawn Regions" type="Node2D" parent="."]
 
@@ -81,8 +76,6 @@ metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 position = Vector2(-652, -686)
 script = ExtResource("5_yi8h1")
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
-
-[node name="HUD" parent="." instance=ExtResource("9_iekto")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_uihyl")]
 visible = false

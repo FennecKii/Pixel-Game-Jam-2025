@@ -1,4 +1,3 @@
-extends Control
+extends CanvasLayer
 
 @onready var compass: Node2D = $Compass
-@onready var screen_size: Vector2 = get_viewport_rect().size

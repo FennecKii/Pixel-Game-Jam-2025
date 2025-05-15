@@ -6,14 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="4_f2wx0"]
 [ext_resource type="StyleBox" uid="uid://rpj38y4qwvue" path="res://Resources/item_container_stylebox.tres" id="4_gppie"]
 
-[node name="HUD" type="Control"]
-z_index = 5
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ijstf")
 
 [node name="Compass" parent="." instance=ExtResource("1_yixhe")]
@@ -56,19 +49,19 @@ text = "%"
 
 [node name="Ofuda" parent="Items" instance=ExtResource("4_f2wx0")]
 z_index = 5
-position = Vector2(65, 0)
+position = Vector2(65, 10)
 display_item = true
 
 [node name="Container" type="Panel" parent="Items/Ofuda"]
 z_index = -1
 offset_left = -24.0
-offset_top = -20.0
+offset_top = -30.0
 offset_right = 24.0
-offset_bottom = 28.0
+offset_bottom = 18.0
 theme_override_styles/panel = ExtResource("4_gppie")
 
 [node name="Labels" type="Node2D" parent="Items/Ofuda"]
-position = Vector2(0, 9)
+position = Vector2(0, -1)
 
 [node name="Keybind" type="Label" parent="Items/Ofuda/Labels"]
 offset_left = -17.0

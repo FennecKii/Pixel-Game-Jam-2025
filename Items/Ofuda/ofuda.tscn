@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c50xxvlfo42jg"]
+[gd_scene load_steps=6 format=3 uid="uid://c50xxvlfo42jg"]
 
 [ext_resource type="Script" uid="uid://nr8o63il26td" path="res://Items/Ofuda/ofuda.gd" id="1_2t8uu"]
 [ext_resource type="Texture2D" uid="uid://861cr3llkvgy" path="res://Items/Ofuda/Ofuda (PGJ 2025).png" id="1_we6hw"]
+[ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="3_od11a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2t8uu"]
 animations = [{
@@ -17,14 +18,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2t8uu"]
 radius = 53.0094
 
-[node name="Ofuda" type="Node2D"]
+[node name="Ofuda" type="Node2D" node_paths=PackedStringArray("ghost_detection_component")]
 script = ExtResource("1_2t8uu")
+ghost_detection_component = NodePath("Ghost Detection Component")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2t8uu")
+offset = Vector2(0, -10)
 
 [node name="Ofuda Placed" type="Label" parent="."]
 visible = false
+z_index = 1
 offset_left = -35.0
 offset_top = 15.0
 offset_right = 35.0
@@ -46,6 +50,7 @@ shape = SubResource("CircleShape2D_2t8uu")
 
 [node name="Pickup" type="Label" parent="."]
 visible = false
+z_index = 1
 offset_left = -50.0
 offset_top = -41.0
 offset_right = 50.0
@@ -57,6 +62,10 @@ theme_override_font_sizes/font_size = 11
 text = "Press \"E\" to pickup"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Ghost Detection Component" parent="." instance=ExtResource("3_od11a")]
+visible = false
+scale = Vector2(0.6, 0.6)
 
 [connection signal="body_entered" from="Pickup Area" to="." method="_on_pickup_area_body_entered"]
 [connection signal="body_exited" from="Pickup Area" to="." method="_on_pickup_area_body_exited"]
