@@ -112,6 +112,7 @@ func _rand_move_to_position(speed: float = SPEED) -> void:
 	var position_variation: Vector2 = Vector2(randf_range(0, world_boundary_region.rect_size.x), randf_range(0, world_boundary_region.rect_size.y))
 	target_position = world_boundary_region.global_position + position_variation
 	direction = (target_position - global_position).normalized()
+	SPEED = speed
 
 func _rand_teleport_to_position() -> void:
 	var target_position: Vector2

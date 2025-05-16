@@ -26,7 +26,7 @@ func _ready() -> void:
 	SignalBus.ghost_alerted.connect(_on_ghost_alerted)
 	visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
 	
 	if player_detected and chasing:

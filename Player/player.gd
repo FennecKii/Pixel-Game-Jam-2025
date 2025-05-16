@@ -51,6 +51,7 @@ func _physics_process(delta: float) -> void:
 func _check_player_health() -> void:
 	if player_health <= 0:
 		is_dead = true
+		velocity = Vector2.ZERO
 		_handle_death()
 	elif player_health > 0:
 		is_dead = false
