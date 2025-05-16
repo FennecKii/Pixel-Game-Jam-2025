@@ -628,7 +628,6 @@ vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
-zoom = Vector2(0.5, 0.5)
 
 [node name="Ofuda Radius" type="Area2D" parent="."]
 collision_layer = 32

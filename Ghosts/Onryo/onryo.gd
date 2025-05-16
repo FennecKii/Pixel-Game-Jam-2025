@@ -17,14 +17,14 @@ var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
 var state_active: bool = false
-var state_weights: PackedFloat32Array = PackedFloat32Array([15, 85])
+var state_weights: PackedFloat32Array = PackedFloat32Array([20, 80])
 var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
 var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 37])
 
 func _ready() -> void:
 	Global.onryo_node = self
 	SignalBus.ghost_alerted.connect(_on_ghost_alerted)
-	visible = true
+	visible = false
 
 func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
@@ -41,11 +41,13 @@ func _physics_process(delta: float) -> void:
 	
 	if chasing:
 		direction = (player_direction).normalized()
-		SPEED = 16000
+		SPEED = 20500
 		collision_shape_2d.disabled = false
 		visible = true
 	
-	if direction and player_direction.length() > 20:
+	if chasing and player_direction.length() < 20:
+		velocity = Vector2.ZERO
+	elif direction:
 		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO

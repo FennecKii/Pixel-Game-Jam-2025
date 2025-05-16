@@ -7,7 +7,7 @@ extends Node2D
 @onready var pickup_area: Area2D = $"Pickup Area"
 @onready var pickup_collision: CollisionShape2D = $"Pickup Area/Pickup Collision"
 @onready var ofuda_placed_label: Label = $"Ofuda Placed"
-@onready var pickup_label: Label = $Pickup
+@onready var pickup_label: Label = %Pickup
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var ofuda_placed: bool = false
