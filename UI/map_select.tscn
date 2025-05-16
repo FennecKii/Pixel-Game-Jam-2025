@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0hewoeik1iox"]
 
 [ext_resource type="Texture2D" uid="uid://dexsqxtq84ge5" path="res://UI/MapSelect.png" id="1_1xeo7"]
-[ext_resource type="Script" uid="uid://dkr22ulvfucb3" path="res://UI/map_select.gd" id="1_t8um1"]
+[ext_resource type="Script" path="res://UI/map_select.gd" id="1_t8um1"]
 
 [node name="MapSelect" type="Node2D"]
 script = ExtResource("1_t8um1")

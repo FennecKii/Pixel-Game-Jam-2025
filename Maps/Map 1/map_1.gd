@@ -7,6 +7,8 @@ extends Node2D
 @export var book_ui: CanvasLayer
 
 func _ready() -> void:	
+	Global.scene_tree = get_tree()
+	
 	if not world_boundary:
 		assert(false, "World boundary is not found in root node.")
 	elif world_boundary:
@@ -31,4 +33,4 @@ func _process(_delta: float) -> void:
 		assert(false, "Book UI CanvasLayer not found in root node.")
 
 func _on_player_dead() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://UI/map_select.tscn")
+	Global.scene_tree.change_scene_to_file("res://UI/main_menu.tscn")

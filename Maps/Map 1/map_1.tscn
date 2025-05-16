@@ -17,6 +17,7 @@ size = Vector2(210, 144)
 size = Vector2(336, 192)
 
 [node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "world_boundary", "book_ui")]
+process_mode = 3
 script = ExtResource("1_082kc")
 spawner_component = NodePath("SpawnerComponent")
 world_objects_node = NodePath("World Objects")
