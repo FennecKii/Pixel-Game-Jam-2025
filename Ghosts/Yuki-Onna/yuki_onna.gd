@@ -24,6 +24,7 @@ var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 
 func _ready() -> void:
 	Global.yuki_onna_node = self
 	SignalBus.ghost_alerted.connect(_on_ghost_alerted)
+	visible = false
 
 func _process(delta: float) -> void:
 	Global.ghost_position = global_position
@@ -60,8 +61,9 @@ func _update_state() -> void:
 	rng = RandomNumberGenerator.new()
 	var random_state_selection: int = rng.rand_weighted(state_weights)
 	if random_state_selection == GhostState.DETECTABLE:
+		Global.ghost_detectable = true
 		collision_shape_2d.disabled = false
-		visible = true
+		#visible = true
 		var random_action_selection: int = rng.rand_weighted(detectable_action_weights)
 		if random_action_selection == GhostAction.DORMANT:
 			# Do dormant things (no velocity, sounds?)
@@ -77,8 +79,9 @@ func _update_state() -> void:
 			_rand_teleport_to_position()
 			await _run_action_timer()
 	elif random_state_selection == GhostState.UNDETECTABLE:
+		Global.ghost_detectable = false
 		collision_shape_2d.disabled = true
-		visible = false
+		#visible = false
 		var random_action_selection: int = rng.rand_weighted(undetectable_action_weights)
 		if random_action_selection == GhostAction.DORMANT:
 			# Do dormant things (no velocity, sounds?)
