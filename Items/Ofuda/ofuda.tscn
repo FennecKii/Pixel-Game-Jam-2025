@@ -293,6 +293,7 @@ autoplay = "idle"
 sprite_frames = SubResource("SpriteFrames_5oo4h")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -4)
 
 [node name="Ofuda Placed" type="Label" parent="."]
 visible = false

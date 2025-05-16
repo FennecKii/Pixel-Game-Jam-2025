@@ -50,15 +50,15 @@ text = "%"
 
 [node name="Ofuda" parent="Items" instance=ExtResource("4_f2wx0")]
 z_index = 5
-position = Vector2(35, 0)
+position = Vector2(35, 3)
 display_item = true
 
 [node name="Container" type="Panel" parent="Items/Ofuda"]
 z_index = -1
 offset_left = -16.0
-offset_top = -15.0
+offset_top = -18.0
 offset_right = 16.0
-offset_bottom = 17.0
+offset_bottom = 14.0
 theme_override_styles/panel = ExtResource("4_gppie")
 
 [node name="Labels" type="Node2D" parent="Items/Ofuda"]

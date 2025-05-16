@@ -510,6 +510,7 @@ visible = false
 [node name="Ofuda" parent="Items" instance=ExtResource("9_x3vf3")]
 unique_name_in_owner = true
 visible = false
+position = Vector2(0, 4)
 held_item = true
 
 [node name="Ofuda Outline" type="Sprite2D" parent="Items"]
