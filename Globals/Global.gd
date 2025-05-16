@@ -19,6 +19,7 @@ enum GhostNames {YUKIONNA, ONRYO, JIKININKI}
 	jikininki_scene
 ]
 
+var spawn_regions: Array[SpawnerRect2D]
 var player_max_health: int = 1
 var current_ghost: PackedScene
 var player_ghost_detected: bool = false
