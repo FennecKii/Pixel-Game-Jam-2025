@@ -16,7 +16,6 @@ var previous_velocity: Vector2
 var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
-var current_state: GhostState = GhostState.DETECTABLE
 var state_active: bool = false
 var state_weights: PackedFloat32Array = PackedFloat32Array([10, 90])
 var action_weights: PackedFloat32Array = PackedFloat32Array([40, 35, 25])
@@ -32,13 +31,14 @@ func _process(delta: float) -> void:
 		SignalBus.hurt_player.emit()
 	
 	if not state_active and not chasing:
-		_update_ai()
+		_update_state()
 
 func _physics_process(delta: float) -> void:
 	var player_direction: Vector2 = Global.player_position - global_position
 	
 	if chasing:
 		direction = (player_direction).normalized()
+		SPEED = 16000
 		collision_shape_2d.disabled = false
 		visible = true
 	
@@ -54,12 +54,11 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _update_ai() -> void:
+func _update_state() -> void:
 	state_active = true
 	rng = RandomNumberGenerator.new()
 	var random_state_selection: int = rng.rand_weighted(state_weights)
 	if random_state_selection == GhostState.DETECTABLE:
-		current_state = GhostState.DETECTABLE
 		collision_shape_2d.disabled = false
 		visible = true
 		var random_action_selection: int = rng.rand_weighted(action_weights)
@@ -77,7 +76,6 @@ func _update_ai() -> void:
 			_rand_teleport_to_position()
 			await _run_action_timer()
 	elif random_state_selection == GhostState.UNDETECTABLE:
-		current_state == GhostState.UNDETECTABLE
 		collision_shape_2d.disabled = true
 		visible = false
 		var random_action_selection: int = rng.rand_weighted(action_weights)
@@ -107,6 +105,7 @@ func _rand_move_to_position(speed: float = SPEED) -> void:
 	var position_variation: Vector2 = Vector2(randf_range(0, world_boundary_region.rect_size.x), randf_range(0, world_boundary_region.rect_size.y))
 	target_position = world_boundary_region.global_position + position_variation
 	direction = (target_position - global_position).normalized()
+	SPEED = speed
 
 func _rand_teleport_to_position() -> void:
 	var target_position: Vector2

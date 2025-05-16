@@ -17,8 +17,7 @@ func point_spawn():
 	if spawn_regions.is_empty():
 		assert(false, "No spawn regions found.")
 	var spawn_region: SpawnerRect2D = spawn_regions.pick_random()
-	#var ghost: PackedScene = Global.ghost_scene_array.pick_random()
-	var ghost: PackedScene = Global.yuki_onna_scene
+	var ghost: PackedScene = Global.ghost_scene_array.pick_random()
 	Global.current_ghost = ghost
 	var ghost_instance = ghost.instantiate()
 	var position_variation: Vector2 = Vector2(randf_range(0, spawn_region.rect_size.x), randf_range(0, spawn_region.rect_size.y))
