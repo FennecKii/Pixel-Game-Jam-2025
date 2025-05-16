@@ -1,8 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://cxaobv87i433q"]
+[gd_scene load_steps=34 format=3 uid="uid://cxaobv87i433q"]
 
 [ext_resource type="Script" uid="uid://3o210ghkacyw" path="res://Ghosts/Yuki-Onna/yuki_onna.gd" id="1_fksj7"]
 [ext_resource type="Texture2D" uid="uid://cgyg5t5reoba6" path="res://Ghosts/Yuki-Onna/Assests/yuki-run.png" id="2_0hm2x"]
-[ext_resource type="BehaviorTree" uid="uid://bi2422oeguy3d" path="res://ai/trees/ghost_behaviour_tree.tres" id="3_0hm2x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3kaf"]
 atlas = ExtResource("2_0hm2x")
@@ -296,6 +295,11 @@ transitions = ["Idle", "Death", SubResource("AnimationNodeStateMachineTransition
 radius = 35.0
 height = 70.0
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_0gcsh"]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_0hm2x"]
+blackboard_plan = SubResource("BlackboardPlan_0gcsh")
+
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_fksj7"]
 
 [node name="Yuki-Onna" type="CharacterBody2D" groups=["Ghost"]]
@@ -353,7 +357,7 @@ position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_0gcsh")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("3_0hm2x")
+behavior_tree = SubResource("BehaviorTree_0hm2x")
 blackboard_plan = SubResource("BlackboardPlan_fksj7")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
