@@ -16,10 +16,11 @@ size = Vector2(210, 144)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iekto"]
 size = Vector2(336, 192)
 
-[node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "book_ui")]
+[node name="Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "world_boundary", "book_ui")]
 script = ExtResource("1_082kc")
 spawner_component = NodePath("SpawnerComponent")
 world_objects_node = NodePath("World Objects")
+world_boundary = NodePath("World Boundary")
 book_ui = NodePath("CanvasLayer")
 
 [node name="SpawnerComponent" parent="." instance=ExtResource("2_yi8h1")]
@@ -79,6 +80,13 @@ metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 position = Vector2(-173, -719)
 script = ExtResource("5_yi8h1")
 rect_size = Vector2(300, 150)
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="World Boundary" type="Node2D" parent="."]
+position = Vector2(-415, -1000)
+script = ExtResource("5_yi8h1")
+region_type = 1
+rect_size = Vector2(1250, 1250)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("9_iekto")]

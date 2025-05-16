@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	
-	if player_direction.length() < 2 and velocity == Vector2.ZERO:
+	if player_direction.length() < 10 and velocity == Vector2.ZERO:
 		global_position -= Vector2(player_direction.normalized())
 	
 	_update_animation()

@@ -5,3 +5,4 @@
 [node name="Spawn Region" type="Node2D"]
 z_index = -1
 script = ExtResource("1_ldkn2")
+region_type = null
