@@ -1,31 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://daqyk52il81xc"]
+[gd_scene load_steps=9 format=3 uid="uid://daqyk52il81xc"]
 
-[ext_resource type="Texture2D" uid="uid://cj8fsgxw7t78t" path="res://UI/Titlescreen.png" id="1_p8ccj"]
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_tk8dj"]
+[ext_resource type="Script" uid="uid://c64opyjvamn5p" path="res://UI/main_menu.gd" id="1_tk8dj"]
+[ext_resource type="Texture2D" uid="uid://ddta046wmyvyh" path="res://UI/TitleScreen.png" id="2_tk8dj"]
+[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="3_4cwpn"]
+[ext_resource type="Texture2D" uid="uid://djopoy3ahh7vq" path="res://UI/button.png" id="3_d8nwk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cwpn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4cwpn"]
+texture = ExtResource("3_d8nwk")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f40uw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f40uw"]
+texture = ExtResource("3_d8nwk")
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_tk8dj")
 
-[node name="Titlescreen" type="Sprite2D" parent="."]
-position = Vector2(640, 357)
-scale = Vector2(1.24805, 0.697266)
-texture = ExtResource("1_p8ccj")
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(641.749, 360.375)
+scale = Vector2(1.25244, 0.704346)
+texture = ExtResource("2_tk8dj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Titlescreen"]
-offset_left = -130.604
-offset_top = 230.902
-offset_right = 103.396
-offset_bottom = 396.902
-
-[node name="Play" type="Button" parent="Titlescreen/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
+[node name="Play" type="Button" parent="TitleScreen"]
+offset_left = -215.379
+offset_top = 169.839
+offset_right = -13.3787
+offset_bottom = 468.839
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_4cwpn")
+theme_override_font_sizes/font_size = 57
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4cwpn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4cwpn")
 text = "Play"
 
-[node name="Quit" type="Button" parent="Titlescreen/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
+[node name="Quit" type="Button" parent="TitleScreen"]
+offset_left = -1.39682
+offset_top = 171.258
+offset_right = 206.603
+offset_bottom = 465.258
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_4cwpn")
+theme_override_font_sizes/font_size = 57
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f40uw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_f40uw")
 text = "Quit"
 
-[connection signal="pressed" from="Titlescreen/VBoxContainer/Play" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="Titlescreen/VBoxContainer/Quit" to="." method="_on_pressed_quit"]
+[connection signal="pressed" from="TitleScreen/Play" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/Quit" to="." method="_on_pressed_quit"]
