@@ -15,6 +15,7 @@ var previous_velocity: Vector2
 var can_place: bool = false
 var bell_volume: float
 var ofuda_count: int = 0
+var is_dead: bool = false
 
 func _ready() -> void:
 	Global.player_node = self

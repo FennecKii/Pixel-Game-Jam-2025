@@ -1,7 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://dvs2smsibprdv"]
+[gd_scene load_steps=66 format=3 uid="uid://dvs2smsibprdv"]
 
 [ext_resource type="Texture2D" uid="uid://ps2c2oyuy552" path="res://Player/Animations/Idle/Idle_Down-Sheet.png" id="1_fhl08"]
 [ext_resource type="Script" uid="uid://cy6m8glbgkhs4" path="res://Player/player.gd" id="1_vtle1"]
+[ext_resource type="Texture2D" uid="uid://bthvdhakw1qn2" path="res://Player/Animations/Player_Death.png" id="2_5htga"]
 [ext_resource type="Texture2D" uid="uid://buw4e276j2far" path="res://Player/Animations/Idle/Idle_Side-Sheet.png" id="2_vtle1"]
 [ext_resource type="Texture2D" uid="uid://clogk5ps7e2if" path="res://Player/Animations/Idle/Idle_Up-Sheet.png" id="3_od3ui"]
 [ext_resource type="Texture2D" uid="uid://btieqhc4gnwr0" path="res://Player/Animations/Walk/Run_Down-Sheet.png" id="5_apopc"]
@@ -11,6 +12,30 @@
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="9_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://bafotd4fbkgww" path="res://Items/Ofuda/Ofuda (16x16).png" id="10_apopc"]
 [ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="11_5htga"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
+atlas = ExtResource("2_5htga")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h3t"]
+atlas = ExtResource("2_5htga")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4o1l"]
+atlas = ExtResource("2_5htga")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2n6q"]
+atlas = ExtResource("2_5htga")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6x0f"]
+atlas = ExtResource("2_5htga")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1hh"]
+atlas = ExtResource("2_5htga")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
 atlas = ExtResource("1_fhl08")
@@ -86,6 +111,29 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6pogt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5o4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0h3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4o1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2n6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6x0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp1hh")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gu6f8")
@@ -381,9 +429,39 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_gu6f8"]
+resource_name = "death"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00tjw"]
 _data = {
 &"RESET": SubResource("Animation_od3ui"),
+&"death": SubResource("Animation_gu6f8"),
 &"idle_down": SubResource("Animation_vtle1"),
 &"idle_side": SubResource("Animation_x3vf3"),
 &"idle_up": SubResource("Animation_00tjw"),
@@ -391,6 +469,9 @@ _data = {
 &"run_side": SubResource("Animation_5htga"),
 &"run_up": SubResource("Animation_p5o4e")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pisgm"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_od3ui"]
 animation = &"idle_side"
@@ -453,14 +534,24 @@ advance_expression = "velocity"
 advance_mode = 2
 advance_expression = "!velocity"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b1ygp"]
+advance_mode = 2
+advance_expression = "is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o28un"]
+advance_mode = 2
+advance_expression = "is_dead"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lfmf2"]
+states/Death/node = SubResource("AnimationNodeAnimation_pisgm")
+states/Death/position = Vector2(562.2, 209.4)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_apopc")
 states/Idle/position = Vector2(413.8, 94.703)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_5htga")
 states/Run/position = Vector2(703.4, 94.0989)
 states/Start/position = Vector2(228.8, 94.72)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta")]
-graph_offset = Vector2(-189, -40)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_b1ygp"), "Run", "Death", SubResource("AnimationNodeStateMachineTransition_o28un")]
+graph_offset = Vector2(-156, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_apopc"]
 radius = 98.1275
