@@ -15,6 +15,7 @@ var previous_velocity: Vector2
 var can_place: bool = false
 var bell_volume: float
 var ofuda_count: int = 0
+var is_dead: bool = false
 
 func _ready() -> void:
 	Global.player_node = self
@@ -114,6 +115,7 @@ func _place_ofuda(map_position: Vector2) -> void:
 	var ofuda_instance := Global.ofuda_scene.instantiate()
 	ofuda_instance.global_position = map_position
 	ofuda_instance.ofuda_placed = true
+	ofuda_instance.scale = Vector2(3, 3)
 	if Global.world_objects_node:
 		Global.world_objects_node.add_child(ofuda_instance)
 	elif Global.world_node:

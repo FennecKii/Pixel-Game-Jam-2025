@@ -3,7 +3,7 @@ class_name RoofComponent
 extends Node2D
 
 @export var occlusion_time: float = 0.5
-@export var occlusion_color: Color = Color(1, 1, 1, 0.5)
+@export var occlusion_color: Color = Color(1, 1, 1, 0)
 
 @onready var roof_tilemap: TileMapLayer = $"Roof Tilemap"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://da7k3e745ih08"]
+[gd_scene load_steps=26 format=3 uid="uid://da7k3e745ih08"]
 
 [ext_resource type="Script" uid="uid://cky4jsstr2j83" path="res://Objects/Mirror/mirror.gd" id="1_mhyce"]
 [ext_resource type="Texture2D" uid="uid://drqs8ypd7cs0f" path="res://Objects/Mirror/Mirror Front.png" id="1_nlt6w"]
@@ -9,62 +9,77 @@
 [ext_resource type="Texture2D" uid="uid://bq6ti5vsi68r0" path="res://Ghosts/Onryo/Assests/onryo-run.png" id="6_s2aci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_maca8"]
+size = Vector2(26.4021, 14.0421)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_maca8"]
-radius = 12.1711
+radius = 10.2387
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sjv4e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_80nxv"]
 atlas = ExtResource("4_2juue")
-region = Rect2(0, 0, 32, 64)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tnlkt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqhj2"]
 atlas = ExtResource("4_2juue")
-region = Rect2(32, 0, 32, 64)
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ykpp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_248io"]
 atlas = ExtResource("4_2juue")
-region = Rect2(64, 0, 32, 64)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jg3b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xob26"]
 atlas = ExtResource("4_2juue")
-region = Rect2(96, 0, 32, 64)
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_am2gq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_685cc"]
 atlas = ExtResource("4_2juue")
-region = Rect2(128, 0, 32, 64)
+region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtf83"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ptq1"]
 atlas = ExtResource("4_2juue")
-region = Rect2(160, 0, 32, 64)
+region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_maca8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmiq8"]
+atlas = ExtResource("4_2juue")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stv32"]
+atlas = ExtResource("4_2juue")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbxft"]
 atlas = ExtResource("5_ss1a5")
-region = Rect2(0, 0, 32, 64)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2c8l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms2q8"]
 atlas = ExtResource("5_ss1a5")
-region = Rect2(0, 0, 32, 64)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ottcr"]
 animations = [{
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_sjv4e")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_tnlkt")
-}, {
-"duration": 1.75,
-"texture": SubResource("AtlasTexture_0ykpp")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_2jg3b")
-}, {
-"duration": 1.25,
-"texture": SubResource("AtlasTexture_am2gq")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80nxv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qtf83")
+"texture": SubResource("AtlasTexture_eqhj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_248io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xob26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_685cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ptq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmiq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stv32")
 }],
 "loop": true,
 "name": &"crack",
@@ -72,7 +87,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_maca8")
+"texture": SubResource("AtlasTexture_kbxft")
 }],
 "loop": true,
 "name": &"ghost_appear",
@@ -80,7 +95,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s2c8l")
+"texture": SubResource("AtlasTexture_ms2q8")
 }],
 "loop": true,
 "name": &"idle",
@@ -140,7 +155,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ms2q8"]
 resource_name = "crack"
-length = 1.5
+length = 1.80002
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -161,10 +176,10 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.188456, 0.583736, 0.951119, 1.13765, 1.28955),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.188456, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_80nxv"]
@@ -214,10 +229,10 @@ tracks/3/path = NodePath("../Mirror Ghost Silhouette:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.540328, 0.69259, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.188235, 0.188235, 0.188235, 0), Color(0.188235, 0.188235, 0.188235, 0.705882), Color(0.188235, 0.188235, 0.188235, 0)]
+"values": [Color(0.188235, 0.188235, 0.188235, 0), Color(0.394226, 0.394226, 0.394226, 0.511), Color(0.394226, 0.394226, 0.394226, 0.511), Color(0.188235, 0.188235, 0.188235, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_maca8"]
@@ -262,23 +277,22 @@ collision_layer = 16
 script = ExtResource("1_mhyce")
 
 [node name="Mirror Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-scale = Vector2(1.0791, 0.591706)
+position = Vector2(-2.98023e-07, 1.5)
+scale = Vector2(0.606012, 0.4985)
 shape = SubResource("RectangleShape2D_maca8")
 
 [node name="Mirror Front" type="Sprite2D" parent="."]
 texture = ExtResource("1_nlt6w")
-offset = Vector2(0, -20)
+offset = Vector2(0, -10)
 
 [node name="Mirror Side" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("2_mhyce")
-offset = Vector2(0, -20)
-flip_h = true
+offset = Vector2(0, -10)
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("4_ms2q8")]
-position = Vector2(0, 32)
-scale = Vector2(0.213627, 0.134499)
+position = Vector2(0, 15)
+scale = Vector2(0.0792957, -0.0472091)
 
 [node name="Player Detection" type="Area2D" parent="."]
 
@@ -290,9 +304,8 @@ shape = SubResource("CircleShape2D_maca8")
 [node name="Mirror UI" type="CanvasLayer" parent="."]
 
 [node name="UI Animated Sprite" type="AnimatedSprite2D" parent="Mirror UI"]
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1210, 610)
-scale = Vector2(4, 4)
+position = Vector2(1200, 620)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ottcr")
 animation = &"idle"
 autoplay = "idle"
@@ -304,8 +317,8 @@ libraries = {
 autoplay = "idle"
 
 [node name="Mirror Ghost Silhouette" type="Sprite2D" parent="Mirror UI"]
-position = Vector2(1211, 607)
-scale = Vector2(2.5, 2.5)
+position = Vector2(1203, 617)
+scale = Vector2(2, 2)
 texture = ExtResource("6_s2aci")
 hframes = 2
 
