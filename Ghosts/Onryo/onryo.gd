@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	if chasing:
 		direction = (player_direction).normalized()
 	
-	if direction and player_direction.length() > 70:
+	if direction and player_direction.length() > 20:
 		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
