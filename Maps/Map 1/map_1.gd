@@ -3,9 +3,15 @@ extends Node2D
 
 @export var spawner_component: SpawnerComponent
 @export var world_objects_node: Node2D
+@export var world_boundary: SpawnerRect2D
 @export var book_ui: CanvasLayer
 
-func _ready() -> void:
+func _ready() -> void:	
+	if not world_boundary:
+		assert(false, "World boundary is not found in root node.")
+	elif world_boundary:
+		Global.world_boundary_region = world_boundary
+	
 	Global.world_node = self
 	SignalBus.player_dead.connect(_on_player_dead)
 	if world_objects_node:

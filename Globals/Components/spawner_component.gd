@@ -11,6 +11,7 @@ func _ready() -> void:
 		spawn_regions = []
 		for spawn_region in spawn_regions_group:
 			spawn_regions.append(spawn_region)
+	Global.spawn_regions = spawn_regions
 
 func point_spawn():
 	if spawn_regions.is_empty():

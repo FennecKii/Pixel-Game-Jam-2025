@@ -2,6 +2,9 @@
 class_name SpawnerRect2D
 extends Node2D
 
+enum RegionType {SPAWNREGION, MOVEREGION}
+
+@export var region_type: RegionType = RegionType.SPAWNREGION
 @export var outline_color: Color = Color("#cd5c5c82")
 @export_range(0, 30, 0.5) var outline_width: float = 2.5
 @export var filled: bool = true
@@ -11,7 +14,8 @@ extends Node2D
 var rect_region: Rect2
 
 func _enter_tree() -> void:
-	add_to_group("spawn regions")
+	if region_type == RegionType.SPAWNREGION:
+		add_to_group("spawn regions")
 
 func _ready() -> void:
 	if not (Engine.is_editor_hint() or runtime_render):

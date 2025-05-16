@@ -304,7 +304,6 @@ shape = SubResource("CircleShape2D_maca8")
 [node name="Mirror UI" type="CanvasLayer" parent="."]
 
 [node name="UI Animated Sprite" type="AnimatedSprite2D" parent="Mirror UI"]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1200, 620)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ottcr")
