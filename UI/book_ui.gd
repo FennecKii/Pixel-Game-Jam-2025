@@ -29,23 +29,23 @@ var book_open := false
 @onready var mirror_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows
 
 @onready var ghost_labels := {
-	"Ghost1": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost1,
-	"Ghost2": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost2,
-	"Ghost3": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost3
+	"Yuki Onna": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost1,
+	"Onryo": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost2,
+	"Jikininki": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost3
 }
 
 const GHOST_BEHAVIORS = {
-	"Ghost1": {
+	"Yuki Onna": {
 		"bell": "nothing",
 		"ofuda": "burns",
 		"mirror": "shows"
 	},
-	"Ghost2": {
+	"Onryo": {
 		"bell": "muted",
 		"ofuda": "nothing",
 		"mirror": "shows"
 	},
-	"Ghost3": {
+	"Jikininki": {
 		"bell": "muted",
 		"ofuda": "burns",
 		"mirror": "nothing"
@@ -105,10 +105,9 @@ func _on_option_toggled(button_pressed: bool, toggled_button: Button) -> void:
 				b.button_pressed = false
 
 func _on_lock_in_pressed() -> void:
-	var selected = null
-	for b in option_buttons:
-		if b.button_pressed:
-			print("Answer locked in: ", b.text)
+	for b_index in range(3):
+		if option_buttons[b_index].button_pressed:
+			_send_lockin_signal(b_index)
 			return
 	print("Please select a ghost first.")
 
@@ -132,6 +131,22 @@ func _on_behavior_changed() -> void:
 		label.modulate = Color(1, 1, 1, 1) if compatible else Color(0.5, 0.5, 0.5, 1)
 		print("Ghost", ghost_name, "is", "visible" if compatible else "greyed out")
 
+func _send_lockin_signal(button_index: int) -> void:
+	if button_index == Global.GhostNames.YUKIONNA:
+		if Global.current_ghost == Global.yuki_onna_scene:
+			print("Player won")
+		else:
+			SignalBus.ghost_alerted.emit()
+	elif button_index == Global.GhostNames.ONRYO:
+		if Global.current_ghost == Global.onryo_scene:
+			print("Player won")
+		else:
+			SignalBus.ghost_alerted.emit()
+	elif button_index == Global.GhostNames.JIKININKI:
+		if Global.current_ghost == Global.jikininki_scene:
+			print("Player won")
+		else:
+			SignalBus.ghost_alerted.emit()
 
 func _on_bell_muted_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed()

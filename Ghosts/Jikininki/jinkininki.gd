@@ -2,15 +2,16 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var chasing: bool = false
 
 var SPEED: float = 9750
 var previous_velocity: Vector2
 var dead: bool = false
-var chasing: bool = false
 var direction: Vector2
 
 func _ready() -> void:
 	Global.jikininki_node = self
+	SignalBus.ghost_alerted.connect(_on_ghost_alerted)
 
 func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
@@ -45,3 +46,6 @@ func _update_animation() -> void:
 		animated_sprite_2d.flip_h = false
 	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = true
+
+func _on_ghost_alerted() -> void:
+	chasing = true

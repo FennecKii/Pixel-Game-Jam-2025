@@ -1,5 +1,7 @@
 extends Node
 
+enum GhostNames {YUKIONNA, ONRYO, JIKININKI}
+
 @onready var world_node: Node2D
 @onready var player_node: Node2D
 @onready var yuki_onna_node: Node2D
@@ -17,6 +19,7 @@ extends Node
 	jikininki_scene
 ]
 
+var current_ghost: PackedScene
 var player_ghost_detected: bool = false
 var player_position: Vector2
 var ghost_position: Vector2

@@ -41,17 +41,17 @@ alignment = 1
 [node name="OptionA" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 layout_mode = 2
 toggle_mode = true
-text = "Ghost1"
+text = "Yuki Onna"
 
 [node name="OptionB" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 layout_mode = 2
 toggle_mode = true
-text = "Ghost2"
+text = "Onryo"
 
 [node name="OptionC" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 layout_mode = 2
 toggle_mode = true
-text = "Ghost3"
+text = "Jikininki"
 
 [node name="LockInButton" type="Button" parent="BookUI/PageContainer/AnswerPage"]
 layout_mode = 0
@@ -104,15 +104,15 @@ offset_bottom = 539.0
 
 [node name="Ghost1" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
 layout_mode = 2
-text = "Ghost1"
+text = "Yuki Onna"
 
 [node name="Ghost2" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
 layout_mode = 2
-text = "Ghost2"
+text = "Onryo"
 
 [node name="Ghost3" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
 layout_mode = 2
-text = "Ghost3"
+text = "Jikininki"
 
 [node name="Page1Blank" type="Panel" parent="BookUI/PageContainer"]
 layout_mode = 0

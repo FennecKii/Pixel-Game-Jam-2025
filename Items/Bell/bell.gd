@@ -34,12 +34,17 @@ func _on_bell_rang(_volume: float):
 
 func _update_item_response() -> void:
 	if ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.yuki_onna_node:
-		print("Yuki Detected", ", *Muted Ring*")
+		pass
+		#print("Yuki Detected", ", *No Ring*")
 	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.onryo_node:
-		print("Onryo Detected", ", *Muted Ring*")
+		pass
+		#print("Onryo Detected", ", *Muted Ring*")
 	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.jikininki_node:
-		print("Jikininki Detected", ", *No Ring*")
+		pass
+		#print("Jikininki Detected", ", *Muted Ring*")
 	elif ghost_detection_component.ghost_detected and not bell_rang:
-		print("Not ringing")
+		pass
+		#print("Not ringing")
 	elif not ghost_detection_component.ghost_detected:
-		print("Ghost not detected")
+		pass
+		#print("Ghost not detected")
