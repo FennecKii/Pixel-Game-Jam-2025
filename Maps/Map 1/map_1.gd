@@ -7,6 +7,7 @@ extends Node2D
 
 func _ready() -> void:
 	Global.world_node = self
+	SignalBus.player_dead.connect(_on_player_dead)
 	if world_objects_node:
 		Global.world_objects_node = world_objects_node
 	else:
@@ -22,3 +23,6 @@ func _process(_delta: float) -> void:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if book_ui.visible else Input.MOUSE_MODE_CAPTURED)
 	elif Input.is_action_just_pressed("toggle_journal") and not book_ui:
 		assert(false, "Book UI CanvasLayer not found in root node.")
+
+func _on_player_dead() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://UI/map_select.tscn")

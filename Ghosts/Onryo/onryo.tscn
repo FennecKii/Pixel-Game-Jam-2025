@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://7adrbp1ixn6a"]
+[gd_scene load_steps=31 format=3 uid="uid://7adrbp1ixn6a"]
 
 [ext_resource type="Script" uid="uid://d16hkjx0kws6i" path="res://Ghosts/Onryo/onryo.gd" id="1_hfm10"]
 [ext_resource type="Texture2D" uid="uid://bq6ti5vsi68r0" path="res://Ghosts/Onryo/Assests/onryo-run.png" id="3_4nrmu"]
@@ -291,6 +291,10 @@ states/Run/node = SubResource("AnimationNodeBlendSpace2D_324nn")
 states/Run/position = Vector2(549, 97.4)
 transitions = ["Idle", "Death", SubResource("AnimationNodeStateMachineTransition_n61th"), "Run", "Death", SubResource("AnimationNodeStateMachineTransition_v5o3e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_m3vdf"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_x3kaf"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ww0yl")]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d55vh"]
+radius = 35.0
+height = 70.0
+
 [node name="Onryo" type="CharacterBody2D" groups=["Ghost"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -339,3 +343,13 @@ theme_override_constants/outline_size = 11
 text = "Onryo"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -22)
+shape = SubResource("CapsuleShape2D_d55vh")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

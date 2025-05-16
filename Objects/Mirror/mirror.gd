@@ -65,11 +65,8 @@ func _on_player_detection_body_exited(body: Node2D) -> void:
 
 func _update_mirror_response() -> void:
 	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
-		print("Yuki Ofuda Entered", ", *Mirror Cracks*")
-		ui_animation_player.play("crack")
+		ui_animation_player.play("ghost_appear")
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
-		print("Onryo Ofuda Entered", ", *Ghost Appears*")
 		ui_animation_player.play("ghost_appear")
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
-		print("Jikininki Ofuda Entered", ", *Ghost Appears*")
-		ui_animation_player.play("ghost_appear")
+		ui_animation_player.play("crack")
