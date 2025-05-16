@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
 @onready var ofuda_radius: Area2D = $"Ofuda Radius"
 @onready var error_message: Label = $"Items/Ofuda Outline/Error Message"
+@onready var player_health: int = Global.player_max_health
 
 var SPEED: float = 30000
 var previous_velocity: Vector2
@@ -21,6 +22,7 @@ func _ready() -> void:
 	Global.player_node = self
 	Global.player_ghost_detected = ghost_detection_component.ghost_detected
 	SignalBus.ofuda_pickedup.connect(_on_ofuda_pickedup)
+	SignalBus.hurt_player.connect(_on_player_hurt)
 	animation_tree.active = true
 
 func _process(_delta: float) -> void:
@@ -30,6 +32,8 @@ func _process(_delta: float) -> void:
 	_update_item_states()
 	
 	_handle_item_input()
+	
+	_check_player_health()
 
 func _physics_process(delta: float) -> void:
 	
@@ -43,6 +47,17 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 	
 	move_and_slide()
+
+func _check_player_health() -> void:
+	if player_health <= 0:
+		is_dead = true
+		_handle_death()
+	elif player_health > 0:
+		is_dead = false
+
+func _handle_death() -> void:
+	await animation_tree.animation_finished
+	SignalBus.player_dead.emit()
 
 func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
@@ -138,3 +153,6 @@ func _on_ofuda_radius_mouse_entered() -> void:
 
 func _on_ofuda_radius_mouse_exited() -> void:
 	can_place = false
+
+func _on_player_hurt() -> void:
+	player_health -= 1

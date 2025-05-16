@@ -249,6 +249,35 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_gu6f8"]
+resource_name = "death"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="Animation" id="Animation_vtle1"]
 resource_name = "idle_down"
 length = 0.500025
@@ -429,35 +458,6 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_gu6f8"]
-resource_name = "death"
-length = 0.500008
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"death"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00tjw"]
 _data = {
 &"RESET": SubResource("Animation_od3ui"),
@@ -544,21 +544,21 @@ advance_expression = "is_dead"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lfmf2"]
 states/Death/node = SubResource("AnimationNodeAnimation_pisgm")
-states/Death/position = Vector2(562.2, 209.4)
+states/Death/position = Vector2(551.8, 192.2)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_apopc")
 states/Idle/position = Vector2(413.8, 94.703)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_5htga")
 states/Run/position = Vector2(703.4, 94.0989)
 states/Start/position = Vector2(228.8, 94.72)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_b1ygp"), "Run", "Death", SubResource("AnimationNodeStateMachineTransition_o28un")]
-graph_offset = Vector2(-156, 15)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p5o4e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_gu6f8"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_dkpta"), "Run", "Death", SubResource("AnimationNodeStateMachineTransition_b1ygp"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_o28un")]
+graph_offset = Vector2(-110, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_apopc"]
 radius = 98.1275
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ghost_detection_component")]
 y_sort_enabled = true
-collision_mask = 24
+collision_mask = 88
 script = ExtResource("1_vtle1")
 ghost_detection_component = NodePath("Ghost Detection Component")
 
@@ -586,7 +586,7 @@ autoplay = "idle_down"
 tree_root = SubResource("AnimationNodeStateMachine_lfmf2")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0, 1)
+parameters/Idle/blend_position = 0.500025
 parameters/Run/blend_position = Vector2(0.00320601, 0.985879)
 
 [node name="Items" type="Node2D" parent="."]

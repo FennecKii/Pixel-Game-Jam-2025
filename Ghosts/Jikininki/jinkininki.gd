@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var chasing: bool = false
 
+var chasing: bool = false
 var SPEED: float = 9750
 var previous_velocity: Vector2
 var dead: bool = false
 var direction: Vector2
+var player_detected: bool = false
 
 func _ready() -> void:
 	Global.jikininki_node = self
@@ -15,6 +16,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
+	
+	if player_detected and chasing:
+		SignalBus.hurt_player.emit()
 
 func _physics_process(delta: float) -> void:
 	
@@ -28,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	
-	if player_direction.length() < 60 and velocity == Vector2.ZERO:
+	if player_direction.length() < 2 and velocity == Vector2.ZERO:
 		global_position -= Vector2(player_direction.normalized())
 	
 	_update_animation()
@@ -49,3 +53,11 @@ func _update_animation() -> void:
 
 func _on_ghost_alerted() -> void:
 	chasing = true
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body == Global.player_node:
+		player_detected = true
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if body == Global.player_node:
+		player_detected = false

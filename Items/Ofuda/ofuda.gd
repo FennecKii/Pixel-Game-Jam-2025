@@ -90,6 +90,10 @@ func _ofuda_pickup() -> void:
 func _update_item_response() -> void:
 	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
 		animation_player.play("burn")
+		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
+		pickup_collision.visible = false
+		await animation_player.animation_finished
+		queue_free()
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
 		animation_player.play("glow")
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
