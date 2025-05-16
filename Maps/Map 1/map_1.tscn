@@ -83,10 +83,10 @@ rect_size = Vector2(300, 150)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="World Boundary" type="Node2D" parent="."]
-position = Vector2(-415, -1000)
+position = Vector2(-402, -935)
 script = ExtResource("5_yi8h1")
 region_type = 1
-rect_size = Vector2(1250, 1250)
+rect_size = Vector2(1400, 700)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("9_iekto")]

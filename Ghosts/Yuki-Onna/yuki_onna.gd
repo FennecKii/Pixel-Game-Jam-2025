@@ -17,8 +17,9 @@ var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
 var state_active: bool = false
-var state_weights: PackedFloat32Array = PackedFloat32Array([10, 90])
-var action_weights: PackedFloat32Array = PackedFloat32Array([40, 35, 25])
+var state_weights: PackedFloat32Array = PackedFloat32Array([15, 85])
+var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
+var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 37])
 
 func _ready() -> void:
 	Global.yuki_onna_node = self
@@ -61,7 +62,7 @@ func _update_state() -> void:
 	if random_state_selection == GhostState.DETECTABLE:
 		collision_shape_2d.disabled = false
 		visible = true
-		var random_action_selection: int = rng.rand_weighted(action_weights)
+		var random_action_selection: int = rng.rand_weighted(detectable_action_weights)
 		if random_action_selection == GhostAction.DORMANT:
 			# Do dormant things (no velocity, sounds?)
 			await _run_action_timer(rng.randf_range(1, 10))
@@ -78,7 +79,7 @@ func _update_state() -> void:
 	elif random_state_selection == GhostState.UNDETECTABLE:
 		collision_shape_2d.disabled = true
 		visible = false
-		var random_action_selection: int = rng.rand_weighted(action_weights)
+		var random_action_selection: int = rng.rand_weighted(undetectable_action_weights)
 		if random_action_selection == GhostAction.DORMANT:
 			# Do dormant things (no velocity, sounds?)
 			await _run_action_timer(rng.randf_range(5, 10))
