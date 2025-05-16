@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var ofuda: Node2D = %Ofuda
 @onready var ofuda_outline: Sprite2D = %"Ofuda Outline"
 @onready var ofuda_radius: Area2D = $"Ofuda Radius"
-@onready var error_message: Label = $"Items/Ofuda Outline/Error Message"
+@onready var error_message: Label = %"Error Message"
 @onready var player_health: int = Global.player_max_health
 
 var SPEED: float = 20000

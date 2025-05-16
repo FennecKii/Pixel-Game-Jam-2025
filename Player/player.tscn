@@ -610,12 +610,25 @@ visible = false
 self_modulate = Color(0.666667, 0.666667, 0.666667, 0.745098)
 texture = ExtResource("10_apopc")
 
-[node name="Error Message" type="Label" parent="Items/Ofuda Outline"]
+[node name="Prompt Layer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Prompt Layer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -170.0
+offset_right = 50.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Error Message" type="Label" parent="Prompt Layer/CenterContainer"]
+unique_name_in_owner = true
 visible = false
-offset_left = -91.0
-offset_top = -30.0
-offset_right = 91.0
-offset_bottom = -14.0
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
