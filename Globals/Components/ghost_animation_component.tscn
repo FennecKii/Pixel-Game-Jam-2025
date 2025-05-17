@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bpa8bjbyqikuu"]
+[gd_scene load_steps=41 format=3 uid="uid://bpa8bjbyqikuu"]
 
 [ext_resource type="Texture2D" uid="uid://brvov16r3wm5q" path="res://Ghosts/Jikininki/Assets/jikininki-run.png" id="1_jqh1l"]
 [ext_resource type="Script" uid="uid://bq0ckqqexnlyb" path="res://Globals/Components/ghost_animation_component.gd" id="1_mwg41"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://b2dtbuohndfxc" path="res://Ghosts/undead_walk_down.png" id="4_18s80"]
 [ext_resource type="Texture2D" uid="uid://cke7jjic1vrbc" path="res://Ghosts/undead_walk_side.png" id="5_kf8v2"]
 [ext_resource type="Texture2D" uid="uid://bsfdb7t4ljin6" path="res://Ghosts/undead_walk_up.png" id="6_e7jkt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7jkt"]
+atlas = ExtResource("1_qwdef")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rj3q"]
 atlas = ExtResource("1_qwdef")
@@ -46,6 +50,18 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_makc3"]
 atlas = ExtResource("1_jqh1l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whgih"]
+atlas = ExtResource("4_18s80")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe7ae"]
+atlas = ExtResource("5_kf8v2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c26q"]
+atlas = ExtResource("6_e7jkt")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6m38"]
@@ -100,6 +116,14 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_e7jkt")
+}],
+"loop": true,
+"name": &"blue idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6rj3q")
 }, {
 "duration": 1.0,
@@ -151,6 +175,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whgih")
+}],
+"loop": true,
+"name": &"undead idle down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe7ae")
+}],
+"loop": true,
+"name": &"undead idle side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c26q")
+}],
+"loop": true,
+"name": &"undead idle up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -401,7 +449,6 @@ _data = {
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_mwg41")
 animation = &"bold run"
-autoplay = "idle"
 frame = 1
 offset = Vector2(0, -12)
 script = ExtResource("1_mwg41")
@@ -410,4 +457,3 @@ script = ExtResource("1_mwg41")
 libraries = {
 &"": SubResource("AnimationLibrary_n61th")
 }
-autoplay = "idle"

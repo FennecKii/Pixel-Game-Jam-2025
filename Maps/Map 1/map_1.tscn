@@ -38,6 +38,7 @@ book_ui = NodePath("CanvasLayer")
 [node name="SpawnerComponent" parent="." instance=ExtResource("2_yi8h1")]
 
 [node name="GameTimerComponent" parent="." instance=ExtResource("3_ej0cx")]
+duration = 180.0
 
 [node name="Path" parent="." instance=ExtResource("1_gk4et")]
 scale = Vector2(3, 3)

@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	
 	if chasing:
 		direction = (player_direction).normalized()
-		SPEED = 20500
+		SPEED = 41000
 		collision_shape_2d.disabled = false
 		visible = true
 	
@@ -75,7 +75,7 @@ func _update_state() -> void:
 			await _run_action_timer(rng.randf_range(1, 10))
 		elif random_action_selection == GhostAction.MOVE:
 			# Do moving things (move to a random position?)
-			_rand_move_to_position(rng.randf_range(10000, 25000))
+			_rand_move_to_position(rng.randf_range(5000, 10000))
 			await _run_action_timer()
 			direction = Vector2.ZERO
 			await _run_action_timer(rng.randf_range(1, 5))
@@ -93,7 +93,7 @@ func _update_state() -> void:
 			await _run_action_timer(rng.randf_range(5, 10))
 		elif random_action_selection == GhostAction.MOVE:
 			# Do moving things (move to a random position?)
-			_rand_move_to_position(rng.randf_range(10000, 25000))
+			_rand_move_to_position(rng.randf_range(5000, 10000))
 			await _run_action_timer()
 			direction = Vector2.ZERO
 			await _run_action_timer(rng.randf_range(1, 5))
@@ -126,19 +126,52 @@ func _rand_teleport_to_position() -> void:
 func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
 		if ghost_appearance == Global.GhostAppearance.DEFAULT:
+			animation_player.active = true
 			animation_player.play("run")
-		elif ghost_appearance == Global.GhostAppearance.BOLD:
-			animation_player.play("bold run")
+		elif ghost_appearance == Global.GhostAppearance.BLUE:
+			animation_player.active = false
+			animated_sprite_2d.play("blue walk")
+		elif ghost_appearance == Global.GhostAppearance.UNDEAD:
+			animation_player.active = false
+			var direction_enum: int = _determine_direction(velocity)
+			if direction_enum == Global.SpriteDirection.DOWN:
+				animated_sprite_2d.play("undead walk down")
+			elif direction_enum == Global.SpriteDirection.UP:
+				animated_sprite_2d.play("undead walk up")
+			elif direction_enum == Global.SpriteDirection.SIDE:
+				animated_sprite_2d.play("undead walk side")
+		previous_velocity = velocity
 	elif velocity == Vector2.ZERO:
 		if ghost_appearance == Global.GhostAppearance.DEFAULT:
+			animation_player.active = true
 			animation_player.play("idle")
-		elif ghost_appearance == Global.GhostAppearance.BOLD:
-			animation_player.play("bold idle")
+		elif ghost_appearance == Global.GhostAppearance.BLUE:
+			animation_player.active = false
+			animated_sprite_2d.play("blue idle")
+		elif ghost_appearance == Global.GhostAppearance.UNDEAD:
+			animation_player.active = false
+			var direction_enum: int = _determine_direction(previous_velocity)
+			if direction_enum == Global.SpriteDirection.DOWN:
+				animated_sprite_2d.play("undead idle down")
+			elif direction_enum == Global.SpriteDirection.UP:
+				animated_sprite_2d.play("undead idle up")
+			elif direction_enum == Global.SpriteDirection.SIDE:
+				animated_sprite_2d.play("undead idle side")
 	
 	if velocity.x < 0:
 		animated_sprite_2d.flip_h = false
 	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = true
+
+func _determine_direction(velocity_vec: Vector2) -> int:
+	if abs(velocity_vec.x) >= abs(velocity_vec.y):
+		return Global.SpriteDirection.SIDE
+	elif velocity_vec.y > 0 and velocity_vec.y > abs(velocity_vec.x):
+		return Global.SpriteDirection.DOWN
+	elif velocity_vec.y < 0 and abs(velocity_vec.y) > abs(velocity_vec.x):
+		return Global.SpriteDirection.UP
+	else:
+		return Global.SpriteDirection.UNKNOWN
 
 func _on_ghost_alerted() -> void:
 	chasing = true
