@@ -24,7 +24,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		if mirror_showing:
-			_update_mirror_response()
+			await _update_mirror_response()
 		elif not mirror_showing:
 			ui_animation_player.stop()
 	else:
@@ -64,9 +64,14 @@ func _on_player_detection_body_exited(body: Node2D) -> void:
 		mirror_showing = false
 
 func _update_mirror_response() -> void:
-	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
+	if not ghost_detection_component.ghost_detected:
+		return
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
 		ui_animation_player.play("ghost_appear")
+		await ui_animation_player.animation_finished
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
 		ui_animation_player.play("ghost_appear")
+		await ui_animation_player.animation_finished
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
 		ui_animation_player.play("crack")
+		await ui_animation_player.animation_finished

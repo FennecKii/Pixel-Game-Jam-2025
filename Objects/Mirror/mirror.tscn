@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_stv32")
 }],
-"loop": true,
+"loop": false,
 "name": &"crack",
 "speed": 5.0
 }, {
@@ -89,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kbxft")
 }],
-"loop": true,
+"loop": false,
 "name": &"ghost_appear",
 "speed": 5.0
 }, {
