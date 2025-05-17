@@ -22,7 +22,7 @@ func point_spawn():
 	var ghost_instance = ghost.instantiate()
 	var position_variation: Vector2 = Vector2(randf_range(0, spawn_region.rect_size.x), randf_range(0, spawn_region.rect_size.y))
 	ghost_instance.global_position = spawn_region.global_position + position_variation
-	#ghost_instance.visible = false
+	ghost_instance.visible = false
 	if Global.world_objects_node:
 		Global.world_objects_node.add_child(ghost_instance)
 	elif world_objects:

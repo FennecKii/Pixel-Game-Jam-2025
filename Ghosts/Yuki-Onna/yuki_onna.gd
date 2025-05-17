@@ -17,14 +17,13 @@ var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
 var state_active: bool = false
-var state_weights: PackedFloat32Array = PackedFloat32Array([20, 80])
+var state_weights: PackedFloat32Array = PackedFloat32Array([25, 75])
 var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
 var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 37])
 
 func _ready() -> void:
 	Global.yuki_onna_node = self
 	SignalBus.ghost_alerted.connect(_on_ghost_alerted)
-	visible = false
 
 func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
