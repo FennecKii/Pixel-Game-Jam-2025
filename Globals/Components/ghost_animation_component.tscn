@@ -1,8 +1,28 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpa8bjbyqikuu"]
+[gd_scene load_steps=37 format=3 uid="uid://bpa8bjbyqikuu"]
 
 [ext_resource type="Texture2D" uid="uid://brvov16r3wm5q" path="res://Ghosts/Jikininki/Assets/jikininki-run.png" id="1_jqh1l"]
 [ext_resource type="Script" uid="uid://bq0ckqqexnlyb" path="res://Globals/Components/ghost_animation_component.gd" id="1_mwg41"]
+[ext_resource type="Texture2D" uid="uid://h5hlb1pxshs6" path="res://Ghosts/blue_ghost_walk.png" id="1_qwdef"]
 [ext_resource type="Texture2D" uid="uid://fk10845jyyn8" path="res://Ghosts/onryo-run-bold.png" id="2_d16gg"]
+[ext_resource type="Texture2D" uid="uid://b2dtbuohndfxc" path="res://Ghosts/undead_walk_down.png" id="4_18s80"]
+[ext_resource type="Texture2D" uid="uid://cke7jjic1vrbc" path="res://Ghosts/undead_walk_side.png" id="5_kf8v2"]
+[ext_resource type="Texture2D" uid="uid://bsfdb7t4ljin6" path="res://Ghosts/undead_walk_up.png" id="6_e7jkt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rj3q"]
+atlas = ExtResource("1_qwdef")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q8wk"]
+atlas = ExtResource("1_qwdef")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18s80"]
+atlas = ExtResource("1_qwdef")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf8v2"]
+atlas = ExtResource("1_qwdef")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwg41"]
 atlas = ExtResource("2_d16gg")
@@ -28,8 +48,73 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_jqh1l")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6m38"]
+atlas = ExtResource("4_18s80")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uiio"]
+atlas = ExtResource("4_18s80")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atu7u"]
+atlas = ExtResource("4_18s80")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh0yu"]
+atlas = ExtResource("4_18s80")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5yjp"]
+atlas = ExtResource("5_kf8v2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ibft"]
+atlas = ExtResource("5_kf8v2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vex43"]
+atlas = ExtResource("5_kf8v2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg0ut"]
+atlas = ExtResource("5_kf8v2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8jyu"]
+atlas = ExtResource("6_e7jkt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sja2"]
+atlas = ExtResource("6_e7jkt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5k4k"]
+atlas = ExtResource("6_e7jkt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh26j"]
+atlas = ExtResource("6_e7jkt")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mwg41"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rj3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q8wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18s80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf8v2")
+}],
+"loop": true,
+"name": &"blue walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mwg41")
@@ -66,6 +151,57 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6m38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uiio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atu7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh0yu")
+}],
+"loop": true,
+"name": &"undead walk down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5yjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ibft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vex43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg0ut")
+}],
+"loop": true,
+"name": &"undead walk side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8jyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sja2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5k4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh26j")
+}],
+"loop": true,
+"name": &"undead walk up",
 "speed": 5.0
 }]
 

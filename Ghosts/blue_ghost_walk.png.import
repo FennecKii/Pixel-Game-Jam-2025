@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2dtbuohndfxc"
-path="res://.godot/imported/undead_walk.png-f2e569088a892d91945189905db7d7e8.ctex"
+uid="uid://h5hlb1pxshs6"
+path="res://.godot/imported/blue_ghost_walk.png-6025b00472e10565344420a360ac84ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ghosts/undead_walk.png"
-dest_files=["res://.godot/imported/undead_walk.png-f2e569088a892d91945189905db7d7e8.ctex"]
+source_file="res://Ghosts/blue_ghost_walk.png"
+dest_files=["res://.godot/imported/blue_ghost_walk.png-6025b00472e10565344420a360ac84ea.ctex"]
 
 [params]
 

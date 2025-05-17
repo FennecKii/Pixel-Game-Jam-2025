@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h5hlb1pxshs6"
-path="res://.godot/imported/blue_ghost.png-1d64f1ea24a18ff36d566dbbfd3cbb72.ctex"
+uid="uid://bsfdb7t4ljin6"
+path="res://.godot/imported/undead_walk_up.png-91f292d77b21d6bd9c57ffee9acc3b67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ghosts/blue_ghost.png"
-dest_files=["res://.godot/imported/blue_ghost.png-1d64f1ea24a18ff36d566dbbfd3cbb72.ctex"]
+source_file="res://Ghosts/undead_walk_up.png"
+dest_files=["res://.godot/imported/undead_walk_up.png-91f292d77b21d6bd9c57ffee9acc3b67.ctex"]
 
 [params]
 
