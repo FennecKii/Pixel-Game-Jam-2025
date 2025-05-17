@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var error_message: Label = %"Error Message"
 @onready var player_health: int = Global.player_max_health
 
-var SPEED: float = 20000
+var SPEED: float = 40000
 var previous_velocity: Vector2
 var can_place: bool = false
 var bell_volume: float
