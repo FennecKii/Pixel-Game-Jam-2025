@@ -46,7 +46,7 @@ offset_left = 7.0
 offset_right = 21.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0.789639, 0.693494, 1)
-text = "%"
+text = "0"
 
 [node name="Ofuda" parent="Items" instance=ExtResource("4_f2wx0")]
 z_index = 5

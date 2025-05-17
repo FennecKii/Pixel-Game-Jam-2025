@@ -23,6 +23,7 @@ func _ready() -> void:
 	Global.player_ghost_detected = ghost_detection_component.ghost_detected
 	SignalBus.ofuda_pickedup.connect(_on_ofuda_pickedup)
 	SignalBus.hurt_player.connect(_on_player_hurt)
+	SignalBus.bell_on_cooldown.connect(_bell_on_cooldown)
 	animation_tree.active = true
 
 func _process(_delta: float) -> void:
@@ -157,3 +158,10 @@ func _on_ofuda_radius_mouse_exited() -> void:
 
 func _on_player_hurt() -> void:
 	player_health -= 1
+
+func _bell_on_cooldown() -> void:
+	if not error_message.visible:
+		error_message.visible = true
+		error_message.text = "Bell on cooldown!"
+		await get_tree().create_timer(1.5).timeout
+		error_message.visible = false

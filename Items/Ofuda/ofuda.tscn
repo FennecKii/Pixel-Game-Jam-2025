@@ -310,6 +310,7 @@ text = "*Placed*"
 [node name="Pickup Area" type="Area2D" parent="."]
 process_mode = 4
 position = Vector2(0, -11)
+scale = Vector2(0.696976, 0.688584)
 collision_layer = 8
 
 [node name="Pickup Collision" type="CollisionShape2D" parent="Pickup Area"]
@@ -340,8 +341,8 @@ visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 11
-theme_override_font_sizes/font_size = 11
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 15
 text = "Press \"E\" to pickup"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -4,12 +4,17 @@ extends Node2D
 @export var display_item: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var timer: Timer = $Timer
 
 var bell_rang: bool = false
+var bell_timer_lable: Label
 
 func _ready() -> void:
 	if not ghost_detection_component:
 		assert(false, "Ghost Detection Component not found.")
+	
+	if display_item:
+		bell_timer_lable = $Labels/Value
 	
 	SignalBus.bell_rang.connect(_on_bell_rang)
 	if display_item and not Global.bell_equipped:
@@ -23,8 +28,17 @@ func _process(_delta: float) -> void:
 		ghost_detection_component.visible = true
 		ghost_detection_component.collision.visible = true
 		_update_item_response()
+	
+	if display_item:
+		var seconds = int(timer.time_left) % 60
+		bell_timer_lable.text = str("%02d" % seconds)
 
 func _on_bell_rang(_volume: float):
+	if not timer.is_stopped():
+		SignalBus.bell_on_cooldown.emit()
+		return
+	elif timer.is_stopped():
+		timer.start()
 	if display_item:
 		return
 	bell_rang = true
