@@ -1,6 +1,7 @@
 extends Node
 
 enum GhostNames {YUKIONNA, ONRYO, JIKININKI}
+enum GhostAppearance {DEFAULT, BOLD}
 
 # Nodes
 @onready var world_node: Node2D
