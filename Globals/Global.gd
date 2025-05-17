@@ -25,7 +25,7 @@ enum GhostAppearance {DEFAULT, BOLD}
 
 # Global variables
 var spawn_regions: Array[SpawnerRect2D]
-var world_boundary_region: SpawnerRect2D
+var world_boundaries: Array[SpawnerRect2D]
 var player_max_health: int = 1
 var current_ghost: PackedScene
 var ghost_detectable: bool = false

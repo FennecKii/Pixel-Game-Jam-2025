@@ -3,16 +3,22 @@ extends Node2D
 
 @export var spawner_component: SpawnerComponent
 @export var world_objects_node: Node2D
-@export var world_boundary: SpawnerRect2D
+@export var world_boundaries: Array[SpawnerRect2D]
 @export var book_ui: CanvasLayer
+
+@onready var world_boundaries_group: Array[Node] = get_tree().get_nodes_in_group("world regions")
 
 func _ready() -> void:	
 	Global.scene_tree = get_tree()
 	
-	if not world_boundary:
-		assert(false, "World boundary is not found in root node.")
-	elif world_boundary:
-		Global.world_boundary_region = world_boundary
+	if world_boundaries.is_empty() or len(world_boundaries_group) != len(world_boundaries):
+		world_boundaries = []
+		for world_region in world_boundaries_group:
+			world_boundaries.append(world_region)
+		Global.world_boundaries = world_boundaries
+	
+	if world_boundaries.is_empty():
+		assert(false, "World boundaries array not found in root node.")
 	
 	Global.world_node = self
 	SignalBus.player_dead.connect(_on_player_dead)

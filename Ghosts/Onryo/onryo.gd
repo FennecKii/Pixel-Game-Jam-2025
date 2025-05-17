@@ -13,13 +13,13 @@ var rng: RandomNumberGenerator
 
 var animation_player: AnimationPlayer
 var chasing: bool = false
-var SPEED: float = 9750
+var SPEED: float = 15000
 var previous_velocity: Vector2
 var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
 var state_active: bool = false
-var state_weights: PackedFloat32Array = PackedFloat32Array([25, 75])
+var state_weights: PackedFloat32Array = PackedFloat32Array([30, 70])
 var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
 var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 37])
 
@@ -75,7 +75,7 @@ func _update_state() -> void:
 			await _run_action_timer(rng.randf_range(1, 10))
 		elif random_action_selection == GhostAction.MOVE:
 			# Do moving things (move to a random position?)
-			_rand_move_to_position(rng.randf_range(9500, 15000))
+			_rand_move_to_position(rng.randf_range(10000, 25000))
 			await _run_action_timer()
 			direction = Vector2.ZERO
 			await _run_action_timer(rng.randf_range(1, 5))
@@ -93,7 +93,7 @@ func _update_state() -> void:
 			await _run_action_timer(rng.randf_range(5, 10))
 		elif random_action_selection == GhostAction.MOVE:
 			# Do moving things (move to a random position?)
-			_rand_move_to_position(rng.randf_range(9500, 15000))
+			_rand_move_to_position(rng.randf_range(10000, 25000))
 			await _run_action_timer()
 			direction = Vector2.ZERO
 			await _run_action_timer(rng.randf_range(1, 5))
@@ -110,7 +110,7 @@ func _run_action_timer(wait_time: float = 5) -> void:
 
 func _rand_move_to_position(speed: float = SPEED) -> void:
 	var target_position: Vector2
-	var world_boundary_region: SpawnerRect2D = Global.world_boundary_region
+	var world_boundary_region: SpawnerRect2D = Global.world_boundaries.pick_random()
 	var position_variation: Vector2 = Vector2(randf_range(0, world_boundary_region.rect_size.x), randf_range(0, world_boundary_region.rect_size.y))
 	target_position = world_boundary_region.global_position + position_variation
 	direction = (target_position - global_position).normalized()
