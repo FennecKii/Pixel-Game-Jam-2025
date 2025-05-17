@@ -23,7 +23,7 @@ func _ready() -> void:
 		world_objects_node.y_sort_enabled = true
 		Global.world_objects_node = world_objects_node
 		add_child(world_objects_node)
-	spawner_component.point_spawn()
+	spawner_component.spawn_ghost()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_journal") and book_ui:

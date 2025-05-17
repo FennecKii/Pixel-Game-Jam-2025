@@ -13,7 +13,7 @@ func _ready() -> void:
 			spawn_regions.append(spawn_region)
 	Global.spawn_regions = spawn_regions
 
-func point_spawn():
+func spawn_ghost():
 	if spawn_regions.is_empty():
 		assert(false, "No spawn regions found.")
 	var spawn_region: SpawnerRect2D = spawn_regions.pick_random()
