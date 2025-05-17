@@ -37,19 +37,19 @@ func _update_mirror_sprite() -> void:
 		mirror_front.visible = true
 		mirror_side.visible = false
 		player_detection_collision.position = Vector2(0, 7.5)
-		ghost_detection_component.position = Vector2(0, 15)
+		ghost_detection_component.position = Vector2(0, 36)
 	elif mirror_type == MirrorDirection.LEFT:
 		mirror_side.flip_h = true
 		mirror_front.visible = false
 		mirror_side.visible = true
 		player_detection_collision.position = Vector2(-8, 3)
-		ghost_detection_component.position = Vector2(-24, 3)
+		ghost_detection_component.position = Vector2(-56, 3)
 	elif mirror_type == MirrorDirection.RIGHT:
 		mirror_side.flip_h = false
 		mirror_front.visible = false
 		mirror_side.visible = true
 		player_detection_collision.position = Vector2(8, 3)
-		ghost_detection_component.position = Vector2(24, 3)
+		ghost_detection_component.position = Vector2(56, 3)
 
 func _on_player_detection_body_entered(body: Node2D) -> void:
 	if body == Global.player_node:

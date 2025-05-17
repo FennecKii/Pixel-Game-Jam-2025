@@ -291,10 +291,11 @@ texture = ExtResource("2_mhyce")
 offset = Vector2(0, -10)
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("4_ms2q8")]
-position = Vector2(0, 15)
-scale = Vector2(0.0792957, -0.0472091)
+position = Vector2(0, 36)
+scale = Vector2(0.182467, -0.109474)
 
 [node name="Player Detection" type="Area2D" parent="."]
+scale = Vector2(1.06867, 0.966183)
 
 [node name="Detection" type="CollisionShape2D" parent="Player Detection"]
 position = Vector2(0, 7.5)
@@ -304,7 +305,6 @@ shape = SubResource("CircleShape2D_maca8")
 [node name="Mirror UI" type="CanvasLayer" parent="."]
 
 [node name="UI Animated Sprite" type="AnimatedSprite2D" parent="Mirror UI"]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1200, 620)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ottcr")
