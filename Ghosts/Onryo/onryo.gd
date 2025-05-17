@@ -3,13 +3,15 @@ extends CharacterBody2D
 enum GhostState {DETECTABLE, UNDETECTABLE}
 enum GhostAction {DORMANT, MOVE, TELEPORT}
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animation_tree: AnimationTree = $AnimationTree
+@export var ghost_appearance: int
+
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var action_timer: Timer = $"Action Timer"
+@onready var animated_sprite_2d: GhostAnimationComponent = $"Ghost Animated Sprite"
 
 var rng: RandomNumberGenerator
 
+var animation_player: AnimationPlayer
 var chasing: bool = false
 var SPEED: float = 9750
 var previous_velocity: Vector2
@@ -24,6 +26,7 @@ var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 
 func _ready() -> void:
 	Global.onryo_node = self
 	SignalBus.ghost_alerted.connect(_on_ghost_alerted)
+	animation_player = animated_sprite_2d.animation_player
 
 func _process(_delta: float) -> void:
 	Global.ghost_position = global_position
@@ -122,10 +125,15 @@ func _rand_teleport_to_position() -> void:
 
 func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
-		animation_tree.set("parameters/Run/blend_position", velocity)
-		previous_velocity = velocity
+		if ghost_appearance == Global.GhostAppearance.DEFAULT:
+			animation_player.play("run")
+		elif ghost_appearance == Global.GhostAppearance.BOLD:
+			animation_player.play("bold run")
 	elif velocity == Vector2.ZERO:
-		animation_tree.set("parameters/Idle/blend_position", previous_velocity)
+		if ghost_appearance == Global.GhostAppearance.DEFAULT:
+			animation_player.play("idle")
+		elif ghost_appearance == Global.GhostAppearance.BOLD:
+			animation_player.play("bold idle")
 	
 	if velocity.x < 0:
 		animated_sprite_2d.flip_h = false
