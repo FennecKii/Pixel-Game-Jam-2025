@@ -25,6 +25,7 @@ book_ui = NodePath("CanvasLayer")
 [node name="SpawnerComponent" parent="." instance=ExtResource("2_yi8h1")]
 
 [node name="GameTimerComponent" parent="." instance=ExtResource("3_ej0cx")]
+duration = 3.0
 
 [node name="Grass" parent="." instance=ExtResource("1_gk4et")]
 z_index = -1
