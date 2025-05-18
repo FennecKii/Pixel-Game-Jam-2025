@@ -62,5 +62,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_4cwpn")
 text = "Quit"
 
 [connection signal="pressed" from="TitleScreen/Play" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="TitleScreen/Quit" to="." method="_on_pressed_quit"]
 [connection signal="pressed" from="TitleScreen/Quit" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/Quit" to="." method="_on_pressed_quit"]
