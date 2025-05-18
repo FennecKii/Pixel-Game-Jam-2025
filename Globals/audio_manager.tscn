@@ -40,9 +40,9 @@
 script = ExtResource("2_qhhwe")
 type = 0
 sound = ExtResource("3_jatf3")
-volume = 20.0
-pitch_scale = 1.1
-pitch_randomness = 0.1
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.05
 metadata/_custom_type_script = "uid://ccfhwjmvugxlp"
 
 [sub_resource type="Resource" id="Resource_yu1vx"]
@@ -51,7 +51,7 @@ type = 1
 sound = ExtResource("4_lxs7p")
 volume = 0.0
 pitch_scale = 1.0
-pitch_randomness = 0.0
+pitch_randomness = 0.05
 metadata/_custom_type_script = "uid://ccfhwjmvugxlp"
 
 [sub_resource type="Resource" id="Resource_uwodp"]
