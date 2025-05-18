@@ -12,7 +12,7 @@ func _ready() -> void:
 	for music_track: SoundResource in music_tracks:
 		music_track_dict[music_track.type] = music_track
 
-func _play_music(type: SoundResource.SoundType) -> void:
+func play_music(type: SoundResource.SoundType) -> void:
 	if music_track_dict.has(type):
 		var music_track: SoundResource = music_track_dict[type]
 		var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
@@ -21,11 +21,14 @@ func _play_music(type: SoundResource.SoundType) -> void:
 		new_audio.volume_db = music_track.volume
 		new_audio.pitch_scale = music_track.pitch_scale
 		new_audio.pitch_scale += Global.rng.randf_range(-music_track.pitch_randomness, music_track.pitch_randomness )
-		new_audio.finished.connect(new_audio.queue_free)
+		new_audio.looped = true
 		add_child(new_audio)
 		new_audio.play()
 	else:
 		push_error("Audio Manager failed to find type ", type)
+
+#func play_music_syncronized() -> void:
+#	
 
 func play_sfx_at_location(location: Vector2, type: SoundResource.SoundType) -> void:
 	if sound_effect_dict.has(type):
