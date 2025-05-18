@@ -82,6 +82,7 @@ offset_right = 805.0
 offset_bottom = 389.0
 
 [node name="AnswerPage" type="Control" parent="BookUI/PageContainer"]
+visible = false
 anchors_preset = 0
 offset_left = 542.0
 offset_top = -1.0
@@ -132,6 +133,7 @@ offset_right = 295.94
 offset_bottom = 370.505
 
 [node name="GhostChecklistPage" type="Control" parent="BookUI/PageContainer"]
+visible = false
 anchors_preset = 0
 offset_left = -78.0
 offset_right = 549.0
@@ -231,7 +233,6 @@ offset_bottom = 656.0
 texture = SubResource("AtlasTexture_w75ed")
 
 [node name="Page3_Story" type="Panel" parent="BookUI/PageContainer"]
-visible = false
 layout_mode = 0
 offset_left = -23.0
 offset_top = 22.0
@@ -261,7 +262,6 @@ offset_bottom = 664.0
 texture = SubResource("AtlasTexture_5ixb6")
 
 [node name="Page4_Story" type="Panel" parent="BookUI/PageContainer"]
-visible = false
 layout_mode = 0
 offset_left = 650.0
 offset_top = 24.0
