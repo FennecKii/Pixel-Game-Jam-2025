@@ -1,10 +1,10 @@
-[gd_scene load_steps=68 format=3 uid="uid://bp8tpdqjy7wxj"]
+[gd_scene load_steps=67 format=3 uid="uid://bp8tpdqjy7wxj"]
 
 [ext_resource type="Script" uid="uid://iirlbq7r2iuy" path="res://Globals/audio_manager.gd" id="1_kho5r"]
 [ext_resource type="Script" uid="uid://ccfhwjmvugxlp" path="res://Globals/MusicResource.gd" id="2_qhhwe"]
 [ext_resource type="AudioStream" uid="uid://xhntmercro7w" path="res://Audio/Music/DarkAmbient The Gate Intensity 1.wav" id="3_jatf3"]
 [ext_resource type="AudioStream" uid="uid://cy8ksjb4066bo" path="res://Audio/Music/DarkAmbient Unnatural Intensity 1.wav" id="4_lxs7p"]
-[ext_resource type="AudioStream" uid="uid://cdlteqf8wa8xr" path="res://Audio/SFX/Gameplay/Ambient/Ambience Grave Whispers Drone Loop.wav" id="5_jatf3"]
+[ext_resource type="Resource" uid="uid://ob7bmnxw6axc" path="res://Audio/Audio Resources/Ambience_Loop.tres" id="5_a002f"]
 [ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="5_oi1wl"]
 [ext_resource type="AudioStream" uid="uid://bk2tanw7eoao6" path="res://Audio/SFX/Gameplay/Player/Bipedal Small Walk C.wav" id="6_fb0sx"]
 [ext_resource type="AudioStream" uid="uid://jg260j7xm4fu" path="res://Audio/SFX/Gameplay/Player/Bipedal Small Walk E.wav" id="7_r6l1c"]
@@ -40,24 +40,15 @@
 script = ExtResource("2_qhhwe")
 type = 0
 sound = ExtResource("3_jatf3")
-volume = 0.0
-pitch_scale = 1.0
-pitch_randomness = 0.0
+volume = 20.0
+pitch_scale = 1.1
+pitch_randomness = 0.1
 metadata/_custom_type_script = "uid://ccfhwjmvugxlp"
 
 [sub_resource type="Resource" id="Resource_yu1vx"]
 script = ExtResource("2_qhhwe")
 type = 1
 sound = ExtResource("4_lxs7p")
-volume = 0.0
-pitch_scale = 1.0
-pitch_randomness = 0.0
-metadata/_custom_type_script = "uid://ccfhwjmvugxlp"
-
-[sub_resource type="Resource" id="Resource_lxs7p"]
-script = ExtResource("2_qhhwe")
-type = 2
-sound = ExtResource("5_jatf3")
 volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
@@ -326,7 +317,8 @@ metadata/_custom_type_script = "uid://j0exrwx617ot"
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_kho5r")
-music_tracks = Array[ExtResource("2_qhhwe")]([SubResource("Resource_0ab1g"), SubResource("Resource_yu1vx"), SubResource("Resource_lxs7p")])
+music_tracks = Array[ExtResource("2_qhhwe")]([SubResource("Resource_0ab1g"), SubResource("Resource_yu1vx"), ExtResource("5_a002f")])
 sound_effects = Array[ExtResource("5_oi1wl")]([SubResource("Resource_uwodp"), SubResource("Resource_m02h0"), SubResource("Resource_r6l1c"), SubResource("Resource_fphjp"), SubResource("Resource_rtps5"), SubResource("Resource_1gal1"), SubResource("Resource_u4qvw"), SubResource("Resource_nai6l"), SubResource("Resource_nafwc"), SubResource("Resource_4txhm"), SubResource("Resource_c6ugq"), SubResource("Resource_5bcmc"), SubResource("Resource_f80ln"), SubResource("Resource_sc8sb"), SubResource("Resource_tneag"), SubResource("Resource_6pglj"), SubResource("Resource_7cy3o"), SubResource("Resource_kafe3"), SubResource("Resource_8v0ut"), SubResource("Resource_8nft7"), SubResource("Resource_fvvvo"), SubResource("Resource_s7h2h"), SubResource("Resource_rhsew"), SubResource("Resource_xk2fa"), SubResource("Resource_s21b7"), SubResource("Resource_brubc"), SubResource("Resource_kqde0"), SubResource("Resource_2ueka"), SubResource("Resource_7m2mv")])
 
 [node name="Main Background Music" type="AudioStreamPlayer" parent="."]
+volume_db = 0.63

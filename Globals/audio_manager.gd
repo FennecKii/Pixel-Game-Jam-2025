@@ -15,16 +15,18 @@ func _ready() -> void:
 		music_track_dict[music_track.type] = music_track
 
 func play_music_background(type: MusicResource.MusicType) -> void:
-	if main_background_music.stream == music_track_dict[type].stream:
+	if main_background_music.stream == music_track_dict[type].sound:
 		return
 	else:
 		var music_track: MusicResource = music_track_dict[type]
 		main_background_music.bus = "Music"
 		main_background_music.stream = music_track.sound
+		main_background_music.stream.loop_mode = AudioStreamWAV.LoopMode.LOOP_FORWARD
+		main_background_music.stream.loop_begin = 0
+		main_background_music.stream.loop_end = int(10*float(music_track.sound.mix_rate))
 		main_background_music.volume_db = music_track.volume
 		main_background_music.pitch_scale = music_track.pitch_scale
 		main_background_music.pitch_scale += Global.rng.randf_range(-music_track.pitch_randomness, music_track.pitch_randomness )
-		main_background_music.looped = true
 		main_background_music.play()
 
 func play_music(type: MusicResource.MusicType) -> void:
@@ -33,10 +35,10 @@ func play_music(type: MusicResource.MusicType) -> void:
 		var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
 		new_audio.bus = "Music"
 		new_audio.stream = music_track.sound
+		new_audio.stream.set_loop_mode(AudioStreamWAV.LoopMode.LOOP_FORWARD)
 		new_audio.volume_db = music_track.volume
 		new_audio.pitch_scale = music_track.pitch_scale
 		new_audio.pitch_scale += Global.rng.randf_range(-music_track.pitch_randomness, music_track.pitch_randomness )
-		new_audio.looped = true
 		add_child(new_audio)
 		new_audio.play()
 	else:

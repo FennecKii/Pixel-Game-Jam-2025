@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MusicResource" load_steps=3 format=3 uid="uid://ob7bmnxw6axc"]
+
+[ext_resource type="Script" uid="uid://ccfhwjmvugxlp" path="res://Globals/MusicResource.gd" id="1_oylsw"]
+[ext_resource type="AudioStream" uid="uid://cdlteqf8wa8xr" path="res://Audio/SFX/Gameplay/Ambient/Ambience Grave Whispers Drone Loop.wav" id="2_72qsg"]
+
+[resource]
+script = ExtResource("1_oylsw")
+type = 2
+sound = ExtResource("2_72qsg")
+volume = 20.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://ccfhwjmvugxlp"
