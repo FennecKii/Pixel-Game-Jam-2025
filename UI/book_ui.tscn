@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=28 format=3 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
 [ext_resource type="Texture2D" uid="uid://es1bymt1f21x" path="res://UI/journal_ui.png" id="2_jumva"]
 [ext_resource type="Texture2D" uid="uid://cip674bptsba4" path="res://UI/Book_Buttons_UI.png" id="3_pcw7d"]
 [ext_resource type="Texture2D" uid="uid://cyop4u5wnfgxy" path="res://UI/picture.png" id="4_40o4i"]
+[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="5_7el6b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw7d"]
 atlas = ExtResource("2_jumva")
@@ -12,6 +13,11 @@ region = Rect2(384, 142, 102, 108)
 [sub_resource type="AtlasTexture" id="AtlasTexture_40o4i"]
 atlas = ExtResource("2_jumva")
 region = Rect2(290, 143, 94, 106)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb8yk"]
+
+[sub_resource type="Theme" id="Theme_5o4lj"]
+CheckBox/styles/hover = SubResource("StyleBoxTexture_bb8yk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7el6b"]
 atlas = ExtResource("3_pcw7d")
@@ -198,6 +204,7 @@ text = "Bell Sounds Muted"
 
 [node name="BellMuted" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
+theme = SubResource("Theme_5o4lj")
 icon = SubResource("AtlasTexture_7el6b")
 
 [node name="Ofuda" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
@@ -250,26 +257,12 @@ offset_bottom = 656.0
 texture = SubResource("AtlasTexture_w75ed")
 
 [node name="Page3_Story" type="Panel" parent="BookUI/PageContainer"]
-visible = false
 layout_mode = 0
 offset_left = -23.0
 offset_top = 22.0
 offset_right = 543.0
 offset_bottom = 692.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rxpr6")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BookUI/PageContainer/Page3_Story"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/Page3_Story/VBoxContainer"]
-layout_mode = 2
-stretch_mode = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page3_Story/VBoxContainer"]
-layout_mode = 2
-text = "test test test text"
 
 [node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/Page3_Story"]
 layout_mode = 0
@@ -286,6 +279,28 @@ offset_top = 28.0
 offset_right = 409.0
 offset_bottom = 297.0
 texture = SubResource("AtlasTexture_bb8yk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page3_Story"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 325.0
+offset_right = 257.0
+offset_bottom = 365.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 45
+text = "Yuki Onna"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookUI/PageContainer/Page3_Story"]
+offset_left = 122.0
+offset_top = 383.0
+offset_right = 463.0
+offset_bottom = 522.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 35
+text = "The Yuki Onna is a ghostly spirit of snow and ice, appearing as a pale woman in white robes with long black hair and an otherworldly calm. She haunts frozen mountain paths, luring travelers with her beauty before draining their life force with a chilling breath. Silent and sorrowful, her presence is often preceded by sudden blizzards or an eerie stillness in the air.
+"
 
 [node name="Page4_Story" type="Panel" parent="BookUI/PageContainer"]
 visible = false
@@ -313,6 +328,7 @@ offset_bottom = 306.0
 texture = SubResource("AtlasTexture_17wqr")
 
 [node name="Page5_Story" type="Panel" parent="BookUI/PageContainer"]
+visible = false
 layout_mode = 0
 offset_left = -7.0
 offset_top = 15.0
@@ -337,6 +353,7 @@ offset_bottom = 346.0
 texture = SubResource("AtlasTexture_rxpr6")
 
 [node name="Page6_Story" type="Panel" parent="BookUI/PageContainer"]
+visible = false
 layout_mode = 0
 offset_left = 654.0
 offset_top = 25.0
