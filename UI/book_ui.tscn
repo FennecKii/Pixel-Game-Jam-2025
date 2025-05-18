@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=28 format=3 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
 [ext_resource type="Texture2D" uid="uid://es1bymt1f21x" path="res://UI/journal_ui.png" id="2_jumva"]
 [ext_resource type="Texture2D" uid="uid://cip674bptsba4" path="res://UI/Book_Buttons_UI.png" id="3_pcw7d"]
 [ext_resource type="Texture2D" uid="uid://cyop4u5wnfgxy" path="res://UI/picture.png" id="4_40o4i"]
+[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="5_7el6b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw7d"]
 atlas = ExtResource("2_jumva")
@@ -12,6 +13,11 @@ region = Rect2(384, 142, 102, 108)
 [sub_resource type="AtlasTexture" id="AtlasTexture_40o4i"]
 atlas = ExtResource("2_jumva")
 region = Rect2(290, 143, 94, 106)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb8yk"]
+
+[sub_resource type="Theme" id="Theme_5o4lj"]
+CheckBox/styles/hover = SubResource("StyleBoxTexture_bb8yk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7el6b"]
 atlas = ExtResource("3_pcw7d")
@@ -198,6 +204,7 @@ text = "Bell Sounds Muted"
 
 [node name="BellMuted" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
+theme = SubResource("Theme_5o4lj")
 icon = SubResource("AtlasTexture_7el6b")
 
 [node name="Ofuda" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
@@ -258,19 +265,6 @@ offset_right = 543.0
 offset_bottom = 692.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rxpr6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BookUI/PageContainer/Page3_Story"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/Page3_Story/VBoxContainer"]
-layout_mode = 2
-stretch_mode = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page3_Story/VBoxContainer"]
-layout_mode = 2
-text = "test test test text"
-
 [node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/Page3_Story"]
 layout_mode = 0
 offset_left = 11.0
@@ -281,11 +275,32 @@ texture = SubResource("AtlasTexture_5ixb6")
 
 [node name="TextureRect2" type="TextureRect" parent="BookUI/PageContainer/Page3_Story"]
 layout_mode = 0
-offset_left = 109.0
-offset_top = 28.0
-offset_right = 409.0
-offset_bottom = 297.0
+offset_left = 192.0
+offset_top = 22.0
+offset_right = 492.0
+offset_bottom = 291.0
 texture = SubResource("AtlasTexture_bb8yk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page3_Story"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 252.0
+offset_right = 249.0
+offset_bottom = 292.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 45
+text = "Yuki Onna"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookUI/PageContainer/Page3_Story"]
+offset_left = 107.0
+offset_top = 320.0
+offset_right = 492.0
+offset_bottom = 574.0
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 35
+text = "The Yuki Onna is a ghostly spirit of snow and ice, often appearing as a pale woman in white. Haunting frozen paths, she lures victims with eerie calm before draining their life with a breath as cold as death. Her presence brings sudden blizzards and unnatural silence.
+"
 
 [node name="Page4_Story" type="Panel" parent="BookUI/PageContainer"]
 visible = false
@@ -306,11 +321,31 @@ texture = SubResource("AtlasTexture_veooj")
 
 [node name="TextureRect2" type="TextureRect" parent="BookUI/PageContainer/Page4_Story"]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 38.0
-offset_right = 341.0
-offset_bottom = 306.0
+offset_left = 82.0
+offset_top = 35.0
+offset_right = 362.0
+offset_bottom = 303.0
 texture = SubResource("AtlasTexture_17wqr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page4_Story"]
+offset_left = -21.0
+offset_top = 257.0
+offset_right = 121.0
+offset_bottom = 297.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 45
+text = "Onryo"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookUI/PageContainer/Page4_Story"]
+offset_left = -30.0
+offset_top = 320.0
+offset_right = 355.0
+offset_bottom = 574.0
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 35
+text = "The Onryo is a vengeful spirit fueled by intense rage, often appearing as a woman but not always. Wronged in life, it returns from the grave to torment the living, spreading death and misfortune. Its presence is marked by a chilling aura and an overwhelming sense of dread.
+"
 
 [node name="Page5_Story" type="Panel" parent="BookUI/PageContainer"]
 layout_mode = 0
@@ -330,11 +365,31 @@ texture = SubResource("AtlasTexture_u7q5a")
 
 [node name="TextureRect2" type="TextureRect" parent="BookUI/PageContainer/Page5_Story"]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 40.0
-offset_right = 440.0
-offset_bottom = 346.0
+offset_left = 150.0
+offset_top = 37.0
+offset_right = 463.0
+offset_bottom = 343.0
 texture = SubResource("AtlasTexture_rxpr6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page5_Story"]
+offset_left = 79.0
+offset_top = 300.0
+offset_right = 221.0
+offset_bottom = 340.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 45
+text = "Jikininki"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookUI/PageContainer/Page5_Story"]
+offset_left = 84.0
+offset_top = 365.0
+offset_right = 469.0
+offset_bottom = 619.0
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 35
+text = "The Jikininki is a cursed spirit doomed to feed on the dead. Once human, it now roams graveyards and battlefields, devouring corpses in secret. Though often monstrous in form, it can appear human to hide its shameful hunger.
+"
 
 [node name="Page6_Story" type="Panel" parent="BookUI/PageContainer"]
 layout_mode = 0
@@ -359,6 +414,25 @@ offset_top = 35.0
 offset_right = 350.0
 offset_bottom = 340.0
 texture = SubResource("AtlasTexture_is55y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookUI/PageContainer/Page6_Story"]
+offset_left = -29.0
+offset_top = 279.0
+offset_right = 113.0
+offset_bottom = 319.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 45
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookUI/PageContainer/Page6_Story"]
+offset_left = -24.0
+offset_top = 345.0
+offset_right = 361.0
+offset_bottom = 599.0
+theme_override_fonts/normal_font = ExtResource("5_7el6b")
+theme_override_font_sizes/normal_font_size = 35
+text = "I saw witnessed something long ago. No name, no form ... just a cold that thinks. Records end where it begins. The few who looked are gone or worse. If you hear whispers in the stillness, stop. Do not seek it. Do not remember. To know it is to lose yourself.
+"
 
 [node name="LeftPageButton" type="Button" parent="BookUI"]
 z_index = 1
