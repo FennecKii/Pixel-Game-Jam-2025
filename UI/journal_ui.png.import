@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfpiv7vnwma7g"
-path="res://.godot/imported/map.png-c2824a26b742ac1cbc3cb7e3eca74df2.ctex"
+uid="uid://es1bymt1f21x"
+path="res://.godot/imported/journal_ui.png-8d4c8f91a6ad0e28e2db4440d7e2c634.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/map.png"
-dest_files=["res://.godot/imported/map.png-c2824a26b742ac1cbc3cb7e3eca74df2.ctex"]
+source_file="res://UI/journal_ui.png"
+dest_files=["res://.godot/imported/journal_ui.png-8d4c8f91a6ad0e28e2db4440d7e2c634.ctex"]
 
 [params]
 
