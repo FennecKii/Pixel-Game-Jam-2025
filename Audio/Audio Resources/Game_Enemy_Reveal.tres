@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dha1oxj5flx2u"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_lhkci"]
+[ext_resource type="AudioStream" uid="uid://2pr2bmjektlb" path="res://Audio/SFX/Gameplay/Ghosts/Enemy Reveal Echo.wav" id="2_nfyqa"]
+
+[resource]
+script = ExtResource("1_lhkci")
+type = 4
+sound = ExtResource("2_nfyqa")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

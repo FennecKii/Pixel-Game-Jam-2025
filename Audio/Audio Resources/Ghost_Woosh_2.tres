@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://cg5300yce3h00"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_6w7jw"]
+[ext_resource type="AudioStream" uid="uid://b1jm80aitcj7b" path="res://Audio/SFX/Gameplay/Ghosts/Ghost Type Demon Hover C.wav" id="2_2atwl"]
+
+[resource]
+script = ExtResource("1_6w7jw")
+type = 11
+sound = ExtResource("2_2atwl")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

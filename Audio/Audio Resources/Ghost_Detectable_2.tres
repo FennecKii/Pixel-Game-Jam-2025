@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://bfq5wpmbcdkhy"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_mv5tp"]
+[ext_resource type="AudioStream" uid="uid://dfdh1xmx6385t" path="res://Audio/SFX/Gameplay/Ghosts/Screaming Metal 002.wav" id="2_fqx0t"]
+
+[resource]
+script = ExtResource("1_mv5tp")
+type = 21
+sound = ExtResource("2_fqx0t")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

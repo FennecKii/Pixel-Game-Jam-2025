@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dywi1esdt63j2"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_vh7yl"]
+[ext_resource type="AudioStream" uid="uid://c3emxkucqjmtj" path="res://Audio/SFX/Gameplay/Items/Burn Victim.wav" id="2_xomy4"]
+
+[resource]
+script = ExtResource("1_vh7yl")
+type = 5
+sound = ExtResource("2_xomy4")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

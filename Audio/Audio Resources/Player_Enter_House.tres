@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://cirm0x8pmfwl0"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_lfrmm"]
+[ext_resource type="AudioStream" uid="uid://5yv01n1u5jyw" path="res://Audio/SFX/Gameplay/Player/Scary Woods 002.wav" id="2_q8d5p"]
+
+[resource]
+script = ExtResource("1_lfrmm")
+type = 2
+sound = ExtResource("2_q8d5p")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

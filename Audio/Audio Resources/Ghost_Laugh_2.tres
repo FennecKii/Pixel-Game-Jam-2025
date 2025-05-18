@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://e0gahb1iqb2"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_oht55"]
+[ext_resource type="AudioStream" uid="uid://dddcus2c7alr0" path="res://Audio/SFX/Gameplay/Ghosts/Mad Maiden 003.wav" id="2_ah5f0"]
+
+[resource]
+script = ExtResource("1_oht55")
+type = 17
+sound = ExtResource("2_ah5f0")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"
