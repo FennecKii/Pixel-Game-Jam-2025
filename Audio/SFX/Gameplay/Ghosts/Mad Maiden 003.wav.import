@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dddcus2c7alr0"
+path="res://.godot/imported/Mad Maiden 003.wav-e67fdde51df8abe3385a90132c6feb8c.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Gameplay/Ghosts/Mad Maiden 003.wav"
+dest_files=["res://.godot/imported/Mad Maiden 003.wav-e67fdde51df8abe3385a90132c6feb8c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
