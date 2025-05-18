@@ -1,22 +1,40 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0hewoeik1iox"]
 
-[ext_resource type="Texture2D" uid="uid://dexsqxtq84ge5" path="res://UI/MapSelect.png" id="1_1xeo7"]
 [ext_resource type="Script" uid="uid://dkr22ulvfucb3" path="res://UI/map_select.gd" id="1_t8um1"]
+[ext_resource type="Texture2D" uid="uid://ciu3o8bdlprc5" path="res://UI/map.png" id="2_t8um1"]
 
 [node name="MapSelect" type="Node2D"]
 script = ExtResource("1_t8um1")
 
-[node name="MapSelectScreen" type="Sprite2D" parent="."]
-position = Vector2(637, 366)
-scale = Vector2(1.24023, 0.705078)
-texture = ExtResource("1_1xeo7")
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(635.5, 357.75)
+scale = Vector2(3.99062, 3.86216)
+texture = ExtResource("2_t8um1")
 
-[node name="Map1" type="Button" parent="."]
-offset_left = 470.0
-offset_top = 465.0
-offset_right = 799.0
-offset_bottom = 535.0
-theme_override_font_sizes/font_size = 24
+[node name="Map3" type="Button" parent="Map"]
+offset_left = -22.4276
+offset_top = 29.3229
+offset_right = 40.5724
+offset_bottom = 60.3229
+theme_override_font_sizes/font_size = 0
+text = "Map 3"
+
+[node name="Map1" type="Button" parent="Map"]
+offset_left = -93.8449
+offset_top = -50.1662
+offset_right = -30.8449
+offset_bottom = -19.1662
+theme_override_font_sizes/font_size = 0
 text = "Map 1"
 
-[connection signal="pressed" from="Map1" to="." method="_on_map1_pressed"]
+[node name="Map2" type="Button" parent="Map"]
+offset_left = 50.9945
+offset_top = -59.7463
+offset_right = 113.995
+offset_bottom = -28.7463
+theme_override_font_sizes/font_size = 0
+text = "Map 2"
+
+[connection signal="pressed" from="Map/Map3" to="." method="_on_map1_pressed"]
+[connection signal="pressed" from="Map/Map1" to="." method="_on_map1_pressed"]
+[connection signal="pressed" from="Map/Map2" to="." method="_on_map1_pressed"]

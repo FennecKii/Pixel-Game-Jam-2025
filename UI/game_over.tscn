@@ -1,49 +1,55 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs87dibm1cwym"]
+[gd_scene load_steps=10 format=3 uid="uid://b0ccmsj02rfgw"]
 
 [ext_resource type="Script" uid="uid://dp6bwgk1biwmi" path="res://UI/game_over.gd" id="1_3y5qq"]
 [ext_resource type="Texture2D" uid="uid://df23j40i6vg71" path="res://UI/GameOver.png" id="1_jawqf"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="3_phit2"]
 [ext_resource type="Texture2D" uid="uid://djopoy3ahh7vq" path="res://UI/button.png" id="4_fmr02"]
+[ext_resource type="Texture2D" uid="uid://bhcsvnvknlivb" path="res://UI/button_hover.png" id="4_jwcg4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwcg4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1to"]
+atlas = ExtResource("4_jwcg4")
+region = Rect2(112.241, 379.744, 799.559, 334.2)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpgl0"]
+texture = SubResource("AtlasTexture_jk1to")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy7qq"]
+atlas = ExtResource("4_fmr02")
+region = Rect2(32.1062, 21.7304, 189.148, 24.1736)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1to"]
-texture = ExtResource("4_fmr02")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpgl0"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fy7qq"]
-texture = ExtResource("4_fmr02")
+texture = SubResource("AtlasTexture_fy7qq")
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_3y5qq")
 
 [node name="GameOver" type="Sprite2D" parent="."]
-position = Vector2(645, 360)
-scale = Vector2(1.25781, 0.705078)
+position = Vector2(640.001, 361)
+scale = Vector2(1.24805, 0.707031)
 texture = ExtResource("1_jawqf")
 
 [node name="Play Again" type="Button" parent="GameOver"]
-offset_left = -243.28
-offset_top = 262.382
-offset_right = -21.28
-offset_bottom = 506.382
+offset_left = -224.351
+offset_top = 323.889
+offset_right = -36.3513
+offset_bottom = 437.889
 theme_override_fonts/font = ExtResource("3_phit2")
 theme_override_font_sizes/font_size = 57
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jwcg4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bpgl0")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jk1to")
 text = "Play Again"
 
 [node name="Quit" type="Button" parent="GameOver"]
-offset_left = -0.79504
-offset_top = 265.219
-offset_right = 221.205
-offset_bottom = 500.219
+offset_left = 29.6458
+offset_top = 321.061
+offset_right = 217.646
+offset_bottom = 435.061
 theme_override_fonts/font = ExtResource("3_phit2")
 theme_override_font_sizes/font_size = 57
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bpgl0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_fy7qq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bpgl0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1to")
 text = "Quit"
 
 [connection signal="pressed" from="GameOver/Play Again" to="." method="_on_pressed_play_again"]
+[connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_play_again"]
 [connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_quit"]
