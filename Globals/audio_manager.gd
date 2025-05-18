@@ -44,6 +44,19 @@ func play_music(type: MusicResource.MusicType) -> void:
 	else:
 		push_error("Audio Manager failed to find type ", type)
 
+#TODO
+func music_loop():
+	pass
+
+func music_fade():
+	pass
+
+func sfx_loop():
+	pass
+
+func sfx_repeat():
+	pass
+
 func play_sfx_at_location(location: Vector2, type: SoundResource.SoundType) -> void:
 	if sound_effect_dict.has(type):
 		var sound_effect: SoundResource = sound_effect_dict[type]
