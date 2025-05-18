@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://csvf18bqmq7dj"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_4uu3c"]
+[ext_resource type="AudioStream" uid="uid://7u450iolfskf" path="res://Audio/SFX/Gameplay/Items/Breaking Glass.wav" id="2_hct8q"]
+
+[resource]
+script = ExtResource("1_4uu3c")
+type = 8
+sound = ExtResource("2_hct8q")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

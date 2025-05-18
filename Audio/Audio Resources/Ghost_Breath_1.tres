@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://caq3bfgm6kmb6"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_wijb5"]
+[ext_resource type="AudioStream" uid="uid://dg2ymnbu2lpsm" path="res://Audio/SFX/Gameplay/Ghosts/Astral Breath 001.wav" id="2_7enbp"]
+
+[resource]
+script = ExtResource("1_wijb5")
+type = 12
+sound = ExtResource("2_7enbp")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

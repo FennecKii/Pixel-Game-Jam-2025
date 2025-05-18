@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://chxwo5oekgqki"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_ahwa8"]
+[ext_resource type="AudioStream" uid="uid://bjghnme1gr8p3" path="res://Audio/SFX/Gameplay/Items/Cavernous Cowbell C.wav" id="2_fftr8"]
+
+[resource]
+script = ExtResource("1_ahwa8")
+type = 6
+sound = ExtResource("2_fftr8")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

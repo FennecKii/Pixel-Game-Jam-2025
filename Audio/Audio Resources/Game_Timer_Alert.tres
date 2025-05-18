@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://bltr0s8g7a3a2"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_pln7a"]
+[ext_resource type="AudioStream" uid="uid://d242yljhx1i14" path="res://Audio/SFX/Gameplay/Player/Metal Jumpscare 002.wav" id="2_dbiod"]
+
+[resource]
+script = ExtResource("1_pln7a")
+type = 3
+sound = ExtResource("2_dbiod")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

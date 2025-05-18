@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://b86sopsrsqma7"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_hvxr1"]
+[ext_resource type="AudioStream" uid="uid://g13uj0cdkx25" path="res://Audio/SFX/Gameplay/Ghosts/Who's Knocking 004.wav" id="2_vjtcc"]
+
+[resource]
+script = ExtResource("1_hvxr1")
+type = 19
+sound = ExtResource("2_vjtcc")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

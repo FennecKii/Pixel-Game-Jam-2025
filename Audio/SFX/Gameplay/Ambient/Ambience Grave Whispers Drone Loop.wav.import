@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdlteqf8wa8xr"
+path="res://.godot/imported/Ambience Grave Whispers Drone Loop.wav-51f48315301590b0395a8bca3d510b7d.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Gameplay/Ambient/Ambience Grave Whispers Drone Loop.wav"
+dest_files=["res://.godot/imported/Ambience Grave Whispers Drone Loop.wav-51f48315301590b0395a8bca3d510b7d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

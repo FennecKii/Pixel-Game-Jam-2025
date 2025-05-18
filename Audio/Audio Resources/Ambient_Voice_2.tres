@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dnnonwwg7fbjw"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_7rin3"]
+[ext_resource type="AudioStream" uid="uid://bo2t84ja5xtvi" path="res://Audio/SFX/Gameplay/Ambient/Withered Voices 003.wav" id="2_m5agt"]
+
+[resource]
+script = ExtResource("1_7rin3")
+type = 25
+sound = ExtResource("2_m5agt")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

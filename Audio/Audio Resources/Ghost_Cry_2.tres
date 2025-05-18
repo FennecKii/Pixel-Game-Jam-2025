@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://bjwpnfufwgaas"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_8bnxf"]
+[ext_resource type="AudioStream" uid="uid://b41tg1bldjiro" path="res://Audio/SFX/Gameplay/Ghosts/Astral Sobbing 004.wav" id="2_crx1o"]
+
+[resource]
+script = ExtResource("1_8bnxf")
+type = 15
+sound = ExtResource("2_crx1o")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

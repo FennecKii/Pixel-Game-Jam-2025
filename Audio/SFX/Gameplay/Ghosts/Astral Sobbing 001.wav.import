@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmsm7lrijssty"
+path="res://.godot/imported/Astral Sobbing 001.wav-5115837f93740ac4abc10c38dc65d908.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Gameplay/Ghosts/Astral Sobbing 001.wav"
+dest_files=["res://.godot/imported/Astral Sobbing 001.wav-5115837f93740ac4abc10c38dc65d908.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

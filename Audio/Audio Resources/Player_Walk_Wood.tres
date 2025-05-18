@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dijj8o0ib00ia"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_7vctl"]
+[ext_resource type="AudioStream" uid="uid://jg260j7xm4fu" path="res://Audio/SFX/Gameplay/Player/Bipedal Small Walk E.wav" id="2_2ag3q"]
+
+[resource]
+script = ExtResource("1_7vctl")
+type = 1
+sound = ExtResource("2_2ag3q")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

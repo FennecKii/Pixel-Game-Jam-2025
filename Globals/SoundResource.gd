@@ -1,0 +1,40 @@
+class_name SoundResource
+extends Resource
+
+enum SoundType {
+	PLAYER_WALK_GRASS,
+	PLAYER_WALK_WOOD,
+	PLAYER_ENTER_HOUSE,
+	GAME_TIMER_ALERT,
+	GAME_ENEMY_REVEAL,
+	ITEM_ODFUA_BURN,
+	ITEM_BELL_RING,
+	OBJECT_MIRROR_APPEAR,
+	OBJECT_MIRROR_BREAK,
+	GHOST_WALK,
+	GHOST_WOOSH_1,
+	GHOST_WOOSH_2,
+	GHOST_BREATH_1,
+	GHOST_BREATH_2,
+	GHOST_CRY_1,
+	GHOST_CRY_2,
+	GHOST_LAUGH_1,
+	GHOST_LAUGH_2,
+	GHOST_SCREAM,
+	GHOST_TELEPORT_KNOCK,
+	GHOST_DETECTABLE_1,
+	GHOST_DETECTABLE_2,
+	AMBIENT_KNOCK_1,
+	AMBIENT_KNOCK_2,
+	AMBIENT_VOICE_1,
+	AMBIENT_VOICE_2,
+	AMBIENT_WHISPER,
+	AMBIENT_HIVE_WOOSH,
+	AMBIENT_TECHNOPHOBIA
+}
+
+@export var type: SoundType
+@export var sound: AudioStreamWAV
+@export_range(-40, 20, 1) var volume: float = 0
+@export_range(0.0, 4.0, 0.01) var pitch_scale: float = 1.0
+@export_range(0.0, 4.0, 0.01) var pitch_randomness: float = 0

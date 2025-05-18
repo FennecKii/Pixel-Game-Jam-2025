@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://c6wby6pdeui1a"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_lvdos"]
+[ext_resource type="AudioStream" uid="uid://dfl3b1pmm8b6l" path="res://Audio/SFX/Gameplay/Ghosts/Biped Frustration C.wav" id="2_3xprp"]
+
+[resource]
+script = ExtResource("1_lvdos")
+type = 18
+sound = ExtResource("2_3xprp")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

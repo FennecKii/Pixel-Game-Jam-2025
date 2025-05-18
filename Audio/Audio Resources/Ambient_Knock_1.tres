@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://didum0aidhjw5"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_x7afj"]
+[ext_resource type="AudioStream" uid="uid://dd7xt1x78lnej" path="res://Audio/SFX/Gameplay/Ambient/Mysterious Knocks 002.wav" id="2_dujtr"]
+
+[resource]
+script = ExtResource("1_x7afj")
+type = 22
+sound = ExtResource("2_dujtr")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

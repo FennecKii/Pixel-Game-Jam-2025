@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d1bv2ownf0fxr"
+path="res://.godot/imported/Big Quadruped Feet E.wav-6ea5239570f33d162dc57c835a9fd9dd.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Gameplay/Ghosts/Big Quadruped Feet E.wav"
+dest_files=["res://.godot/imported/Big Quadruped Feet E.wav-6ea5239570f33d162dc57c835a9fd9dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=45
+compress/mode=2

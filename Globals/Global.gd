@@ -4,6 +4,8 @@ enum GhostNames {YUKIONNA, ONRYO, JIKININKI}
 enum GhostAppearance {DEFAULT, BLUE, UNDEAD}
 enum SpriteDirection {UNKNOWN, DOWN, UP, SIDE}
 
+@onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+
 # Nodes
 @onready var world_node: Node2D
 @onready var player_node: Node2D
