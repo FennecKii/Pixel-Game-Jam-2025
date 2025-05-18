@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0ccmsj02rfgw"]
+[gd_scene load_steps=10 format=3 uid="uid://bs87dibm1cwym"]
 
 [ext_resource type="Script" uid="uid://dp6bwgk1biwmi" path="res://UI/game_over.gd" id="1_3y5qq"]
 [ext_resource type="Texture2D" uid="uid://df23j40i6vg71" path="res://UI/GameOver.png" id="1_jawqf"]
@@ -51,5 +51,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jk1to")
 text = "Quit"
 
 [connection signal="pressed" from="GameOver/Play Again" to="." method="_on_pressed_play_again"]
-[connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_play_again"]
 [connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_quit"]
+[connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_play_again"]
