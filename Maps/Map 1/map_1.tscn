@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="1_gk4et"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="2_njmqy"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
-[ext_resource type="PackedScene" uid="uid://ct65glxsu1i3l" path="res://Globals/Components/game_timer_component.tscn" id="3_ej0cx"]
+[ext_resource type="PackedScene" path="res://Globals/Components/game_timer_component.tscn" id="3_ej0cx"]
 [ext_resource type="PackedScene" uid="uid://gr1sptjguxr3" path="res://Globals/Components/roof.tscn" id="5_emtie"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://Globals/Components/spawn_region.gd" id="5_yi8h1"]
 [ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="6_uihyl"]
