@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://du1s6sh7p4yqq"
+path="res://.godot/imported/Bonk Hover B.wav-e17763ceb20bc32b16e7039b312b3863.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/Bonk Hover B.wav"
+dest_files=["res://.godot/imported/Bonk Hover B.wav-e17763ceb20bc32b16e7039b312b3863.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

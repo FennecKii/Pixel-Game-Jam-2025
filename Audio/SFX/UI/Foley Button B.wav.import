@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1w5ln62ca4g5"
+path="res://.godot/imported/Foley Button B.wav-96f124fa5bacaea75ec07466deb60fb5.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/Foley Button B.wav"
+dest_files=["res://.godot/imported/Foley Button B.wav-96f124fa5bacaea75ec07466deb60fb5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
