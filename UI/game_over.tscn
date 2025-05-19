@@ -1,24 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0ccmsj02rfgw"]
+[gd_scene load_steps=4 format=3 uid="uid://bs87dibm1cwym"]
 
 [ext_resource type="Script" uid="uid://dp6bwgk1biwmi" path="res://UI/game_over.gd" id="1_3y5qq"]
 [ext_resource type="Texture2D" uid="uid://df23j40i6vg71" path="res://UI/GameOver.png" id="1_jawqf"]
-[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="3_phit2"]
-[ext_resource type="Texture2D" uid="uid://djopoy3ahh7vq" path="res://UI/button.png" id="4_fmr02"]
-[ext_resource type="Texture2D" uid="uid://bhcsvnvknlivb" path="res://UI/button_hover.png" id="4_jwcg4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jk1to"]
-atlas = ExtResource("4_jwcg4")
-region = Rect2(112.241, 379.744, 799.559, 334.2)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpgl0"]
-texture = SubResource("AtlasTexture_jk1to")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fy7qq"]
-atlas = ExtResource("4_fmr02")
-region = Rect2(32.1062, 21.7304, 189.148, 24.1736)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1to"]
-texture = SubResource("AtlasTexture_fy7qq")
+[ext_resource type="Theme" uid="uid://cjk4ci1au4rg7" path="res://Resources/main_theme.tres" id="3_jwcg4"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_3y5qq")
@@ -33,10 +17,7 @@ offset_left = -224.351
 offset_top = 323.889
 offset_right = -36.3513
 offset_bottom = 437.889
-theme_override_fonts/font = ExtResource("3_phit2")
-theme_override_font_sizes/font_size = 57
-theme_override_styles/hover = SubResource("StyleBoxTexture_bpgl0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_jk1to")
+theme = ExtResource("3_jwcg4")
 text = "Play Again"
 
 [node name="Quit" type="Button" parent="GameOver"]
@@ -44,12 +25,9 @@ offset_left = 29.6458
 offset_top = 321.061
 offset_right = 217.646
 offset_bottom = 435.061
-theme_override_fonts/font = ExtResource("3_phit2")
-theme_override_font_sizes/font_size = 57
-theme_override_styles/hover = SubResource("StyleBoxTexture_bpgl0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_jk1to")
+theme = ExtResource("3_jwcg4")
 text = "Quit"
 
 [connection signal="pressed" from="GameOver/Play Again" to="." method="_on_pressed_play_again"]
-[connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_play_again"]
 [connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_quit"]
+[connection signal="pressed" from="GameOver/Quit" to="." method="_on_pressed_play_again"]
