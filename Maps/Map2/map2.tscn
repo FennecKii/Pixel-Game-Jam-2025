@@ -140,6 +140,7 @@ rect_size = Vector2(5000, 1500)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("6_ft032")]
+visible = false
 
 [node name="SubViewportContainer" parent="HUD" instance=ExtResource("7_ihce2")]
 
