@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://cvbb2sdoqyev"]
+[gd_scene load_steps=8 format=4 uid="uid://cvbb2sdoqyev"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_6mpjy"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_jm6md"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="3_ft032"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="4_yl0ed"]
 [ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://Globals/Components/spawn_region.gd" id="5_ihce2"]
+[ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/HUD.tscn" id="6_ft032"]
+[ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="7_yl0ed"]
 
 [node name="Map2" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node")]
 script = ExtResource("1_6mpjy")
@@ -71,3 +73,7 @@ visible = false
 [node name="SpawnerRect2D" type="Node2D" parent="Spawn Regions"]
 script = ExtResource("5_ihce2")
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="HUD" parent="." instance=ExtResource("6_ft032")]
+
+[node name="Book UI" parent="." instance=ExtResource("7_yl0ed")]
