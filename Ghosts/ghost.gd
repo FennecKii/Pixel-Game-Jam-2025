@@ -55,7 +55,8 @@ func _physics_process(delta: float) -> void:
 		if velocity:
 			_update_footstep_audio(true)
 		direction = (player_direction).normalized()
-		SPEED = 44000
+		SPEED = 45000
+		Global.ghost_detectable = true
 		collision_shape_2d.disabled = false
 		visible = true
 	

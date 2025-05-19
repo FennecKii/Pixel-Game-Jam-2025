@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct65glxsu1i3l"]
+[gd_scene load_steps=4 format=3 uid="uid://ct65glxsu1i3l"]
 
 [ext_resource type="Script" uid="uid://g3cviie7jpa5" path="res://Globals/Components/game_timer_component.gd" id="1_7k7av"]
 [ext_resource type="AudioStream" uid="uid://cf87vhrw1s7md" path="res://Audio/SFX/UI/ticking-timer-65220.mp3" id="2_wu43x"]
+[ext_resource type="Theme" uid="uid://ccxtvmga0ceek" path="res://Resources/HUD_theme.tres" id="3_ibsex"]
 
 [node name="GameTimerComponent" type="Node2D"]
 script = ExtResource("1_7k7av")
@@ -15,44 +16,53 @@ one_shot = true
 
 [node name="Timer Label" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="Timer Label"]
+[node name="Control" type="Control" parent="Timer Label"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_ibsex")
+
+[node name="CenterContainer" type="CenterContainer" parent="Timer Label/Control"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -45.5
+offset_left = 564.0
 offset_top = 25.0
-offset_right = 45.5
+offset_right = 676.0
 offset_bottom = 65.0
 grow_horizontal = 2
 
-[node name="Time Remaining" type="Label" parent="Timer Label/CenterContainer"]
+[node name="Time Remaining" type="Label" parent="Timer Label/Control/CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 25
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
 text = "Time Left"
 
-[node name="CenterContainer2" type="CenterContainer" parent="Timer Label"]
+[node name="CenterContainer2" type="CenterContainer" parent="Timer Label/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -50.0
-offset_right = 71.5
-offset_bottom = -8.0
+offset_left = 548.5
+offset_top = 290.0
+offset_right = 691.5
+offset_bottom = 332.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Times Up" type="Label" parent="Timer Label/CenterContainer2"]
+[node name="Times Up" type="Label" parent="Timer Label/Control/CenterContainer2"]
 unique_name_in_owner = true
 modulate = Color(0.882353, 0.384314, 0.321569, 1)
 self_modulate = Color(0.882353, 0.384314, 0.321569, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
-theme_override_font_sizes/font_size = 30
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 40
 text = "Times Up!"

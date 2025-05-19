@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ccxtvmga0ceek"]
+
+[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="1_jhltk"]
+
+[resource]
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_jhltk")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://c50xxvlfo42jg"]
+[gd_scene load_steps=31 format=3 uid="uid://c50xxvlfo42jg"]
 
 [ext_resource type="Script" uid="uid://nr8o63il26td" path="res://Items/Ofuda/ofuda.gd" id="1_2t8uu"]
 [ext_resource type="Texture2D" uid="uid://cy7gaibpq36v8" path="res://Items/Ofuda/Ofuda_Burn-Sheet (16x16).png" id="2_biji6"]
 [ext_resource type="Texture2D" uid="uid://bafotd4fbkgww" path="res://Items/Ofuda/Ofuda (16x16).png" id="2_od11a"]
 [ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="3_od11a"]
+[ext_resource type="Theme" uid="uid://ccxtvmga0ceek" path="res://Resources/HUD_theme.tres" id="4_udinp"]
 
 [sub_resource type="Animation" id="Animation_udinp"]
 length = 0.001
@@ -339,10 +340,11 @@ grow_vertical = 0
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+theme = ExtResource("4_udinp")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
-theme_override_font_sizes/font_size = 15
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 40
 text = "Press \"E\" to pickup"
 horizontal_alignment = 1
 vertical_alignment = 1

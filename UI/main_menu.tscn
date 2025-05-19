@@ -72,6 +72,5 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_pressed_play"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_pressed_quit"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2/Settings" to="." method="_on_settings_pressed"]

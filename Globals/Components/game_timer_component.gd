@@ -36,12 +36,12 @@ func _process(_delta: float) -> void:
 		timer_tick_audio.stop()
 		timer_tick_played = false
 	
-	if timer.is_stopped() and not stop_sequence:
+	if timer.time_left <= 1 and not stop_sequence:
 		stop_sequence = true
-		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_TIMER_END)
 		var tween: Tween = get_tree().create_tween()
-		tween.tween_property(times_up, "self_modulate", Color(1, 1, 1, 1), 0.5)
-		tween.tween_property(times_up, "modulate", Color(0.882, 0.384, 0.322, 0.0), 0.5)
+		tween.tween_property(times_up, "self_modulate", Color(1, 1, 1, 1), 0.75)
+		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_TIMER_END)
+		tween.tween_property(times_up, "self_modulate", Color(1, 1, 1, 0), 0.75)
 		AudioManager.lower_audio()
 		await get_tree().create_timer(0.25).timeout
 		AudioManager.lower_audio()
