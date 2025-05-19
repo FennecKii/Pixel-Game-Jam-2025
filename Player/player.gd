@@ -18,6 +18,7 @@ var bell_volume: float
 var ofuda_count: int = 0
 var is_dead: bool = false
 var footstep_audio_played: bool = false
+var death_handled: bool = false
 
 func _ready() -> void:
 	Global.player_node = self
@@ -35,7 +36,8 @@ func _process(_delta: float) -> void:
 	
 	_handle_item_input()
 	
-	_check_player_health()
+	if not death_handled:
+		_check_player_health()
 
 func _physics_process(delta: float) -> void:
 	
@@ -56,6 +58,7 @@ func _check_player_health() -> void:
 		is_dead = true
 		velocity = Vector2.ZERO
 		_handle_death()
+		death_handled = true
 	elif player_health > 0:
 		is_dead = false
 

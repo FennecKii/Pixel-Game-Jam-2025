@@ -53,13 +53,10 @@ func _process(_delta: float) -> void:
 
 func _on_player_dead() -> void:
 	player_dead = true
-	await get_tree().create_timer(1).timeout
 	if not end_ui_audio_played:
 		end_ui_audio_played = true
 		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_END_UI)
-		await get_tree().create_timer(1).timeout
-		AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_KNOCK_1, SoundResource.SoundType.AMBIENT_HEX))
-	Global.scene_tree.change_scene_to_file("res://UI/game_over.tscn")
+	get_tree().change_scene_to_file("res://UI/game_over.tscn")
 
 func _rand_ambient_audio() -> void:
 	if randf_range(0, 1) <= 1:

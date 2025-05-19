@@ -12,21 +12,39 @@ position = Vector2(640.001, 361)
 scale = Vector2(1.24805, 0.707031)
 texture = ExtResource("1_jawqf")
 
-[node name="Play Again" type="Button" parent="GameOver"]
-offset_left = -224.351
-offset_top = 323.889
-offset_right = -36.3513
-offset_bottom = 437.889
+[node name="CenterContainer" type="CenterContainer" parent="GameOver"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -668.0
+offset_top = -704.0
+offset_right = -356.0
+offset_bottom = -579.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOver/CenterContainer"]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+alignment = 1
+
+[node name="Play Again" type="Button" parent="GameOver/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
 theme = ExtResource("3_jwcg4")
 text = "Play Again"
 
-[node name="Main Menu" type="Button" parent="GameOver"]
-offset_left = 29.6458
-offset_top = 321.061
-offset_right = 217.646
-offset_bottom = 435.061
+[node name="Control" type="Control" parent="GameOver/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Main Menu" type="Button" parent="GameOver/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
 theme = ExtResource("3_jwcg4")
 text = "Menu"
 
-[connection signal="pressed" from="GameOver/Play Again" to="." method="_on_pressed_play_again"]
-[connection signal="pressed" from="GameOver/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="GameOver/CenterContainer/HBoxContainer/Play Again" to="." method="_on_pressed_play_again"]
+[connection signal="pressed" from="GameOver/CenterContainer/HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
