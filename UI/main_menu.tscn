@@ -19,16 +19,21 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -741.0
-offset_top = -824.0
+offset_top = -924.0
 offset_right = -283.0
-offset_bottom = -699.0
+offset_bottom = -645.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitleScreen/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen/CenterContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="Play" type="Button" parent="TitleScreen/CenterContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(175, 125)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -36,11 +41,11 @@ size_flags_vertical = 4
 theme = ExtResource("3_ev3b6")
 text = "Play"
 
-[node name="Control" type="Control" parent="TitleScreen/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+[node name="Control" type="Control" parent="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="TitleScreen/CenterContainer/HBoxContainer"]
+[node name="Quit" type="Button" parent="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(175, 125)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -48,6 +53,25 @@ size_flags_vertical = 4
 theme = ExtResource("3_ev3b6")
 text = "Quit"
 
-[connection signal="pressed" from="TitleScreen/CenterContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="TitleScreen/CenterContainer/HBoxContainer/Quit" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="TitleScreen/CenterContainer/HBoxContainer/Quit" to="." method="_on_pressed_quit"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TitleScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Settings" type="Button" parent="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(175, 150)
+layout_mode = 2
+theme = ExtResource("3_ev3b6")
+text = "Settings"
+
+[node name="Control2" type="Control" parent="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_pressed_quit"]
+[connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2/Settings" to="." method="_on_settings_pressed"]

@@ -5,3 +5,6 @@ func _on_pressed_play():
 
 func _on_pressed_quit():
 	get_tree().quit()
+
+func _on_settings_pressed() -> void:
+	pass # Replace with function body.
