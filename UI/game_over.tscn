@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs87dibm1cwym"]
+[gd_scene load_steps=5 format=3 uid="uid://bs87dibm1cwym"]
 
 [ext_resource type="Script" uid="uid://dp6bwgk1biwmi" path="res://UI/game_over.gd" id="1_3y5qq"]
 [ext_resource type="Texture2D" uid="uid://df23j40i6vg71" path="res://UI/GameOver.png" id="1_jawqf"]
 [ext_resource type="Theme" uid="uid://cjk4ci1au4rg7" path="res://Resources/main_theme.tres" id="3_jwcg4"]
+[ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="4_phit2"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_3y5qq")
@@ -45,6 +46,10 @@ custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 theme = ExtResource("3_jwcg4")
 text = "Menu"
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" parent="Shader" instance=ExtResource("4_phit2")]
 
 [connection signal="pressed" from="GameOver/CenterContainer/HBoxContainer/Play Again" to="." method="_on_pressed_play_again"]
 [connection signal="pressed" from="GameOver/CenterContainer/HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

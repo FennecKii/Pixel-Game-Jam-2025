@@ -19,8 +19,9 @@ one_shot = true
 [node name="Control" type="Control" parent="Timer Label"]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 20.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 60.0
 theme = ExtResource("3_ibsex")
 
 [node name="CenterContainer" type="CenterContainer" parent="Timer Label/Control"]

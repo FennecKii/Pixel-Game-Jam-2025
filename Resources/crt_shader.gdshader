@@ -24,7 +24,7 @@ shader_type canvas_item;
 
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
 
-uniform vec2 resolution = vec2(640.0, 360.0);
+uniform vec2 resolution = vec2(1280.0, 720.0);
 
 uniform float scan_line_amount :hint_range(0.0, 1.0) = 0.3;
 uniform float warp_amount :hint_range(0.0, 5.0) = 0.5;
