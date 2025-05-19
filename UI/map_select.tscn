@@ -1740,7 +1740,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_f8jdn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_atjiu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bg4bu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nyu5l")
-text = "tutorial"
+text = "Tutorial"
 
 [node name="Shader" type="CanvasLayer" parent="."]
 visible = false
