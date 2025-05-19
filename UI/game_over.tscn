@@ -9,8 +9,8 @@
 script = ExtResource("1_3y5qq")
 
 [node name="GameOver" type="Sprite2D" parent="."]
-position = Vector2(640.001, 361)
-scale = Vector2(1.24805, 0.707031)
+position = Vector2(640.001, 287)
+scale = Vector2(1.24805, 0.851562)
 texture = ExtResource("1_jawqf")
 
 [node name="CenterContainer" type="CenterContainer" parent="GameOver"]
@@ -50,6 +50,8 @@ text = "Menu"
 [node name="Shader" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" parent="Shader" instance=ExtResource("4_phit2")]
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [connection signal="pressed" from="GameOver/CenterContainer/HBoxContainer/Play Again" to="." method="_on_pressed_play_again"]
 [connection signal="pressed" from="GameOver/CenterContainer/HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
