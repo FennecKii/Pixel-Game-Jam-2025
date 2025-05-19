@@ -38,7 +38,6 @@ world_objects_node = NodePath("World Objects")
 book_ui = NodePath("BookLayer")
 
 [node name="SpawnerComponent" parent="." node_paths=PackedStringArray("world_objects") instance=ExtResource("2_yi8h1")]
-visible = false
 world_objects = NodePath("../World Objects")
 
 [node name="GameTimerComponent" parent="." instance=ExtResource("3_ej0cx")]
@@ -180,27 +179,27 @@ rect_size = Vector2(3000, 2150)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="World Boundary 2" type="Node2D" parent="World Boundaries" groups=["world regions"]]
-position = Vector2(-3806, -1292)
+position = Vector2(-5589, -1541)
 script = ExtResource("5_yi8h1")
 region_type = 1
 outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
-rect_size = Vector2(1750, 800)
+rect_size = Vector2(6500, 1000)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="World Boundary 3" type="Node2D" parent="World Boundaries" groups=["world regions"]]
-position = Vector2(-2082, -1088)
+position = Vector2(-2280, -1517)
 script = ExtResource("5_yi8h1")
 region_type = 1
 outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
-rect_size = Vector2(5000, 1050)
+rect_size = Vector2(5000, 1500)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="World Boundary 4" type="Node2D" parent="World Boundaries" groups=["world regions"]]
-position = Vector2(-2299, -2076)
+position = Vector2(-2295, -2230)
 script = ExtResource("5_yi8h1")
 region_type = 1
 outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
-rect_size = Vector2(4100, 1000)
+rect_size = Vector2(4100, 1200)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="World Boundary 5" type="Node2D" parent="World Boundaries" groups=["world regions"]]
@@ -208,7 +207,7 @@ position = Vector2(-1823, -2865)
 script = ExtResource("5_yi8h1")
 region_type = 1
 outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
-rect_size = Vector2(2400, 800)
+rect_size = Vector2(2400, 1300)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="World Boundary 6" type="Node2D" parent="World Boundaries" groups=["world regions"]]
