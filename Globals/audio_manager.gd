@@ -33,7 +33,7 @@ func play_music_background(type: MusicResource.MusicType) -> void:
 
 func play_background_track1(type: MusicResource.MusicType, loop_begin: float = 0, loop_end: float = -1) -> void:
 	if background_track_1.stream == music_track_dict[type].sound:
-		return
+		background_track_1.play()
 	elif music_track_dict.has(type):
 		var music_track: MusicResource = music_track_dict[type]
 		background_track_1.bus = "Music"
@@ -55,7 +55,7 @@ func stop_background_track1():
 
 func play_background_track2(type: MusicResource.MusicType, loop_begin: float = 0, loop_end: float = -1) -> void:
 	if background_track_2.stream == music_track_dict[type].sound:
-		return
+		background_track_2.play()
 	elif music_track_dict.has(type):
 		var music_track: MusicResource = music_track_dict[type]
 		background_track_2.bus = "Music"
