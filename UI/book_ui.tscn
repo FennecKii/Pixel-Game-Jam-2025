@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=100 format=4 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/book_theme.tres" id="1_bb8yk"]
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
@@ -6,10 +6,79 @@
 [ext_resource type="Texture2D" uid="uid://cip674bptsba4" path="res://UI/Book_Buttons_UI.png" id="3_pcw7d"]
 [ext_resource type="Texture2D" uid="uid://cyop4u5wnfgxy" path="res://UI/picture.png" id="4_40o4i"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="5_7el6b"]
+[ext_resource type="Texture2D" uid="uid://busglmb0bnhy2" path="res://UI/page_button_press.png" id="7_5o4lj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw7d"]
 atlas = ExtResource("2_jumva")
 region = Rect2(384, 142, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpgap"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.8174, 70.041, 48.5292, 19.1883)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tef4s"]
+texture = SubResource("AtlasTexture_jpgap")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwr5m"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.9189, 70.3456, 48.5292, 19.0868)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exce3"]
+texture = SubResource("AtlasTexture_vwr5m")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6rro"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.9251, 102.421, 48.2246, 19.2899)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74nqc"]
+texture = SubResource("AtlasTexture_l6rro")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp6si"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.8174, 103.014, 48.7323, 18.0715)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liab8"]
+texture = SubResource("AtlasTexture_qp6si")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1nmi"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.8174, 70.0095, 48.6307, 19.1883)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cioyx"]
+texture = SubResource("AtlasTexture_x1nmi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_610u5"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.7158, 102.461, 48.7323, 19.3914)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jl4fi"]
+texture = SubResource("AtlasTexture_610u5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n05k"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.4112, 70.139, 48.9353, 19.1883)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxefl"]
+texture = SubResource("AtlasTexture_7n05k")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7655"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.9189, 70.0067, 48.8338, 19.2899)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fn5x"]
+texture = SubResource("AtlasTexture_t7655")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrsa7"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.6143, 101.679, 48.4277, 19.7975)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw7mj"]
+texture = SubResource("AtlasTexture_yrsa7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exce3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6rro"]
+texture = SubResource("AtlasTexture_exce3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40o4i"]
 atlas = ExtResource("2_jumva")
@@ -1651,6 +1720,48 @@ region = Rect2(128, 143, 85, 106)
 atlas = ExtResource("4_40o4i")
 region = Rect2(65, 71, 63, 50)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_74nqc"]
+atlas = ExtResource("7_5o4lj")
+region = Rect2(3.49936, 13.8055, 15.0664, 18.0923)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qp6si"]
+texture = SubResource("AtlasTexture_74nqc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liab8"]
+atlas = ExtResource("7_5o4lj")
+region = Rect2(3.38031, 13.5101, 15.7598, 18.2184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1nmi"]
+texture = SubResource("AtlasTexture_liab8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm4bt"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(3.38162, 14.3253, 15.5333, 18.4764)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_610u5"]
+texture = SubResource("AtlasTexture_jm4bt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl4fi"]
+atlas = ExtResource("7_5o4lj")
+region = Rect2(45.1778, 13.9335, 15.2999, 18.0919)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7n05k"]
+texture = SubResource("AtlasTexture_jl4fi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxefl"]
+atlas = ExtResource("7_5o4lj")
+region = Rect2(45.0661, 14.0452, 15.97, 18.7619)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7655"]
+texture = SubResource("AtlasTexture_wxefl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fn5x"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(44.5965, 13.6621, 15.2555, 18.2304)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrsa7"]
+texture = SubResource("AtlasTexture_2fn5x")
+
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="BookUI" type="Control" parent="."]
@@ -1700,18 +1811,27 @@ alignment = 1
 [node name="OptionA" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 z_index = 1
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_tef4s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_exce3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_74nqc")
 toggle_mode = true
 text = "Yuki Onna"
 
 [node name="OptionB" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 z_index = 1
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_liab8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cioyx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jl4fi")
 toggle_mode = true
 text = "Onryo"
 
 [node name="OptionC" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 z_index = 1
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_wxefl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2fn5x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vw7mj")
 toggle_mode = true
 text = "Jikininki"
 
@@ -1722,6 +1842,8 @@ offset_left = 232.0
 offset_top = 360.0
 offset_right = 298.0
 offset_bottom = 390.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6rro")
+text = "Submit"
 
 [node name="GhostChecklistPage" type="Control" parent="BookUI/PageContainer"]
 anchors_preset = 0
@@ -2034,7 +2156,9 @@ offset_left = 136.0
 offset_top = 573.0
 offset_right = 250.0
 offset_bottom = 654.0
-text = "left"
+theme_override_styles/hover = SubResource("StyleBoxTexture_qp6si")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x1nmi")
+theme_override_styles/normal = SubResource("StyleBoxTexture_610u5")
 
 [node name="RightPageButton" type="Button" parent="BookUI"]
 z_index = 1
@@ -2043,7 +2167,9 @@ offset_left = 986.0
 offset_top = 569.0
 offset_right = 1093.0
 offset_bottom = 651.0
-text = "right"
+theme_override_styles/hover = SubResource("StyleBoxTexture_7n05k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t7655")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yrsa7")
 
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted" to="BookUI" method="_on_bell_muted_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns" to="BookUI" method="_on_ofuda_burns_toggled"]
