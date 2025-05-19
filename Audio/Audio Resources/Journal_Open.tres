@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://cobeencavaug2"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_56mes"]
+[ext_resource type="AudioStream" uid="uid://d3jpd6bynj81m" path="res://Audio/SFX/UI/Open Journal C.wav" id="2_61bds"]
+
+[resource]
+script = ExtResource("1_56mes")
+type = 39
+sound = ExtResource("2_61bds")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"

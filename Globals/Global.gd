@@ -31,3 +31,4 @@ var player_house_entered: bool = false
 var timer_alert_zone: bool = false
 
 var scene_tree: SceneTree
+var wincount: int = 0

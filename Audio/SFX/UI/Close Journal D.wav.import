@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dovdv3ydipgjw"
+path="res://.godot/imported/Close Journal D.wav-a0eeb0cdc55174c2b2860dfcc5db6796.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/Close Journal D.wav"
+dest_files=["res://.godot/imported/Close Journal D.wav-a0eeb0cdc55174c2b2860dfcc5db6796.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

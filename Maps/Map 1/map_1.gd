@@ -40,6 +40,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_journal") and book_ui:
+		if not book_ui.visible:
+			AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_OPEN)
+		elif book_ui.visible:
+			AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CLOSE)
 		book_ui.visible = !book_ui.visible
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if book_ui.visible else Input.MOUSE_MODE_CAPTURED)
 	elif Input.is_action_just_pressed("toggle_journal") and not book_ui:

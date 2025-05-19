@@ -14,10 +14,16 @@ func _process(_delta: float) -> void:
 			ambient_audio_played = false
 
 func _on_pressed_play():
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)
 	get_tree().change_scene_to_file("res://UI/map_select.tscn")
 
 func _on_pressed_quit():
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)
+	await get_tree().create_timer(0.25).timeout
 	get_tree().quit()
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)
+
+func _on_button_mouse_entered() -> void:
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_HOVER)

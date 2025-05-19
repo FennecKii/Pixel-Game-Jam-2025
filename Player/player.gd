@@ -128,18 +128,22 @@ func _handle_heartbeat() -> void:
 func _handle_item_input() -> void:
 	# Equip or Switch Items
 	if Input.is_action_just_pressed("Equip Bell") and not Global.bell_equipped:
+		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_EQUIP)
 		bell.visible = true
 		ofuda.visible = false
 		ofuda_outline.visible = false
 	elif Input.is_action_just_pressed("Equip Ofuda") and not Global.ofuda_equipped:
+		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_EQUIP)
 		ofuda.visible = true
 		bell.visible = false
 		ofuda_outline.visible = true
 	
 	# Unequip Items
 	if Input.is_action_just_pressed("Equip Bell") and Global.bell_equipped:
+		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_EQUIP)
 		bell.visible = false
 	elif Input.is_action_just_pressed("Equip Ofuda") and Global.ofuda_equipped:
+		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_EQUIP)
 		ofuda.visible = false
 		ofuda_outline.visible = false
 	
@@ -168,7 +172,7 @@ func _place_ofuda(map_position: Vector2) -> void:
 	ofuda_instance.global_position = map_position
 	ofuda_instance.ofuda_placed = true
 	ofuda_instance.scale = Vector2(3, 3)
-	AudioManager.play_sfx_at_location(map_position, SoundResource.SoundType.GHOST_WALK)
+	AudioManager.play_sfx_at_location(map_position, SoundResource.SoundType.ITEM_PLACE)
 	if Global.world_objects_node:
 		Global.world_objects_node.add_child(ofuda_instance)
 	elif Global.world_node:
