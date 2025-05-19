@@ -24,14 +24,14 @@ extends Control
 
 var book_open := false
 
-@onready var bell_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted
-@onready var ofuda_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns
-@onready var mirror_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows
+@onready var bell_cb := $PageContainer/GhostChecklistPage/BellMuted
+@onready var ofuda_cb := $PageContainer/GhostChecklistPage/OfudaBurns
+@onready var mirror_cb := $PageContainer/GhostChecklistPage/MirrorShows
 
 @onready var ghost_labels := {
-	"Yuki Onna": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost1,
-	"Onryo": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost2,
-	"Jikininki": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost3
+	"Yuki Onna": $PageContainer/GhostChecklistPage/Ghost1,
+	"Onryo": $PageContainer/GhostChecklistPage/Ghost2,
+	"Jikininki": $PageContainer/GhostChecklistPage/Ghost3
 }
 
 const GHOST_BEHAVIORS = {
@@ -95,6 +95,11 @@ func _update_page() -> void:
 
 	left_button.disabled = current_page == 0
 	right_button.disabled = current_page + 2 >= pages.size()
+	
+	# make page button invisible when on first or last page
+	left_button.visible = current_page != 0
+	right_button.visible = current_page + 2 < pages.size()
+
 
 
 
@@ -156,3 +161,6 @@ func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
 
 func _on_mirror_shows_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed()
+	
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
