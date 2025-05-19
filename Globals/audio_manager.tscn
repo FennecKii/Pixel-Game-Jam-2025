@@ -50,4 +50,8 @@ sound_effects = Array[ExtResource("5_oi1wl")]([ExtResource("7_7uio8"), ExtResour
 [node name="Main Background Music" type="AudioStreamPlayer" parent="."]
 volume_db = 0.63
 
+[node name="Background Track 1" type="AudioStreamPlayer" parent="."]
+
+[node name="Background Track 2" type="AudioStreamPlayer" parent="."]
+
 [node name="Audio Players" type="Node2D" parent="."]

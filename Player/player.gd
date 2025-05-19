@@ -61,6 +61,8 @@ func _check_player_health() -> void:
 
 func _handle_death() -> void:
 	await animation_tree.animation_finished
+	AudioManager.stop_background_track1()
+	AudioManager.stop_background_track2()
 	SignalBus.player_dead.emit()
 
 func _update_footstep_audio() -> void:

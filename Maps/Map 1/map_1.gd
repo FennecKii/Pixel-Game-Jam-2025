@@ -14,8 +14,8 @@ var end_ui_audio_played: bool = false
 func _ready() -> void:
 	Global.scene_tree = get_tree()
 	
-	AudioManager.play_music_loop(randi_range(MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_1, MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_2))
-	AudioManager.play_music_loop(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
+	AudioManager.play_background_track1(randi_range(MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_1, MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_2))
+	AudioManager.play_background_track2(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
 	
 	if world_boundaries.is_empty() or len(world_boundaries_group) != len(world_boundaries):
 		world_boundaries = []
