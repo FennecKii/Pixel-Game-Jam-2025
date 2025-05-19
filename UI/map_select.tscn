@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkr22ulvfucb3" path="res://UI/map_select.gd" id="1_t8um1"]
 [ext_resource type="Texture2D" uid="uid://cfpiv7vnwma7g" path="res://UI/map.png" id="2_t8um1"]
-[ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="3_2lpm4"]
+[ext_resource type="PackedScene" path="res://Globals/Components/CRT_viewport.tscn" id="3_2lpm4"]
 
 [node name="MapSelect" type="Node2D"]
 script = ExtResource("1_t8um1")

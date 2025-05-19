@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=4 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=104 format=4 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/book_theme.tres" id="1_bb8yk"]
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
@@ -76,9 +76,25 @@ region = Rect2(71.6143, 101.679, 48.4277, 19.7975)
 texture = SubResource("AtlasTexture_yrsa7")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exce3"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.5671, 70.1482, 48.3767, 19.5939)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jm4bt"]
+texture = SubResource("AtlasTexture_exce3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw7mj"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.2919, 70.476, 48.8246, 19.1053)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3h1n6"]
+texture = SubResource("AtlasTexture_vw7mj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi057"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.944, 102.404, 48.5119, 19.4588)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6rro"]
-texture = SubResource("AtlasTexture_exce3")
+texture = SubResource("AtlasTexture_mi057")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40o4i"]
 atlas = ExtResource("2_jumva")
@@ -1463,7 +1479,7 @@ cache/0/24/0/glyphs/20/texture_idx = 0
 atlas = ExtResource("3_pcw7d")
 region = Rect2(41, 41, 17, 20)
 
-[sub_resource type="Image" id="Image_veooj"]
+[sub_resource type="Image" id="Image_5dkak"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8R////S////13///9e////Xv///17///9e////Xv///17///9e////Xv///13///9K////EAAAAAAAAAAA////S////17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///0oAAAAAAAAAAP///13///9e////Xv///17///9e////Xv///17///9e////Xv///17r6+tj////Xv///17///9dAAAAAAAAAAD///9e////Xv///17///9e////Xv///17///9e////Xv///163t7d0XFxcqbe3t3T///9e////XgAAAAAAAAAA////Xv///17///9e////Xv///17///9e////Xv///161tbV1WVlZrFdXV692dnaV////Xv///14AAAAAAAAAAP///17///9e////Xv///17///9e////Xv///161tbV1WVlZrFdXV690dHSY9fX1YP///17///9eAAAAAAAAAAD///9e////Xvr6+l/d3d1n////Xv///161tbV1WVlZrFdXV690dHSX9fX1YP///17///9e////XgAAAAAAAAAA////Xvr6+l95eXmTX19fptTU1Gq0tLR2WVlZrFdXV690dHSX9fX1YP///17///9e////Xv///14AAAAAAAAAAP///17m5uZkZWVloldXV69fX1+nWVlZrFdXV690dHSX9fX1YP///17///9e////Xv///17///9eAAAAAAAAAAD///9e////XuHh4WZlZWWiV1dXr1dXV690dHSX9fX1YP///17///9e////Xv///17///9e////XgAAAAAAAAAA////Xv///17///9e4eHhZmVlZaJ1dXWW9fX1YP///17///9e////Xv///17///9e////Xv///14AAAAAAAAAAP///13///9e////Xv///17k5ORl9fX1YP///17///9e////Xv///17///9e////Xv///17///9dAAAAAAAAAAD///9K////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////SQAAAAAAAAAA////EP///0r///9d////Xv///17///9e////Xv///17///9e////Xv///17///9d////Sf///w8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1473,9 +1489,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jpgap"]
-image = SubResource("Image_veooj")
+image = SubResource("Image_5dkak")
 
-[sub_resource type="Image" id="Image_2jit7"]
+[sub_resource type="Image" id="Image_n8rlv"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8N////YP///4j///+t////rf///4j///9f////CwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///83////q/7+/sDw8PDM4+Pj2ePj49nw8PDM/v7+wP///6j///8zAAAAAAAAAAAAAAAAAAAAAAAAAAD///83////v/Ly8svNzc30xcXF/8XFxf/FxcX/xcXF/87OzvPz8/PK////vv///zEAAAAAAAAAAAAAAAD///8M////q/Ly8svGxsb+r6+v/1BQUP8pKSn/Kioq/1JSUv+wsLD/xsbG/vPz88r///+n////CgAAAAAAAAAA////YP7+/sDNzc30r6+v/yMjI/8aGhr/Ghoa/xoaGv8aGhr/JiYm/7Kysv/Ozs7z/v7+wP///2AAAAAAAAAAAP///4nw8PDMxcXF/1BQUP8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv9VVVX/xcXF//Ly8sv///+aAAAAAAAAAAD///+t4+Pj2cXFxf8pKSn/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Kysr/8XFxf/k5OTY////tAAAAAAAAAAA////rePj49nFxcX/KSkp/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/ysrK//FxcX/5OTk2P///7QAAAAAAAAAAP///4fw8PDMxcXF/1JSUv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv9XV1f/xcXF//Ly8sv///+YAAAAAAAAAAD///9e/v7+wM7OzvOxsbH/JiYm/xoaGv8aGhr/Ghoa/xoaGv8pKSn/tLS0/87OzvP+/v7A////XgAAAAAAAAAA////C////6nz8/PKxsbG/rKysv9VVVX/Kysr/ysrK/9XV1f/tLS0/8fHx/3z8/PK////pP///wgAAAAAAAAAAAAAAAD///80////vvPz88rOzs7zxcXF/8XFxf/FxcX/xcXF/87OzvPz8/PK////vf///y4AAAAAAAAAAAAAAAAAAAAAAAAAAP///zH///+n/v7+wPLy8svk5OTY5OTk2PLy8sv+/v7A////pP///y4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Cv///2D///+a////tP///7T///+Y////Xv///wgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1485,9 +1501,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_vwr5m"]
-image = SubResource("Image_2jit7")
+image = SubResource("Image_n8rlv")
 
-[sub_resource type="Image" id="Image_u7q5a"]
+[sub_resource type="Image" id="Image_8hrxf"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8I////Mf///03///9Z////Wf///03///8w////CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8g////Wf///17///9e////Xv///17///9e////Xv///1n///8fAAAAAAAAAAAAAAAAAAAAAAAAAAD///8g////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///x8AAAAAAAAAAAAAAAD///8I////Wf///17///9e3d3dZ3l5eZNfX1+nX19fp3t7e5Pd3d1n////Xv///17///9Z////CAAAAAAAAAAA////Mf///17///9e3d3dZ1xcXKlXV1evV1dXr1dXV69XV1evXV1dqd3d3Wf///9e////Xv///zAAAAAAAAAAAP///03///9e////Xnl5eZNXV1evV1dXr1dXV69XV1evV1dXr1dXV697e3uT////Xv///17///9MAAAAAAAAAAD///9Z////Xv///15fX1+nV1dXr1dXV69XV1evV1dXr1dXV69XV1evX19fp////17///9e////WQAAAAAAAAAA////Wf///17///9eX19fp1dXV69XV1evV1dXr1dXV69XV1evV1dXr19fX6b///9e////Xv///1kAAAAAAAAAAP///03///9e////Xnt7e5NXV1evV1dXr1dXV69XV1evV1dXr1dXV698fHyS////Xv///17///9MAAAAAAAAAAD///8w////Xv///17d3d1nXV1dqVdXV69XV1evV1dXr1dXV69dXV2p39/fZv///17///9e////LwAAAAAAAAAA////CP///1n///9e////Xt3d3Wd7e3uTX19fp19fX6Z8fHyS39/fZv///17///9e////WP///wcAAAAAAAAAAAAAAAD///8f////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///x4AAAAAAAAAAAAAAAAAAAAAAAAAAP///x////9Z////Xv///17///9e////Xv///17///9e////WP///x4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////CP///zD///9M////Wf///1n///9M////L////wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1497,9 +1513,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_l6rro"]
-image = SubResource("Image_u7q5a")
+image = SubResource("Image_8hrxf")
 
-[sub_resource type="Image" id="Image_jpgap"]
+[sub_resource type="Image" id="Image_uhc17"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVFRUMFhYWQxgYGGkZGRl6GRkZehgYGGkXFxdCFxcXCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcsGRkZehoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBkZGXoYGBgqAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcsGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBgYGCoAAAAAAAAAAAAAAAAVFRUMGRkZehoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAZGRl5FxcXCwAAAAAAAAAAFhYWQxoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBcXF0EAAAAAAAAAABgYGGkaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBhoAAAAAAAAAAAZGRl6GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGRkZegAAAAAAAAAAGRkZehoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBkZGXkAAAAAAAAAABgYGGkaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBhnAAAAAAAAAAAXFxdCGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAFxcXQQAAAAAAAAAAFxcXCxkZGXoaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGRkZeRkZGQoAAAAAAAAAAAAAAAAYGBgqGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBgYGCkAAAAAAAAAAAAAAAAAAAAAAAAAABgYGCoZGRl5GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGRkZeRgYGCkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFxcXCxcXF0EYGBhoGRkZehkZGXkYGBhnFxcXQRkZGQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1509,9 +1525,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_qp6si"]
-image = SubResource("Image_jpgap")
+image = SubResource("Image_uhc17")
 
-[sub_resource type="Image" id="Image_tef4s"]
+[sub_resource type="Image" id="Image_4sew0"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGFxcXIRgYGDQZGRk9GRkZPRgYGDQXFxchAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcWGRkZPRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBkZGT0YGBgVAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcWHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBgYGBUAAAAAAAAAAAAAAAAAAAAGGRkZPRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAZGRk8AAAABQAAAAAAAAAAFxcXIRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBgYGCAAAAAAAAAAABgYGDQcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg0AAAAAAAAAAAZGRk9HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGRkZPQAAAAAAAAAAGRkZPRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBkZGTwAAAAAAAAAABgYGDQcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAZGRkzAAAAAAAAAAAXFxchHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGBgYIAAAAAAAAAAAAAAABRkZGT0cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGRkZPAAAAAUAAAAAAAAAAAAAAAAYGBgVHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBkZGRQAAAAAAAAAAAAAAAAAAAAAAAAAABgYGBUZGRk8HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGRkZPBkZGRQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRgYGCAYGBg0GRkZPRkZGTwZGRkzGBgYIAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1521,13 +1537,13 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_x1nmi"]
-image = SubResource("Image_tef4s")
+image = SubResource("Image_4sew0")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cioyx"]
 atlas = ExtResource("3_pcw7d")
 region = Rect2(9, 41, 18, 20)
 
-[sub_resource type="Image" id="Image_vwr5m"]
+[sub_resource type="Image" id="Image_2kjoy"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXFxcLGRkZMxgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBgYGD8ZGRkzFxcXCwAAAAAAAAAAGRkZMxwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBkZGTIAAAAAAAAAABgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/AAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAAAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAAAAAAAAAAAAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQAAAAAAAAAAAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAAAAAAAAAAABgYGD8cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/AAAAAAAAAAAZGRkzHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAGRkZMgAAAAAAAAAAFxcXCxkZGTIYGBg/HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAYGBg/GRkZMhkZGQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1537,7 +1553,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_610u5"]
-image = SubResource("Image_vwr5m")
+image = SubResource("Image_2kjoy")
 
 [sub_resource type="Theme" id="Theme_jl4fi"]
 CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -1581,7 +1597,7 @@ CheckBox/icons/unchecked_disabled = SubResource("ImageTexture_610u5")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veooj"]
 
-[sub_resource type="Image" id="Image_exce3"]
+[sub_resource type="Image" id="Image_2f6vn"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8j////mf///77///+/////v////7////+/////v////7////+/////v////77///+Y////IQAAAAAAAAAA////mf///7////+/////v////7////+/////v////7////+/////v////7////+/////v////5cAAAAAAAAAAP///77///+/////v////7////+/////v////7////+/////v////7/s7OzD////v////7////++AAAAAAAAAAD///+/////v////7////+/////v////7////+/////v////7+wsLDRIyMj+7GxsdH///+/////vwAAAAAAAAAA////v////7////+/////v////7////+/////v////7+vr6/RHh4e/RoaGv9TU1Pr////v////78AAAAAAAAAAP///7////+/////v////7////+/////v////7+vr6/RHh4e/RoaGv9NTU3t9vb2wP///7////+/AAAAAAAAAAD///+/////v/v7+7/e3t7G////v////7+tra3RHh4e/RoaGv9OTk7t9vb2wP///7////+/////vwAAAAAAAAAA////v/v7+79YWFjpLCws+dPT08itra3SHh4e/RoaGv9OTk7t9vb2wP///7////+/////v////78AAAAAAAAAAP///7/n5+fENTU19hoaGv8pKSn5Hh4e/RoaGv9PT0/s9vb2wP///7////+/////v////7////+/AAAAAAAAAAD///+/////v+Dg4MU1NTX2Ghoa/xoaGv9PT0/s9vb2wP///7////+/////v////7////+/////vwAAAAAAAAAA////v////7////+/4ODgxTU1NfZQUFDs9vb2wP///7////+/////v////7////+/////v////78AAAAAAAAAAP///77///+/////v////7/k5OTE9vb2wP///7////+/////v////7////+/////v////7////+9AAAAAAAAAAD///+Y////v////7////+/////v////7////+/////v////7////+/////v////7////+/////lQAAAAAAAAAA////If///5f///++////v////7////+/////v////7////+/////v////7////+9////lf///yAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1591,9 +1607,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_wxefl"]
-image = SubResource("Image_exce3")
+image = SubResource("Image_2f6vn")
 
-[sub_resource type="Image" id="Image_l6rro"]
+[sub_resource type="Image" id="Image_hkp6y"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFhYXGBgYZxgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBgYGH8ZGRlmFxcXFgAAAAAAAAAAGBgYZxoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBkZGWUAAAAAAAAAABgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/AAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAAAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAAAAAAAAAAAAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagAAAAAAAAAAAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAAAAAAAAAAABgYGH8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/AAAAAAAAAAAZGRlmGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGRkZZAAAAAAAAAAAFxcXFhkZGWUYGBh/GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAYGBh/GRkZZBgYGBUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -1603,7 +1619,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_2fn5x"]
-image = SubResource("Image_l6rro")
+image = SubResource("Image_hkp6y")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrsa7"]
 content_margin_left = 4.0
@@ -1800,17 +1816,39 @@ offset_right = 545.0
 offset_bottom = 703.0
 texture = SubResource("AtlasTexture_pcw7d")
 
+[node name="PagePrompt" type="Label" parent="BookUI/PageContainer/AnswerPage/TextureRect"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 103.0
+offset_right = 513.0
+offset_bottom = 152.0
+theme_override_constants/outline_size = 7
+text = "Based on the evidence, the ghost is a"
+
+[node name="PagePrompt2" type="Label" parent="BookUI/PageContainer/AnswerPage/TextureRect/PagePrompt"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.044
+anchor_bottom = 0.39
+offset_left = 207.0
+offset_top = 43.0
+offset_right = 207.804
+offset_bottom = 62.14
+theme_override_constants/outline_size = 6
+text = "..."
+
 [node name="AnswerButtons" type="VBoxContainer" parent="BookUI/PageContainer/AnswerPage"]
 layout_mode = 0
-offset_left = 191.985
-offset_top = 198.7
-offset_right = 336.985
-offset_bottom = 344.7
+offset_left = 98.0
+offset_top = 147.0
+offset_right = 442.0
+offset_bottom = 483.0
 alignment = 1
 
 [node name="OptionA" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 z_index = 1
 layout_mode = 2
+theme_override_constants/outline_size = 7
 theme_override_styles/hover = SubResource("StyleBoxTexture_tef4s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_exce3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_74nqc")
@@ -1820,6 +1858,7 @@ text = "Yuki Onna"
 [node name="OptionB" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 z_index = 1
 layout_mode = 2
+theme_override_constants/outline_size = 7
 theme_override_styles/hover = SubResource("StyleBoxTexture_liab8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cioyx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jl4fi")
@@ -1829,6 +1868,7 @@ text = "Onryo"
 [node name="OptionC" type="Button" parent="BookUI/PageContainer/AnswerPage/AnswerButtons"]
 z_index = 1
 layout_mode = 2
+theme_override_constants/outline_size = 7
 theme_override_styles/hover = SubResource("StyleBoxTexture_wxefl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2fn5x")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vw7mj")
@@ -1838,10 +1878,13 @@ text = "Jikininki"
 [node name="LockInButton" type="Button" parent="BookUI/PageContainer/AnswerPage"]
 z_index = 1
 layout_mode = 0
-offset_left = 232.0
-offset_top = 360.0
-offset_right = 298.0
-offset_bottom = 390.0
+offset_left = 162.0
+offset_top = 451.0
+offset_right = 373.0
+offset_bottom = 506.0
+theme_override_constants/outline_size = 7
+theme_override_styles/hover = SubResource("StyleBoxTexture_jm4bt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3h1n6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l6rro")
 text = "Submit"
 
@@ -1850,25 +1893,6 @@ anchors_preset = 0
 offset_left = -78.0
 offset_right = 549.0
 offset_bottom = 708.0
-
-[node name="GhostDisplay" type="HBoxContainer" parent="BookUI/PageContainer/GhostChecklistPage"]
-layout_mode = 0
-offset_left = 253.125
-offset_top = 400.0
-offset_right = 452.125
-offset_bottom = 539.0
-
-[node name="Ghost1" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
-layout_mode = 2
-text = "Yuki Onna"
-
-[node name="Ghost2" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
-layout_mode = 2
-text = "Onryo"
-
-[node name="Ghost3" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/GhostDisplay"]
-layout_mode = 2
-text = "Jikininki"
 
 [node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/GhostChecklistPage"]
 z_index = -1
@@ -1881,14 +1905,15 @@ texture = SubResource("AtlasTexture_40o4i")
 
 [node name="BehaviourChecklist" type="VBoxContainer" parent="BookUI/PageContainer/GhostChecklistPage"]
 layout_mode = 0
-offset_left = 192.25
-offset_top = 189.0
-offset_right = 511.25
-offset_bottom = 401.0
+offset_left = 158.0
+offset_top = 178.0
+offset_right = 534.0
+offset_bottom = 434.0
 alignment = 1
 
 [node name="Bell" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
+theme_override_constants/outline_size = 7
 text = "Bell Sounds Muted"
 
 [node name="BellMuted" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
@@ -1910,6 +1935,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_veooj")
 
 [node name="Ofuda" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
+theme_override_constants/outline_size = 7
 text = "Ofuda Burns"
 
 [node name="OfudaBurns" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
@@ -1918,10 +1944,49 @@ theme = SubResource("Theme_3h1n6")
 
 [node name="Mirror" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
+theme_override_constants/outline_size = 7
 text = "Mirror Response"
 
 [node name="MirrorShows" type="CheckBox" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
+
+[node name="Ghost1" type="Label" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 2
+offset_left = 126.0
+offset_top = 482.0
+offset_right = 265.0
+offset_bottom = 529.0
+theme_override_constants/outline_size = 7
+text = "Yuki Onna"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Ghost2" type="Label" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 2
+offset_left = 310.0
+offset_top = 482.0
+offset_right = 370.0
+offset_bottom = 520.25
+theme_override_constants/outline_size = 7
+text = "Onryo"
+
+[node name="Ghost3" type="Label" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 2
+offset_left = 438.0
+offset_top = 482.0
+offset_right = 522.0
+offset_bottom = 520.25
+theme_override_constants/outline_size = 7
+text = "Jikininki"
+
+[node name="Label" type="Label" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 106.0
+offset_right = 400.0
+offset_bottom = 144.25
+theme_override_constants/outline_size = 7
+text = "Evidence"
 
 [node name="Page1Blank" type="Panel" parent="BookUI/PageContainer"]
 visible = false
