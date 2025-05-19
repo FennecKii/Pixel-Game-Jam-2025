@@ -48,12 +48,12 @@ tile_map_data = PackedByteArray("AADx/wUABwAFAAcAAAD0/wYABwAFAAcAAAD3/wQABwAFAAc
 [node name="WorldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Player" parent="WorldObjects" instance=ExtResource("4_yl0ed")]
+
 [node name="Objects" parent="WorldObjects" instance=ExtResource("3_ft032")]
 y_sort_enabled = true
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAQAAAAAQACAAUAAAARAAAAAQADAAUAAAAUAAAAAQADAAYAAAD+//v/AQAAAAQAAADs/wEAAQABAAUAAADs/wIAAQADAAUAAADt/wEAAQACAAUAAADt/wIAAQACAAUAAADv/wAAAQAGAAYAAADx/wIAAQAFAAcAAADy/wIAAQAGAAcAAADx/wAAAQABAAYAAAD9//f/AAAHAAAAAAAQAP//AQABAAcAAAA=")
-
-[node name="Player" parent="WorldObjects" instance=ExtResource("4_yl0ed")]
 
 [node name="Border Wall" parent="WorldObjects" instance=ExtResource("3_ft032")]
 y_sort_enabled = true
