@@ -10,6 +10,7 @@ extends Node2D
 
 var ambient_audio_played: bool = false
 var end_ui_audio_played: bool = false
+var player_dead: bool = false
 
 func _ready() -> void:
 	Global.scene_tree = get_tree()
@@ -44,17 +45,20 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("toggle_journal") and not book_ui:
 		assert(false, "Book UI CanvasLayer not found in root node.")
 	
-	if not ambient_audio_played:
+	if not ambient_audio_played and not player_dead:
 		_rand_ambient_audio()
 		ambient_audio_played = true
 		await get_tree().create_timer(10).timeout
 		ambient_audio_played = false
 
 func _on_player_dead() -> void:
+	player_dead = true
 	await get_tree().create_timer(1).timeout
 	if not end_ui_audio_played:
 		end_ui_audio_played = true
 		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_END_UI)
+		await get_tree().create_timer(1).timeout
+		AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_KNOCK_1, SoundResource.SoundType.AMBIENT_HEX))
 	Global.scene_tree.change_scene_to_file("res://UI/main_menu.tscn")
 
 func _rand_ambient_audio() -> void:

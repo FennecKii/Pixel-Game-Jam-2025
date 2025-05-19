@@ -230,7 +230,9 @@ func _on_ghost_alerted() -> void:
 	if not chase_sound_played:
 		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_ENEMY_REVEAL)
 		chase_sound_played = true
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(3.75).timeout
+		var rand_angle: float = randf_range(0, 2*PI)
+		global_position = Global.player_position + Vector2(cos(rand_angle), sin(rand_angle)) * 1000
 		chasing = true
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
