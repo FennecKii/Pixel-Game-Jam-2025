@@ -76,6 +76,9 @@ layout_mode = 2
 
 [node name="SubViewportContainer" parent="Shader" instance=ExtResource("4_4cwpn")]
 
+[connection signal="mouse_entered" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]
+[connection signal="mouse_entered" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_pressed_quit"]
+[connection signal="mouse_entered" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2/Settings" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer2/Settings" to="." method="_on_settings_pressed"]

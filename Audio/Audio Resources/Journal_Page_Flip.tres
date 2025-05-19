@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://hkvawmqmd8f7"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_lpd74"]
+[ext_resource type="AudioStream" uid="uid://bsy7tosbwm1pc" path="res://Audio/SFX/UI/Flip Page Journal A.wav" id="2_l5hxx"]
+
+[resource]
+script = ExtResource("1_lpd74")
+type = 41
+sound = ExtResource("2_l5hxx")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.15
+metadata/_custom_type_script = "uid://j0exrwx617ot"

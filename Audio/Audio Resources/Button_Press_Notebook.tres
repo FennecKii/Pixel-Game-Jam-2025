@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://14f0ur7t5gux"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_arrxk"]
+[ext_resource type="AudioStream" uid="uid://bn4wm6cchps7f" path="res://Audio/SFX/UI/Funk Click A.wav" id="2_8tlm0"]
+
+[resource]
+script = ExtResource("1_arrxk")
+type = 47
+sound = ExtResource("2_8tlm0")
+volume = -2.0
+pitch_scale = 1.2
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"

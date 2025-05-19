@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bp8tpdqjy7wxj"]
+[gd_scene load_steps=55 format=3 uid="uid://bp8tpdqjy7wxj"]
 
 [ext_resource type="Script" uid="uid://iirlbq7r2iuy" path="res://Globals/audio_manager.gd" id="1_kho5r"]
 [ext_resource type="Script" uid="uid://ccfhwjmvugxlp" path="res://Globals/MusicResource.gd" id="2_qhhwe"]
@@ -42,11 +42,23 @@
 [ext_resource type="Resource" uid="uid://b1jthdo3l0kvy" path="res://Audio/Audio Resources/Game_Timer_End.tres" id="41_kuuun"]
 [ext_resource type="Resource" uid="uid://da4cp147mda53" path="res://Audio/Audio Resources/Player_Heartbeat.tres" id="42_cexur"]
 [ext_resource type="Resource" uid="uid://rc3ed2brbeag" path="res://Audio/Audio Resources/Game_End_UI.tres" id="42_iqnkb"]
+[ext_resource type="Resource" uid="uid://ca7dnadmnsx8u" path="res://Audio/Audio Resources/Item_Equip.tres" id="43_iqnkb"]
+[ext_resource type="Resource" uid="uid://ctjtgxo0jq75t" path="res://Audio/Audio Resources/Item_Place.tres" id="44_43elq"]
+[ext_resource type="Resource" uid="uid://cl4177j4objsm" path="res://Audio/Audio Resources/Item_Pickup.tres" id="45_3wtdp"]
+[ext_resource type="Resource" uid="uid://cobeencavaug2" path="res://Audio/Audio Resources/Journal_Open.tres" id="46_hi2ct"]
+[ext_resource type="Resource" uid="uid://clukbaopwrih3" path="res://Audio/Audio Resources/Journal_Close.tres" id="47_20423"]
+[ext_resource type="Resource" uid="uid://hkvawmqmd8f7" path="res://Audio/Audio Resources/Journal_Page_Flip.tres" id="48_j68rx"]
+[ext_resource type="Resource" uid="uid://dsj2olb86a3jc" path="res://Audio/Audio Resources/Button_Press.tres" id="49_dod8s"]
+[ext_resource type="Resource" uid="uid://dswnrjlcxdpog" path="res://Audio/Audio Resources/Button_Hover.tres" id="50_n0jv7"]
+[ext_resource type="Resource" uid="uid://dvxuxqtjktthm" path="res://Audio/Audio Resources/Button_Haunt_1.tres" id="51_gvk1v"]
+[ext_resource type="Resource" uid="uid://dmyp3bx7tvqh3" path="res://Audio/Audio Resources/Button_Haunt_2.tres" id="52_d1fs3"]
+[ext_resource type="Resource" uid="uid://dhwlhx2b2n6f2" path="res://Audio/Audio Resources/Negative_Feedback.tres" id="53_hw5p4"]
+[ext_resource type="Resource" uid="uid://14f0ur7t5gux" path="res://Audio/Audio Resources/Button_Press_Notebook.tres" id="54_dod8s"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_kho5r")
 music_tracks = Array[ExtResource("2_qhhwe")]([ExtResource("3_a002f"), ExtResource("4_38g8w"), ExtResource("5_a002f")])
-sound_effects = Array[ExtResource("5_oi1wl")]([ExtResource("7_7uio8"), ExtResource("8_ombb4"), ExtResource("9_upbfn"), ExtResource("10_xibtb"), ExtResource("11_fc8of"), ExtResource("12_cexur"), ExtResource("13_kuuun"), ExtResource("14_iqnkb"), ExtResource("15_wer71"), ExtResource("16_43elq"), ExtResource("17_3wtdp"), ExtResource("18_hi2ct"), ExtResource("19_20423"), ExtResource("20_shg3i"), ExtResource("21_6q888"), ExtResource("22_4ypnc"), ExtResource("23_j68rx"), ExtResource("24_dod8s"), ExtResource("25_n0jv7"), ExtResource("26_gvk1v"), ExtResource("27_d1fs3"), ExtResource("28_hw5p4"), ExtResource("29_300t3"), ExtResource("30_rtps5"), ExtResource("31_1gal1"), ExtResource("32_u4qvw"), ExtResource("33_nai6l"), ExtResource("34_nafwc"), ExtResource("35_4txhm"), ExtResource("36_ombb4"), ExtResource("37_upbfn"), ExtResource("36_38g8w"), ExtResource("39_upbfn"), ExtResource("41_kuuun"), ExtResource("42_iqnkb"), ExtResource("42_cexur")])
+sound_effects = Array[ExtResource("5_oi1wl")]([ExtResource("7_7uio8"), ExtResource("8_ombb4"), ExtResource("9_upbfn"), ExtResource("10_xibtb"), ExtResource("11_fc8of"), ExtResource("12_cexur"), ExtResource("13_kuuun"), ExtResource("14_iqnkb"), ExtResource("15_wer71"), ExtResource("16_43elq"), ExtResource("17_3wtdp"), ExtResource("18_hi2ct"), ExtResource("19_20423"), ExtResource("20_shg3i"), ExtResource("21_6q888"), ExtResource("22_4ypnc"), ExtResource("23_j68rx"), ExtResource("24_dod8s"), ExtResource("25_n0jv7"), ExtResource("26_gvk1v"), ExtResource("27_d1fs3"), ExtResource("28_hw5p4"), ExtResource("29_300t3"), ExtResource("30_rtps5"), ExtResource("31_1gal1"), ExtResource("32_u4qvw"), ExtResource("33_nai6l"), ExtResource("34_nafwc"), ExtResource("35_4txhm"), ExtResource("36_ombb4"), ExtResource("37_upbfn"), ExtResource("36_38g8w"), ExtResource("39_upbfn"), ExtResource("41_kuuun"), ExtResource("42_iqnkb"), ExtResource("42_cexur"), ExtResource("43_iqnkb"), ExtResource("44_43elq"), ExtResource("45_3wtdp"), ExtResource("46_hi2ct"), ExtResource("47_20423"), ExtResource("48_j68rx"), ExtResource("49_dod8s"), ExtResource("50_n0jv7"), ExtResource("51_gvk1v"), ExtResource("52_d1fs3"), ExtResource("53_hw5p4"), ExtResource("54_dod8s")])
 
 [node name="Main Background Music" type="AudioStreamPlayer" parent="."]
 volume_db = 0.63

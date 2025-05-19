@@ -1722,6 +1722,7 @@ offset_left = 232.0
 offset_top = 360.0
 offset_right = 298.0
 offset_bottom = 390.0
+text = "Lock In"
 
 [node name="GhostChecklistPage" type="Control" parent="BookUI/PageContainer"]
 anchors_preset = 0
@@ -2045,6 +2046,9 @@ offset_right = 1093.0
 offset_bottom = 651.0
 text = "right"
 
+[connection signal="pressed" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted" to="BookUI" method="_on_toggle_button_pressed"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted" to="BookUI" method="_on_bell_muted_toggled"]
+[connection signal="pressed" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns" to="BookUI" method="_on_toggle_button_pressed"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns" to="BookUI" method="_on_ofuda_burns_toggled"]
+[connection signal="pressed" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows" to="BookUI" method="_on_toggle_button_pressed"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows" to="BookUI" method="_on_mirror_shows_toggled"]
