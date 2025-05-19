@@ -2,16 +2,17 @@
 
 [ext_resource type="StyleBox" uid="uid://bojajled7fp2c" path="res://Resources/Menu Button Hover Stylebox Texture.tres" id="1_b4loo"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="1_jgrfi"]
-[ext_resource type="StyleBox" uid="uid://bj0lt76kagd2u" path="res://Resources/Menu Button Focus Stylebox Texture.tres" id="1_jniar"]
 [ext_resource type="StyleBox" uid="uid://bn28w7k4mc7x2" path="res://Resources/Menu Button Normal Stylebox Texture.tres" id="2_jniar"]
 [ext_resource type="StyleBox" uid="uid://kxjp10r2ovdi" path="res://Resources/Menu Button Pressed Stylebox Texture.tres" id="3_jgrfi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jniar"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgrfi"]
 
 [resource]
 Button/font_sizes/font_size = 58
 Button/fonts/font = ExtResource("1_jgrfi")
-Button/styles/focus = ExtResource("1_jniar")
+Button/styles/focus = SubResource("StyleBoxEmpty_jniar")
 Button/styles/hover = ExtResource("1_b4loo")
 Button/styles/normal = ExtResource("2_jniar")
 Button/styles/pressed = ExtResource("3_jgrfi")
