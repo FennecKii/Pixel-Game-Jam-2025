@@ -88,7 +88,7 @@ func _on_pickup_area_body_exited(body: Node2D) -> void:
 func _ofuda_pickup() -> void:
 	if can_pickup and Input.is_action_just_pressed("Interact"):
 		ofuda_pickup_audio_played = true
-		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.GHOST_WALK)
+		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_PICKUP)
 		SignalBus.ofuda_pickedup.emit()
 		queue_free()
 

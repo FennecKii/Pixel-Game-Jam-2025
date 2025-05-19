@@ -1701,5 +1701,9 @@ visible = false
 
 [node name="SubViewportContainer" parent="Shader" instance=ExtResource("3_2lpm4")]
 
-[connection signal="pressed" from="Map/BigVillage" to="." method="_on_map1_pressed"]
-[connection signal="pressed" from="Map/LittleVillage" to="." method="_on_map_2_pressed"]
+[connection signal="mouse_entered" from="Map/Map1" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Map/Map1" to="." method="_on_map1_pressed"]
+[connection signal="mouse_entered" from="Map/Map2" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Map/Map2" to="." method="_on_map_2_pressed"]
+[connection signal="mouse_entered" from="Map/Map3" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Map/Map3" to="." method="_on_map_3_pressed"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://ctjtgxo0jq75t"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_6r5f7"]
+[ext_resource type="AudioStream" uid="uid://t42ti47n1ana" path="res://Audio/SFX/UI/Drop Organic C.wav" id="2_5pcr8"]
+
+[resource]
+script = ExtResource("1_6r5f7")
+type = 37
+sound = ExtResource("2_5pcr8")
+volume = 1.0
+pitch_scale = 0.9
+pitch_randomness = 0.15
+metadata/_custom_type_script = "uid://j0exrwx617ot"
