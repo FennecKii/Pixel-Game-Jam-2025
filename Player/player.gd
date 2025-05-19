@@ -19,6 +19,7 @@ var ofuda_count: int = 0
 var is_dead: bool = false
 var footstep_audio_played: bool = false
 var death_handled: bool = false
+var heartbeat_audio_played: bool = false
 
 func _ready() -> void:
 	Global.player_node = self
@@ -114,6 +115,15 @@ func _update_item_states() -> void:
 	Global.bell_equipped = bell.visible
 	Global.ofuda_equipped = ofuda.visible
 	ofuda_outline.global_position = get_global_mouse_position()
+
+func _handle_heartbeat() -> void:
+	if Global.ghost_detectable and not Global.timer_alert_zone:
+		if not heartbeat_audio_played:
+			if randf_range(0, 1) <= 0.075:
+				heartbeat_audio_played = true
+				AudioManager.play_sfx_global(SoundResource.SoundType.PLAYER_HEARTBEAT)
+				await get_tree().create_timer(randf_range(2, 5)).timeout
+				heartbeat_audio_played = false
 
 func _handle_item_input() -> void:
 	# Equip or Switch Items

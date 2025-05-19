@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bp8tpdqjy7wxj"]
+[gd_scene load_steps=43 format=3 uid="uid://bp8tpdqjy7wxj"]
 
 [ext_resource type="Script" uid="uid://iirlbq7r2iuy" path="res://Globals/audio_manager.gd" id="1_kho5r"]
 [ext_resource type="Script" uid="uid://ccfhwjmvugxlp" path="res://Globals/MusicResource.gd" id="2_qhhwe"]
@@ -40,12 +40,13 @@
 [ext_resource type="Resource" uid="uid://dxa5ehby124s1" path="res://Audio/Audio Resources/Ambient_Hex.tres" id="37_upbfn"]
 [ext_resource type="Resource" uid="uid://d13kl88gtksfk" path="res://Audio/Audio Resources/Item_Ofuda_Glow.tres" id="39_upbfn"]
 [ext_resource type="Resource" uid="uid://b1jthdo3l0kvy" path="res://Audio/Audio Resources/Game_Timer_End.tres" id="41_kuuun"]
+[ext_resource type="Resource" uid="uid://da4cp147mda53" path="res://Audio/Audio Resources/Player_Heartbeat.tres" id="42_cexur"]
 [ext_resource type="Resource" uid="uid://rc3ed2brbeag" path="res://Audio/Audio Resources/Game_End_UI.tres" id="42_iqnkb"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_kho5r")
 music_tracks = Array[ExtResource("2_qhhwe")]([ExtResource("3_a002f"), ExtResource("4_38g8w"), ExtResource("5_a002f")])
-sound_effects = Array[ExtResource("5_oi1wl")]([ExtResource("7_7uio8"), ExtResource("8_ombb4"), ExtResource("9_upbfn"), ExtResource("10_xibtb"), ExtResource("11_fc8of"), ExtResource("12_cexur"), ExtResource("13_kuuun"), ExtResource("14_iqnkb"), ExtResource("15_wer71"), ExtResource("16_43elq"), ExtResource("17_3wtdp"), ExtResource("18_hi2ct"), ExtResource("19_20423"), ExtResource("20_shg3i"), ExtResource("21_6q888"), ExtResource("22_4ypnc"), ExtResource("23_j68rx"), ExtResource("24_dod8s"), ExtResource("25_n0jv7"), ExtResource("26_gvk1v"), ExtResource("27_d1fs3"), ExtResource("28_hw5p4"), ExtResource("29_300t3"), ExtResource("30_rtps5"), ExtResource("31_1gal1"), ExtResource("32_u4qvw"), ExtResource("33_nai6l"), ExtResource("34_nafwc"), ExtResource("35_4txhm"), ExtResource("36_ombb4"), ExtResource("37_upbfn"), ExtResource("36_38g8w"), ExtResource("39_upbfn"), ExtResource("41_kuuun"), ExtResource("42_iqnkb")])
+sound_effects = Array[ExtResource("5_oi1wl")]([ExtResource("7_7uio8"), ExtResource("8_ombb4"), ExtResource("9_upbfn"), ExtResource("10_xibtb"), ExtResource("11_fc8of"), ExtResource("12_cexur"), ExtResource("13_kuuun"), ExtResource("14_iqnkb"), ExtResource("15_wer71"), ExtResource("16_43elq"), ExtResource("17_3wtdp"), ExtResource("18_hi2ct"), ExtResource("19_20423"), ExtResource("20_shg3i"), ExtResource("21_6q888"), ExtResource("22_4ypnc"), ExtResource("23_j68rx"), ExtResource("24_dod8s"), ExtResource("25_n0jv7"), ExtResource("26_gvk1v"), ExtResource("27_d1fs3"), ExtResource("28_hw5p4"), ExtResource("29_300t3"), ExtResource("30_rtps5"), ExtResource("31_1gal1"), ExtResource("32_u4qvw"), ExtResource("33_nai6l"), ExtResource("34_nafwc"), ExtResource("35_4txhm"), ExtResource("36_ombb4"), ExtResource("37_upbfn"), ExtResource("36_38g8w"), ExtResource("39_upbfn"), ExtResource("41_kuuun"), ExtResource("42_iqnkb"), ExtResource("42_cexur")])
 
 [node name="Main Background Music" type="AudioStreamPlayer" parent="."]
 volume_db = 0.63

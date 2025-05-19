@@ -5,7 +5,7 @@ var ambient_audio_played: bool = false
 func _ready() -> void:
 	AudioManager.play_background_track2(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not ambient_audio_played:
 		if randf_range(0, 1) <= 0.025:
 			ambient_audio_played = true

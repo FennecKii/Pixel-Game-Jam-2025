@@ -8,7 +8,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_KNOCK_1, SoundResource.SoundType.AMBIENT_KNOCK_2))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not scene_iniatlized:
 		await get_tree().create_timer(10).timeout
 		scene_iniatlized = true

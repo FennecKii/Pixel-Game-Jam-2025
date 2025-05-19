@@ -7,7 +7,7 @@
 script = ExtResource("1_q4843")
 type = 29
 sound = ExtResource("2_s5dsk")
-volume = -1.0
+volume = -2.0
 pitch_scale = 1.0
 pitch_randomness = 0.1
 metadata/_custom_type_script = "uid://j0exrwx617ot"

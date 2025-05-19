@@ -28,5 +28,6 @@ var ghost_position: Vector2
 var bell_equipped: bool = false
 var ofuda_equipped: bool = false
 var player_house_entered: bool = false
+var timer_alert_zone: bool = false
 
 var scene_tree: SceneTree

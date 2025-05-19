@@ -15,6 +15,7 @@ var can_pickup: bool = false
 var ofuda_audio_played: bool = false
 var ofuda_count_lable: Label
 var ofuda_count: int = 0
+var ofuda_pickup_audio_played: bool = false
 
 func _ready() -> void:
 	if not ghost_detection_component:
@@ -35,7 +36,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	_update_ofuda_label()
 	
-	_ofuda_pickup()
+	if not ofuda_pickup_audio_played:
+		_ofuda_pickup()
 	
 	if ofuda_count != 0 and not display_item:
 		ofuda_placed = true
@@ -85,6 +87,8 @@ func _on_pickup_area_body_exited(body: Node2D) -> void:
 
 func _ofuda_pickup() -> void:
 	if can_pickup and Input.is_action_just_pressed("Interact"):
+		ofuda_pickup_audio_played = true
+		AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.GHOST_WALK)
 		SignalBus.ofuda_pickedup.emit()
 		queue_free()
 

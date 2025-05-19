@@ -36,7 +36,8 @@ enum SoundType {
 	GHOST_WALK_QUIET,
 	ITEM_ODFUA_GLOW,
 	GAME_TIMER_END,
-	GAME_END_UI
+	GAME_END_UI,
+	PLAYER_HEARTBEAT
 }
 
 @export var type: SoundType

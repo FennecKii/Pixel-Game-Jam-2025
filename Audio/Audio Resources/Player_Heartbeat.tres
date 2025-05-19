@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://da4cp147mda53"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_ucrbq"]
+[ext_resource type="AudioStream" uid="uid://c7c7hjigkvywu" path="res://Audio/SFX/Gameplay/Player/heart-beat-new-137135.wav" id="2_h2cl6"]
+
+[resource]
+script = ExtResource("1_ucrbq")
+type = 35
+sound = ExtResource("2_h2cl6")
+volume = 4.0
+pitch_scale = 1.0
+pitch_randomness = 0.2
+metadata/_custom_type_script = "uid://j0exrwx617ot"
