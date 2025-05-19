@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dtinrr8hokyl6"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://dtinrr8hokyl6"]
 
 [ext_resource type="Texture2D" uid="uid://doa75easgmc8c" path="res://Tilesets/outside_tileset.png" id="1_fk7st"]
 [ext_resource type="Texture2D" uid="uid://dsuej003w5y62" path="res://Tilesets/inside_tileset.png" id="2_0bvd4"]
+[ext_resource type="Texture2D" uid="uid://b3ueg0tx4xo72" path="res://Tilesets/color_fixes.png" id="3_lgh62"]
 [ext_resource type="Texture2D" uid="uid://bjr3woavm2ulu" path="res://Tilesets/fixes.png" id="3_rxn4f"]
 [ext_resource type="Texture2D" uid="uid://wk4a80oxg8a2" path="res://Tilesets/fixes2.png" id="4_kdwb1"]
 
@@ -513,6 +514,56 @@ texture_region_size = Vector2i(32, 32)
 10:3/0/y_sort_origin = 20
 10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 25, -3, 25, -3, -16, -16, -16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uowi"]
+texture = ExtResource("3_lgh62")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdwb1"]
 texture = ExtResource("3_rxn4f")
 texture_region_size = Vector2i(32, 32)
@@ -879,3 +930,4 @@ sources/1 = SubResource("TileSetAtlasSource_rxn4f")
 sources/0 = SubResource("TileSetAtlasSource_0bvd4")
 sources/6 = SubResource("TileSetAtlasSource_kdwb1")
 sources/7 = SubResource("TileSetAtlasSource_lgh62")
+sources/2 = SubResource("TileSetAtlasSource_1uowi")
