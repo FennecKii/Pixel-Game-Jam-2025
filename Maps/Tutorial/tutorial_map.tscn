@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2uyuxbpivnd2"]
+[gd_scene load_steps=12 format=4 uid="uid://c2uyuxbpivnd2"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_7py7c"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="2_7py7c"]
@@ -6,12 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://da7k3e745ih08" path="res://Objects/Mirror/mirror.tscn" id="5_78xl6"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="5_nw7x2"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="6_7py7c"]
+[ext_resource type="PackedScene" uid="uid://gr1sptjguxr3" path="res://Globals/Components/roof.tscn" id="6_acv8r"]
+[ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/HUD.tscn" id="7_wd5kf"]
+[ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="8_acv8r"]
+[ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/book_ui.tscn" id="9_gkfty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acv8r"]
+size = Vector2(576.5, 464)
 
 [node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node")]
 script = ExtResource("1_7py7c")
 spawner_component = NodePath("SpawnerComponent")
 world_objects_node = NodePath("World Objects")
 metadata/_custom_type_script = "uid://ddkb5fdtjqh12"
+
+[node name="SpawnerComponent" parent="." node_paths=PackedStringArray("world_objects") instance=ExtResource("6_7py7c")]
+world_objects = NodePath("../World Objects")
 
 [node name="Dirt" parent="." instance=ExtResource("2_7py7c")]
 scale = Vector2(3, 3)
@@ -25,25 +35,8 @@ tile_map_data = PackedByteArray("AAADAAEAAAABAAQAAAADAAIAAAABAAQAAAADAAMAAAABAAQ
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAADAAIAAAAAAAAAAAADAAMAAAABAAAAAAADAAQAAAAAAAAAAAADAAUAAAACAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAACAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAAAAAAFAAUAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAACAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAABAAAAAAAHAAUAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAA=")
 
-[node name="World Boundaries" type="Node2D" parent="."]
-
-[node name="SpawnerRect2D" type="Node2D" parent="World Boundaries"]
-position = Vector2(388, 211)
-scale = Vector2(3.6, 3.6)
-script = ExtResource("3_7b3m2")
-region_type = 1
-outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
-metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
-
-[node name="Spawn Regions" type="Node2D" parent="."]
-
-[node name="SpawnerRect2D" type="Node2D" parent="Spawn Regions"]
-position = Vector2(389, 210)
-scale = Vector2(3.565, 3.565)
-script = ExtResource("3_7b3m2")
-metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
-
 [node name="World Objects" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Border" parent="World Objects" instance=ExtResource("2_7py7c")]
 y_sort_enabled = true
@@ -73,5 +66,45 @@ tile_map_data = PackedByteArray("AAADAAEAAQAAAAcAAAAIAAEAAQAAAAUAAAAFAAIAAQACAAU
 [node name="Player" parent="World Objects" instance=ExtResource("5_nw7x2")]
 position = Vector2(643, 959)
 
-[node name="SpawnerComponent" parent="." node_paths=PackedStringArray("world_objects") instance=ExtResource("6_7py7c")]
-world_objects = NodePath("../World Objects")
+[node name="Roof" type="Node2D" parent="."]
+
+[node name="Roof" parent="Roof" instance=ExtResource("6_acv8r")]
+
+[node name="Roof Tilemap" parent="Roof/Roof" index="0"]
+tile_map_data = PackedByteArray("AAACAAAABgAKAAAAAAADAAAABgALAAAAAAAEAAAABgALAAAAAAAFAAAABgALAAAAAAAGAAAABgAMAAAAAAAHAAAABgANAAAAAAAIAAAABgANAAAAAAAJAAAABgAOAAAAAAACAAEABgAKAAEAAAADAAEABgALAAEAAAAEAAEABgALAAEAAAAFAAEABgALAAEAAAAGAAEABgAMAAEAAAAHAAEABgANAAEAAAAIAAEABgANAAEAAAAJAAEABgAOAAEAAAACAAIABgAKAAEAAAADAAIABgALAAEAAAAEAAIABgALAAEAAAAFAAIABgALAAEAAAAGAAIABgAMAAEAAAAHAAIABgANAAEAAAAIAAIABgANAAEAAAAJAAIABgAOAAEAAAACAAMABgAKAAIAAAADAAMABgALAAIAAAAEAAMABgALAAIAAAAFAAMABgALAAIAAAAGAAMABgAMAAIAAAAHAAMABgANAAIAAAAIAAMABgANAAIAAAAJAAMABgAOAAIAAAACAAQABgAKAAMAAAADAAQABgALAAMAAAAGAAQABgAMAAMAAAAEAAQABgALAAMAAAAFAAQABgALAAMAAAAHAAQABgANAAMAAAAIAAQABgANAAMAAAAJAAQABgAOAAMAAAACAAUABgAKAAMAAAAJAAUABgAOAAMAAAADAAUABgALAAMAAAAEAAUABgALAAMAAAAFAAUABgALAAMAAAAGAAUABgAMAAMAAAAHAAUABgANAAMAAAAIAAUABgANAAMAAAACAAYABgAKAAQAAAADAAYABgALAAQAAAAEAAYABgALAAQAAAAFAAYABgALAAQAAAAGAAYABgAMAAQAAAAHAAYABgANAAQAAAAIAAYABgANAAQAAAAJAAYABgAOAAQAAAA=")
+
+[node name="Roof Collision" parent="Roof/Roof/Player Detection" index="0"]
+position = Vector2(575.75, 424)
+shape = SubResource("RectangleShape2D_acv8r")
+
+[node name="World Boundaries" type="Node2D" parent="."]
+visible = false
+
+[node name="SpawnerRect2D" type="Node2D" parent="World Boundaries"]
+position = Vector2(388, 211)
+scale = Vector2(3.6, 3.6)
+script = ExtResource("3_7b3m2")
+region_type = 1
+outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="Spawn Regions" type="Node2D" parent="."]
+visible = false
+
+[node name="SpawnerRect2D" type="Node2D" parent="Spawn Regions"]
+position = Vector2(389, 210)
+scale = Vector2(3.565, 3.565)
+script = ExtResource("3_7b3m2")
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
+[node name="HUD" parent="." instance=ExtResource("7_wd5kf")]
+visible = false
+
+[node name="SubViewportContainer" parent="HUD" instance=ExtResource("8_acv8r")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_gkfty")]
+visible = false
+
+[node name="SubViewportContainer" parent="CanvasLayer" instance=ExtResource("8_acv8r")]
+
+[editable path="Roof/Roof"]
