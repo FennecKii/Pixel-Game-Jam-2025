@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://b1jthdo3l0kvy"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_hdltp"]
+[ext_resource type="AudioStream" uid="uid://bqcnvx87v730c" path="res://Audio/SFX/UI/Who's There 001.wav" id="2_u0ksw"]
+
+[resource]
+script = ExtResource("1_hdltp")
+type = 33
+sound = ExtResource("2_u0ksw")
+volume = 5.0
+pitch_scale = 1.0
+pitch_randomness = 0.15
+metadata/_custom_type_script = "uid://j0exrwx617ot"

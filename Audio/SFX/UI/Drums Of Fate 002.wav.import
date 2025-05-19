@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qj8jcyrdf8c8"
+path="res://.godot/imported/Drums Of Fate 002.wav-8410b9231a87d370f884d36137ab42e8.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/Drums Of Fate 002.wav"
+dest_files=["res://.godot/imported/Drums Of Fate 002.wav-8410b9231a87d370f884d36137ab42e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

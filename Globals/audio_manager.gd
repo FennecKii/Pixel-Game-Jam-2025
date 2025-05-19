@@ -4,6 +4,7 @@ extends Node2D
 @export var sound_effects: Array[SoundResource]
 
 @onready var main_background_music: AudioStreamPlayer = $"Main Background Music"
+@onready var audio_players: Node2D = $"Audio Players"
 
 var music_track_dict: Dictionary = {}
 var sound_effect_dict: Dictionary = {}
@@ -37,7 +38,7 @@ func play_music(type: MusicResource.MusicType) -> void:
 		new_audio.volume_db = music_track.volume
 		new_audio.pitch_scale = music_track.pitch_scale
 		new_audio.pitch_scale += Global.rng.randf_range(-music_track.pitch_randomness, music_track.pitch_randomness )
-		add_child(new_audio)
+		audio_players.add_child(new_audio)
 		new_audio.play()
 	else:
 		push_error("Audio Manager failed to find type ", type)
@@ -57,7 +58,7 @@ func play_music_loop(type: MusicResource.MusicType, loop_begin: float = 0, loop_
 		new_audio.volume_db = music_track.volume
 		new_audio.pitch_scale = music_track.pitch_scale
 		new_audio.pitch_scale += Global.rng.randf_range(-music_track.pitch_randomness, music_track.pitch_randomness )
-		add_child(new_audio)
+		audio_players.add_child(new_audio)
 		new_audio.play()
 	else:
 		push_error("Audio Manager failed to find type ", type)
@@ -73,7 +74,7 @@ func play_sfx_at_location(location: Vector2, type: SoundResource.SoundType) -> v
 		new_2D_audio.pitch_scale = sound_effect.pitch_scale
 		new_2D_audio.pitch_scale += Global.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness )
 		new_2D_audio.finished.connect(new_2D_audio.queue_free)
-		add_child(new_2D_audio)
+		audio_players.add_child(new_2D_audio)
 		new_2D_audio.play()
 	else:
 		push_error("Audio Manager failed to find type ", type)
@@ -88,7 +89,19 @@ func play_sfx_global(type: SoundResource.SoundType) -> void:
 		new_audio.pitch_scale = sound_effect.pitch_scale
 		new_audio.pitch_scale += Global.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness )
 		new_audio.finished.connect(new_audio.queue_free)
-		add_child(new_audio)
+		audio_players.add_child(new_audio)
 		new_audio.play()
 	else:
 		push_error("Audio Manager failed to find type ", type)
+
+func clear_audio() -> void:
+	var audio_players_children: Array[Node] = audio_players.get_children()
+	
+	for audio in audio_players_children:
+		audio.queue_free()
+
+func lower_audio() -> void:
+	var audio_players_children: Array[Node] = audio_players.get_children()
+	
+	for audio in audio_players_children:
+		audio.volume_db = audio.volume_db/2.5

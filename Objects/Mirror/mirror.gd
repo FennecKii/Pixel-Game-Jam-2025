@@ -15,6 +15,7 @@ enum MirrorDirection {FRONT, LEFT, RIGHT}
 
 var silhouette_rgb_value: float = 48/255.0
 var mirror_showing: bool = false
+var mirror_audio_played: bool = false
 
 func _ready() -> void:
 	ui_animated_sprite.self_modulate = Color(1, 1, 1, 0)
@@ -66,12 +67,21 @@ func _on_player_detection_body_exited(body: Node2D) -> void:
 func _update_mirror_response() -> void:
 	if not ghost_detection_component.ghost_detected:
 		return
-	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.YUKIONNA:
 		ui_animation_player.play("ghost_appear")
+		if not mirror_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.OBJECT_MIRROR_APPEAR)
+			mirror_audio_played = true
 		await ui_animation_player.animation_finished
-	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.ONRYO:
 		ui_animation_player.play("ghost_appear")
+		if not mirror_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.OBJECT_MIRROR_APPEAR)
+			mirror_audio_played = true
 		await ui_animation_player.animation_finished
-	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.JIKININKI:
 		ui_animation_player.play("crack")
+		if not mirror_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.OBJECT_MIRROR_BREAK)
+			mirror_audio_played = true
 		await ui_animation_player.animation_finished

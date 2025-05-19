@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dxa5ehby124s1"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_0ryfa"]
+[ext_resource type="AudioStream" uid="uid://dpyfxesmjq01c" path="res://Audio/SFX/Gameplay/Ambient/Hex 003.wav" id="2_ur00s"]
+
+[resource]
+script = ExtResource("1_0ryfa")
+type = 30
+sound = ExtResource("2_ur00s")
+volume = -2.0
+pitch_scale = 1.0
+pitch_randomness = 0.15
+metadata/_custom_type_script = "uid://j0exrwx617ot"

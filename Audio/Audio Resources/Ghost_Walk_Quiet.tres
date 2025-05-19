@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://h2xaprvogc4j"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_lv5oq"]
+[ext_resource type="AudioStream" uid="uid://d1bv2ownf0fxr" path="res://Audio/SFX/Gameplay/Ghosts/Big Quadruped Feet E.wav" id="2_obr7d"]
+
+[resource]
+script = ExtResource("1_lv5oq")
+type = 31
+sound = ExtResource("2_obr7d")
+volume = -6.0
+pitch_scale = 0.9
+pitch_randomness = 0.05
+metadata/_custom_type_script = "uid://j0exrwx617ot"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0tkgahxd47yk"
+path="res://.godot/imported/Dark Stinger C.wav-f6c6a785b1dfe648ae4961a0d6e8158e.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Gameplay/Ambient/Dark Stinger C.wav"
+dest_files=["res://.godot/imported/Dark Stinger C.wav-f6c6a785b1dfe648ae4961a0d6e8158e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

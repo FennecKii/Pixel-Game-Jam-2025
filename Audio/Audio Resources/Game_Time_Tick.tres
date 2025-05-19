@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://co2v4uk42obsr"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_p10tq"]
+[ext_resource type="AudioStream" uid="uid://cf87vhrw1s7md" path="res://Audio/SFX/UI/ticking-timer-65220.mp3" id="2_wb1iu"]
+
+[resource]
+script = ExtResource("1_p10tq")
+type = 33
+sound = ExtResource("2_wb1iu")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://j0exrwx617ot"

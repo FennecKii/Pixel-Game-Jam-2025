@@ -11,6 +11,7 @@ script = ExtResource("1_vi7cn")
 scale = Vector2(3, 3)
 
 [node name="Player Detection" type="Area2D" parent="."]
+collision_layer = 128
 
 [node name="Roof Collision" type="CollisionShape2D" parent="Player Detection"]
 z_index = 1

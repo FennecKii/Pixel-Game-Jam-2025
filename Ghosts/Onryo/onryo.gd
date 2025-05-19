@@ -13,15 +13,19 @@ var rng: RandomNumberGenerator
 
 var animation_player: AnimationPlayer
 var chasing: bool = false
+var chase_sound_played: bool = false
 var SPEED: float = 15000
 var previous_velocity: Vector2
 var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
 var state_active: bool = false
-var state_weights: PackedFloat32Array = PackedFloat32Array([30, 70])
+var state_weights: PackedFloat32Array = PackedFloat32Array([100, 0])
 var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
-var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 37])
+var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 0])
+var footstep_audio_played: bool = false
+var walk_audio_prob: float
+var play_walk_audio: bool = false
 
 func _ready() -> void:
 	Global.onryo_node = self
@@ -42,14 +46,17 @@ func _physics_process(delta: float) -> void:
 	var player_direction: Vector2 = Global.player_position - global_position
 	
 	if chasing:
+		_update_footstep_audio(true)
 		direction = (player_direction).normalized()
-		SPEED = 41000
+		SPEED = 44000
 		collision_shape_2d.disabled = false
 		visible = true
 	
 	if chasing and player_direction.length() < 20:
 		velocity = Vector2.ZERO
 	elif direction:
+		if play_walk_audio:
+			_update_footstep_audio()
 		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
@@ -60,6 +67,20 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 	
 	move_and_slide()
+
+func _update_footstep_audio(fast: bool = false) -> void:
+	if not fast:
+		if not footstep_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.GHOST_WALK)
+			footstep_audio_played = true
+			await get_tree().create_timer(randf_range(0.5, 0.55)).timeout
+			footstep_audio_played = false
+	elif fast:
+		if not footstep_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.GHOST_WALK)
+			footstep_audio_played = true
+			await get_tree().create_timer(randf_range(0.3, 0.35)).timeout
+			footstep_audio_played = false
 
 func _update_state() -> void:
 	state_active = true
@@ -75,6 +96,9 @@ func _update_state() -> void:
 			await _run_action_timer(rng.randf_range(1, 10))
 		elif random_action_selection == GhostAction.MOVE:
 			# Do moving things (move to a random position?)
+			walk_audio_prob = randf_range(0, 1)
+			if walk_audio_prob <= 0.1:
+				play_walk_audio = true
 			_rand_move_to_position(rng.randf_range(5000, 10000))
 			await _run_action_timer()
 			direction = Vector2.ZERO
@@ -93,6 +117,9 @@ func _update_state() -> void:
 			await _run_action_timer(rng.randf_range(5, 10))
 		elif random_action_selection == GhostAction.MOVE:
 			# Do moving things (move to a random position?)
+			walk_audio_prob = randf_range(0, 1)
+			if walk_audio_prob <= 0.1:
+				play_walk_audio = true
 			_rand_move_to_position(rng.randf_range(5000, 10000))
 			await _run_action_timer()
 			direction = Vector2.ZERO
@@ -174,7 +201,11 @@ func _determine_direction(velocity_vec: Vector2) -> int:
 		return Global.SpriteDirection.UNKNOWN
 
 func _on_ghost_alerted() -> void:
-	chasing = true
+	if not chase_sound_played:
+		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_ENEMY_REVEAL)
+		chase_sound_played = true
+		await get_tree().create_timer(4).timeout
+		chasing = true
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body == Global.player_node:
