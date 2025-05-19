@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="5_nw7x2"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="6_7py7c"]
 
-[node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("world_objects_node")]
+[node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node")]
 script = ExtResource("1_7py7c")
+spawner_component = NodePath("SpawnerComponent")
 world_objects_node = NodePath("World Objects")
 metadata/_custom_type_script = "uid://ddkb5fdtjqh12"
 
