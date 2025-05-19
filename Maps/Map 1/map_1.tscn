@@ -67,7 +67,6 @@ position = Vector2(53, -1198)
 position = Vector2(-1029, -902)
 
 [node name="Roofs" type="Node2D" parent="."]
-visible = false
 
 [node name="Roof" parent="Roofs" instance=ExtResource("5_emtie")]
 

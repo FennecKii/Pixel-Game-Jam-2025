@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0hewoeik1iox"]
 
-[ext_resource type="Script" path="res://UI/map_select.gd" id="1_t8um1"]
+[ext_resource type="Script" uid="uid://dkr22ulvfucb3" path="res://UI/map_select.gd" id="1_t8um1"]
 [ext_resource type="Texture2D" uid="uid://cfpiv7vnwma7g" path="res://UI/map.png" id="2_t8um1"]
 
 [node name="MapSelect" type="Node2D"]
@@ -11,19 +11,11 @@ position = Vector2(635.5, 357.75)
 scale = Vector2(3.99062, 3.86216)
 texture = ExtResource("2_t8um1")
 
-[node name="Map3" type="Button" parent="Map"]
-offset_left = -22.4276
-offset_top = 29.3229
-offset_right = 40.5724
-offset_bottom = 60.3229
-theme_override_font_sizes/font_size = 0
-text = "Map 3"
-
 [node name="Map1" type="Button" parent="Map"]
-offset_left = -93.8449
-offset_top = -50.1662
-offset_right = -30.8449
-offset_bottom = -19.1662
+offset_left = -93.5945
+offset_top = -50.943
+offset_right = -30.5945
+offset_bottom = -19.943
 theme_override_font_sizes/font_size = 0
 text = "Map 1"
 
@@ -35,6 +27,13 @@ offset_bottom = -28.7463
 theme_override_font_sizes/font_size = 0
 text = "Map 2"
 
-[connection signal="pressed" from="Map/Map3" to="." method="_on_map1_pressed"]
+[node name="Map3" type="Button" parent="Map"]
+offset_left = -22.4276
+offset_top = 29.3229
+offset_right = 40.5724
+offset_bottom = 60.3229
+theme_override_font_sizes/font_size = 0
+text = "Map 3"
+
 [connection signal="pressed" from="Map/Map1" to="." method="_on_map1_pressed"]
-[connection signal="pressed" from="Map/Map2" to="." method="_on_map1_pressed"]
+[connection signal="pressed" from="Map/Map2" to="." method="_on_map_2_pressed"]

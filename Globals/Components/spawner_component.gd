@@ -24,7 +24,7 @@ func spawn_ghost():
 	Global.current_ghost = ghost_type
 	ghost_instance.global_position = spawn_region.global_position + position_variation
 	ghost_instance.ghost_type = ghost_type
-	#ghost_instance.visible = false
+	ghost_instance.visible = false
 	ghost_instance.ghost_appearance = ghost_appearance
 	if Global.world_objects_node:
 		Global.world_objects_node.add_child(ghost_instance)

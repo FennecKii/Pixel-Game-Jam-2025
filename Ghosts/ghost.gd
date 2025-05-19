@@ -24,7 +24,7 @@ var player_detected: bool = false
 var state_active: bool = false
 var state_weights: PackedFloat32Array = PackedFloat32Array([50, 50])
 var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
-var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([26, 37, 47])
+var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([30, 30, 40])
 var footstep_audio_played: bool = false
 var walk_audio_prob: float
 var play_walk_audio: bool = false
