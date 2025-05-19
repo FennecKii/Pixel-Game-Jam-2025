@@ -17,6 +17,7 @@ var can_place: bool = false
 var bell_volume: float
 var ofuda_count: int = 0
 var is_dead: bool = false
+var footstep_audio_played: bool = false
 
 func _ready() -> void:
 	Global.player_node = self
@@ -41,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down").normalized()
 	
 	if direction:
+		_update_footstep_audio()
 		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2.ZERO
@@ -59,7 +61,27 @@ func _check_player_health() -> void:
 
 func _handle_death() -> void:
 	await animation_tree.animation_finished
+	AudioManager.stop_background_track1()
+	AudioManager.stop_background_track2()
 	SignalBus.player_dead.emit()
+
+func _update_footstep_audio() -> void:
+	if not Global.player_house_entered:
+		if not footstep_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.PLAYER_WALK_GRASS)
+			footstep_audio_played = true
+			await get_tree().create_timer(randf_range(0.25, 0.35)).timeout
+			footstep_audio_played = false
+		else:
+			return
+	elif Global.player_house_entered:
+		if not footstep_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.PLAYER_WALK_WOOD)
+			footstep_audio_played = true
+			await get_tree().create_timer(randf_range(0.25, 0.35)).timeout
+			footstep_audio_played = false
+		else:
+			return
 
 func _update_animation() -> void:
 	if velocity != Vector2.ZERO:
@@ -133,6 +155,7 @@ func _place_ofuda(map_position: Vector2) -> void:
 	ofuda_instance.global_position = map_position
 	ofuda_instance.ofuda_placed = true
 	ofuda_instance.scale = Vector2(3, 3)
+	AudioManager.play_sfx_at_location(map_position, SoundResource.SoundType.GHOST_WALK)
 	if Global.world_objects_node:
 		Global.world_objects_node.add_child(ofuda_instance)
 	elif Global.world_node:

@@ -5,4 +5,3 @@ func _on_pressed_play():
 
 func _on_pressed_quit():
 	get_tree().quit()
-	

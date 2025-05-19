@@ -8,8 +8,14 @@ extends Node2D
 
 @onready var world_boundaries_group: Array[Node] = get_tree().get_nodes_in_group("world regions")
 
-func _ready() -> void:	
+var ambient_audio_played: bool = false
+var end_ui_audio_played: bool = false
+
+func _ready() -> void:
 	Global.scene_tree = get_tree()
+	
+	AudioManager.play_background_track1(randi_range(MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_1, MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_2))
+	AudioManager.play_background_track2(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
 	
 	if world_boundaries.is_empty() or len(world_boundaries_group) != len(world_boundaries):
 		world_boundaries = []
@@ -37,6 +43,21 @@ func _process(_delta: float) -> void:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if book_ui.visible else Input.MOUSE_MODE_CAPTURED)
 	elif Input.is_action_just_pressed("toggle_journal") and not book_ui:
 		assert(false, "Book UI CanvasLayer not found in root node.")
+	
+	if not ambient_audio_played:
+		_rand_ambient_audio()
+		ambient_audio_played = true
+		await get_tree().create_timer(10).timeout
+		ambient_audio_played = false
 
 func _on_player_dead() -> void:
+	await get_tree().create_timer(1).timeout
+	if not end_ui_audio_played:
+		end_ui_audio_played = true
+		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_END_UI)
 	Global.scene_tree.change_scene_to_file("res://UI/main_menu.tscn")
+
+func _rand_ambient_audio() -> void:
+	if randf_range(0, 1) <= 1:
+		await get_tree().create_timer(randf_range(3, 6)).timeout
+		AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_KNOCK_1, SoundResource.SoundType.AMBIENT_HEX))

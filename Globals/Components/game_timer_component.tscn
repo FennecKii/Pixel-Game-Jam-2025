@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct65glxsu1i3l"]
+[gd_scene load_steps=3 format=3 uid="uid://ct65glxsu1i3l"]
 
 [ext_resource type="Script" uid="uid://g3cviie7jpa5" path="res://Globals/Components/game_timer_component.gd" id="1_7k7av"]
+[ext_resource type="AudioStream" uid="uid://cf87vhrw1s7md" path="res://Audio/SFX/UI/ticking-timer-65220.mp3" id="2_wu43x"]
 
 [node name="GameTimerComponent" type="Node2D"]
 script = ExtResource("1_7k7av")
+
+[node name="Timer Tick Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wu43x")
+volume_db = 5.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

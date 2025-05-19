@@ -27,7 +27,6 @@ func _process(_delta: float) -> void:
 		ghost_detection_component.process_mode = Node.PROCESS_MODE_INHERIT
 		ghost_detection_component.visible = true
 		ghost_detection_component.collision.visible = true
-		_update_item_response()
 	
 	if display_item:
 		var seconds = int(timer.time_left) % 60
@@ -37,24 +36,31 @@ func _on_bell_rang(_volume: float):
 	if not timer.is_stopped():
 		SignalBus.bell_on_cooldown.emit()
 		return
-	elif timer.is_stopped():
+	elif timer.is_stopped() and ghost_detection_component.ghost_detected:
 		timer.start()
-	if display_item:
+	if display_item and not Global.bell_equipped:
 		return
 	bell_rang = true
-	animation_player.play("ring")
+	if not display_item:
+		animation_player.play("ring")
+	_update_item_response()
 	await animation_player.animation_finished
 	bell_rang = false
 
+func _update_bell_audio() -> void:
+	for ring in range(0, randi_range(3,5)):
+		AudioManager.play_sfx_at_location(Global.player_position, SoundResource.SoundType.ITEM_BELL_RING)
+		await get_tree().create_timer(randf_range(0.15, 0.3)).timeout
+
 func _update_item_response() -> void:
-	if ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.yuki_onna_node:
-		pass
+	if ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.GhostNames.YUKIONNA:
+		_update_bell_audio()
 		#print("Yuki Detected", ", *No Ring*")
-	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.onryo_node:
-		pass
+	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.GhostNames.ONRYO:
+		_update_bell_audio()
 		#print("Onryo Detected", ", *Muted Ring*")
-	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.jikininki_node:
-		pass
+	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.GhostNames.JIKININKI:
+		_update_bell_audio()
 		#print("Jikininki Detected", ", *Muted Ring*")
 	elif ghost_detection_component.ghost_detected and not bell_rang:
 		pass

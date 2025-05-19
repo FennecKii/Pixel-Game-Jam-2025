@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://d13kl88gtksfk"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_ek3rb"]
+[ext_resource type="AudioStream" uid="uid://hr1ykof2c8fl" path="res://Audio/SFX/Gameplay/Items/Hexproof 001.wav" id="2_m3k0p"]
+
+[resource]
+script = ExtResource("1_ek3rb")
+type = 32
+sound = ExtResource("2_m3k0p")
+volume = -6.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"

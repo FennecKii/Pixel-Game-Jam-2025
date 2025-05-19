@@ -94,6 +94,7 @@ toggle_journal={
 2d_physics/layer_5="Tilemap Objects"
 2d_physics/layer_6="Ofuda Placement"
 2d_physics/layer_7="Ghost Hitbox"
+2d_physics/layer_8="House Collision"
 2d_physics/layer_16="Layer 16"
 
 [rendering]

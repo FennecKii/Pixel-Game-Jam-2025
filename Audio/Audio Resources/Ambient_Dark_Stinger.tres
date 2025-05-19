@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dx1rl3pt5wu4a"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_q4843"]
+[ext_resource type="AudioStream" uid="uid://d0tkgahxd47yk" path="res://Audio/SFX/Gameplay/Ambient/Dark Stinger C.wav" id="2_s5dsk"]
+
+[resource]
+script = ExtResource("1_q4843")
+type = 29
+sound = ExtResource("2_s5dsk")
+volume = -1.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"

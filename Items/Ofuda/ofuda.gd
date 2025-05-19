@@ -12,6 +12,7 @@ extends Node2D
 
 var ofuda_placed: bool = false
 var can_pickup: bool = false
+var ofuda_audio_played: bool = false
 var ofuda_count_lable: Label
 var ofuda_count: int = 0
 
@@ -88,20 +89,29 @@ func _ofuda_pickup() -> void:
 		queue_free()
 
 func _update_item_response() -> void:
-	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.yuki_onna_node:
+	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.YUKIONNA:
 		animation_player.play("burn")
+		if not ofuda_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_BURN)
+			ofuda_audio_played = true
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
 		pickup_collision.visible = false
 		await animation_player.animation_finished
 		queue_free()
-	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.onryo_node:
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.ONRYO:
 		animation_player.play("glow")
+		if not ofuda_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_GLOW)
+			ofuda_audio_played = true
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
 		pickup_collision.visible = false
 		await animation_player.animation_finished
 		queue_free()
-	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.jikininki_node:
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.JIKININKI:
 		animation_player.play("burn")
+		if not ofuda_audio_played:
+			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_BURN)
+			ofuda_audio_played = true
 		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
 		pickup_collision.visible = false
 		await animation_player.animation_finished

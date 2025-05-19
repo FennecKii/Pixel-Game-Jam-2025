@@ -133,17 +133,17 @@ func _on_behavior_changed() -> void:
 
 func _send_lockin_signal(button_index: int) -> void:
 	if button_index == Global.GhostNames.YUKIONNA:
-		if Global.current_ghost == Global.yuki_onna_scene:
+		if Global.current_ghost == Global.GhostNames.YUKIONNA:
 			print("Player won")
 		else:
 			SignalBus.ghost_alerted.emit()
 	elif button_index == Global.GhostNames.ONRYO:
-		if Global.current_ghost == Global.onryo_scene:
+		if Global.current_ghost == Global.GhostNames.ONRYO:
 			print("Player won")
 		else:
 			SignalBus.ghost_alerted.emit()
 	elif button_index == Global.GhostNames.JIKININKI:
-		if Global.current_ghost == Global.jikininki_scene:
+		if Global.current_ghost == Global.GhostNames.JIKININKI:
 			print("Player won")
 		else:
 			SignalBus.ghost_alerted.emit()
