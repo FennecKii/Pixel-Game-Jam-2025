@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g3cviie7jpa5" path="res://Globals/Components/game_timer_component.gd" id="1_7k7av"]
 [ext_resource type="AudioStream" uid="uid://cf87vhrw1s7md" path="res://Audio/SFX/UI/ticking-timer-65220.mp3" id="2_wu43x"]
-[ext_resource type="Theme" uid="uid://ccxtvmga0ceek" path="res://Resources/HUD_theme.tres" id="3_ibsex"]
+[ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/book_theme.tres" id="3_ibsex"]
 
 [node name="GameTimerComponent" type="Node2D"]
 script = ExtResource("1_7k7av")

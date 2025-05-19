@@ -1,5 +1,6 @@
-[gd_scene load_steps=66 format=4 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=67 format=4 uid="uid://cl060iceibg6o"]
 
+[ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/book_theme.tres" id="1_bb8yk"]
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/book_ui.gd" id="1_t2tou"]
 [ext_resource type="Texture2D" uid="uid://es1bymt1f21x" path="res://UI/journal_ui.png" id="2_jumva"]
 [ext_resource type="Texture2D" uid="uid://cip674bptsba4" path="res://UI/Book_Buttons_UI.png" id="3_pcw7d"]
@@ -1657,6 +1658,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("1_bb8yk")
 script = ExtResource("1_t2tou")
 
 [node name="PageDisplay" type="TextureRect" parent="BookUI"]
@@ -1716,10 +1718,10 @@ text = "Jikininki"
 [node name="LockInButton" type="Button" parent="BookUI/PageContainer/AnswerPage"]
 z_index = 1
 layout_mode = 0
-offset_left = 229.94
-offset_top = 340.505
-offset_right = 295.94
-offset_bottom = 370.505
+offset_left = 232.0
+offset_top = 360.0
+offset_right = 298.0
+offset_bottom = 390.0
 
 [node name="GhostChecklistPage" type="Control" parent="BookUI/PageContainer"]
 anchors_preset = 0
@@ -2022,7 +2024,7 @@ offset_bottom = 599.0
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("5_7el6b")
 theme_override_font_sizes/normal_font_size = 35
-text = "I saw witnessed something long ago. No name, no form ... just a cold that thinks. Records end where it begins. The few who looked are gone or worse. If you hear whispers in the stillness, stop. Do not seek it. Do not remember. To know it is to lose yourself.
+text = "I saw witnessed something long ago. No name, no form ... just a cold that thinks. Records end where it begins. The few who looked are gone or worse. If you hear whispers in the stillness, stop. Do not seek it. Do not remember. To know it, is to lose yourself.
 "
 
 [node name="LeftPageButton" type="Button" parent="BookUI"]
