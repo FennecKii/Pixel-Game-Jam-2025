@@ -12,26 +12,42 @@ position = Vector2(641.749, 360.375)
 scale = Vector2(1.25244, 0.704346)
 texture = ExtResource("2_tk8dj")
 
-[node name="Play" type="Button" parent="TitleScreen"]
-offset_left = -200.208
-offset_top = 274.9
-offset_right = -49.2084
-offset_bottom = 382.9
+[node name="CenterContainer" type="CenterContainer" parent="TitleScreen"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -741.0
+offset_top = -824.0
+offset_right = -283.0
+offset_bottom = -699.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleScreen/CenterContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="TitleScreen/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 125)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_ev3b6")
 text = "Play"
 
-[node name="Quit" type="Button" parent="TitleScreen"]
-offset_left = 37.7271
-offset_top = 272.061
-offset_right = 188.727
-offset_bottom = 380.061
+[node name="Control" type="Control" parent="TitleScreen/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="TitleScreen/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 125)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_ev3b6")
 text = "Quit"
 
-[connection signal="pressed" from="TitleScreen/Play" to="." method="_on_pressed_play"]
-[connection signal="pressed" from="TitleScreen/Quit" to="." method="_on_pressed_quit"]
-[connection signal="pressed" from="TitleScreen/Quit" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/CenterContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/CenterContainer/HBoxContainer/Quit" to="." method="_on_pressed_play"]
+[connection signal="pressed" from="TitleScreen/CenterContainer/HBoxContainer/Quit" to="." method="_on_pressed_quit"]
