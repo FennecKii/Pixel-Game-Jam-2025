@@ -23,7 +23,7 @@ func _on_map_2_pressed() -> void:
 
 func _on_map_3_pressed() -> void:
 	await _play_button_audio()
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Maps/Tutorial/tutorial_map.tscn")
 
 func _play_button_audio() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)
