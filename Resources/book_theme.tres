@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b2vvg4e24btmm"]
+
+[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="1_k7t5r"]
+
+[resource]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_k7t5r")
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_k7t5r")
