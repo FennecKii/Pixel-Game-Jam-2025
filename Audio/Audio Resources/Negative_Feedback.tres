@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dhwlhx2b2n6f2"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_m3j56"]
+[ext_resource type="AudioStream" uid="uid://ca5umu5pwxmdl" path="res://Audio/SFX/UI/Negative Feedback.wav" id="2_2t4in"]
+
+[resource]
+script = ExtResource("1_m3j56")
+type = 46
+sound = ExtResource("2_2t4in")
+volume = 2.0
+pitch_scale = 1.0
+pitch_randomness = 0.2
+metadata/_custom_type_script = "uid://j0exrwx617ot"

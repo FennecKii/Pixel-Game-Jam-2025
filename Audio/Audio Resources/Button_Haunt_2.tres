@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dmyp3bx7tvqh3"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_8hktj"]
+[ext_resource type="AudioStream" uid="uid://bb43jr5ihqifl" path="res://Audio/SFX/UI/Secret Coven 004.wav" id="2_qupko"]
+
+[resource]
+script = ExtResource("1_8hktj")
+type = 45
+sound = ExtResource("2_qupko")
+volume = -2.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"

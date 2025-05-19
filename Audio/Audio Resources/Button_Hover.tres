@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dswnrjlcxdpog"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_bgqos"]
+[ext_resource type="AudioStream" uid="uid://du1s6sh7p4yqq" path="res://Audio/SFX/UI/Bonk Hover B.wav" id="2_r8ypb"]
+
+[resource]
+script = ExtResource("1_bgqos")
+type = 43
+sound = ExtResource("2_r8ypb")
+volume = -3.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"

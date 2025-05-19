@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://ca7dnadmnsx8u"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_ppfro"]
+[ext_resource type="AudioStream" uid="uid://jcd0t8pwotqc" path="res://Audio/SFX/UI/Equip.wav" id="2_267dd"]
+
+[resource]
+script = ExtResource("1_ppfro")
+type = 36
+sound = ExtResource("2_267dd")
+volume = -2.0
+pitch_scale = 1.0
+pitch_randomness = 0.15
+metadata/_custom_type_script = "uid://j0exrwx617ot"
