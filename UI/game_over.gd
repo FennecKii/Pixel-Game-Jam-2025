@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 	elif not ambient_audio_played:
 		if randf_range(0, 1) <= 0.040:
 			ambient_audio_played = true
-			AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_KNOCK_1, SoundResource.SoundType.AMBIENT_WHISPER))
+			AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_VOICE_1, SoundResource.SoundType.AMBIENT_HEX))
 			await get_tree().create_timer(randf_range(8, 15)).timeout
 			ambient_audio_played = false
 
