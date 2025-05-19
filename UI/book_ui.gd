@@ -127,16 +127,19 @@ func _send_lockin_signal(button_index: int) -> void:
 	if button_index == Global.GhostNames.YUKIONNA:
 		if Global.current_ghost == Global.GhostNames.YUKIONNA:
 			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
+			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
 	elif button_index == Global.GhostNames.ONRYO:
 		if Global.current_ghost == Global.GhostNames.ONRYO:
 			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
+			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
 	elif button_index == Global.GhostNames.JIKININKI:
 		if Global.current_ghost == Global.GhostNames.JIKININKI:
 			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
+			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
 

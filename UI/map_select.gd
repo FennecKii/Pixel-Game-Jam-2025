@@ -1,5 +1,18 @@
 extends Node2D
 
+@onready var tutorial_btn = $Map/Tutorial
+@onready var little_village_btn = $Map/LittleVillage
+@onready var big_village_btn = $Map/BigVillage
+
+func _ready():
+	update_button_states()
+
+func update_button_states():
+	tutorial_btn.disabled = false
+
+	little_village_btn.disabled = Global.wincount < 1
+	big_village_btn.disabled = Global.wincount < 2
+
 func _on_map1_pressed():
 	await _play_button_audio()
 	get_tree().change_scene_to_file("res://Maps/Map 1/map_1.tscn")
