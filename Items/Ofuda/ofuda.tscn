@@ -351,7 +351,7 @@ vertical_alignment = 1
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("3_od11a")]
 visible = false
-scale = Vector2(0.130306, 0.129127)
+scale = Vector2(0.188503, 0.189032)
 
 [connection signal="body_entered" from="Pickup Area" to="." method="_on_pickup_area_body_entered"]
 [connection signal="body_exited" from="Pickup Area" to="." method="_on_pickup_area_body_exited"]

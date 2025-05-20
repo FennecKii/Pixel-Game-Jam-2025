@@ -11,6 +11,7 @@ enum SpriteDirection {UNKNOWN, DOWN, UP, SIDE}
 @onready var player_node: Node2D
 @onready var ghost_node: Node2D
 @onready var world_objects_node: Node2D
+@onready var bell_cooldown_label: Label
 
 # Preload Scenes
 @onready var ofuda_scene: PackedScene = preload("res://Items/Ofuda/ofuda.tscn")

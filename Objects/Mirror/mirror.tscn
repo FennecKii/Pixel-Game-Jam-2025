@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://da7k3e745ih08"]
+[gd_scene load_steps=28 format=3 uid="uid://da7k3e745ih08"]
 
 [ext_resource type="Script" uid="uid://cky4jsstr2j83" path="res://Objects/Mirror/mirror.gd" id="1_mhyce"]
 [ext_resource type="Texture2D" uid="uid://drqs8ypd7cs0f" path="res://Objects/Mirror/Mirror Front.png" id="1_nlt6w"]
@@ -46,6 +46,10 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("4_2juue")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_scmk6"]
+atlas = ExtResource("4_2juue")
+region = Rect2(224, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbxft"]
 atlas = ExtResource("5_ss1a5")
 region = Rect2(0, 0, 32, 32)
@@ -83,6 +87,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"crack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scmk6")
+}],
+"loop": true,
+"name": &"cracked",
 "speed": 5.0
 }, {
 "frames": [{
@@ -262,10 +274,39 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_eqhj2"]
+resource_name = "cracked"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"crack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ms2q8"]
 _data = {
 &"RESET": SubResource("Animation_s2aci"),
 &"crack": SubResource("Animation_ms2q8"),
+&"cracked": SubResource("Animation_eqhj2"),
 &"ghost_appear": SubResource("Animation_80nxv"),
 &"idle": SubResource("Animation_maca8")
 }
@@ -292,7 +333,7 @@ offset = Vector2(0, -10)
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("4_ms2q8")]
 position = Vector2(0, 36)
-scale = Vector2(0.182467, -0.109474)
+scale = Vector2(0.279321, -0.164578)
 
 [node name="Player Detection" type="Area2D" parent="."]
 scale = Vector2(1.06867, 0.966183)

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dtexre1wymekt"]
 
 [ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_ceye5"]
-[ext_resource type="AudioStream" uid="uid://4p3csxr5oy3c" path="res://Audio/SFX/Gameplay/Items/Breaking Glass Shatter.wav" id="2_ceye5"]
+[ext_resource type="AudioStream" uid="uid://d35cxn3dcbr3r" path="res://Audio/SFX/Gameplay/Items/Misty Piano 003.wav" id="2_6ra8m"]
 
 [resource]
 script = ExtResource("1_ceye5")
 type = 7
-sound = ExtResource("2_ceye5")
+sound = ExtResource("2_6ra8m")
 volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0

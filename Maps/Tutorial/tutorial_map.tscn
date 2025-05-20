@@ -98,7 +98,6 @@ script = ExtResource("3_7b3m2")
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("7_wd5kf")]
-visible = false
 
 [node name="SubViewportContainer" parent="HUD" instance=ExtResource("8_acv8r")]
 
