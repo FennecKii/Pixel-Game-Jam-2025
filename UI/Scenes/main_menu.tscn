@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://daqyk52il81xc"]
 
 [ext_resource type="Script" uid="uid://c64opyjvamn5p" path="res://UI/Scripts/main_menu.gd" id="1_tk8dj"]
-[ext_resource type="Texture2D" uid="uid://ddta046wmyvyh" path="res://Resources/Assets/TitleScreen.png" id="2_tk8dj"]
+[ext_resource type="Texture2D" uid="uid://ctbqfvandjqfo" path="res://Resources/Assets/spirit_seeker_mainmenu.png" id="2_1ft4g"]
 [ext_resource type="Theme" uid="uid://cjk4ci1au4rg7" path="res://Resources/Themes/main_theme.tres" id="3_ev3b6"]
 [ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="4_4cwpn"]
 [ext_resource type="PackedScene" uid="uid://cwcdjjpkkcd3e" path="res://UI/Scenes/settings.tscn" id="5_y8e7h"]
@@ -17,9 +17,9 @@
 script = ExtResource("1_tk8dj")
 
 [node name="TitleScreen" type="Sprite2D" parent="."]
-position = Vector2(745, 363.5)
-scale = Vector2(0.989583, 0.731445)
-texture = ExtResource("2_tk8dj")
+position = Vector2(714.5, 363.5)
+scale = Vector2(0.94987, 0.731445)
+texture = ExtResource("2_1ft4g")
 
 [node name="CenterContainer" type="CenterContainer" parent="TitleScreen"]
 anchors_preset = 7
@@ -29,7 +29,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -1254.0
 offset_top = -849.0
-offset_right = -487.0
+offset_right = -420.0
 offset_bottom = -570.0
 grow_horizontal = 2
 grow_vertical = 0
