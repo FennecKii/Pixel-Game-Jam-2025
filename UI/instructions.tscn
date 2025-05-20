@@ -176,7 +176,6 @@ texture_hover = SubResource("AtlasTexture_v8440")
 stretch_mode = 4
 
 [node name="Page2" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 453.0
 offset_bottom = 572.0
@@ -265,7 +264,7 @@ offset_bottom = 561.0
 theme_override_colors/font_color = Color(0.955263, 0.942587, 0.94314, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 20
-text = "Instructions Keybind \" I \""
+text = "Instructions Keybind: I"
 
 [node name="Exit_button" type="TextureButton" parent="."]
 layout_mode = 0
