@@ -150,7 +150,7 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
-			$".".visible = false
+			visible = false
 	elif button_index == Global.GhostNames.ONRYO:
 		if Global.current_ghost == Global.GhostNames.ONRYO:
 			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
@@ -158,7 +158,7 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
-			$".".visible = false
+			visible = false
 	elif button_index == Global.GhostNames.JIKININKI:
 		if Global.current_ghost == Global.GhostNames.JIKININKI:
 			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
@@ -166,7 +166,7 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
-			$".".visible = false
+			visible = false
 
 func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
 	if toggled_on:
