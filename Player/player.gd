@@ -159,11 +159,13 @@ func _handle_item_input() -> void:
 		elif ofuda_count == 2 and not error_message.visible:
 			error_message.visible = true
 			error_message.text = "No more Ofuda left!"
+			AudioManager.play_sfx_global(SoundResource.SoundType.NEGATIVE_FEEDBACK)
 			await get_tree().create_timer(2).timeout
 			error_message.visible = false
 		elif not can_place and not error_message.visible:
 			error_message.visible = true
 			error_message.text = "Too far!"
+			AudioManager.play_sfx_global(SoundResource.SoundType.NEGATIVE_FEEDBACK)
 			await get_tree().create_timer(1).timeout
 			error_message.visible = false
 
@@ -203,5 +205,6 @@ func _bell_on_cooldown() -> void:
 	if not error_message.visible:
 		error_message.visible = true
 		error_message.text = "Bell on cooldown!"
+		AudioManager.play_sfx_global(SoundResource.SoundType.NEGATIVE_FEEDBACK)
 		await get_tree().create_timer(1.5).timeout
 		error_message.visible = false

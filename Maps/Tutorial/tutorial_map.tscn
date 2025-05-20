@@ -172,7 +172,6 @@ outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("7_wd5kf")]
-visible = false
 
 [node name="SubViewportContainer" parent="HUD" instance=ExtResource("8_acv8r")]
 
