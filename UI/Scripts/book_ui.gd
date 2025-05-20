@@ -150,6 +150,7 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
+			$".".visible = false
 	elif button_index == Global.GhostNames.ONRYO:
 		if Global.current_ghost == Global.GhostNames.ONRYO:
 			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
@@ -157,6 +158,7 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
+			$".".visible = false
 	elif button_index == Global.GhostNames.JIKININKI:
 		if Global.current_ghost == Global.GhostNames.JIKININKI:
 			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
@@ -207,7 +209,7 @@ func _on_settings_pressed() -> void:
 func _on_evidence_page_button_pressed() -> void:
 	current_page = pages.find($PageContainer/GhostChecklistPage)
 	if current_page % 2 != 0:
-		current_page -= 1  # ensure even-numbered left page (optional)
+		current_page -= 1  
 	_update_page()
 
 func _on_main_menu_bookmark_pressed() -> void:

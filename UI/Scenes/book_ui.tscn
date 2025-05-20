@@ -1,10 +1,11 @@
-[gd_scene load_steps=204 format=4 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=207 format=4 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/Themes/book_theme.tres" id="1_bb8yk"]
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/Scripts/book_ui.gd" id="1_t2tou"]
 [ext_resource type="Texture2D" uid="uid://es1bymt1f21x" path="res://Resources/Assets/journal_ui.png" id="2_jumva"]
 [ext_resource type="Texture2D" uid="uid://cip674bptsba4" path="res://Resources/Assets/Book_Buttons_UI.png" id="3_pcw7d"]
 [ext_resource type="Texture2D" uid="uid://cyop4u5wnfgxy" path="res://Resources/Assets/picture.png" id="4_40o4i"]
+[ext_resource type="Texture2D" uid="uid://c1yp640s76mm" path="res://Resources/Assets/grey_button.png" id="4_cwx7j"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://Resources/Font/m3x6.ttf" id="5_7el6b"]
 [ext_resource type="Texture2D" uid="uid://b0cnocq6jbqw2" path="res://Resources/Assets/page_button_press.png" id="7_5o4lj"]
 [ext_resource type="Texture2D" uid="uid://d014yp8wdfvmh" path="res://Resources/Assets/bookmarks_pressed.png" id="8_36a7o"]
@@ -15,46 +16,48 @@ atlas = ExtResource("2_jumva")
 region = Rect2(384, 142, 102, 108)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpgap"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.8174, 70.041, 48.5292, 19.1883)
+atlas = ExtResource("4_cwx7j")
+region = Rect2(8.43599, 5.92465, 48.1936, 19.3468)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tef4s"]
 texture = SubResource("AtlasTexture_jpgap")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwr5m"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.9189, 70.3456, 48.5292, 19.0868)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdere"]
+atlas = ExtResource("4_cwx7j")
+region = Rect2(8.42398, 6.54143, 48.263, 19.4161)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exce3"]
-texture = SubResource("AtlasTexture_vwr5m")
+texture = SubResource("AtlasTexture_sdere")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6rro"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.9251, 102.421, 48.2246, 19.2899)
+atlas = ExtResource("4_cwx7j")
+region = Rect2(8.0248, 38.39, 48.5403, 19.1388)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74nqc"]
 texture = SubResource("AtlasTexture_l6rro")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q07f"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp6si"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.8174, 103.014, 48.7323, 18.0715)
+atlas = ExtResource("4_cwx7j")
+region = Rect2(8.01073, 5.56473, 48.0549, 19.4508)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liab8"]
 texture = SubResource("AtlasTexture_qp6si")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1nmi"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.8174, 70.0095, 48.6307, 19.1883)
+atlas = ExtResource("4_cwx7j")
+region = Rect2(7.96946, 5.36733, 48.1312, 19.6796)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cioyx"]
 texture = SubResource("AtlasTexture_x1nmi")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_610u5"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.7158, 102.461, 48.7323, 19.3914)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xld0"]
+atlas = ExtResource("4_cwx7j")
+region = Rect2(7.188, 38.64, 48.4363, 19.9085)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jl4fi"]
-texture = SubResource("AtlasTexture_610u5")
+texture = SubResource("AtlasTexture_0xld0")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7n05k"]
 atlas = ExtResource("3_pcw7d")
@@ -77,26 +80,28 @@ region = Rect2(71.6143, 101.679, 48.4277, 19.7975)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw7mj"]
 texture = SubResource("AtlasTexture_yrsa7")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5uxym"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_exce3"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.5671, 70.1482, 48.3767, 19.5939)
+atlas = ExtResource("4_cwx7j")
+region = Rect2(7.5535, 5.744, 48.8246, 19.7513)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jm4bt"]
 texture = SubResource("AtlasTexture_exce3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw7mj"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.2919, 70.476, 48.8246, 19.1053)
+atlas = ExtResource("4_cwx7j")
+region = Rect2(7.60547, 5.61372, 49.1228, 19.5545)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3h1n6"]
 texture = SubResource("AtlasTexture_vw7mj")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mi057"]
-atlas = ExtResource("3_pcw7d")
-region = Rect2(71.944, 102.404, 48.5119, 19.4588)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkpn6"]
+atlas = ExtResource("4_cwx7j")
+region = Rect2(7.59122, 38.2339, 48.5889, 19.9847)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6rro"]
-texture = SubResource("AtlasTexture_mi057")
+texture = SubResource("AtlasTexture_hkpn6")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygsa1"]
 atlas = ExtResource("3_pcw7d")
@@ -3044,6 +3049,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_constants/outline_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0q07f")
 theme_override_styles/hover = SubResource("StyleBoxTexture_liab8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cioyx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jl4fi")
@@ -3070,6 +3076,7 @@ offset_top = 507.0
 offset_right = 389.0
 offset_bottom = 562.0
 theme_override_constants/outline_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5uxym")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jm4bt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3h1n6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l6rro")
