@@ -166,6 +166,7 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
+			$".".visible = false
 
 func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
 	if toggled_on:

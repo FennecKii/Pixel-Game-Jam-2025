@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MusicResource" load_steps=3 format=3 uid="uid://bhauvqqytnt4d"]
 
-[ext_resource type="Script" uid="uid://ccfhwjmvugxlp" path="res://Globals/MusicResource.gd" id="1_jwqvv"]
+[ext_resource type="Script" path="res://Globals/MusicResource.gd" id="1_jwqvv"]
 [ext_resource type="AudioStream" uid="uid://xhntmercro7w" path="res://Audio/Music/DarkAmbient The Gate Intensity 1.wav" id="2_gbspx"]
 
 [resource]
