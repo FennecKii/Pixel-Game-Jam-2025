@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c2uyuxbpivnd2"]
+[gd_scene load_steps=20 format=4 uid="uid://c2uyuxbpivnd2"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_7py7c"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="2_7py7c"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="8_acv8r"]
 [ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/Scenes/book_ui.tscn" id="9_gkfty"]
 [ext_resource type="PackedScene" uid="uid://cw2li7p7afoxu" path="res://UI/Scenes/instructions.tscn" id="11_gkfty"]
+[ext_resource type="PackedScene" uid="uid://b3jn4msx66bqe" path="res://UI/Scenes/jump_scare_layer.tscn" id="12_15ds6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acv8r"]
 size = Vector2(576.5, 464)
@@ -172,7 +173,6 @@ outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("7_wd5kf")]
-visible = false
 
 [node name="SubViewportContainer" parent="HUD" instance=ExtResource("8_acv8r")]
 
@@ -190,17 +190,23 @@ libraries = {
 &"": SubResource("AnimationLibrary_q84xu")
 }
 
+[node name="JumpScareLayer" parent="HUD" instance=ExtResource("12_15ds6")]
+visible = false
+offset_right = 1283.0
+offset_bottom = 717.0
+
 [node name="Book UI" parent="." instance=ExtResource("9_gkfty")]
 visible = false
 
 [node name="SubViewportContainer" parent="Book UI" instance=ExtResource("8_acv8r")]
 
 [node name="FadeRect" type="ColorRect" parent="."]
+visible = false
 z_index = 10
 offset_left = -497.0
 offset_top = -535.0
 offset_right = 1640.0
-offset_bottom = 1176.0
+offset_bottom = 1555.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 

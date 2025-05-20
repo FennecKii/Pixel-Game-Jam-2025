@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3jn4msx66bqe"]
+
+[ext_resource type="Texture2D" uid="uid://cqsussfgspmrd" path="res://Resources/Assets/lady.png" id="2_0vmwo"]
+[ext_resource type="Texture2D" uid="uid://dvekffx7gelwp" path="res://Resources/Assets/blueguy.png" id="2_6qegi"]
+[ext_resource type="Texture2D" uid="uid://dyj2fblbujed6" path="res://Resources/Assets/zombie.png" id="3_gw5k7"]
+
+[sub_resource type="Animation" id="Animation_ln637"]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.166667, 0.266667, 0.366667, 0.466667, 0.566667, 0.7, 0.8, 0.866667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 0, 0, 0), Color(0.345098, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hixik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0vmwo"]
+_data = {
+&"RESET": SubResource("Animation_hixik"),
+&"flash": SubResource("Animation_ln637")
+}
+
+[sub_resource type="Animation" id="Animation_6qegi"]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gw5k7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1p54d"]
+_data = {
+&"RESET": SubResource("Animation_gw5k7"),
+&"flash": SubResource("Animation_6qegi")
+}
+
+[node name="JumpScareLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Flash" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -29.0
+offset_right = 1303.0
+offset_bottom = 753.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Flash"]
+libraries = {
+&"": SubResource("AnimationLibrary_0vmwo")
+}
+
+[node name="LadyScare" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -20.0
+offset_top = -5.0
+offset_right = 1412.0
+offset_bottom = 876.0
+texture = ExtResource("2_0vmwo")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LadyScare"]
+libraries = {
+&"": SubResource("AnimationLibrary_1p54d")
+}
+
+[node name="BlueScare" type="TextureRect" parent="."]
+visible = false
+offset_left = -6.0
+offset_top = -41.0
+offset_right = 1282.0
+offset_bottom = 818.0
+texture = ExtResource("2_6qegi")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlueScare"]
+libraries = {
+&"": SubResource("AnimationLibrary_1p54d")
+}
+
+[node name="ZombieScare" type="TextureRect" parent="."]
+visible = false
+offset_left = -6.0
+offset_top = -13.0
+offset_right = 1285.0
+offset_bottom = 742.0
+texture = ExtResource("3_gw5k7")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ZombieScare"]
+libraries = {
+&"": SubResource("AnimationLibrary_1p54d")
+}
