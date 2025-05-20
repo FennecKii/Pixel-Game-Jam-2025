@@ -13,7 +13,7 @@ extends Control
 
 @onready var left_button = $LeftPageButton
 @onready var right_button = $RightPageButton
-@onready var evidence_page_button = $EvidencePageButton
+@onready var settings: Control = %Settings
 
 @onready var option_buttons := [
 	$PageContainer/AnswerPage/AnswerButtons/OptionA,
@@ -201,6 +201,8 @@ func _on_main_menu_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
+	settings.visible = true
+	SignalBus.settings_entered.emit()
 
 func _on_evidence_page_button_pressed() -> void:
 	current_page = pages.find($PageContainer/GhostChecklistPage)
