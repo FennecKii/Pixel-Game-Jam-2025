@@ -201,7 +201,6 @@ visible = false
 [node name="SubViewportContainer" parent="Book UI" instance=ExtResource("8_acv8r")]
 
 [node name="FadeRect" type="ColorRect" parent="."]
-visible = false
 z_index = 10
 offset_left = -497.0
 offset_top = -535.0
