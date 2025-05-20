@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bs87s8ufsum54" path="res://Items/Bell/bell.tscn" id="8_00tjw"]
 [ext_resource type="PackedScene" uid="uid://c50xxvlfo42jg" path="res://Items/Ofuda/ofuda.tscn" id="9_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://bafotd4fbkgww" path="res://Items/Ofuda/Ofuda (16x16).png" id="10_apopc"]
-[ext_resource type="PackedScene" path="res://Globals/Components/ghost_detection_component.tscn" id="11_5htga"]
+[ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="11_5htga"]
 [ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/Themes/book_theme.tres" id="12_p5o4e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
