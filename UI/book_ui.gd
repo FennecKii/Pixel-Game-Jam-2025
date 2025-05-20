@@ -188,3 +188,10 @@ func _on_mirror_appears_toggled(toggled_on: bool) -> void:
 
 func _on_mirror_cracks_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed() # Replace with function body.
+
+func _on_main_menu_pressed() -> void:
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+
+func _on_settings_pressed() -> void:
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)

@@ -3416,3 +3416,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_yrsa7")
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/OfudaGlows" to="BookUI" method="_on_ofuda_glows_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/MirrorAppears" to="BookUI" method="_on_mirror_appears_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/MirrorCracks" to="BookUI" method="_on_mirror_cracks_toggled"]
+[connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/Settings" to="BookUI" method="_on_settings_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/MainMenu" to="BookUI" method="_on_main_menu_pressed"]
