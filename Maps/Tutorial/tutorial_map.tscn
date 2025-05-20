@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c2uyuxbpivnd2"]
+[gd_scene load_steps=19 format=4 uid="uid://c2uyuxbpivnd2"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_7py7c"]
 [ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="2_7py7c"]
@@ -15,6 +15,78 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acv8r"]
 size = Vector2(576.5, 464)
 
+[sub_resource type="Animation" id="Animation_olasf"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ojnfh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q84xu"]
+_data = {
+&"RESET": SubResource("Animation_ojnfh"),
+&"fade_in": SubResource("Animation_olasf")
+}
+
+[sub_resource type="Animation" id="Animation_gkfty"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_15ds6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_olasf"]
+_data = {
+&"RESET": SubResource("Animation_15ds6"),
+&"fade_in": SubResource("Animation_gkfty")
+}
+
 [node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "book_ui")]
 script = ExtResource("1_7py7c")
 is_tutorial = true
@@ -26,6 +98,15 @@ metadata/_custom_type_script = "uid://ddkb5fdtjqh12"
 [node name="SpawnerComponent" parent="." node_paths=PackedStringArray("world_objects") instance=ExtResource("6_7py7c")]
 world_objects = NodePath("../World Objects")
 
+[node name="Spawn Regions" type="Node2D" parent="."]
+visible = false
+
+[node name="SpawnerRect2D" type="Node2D" parent="Spawn Regions"]
+position = Vector2(389, 210)
+scale = Vector2(3.565, 3.565)
+script = ExtResource("3_7b3m2")
+metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
+
 [node name="Dirt" parent="." instance=ExtResource("2_7py7c")]
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAIAAAAEAAAAAAAAAAMAAAAFAAAAAAAAAAQAAAADAAAAAAAAAAUAAAAFAAAAAAAAAAYAAAAEAAAAAAAAAAcAAAAFAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAABAAQAAAAFAAAAAAABAAUAAAADAAAAAAABAAYAAAAFAAAAAAABAAcAAAAEAAAAAAACAAAAAAADAAAAAAACAAEAAAAFAAAAAAACAAIAAAAFAAAAAAACAAMAAAAFAAAAAAACAAQAAAADAAAAAAACAAUAAAAEAAAAAAACAAYAAAADAAAAAAACAAcAAAAFAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAAFAAAAAAADAAMAAAADAAAAAAADAAQAAAAFAAAAAAADAAUAAAAEAAAAAAADAAYAAAAFAAAAAAADAAcAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAEAAAAFAAAAAAAEAAIAAAAFAAAAAAAEAAMAAAADAAAAAAAEAAQAAAAFAAAAAAAEAAUAAAAEAAAAAAAEAAYAAAADAAAAAAAEAAcAAAAFAAAAAAAFAAAAAAAEAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAADAAAAAAAFAAUAAAAEAAAAAAAFAAYAAAAFAAAAAAAFAAcAAAAEAAAAAAAGAAAAAAAFAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAGAAQAAAAEAAAAAAAGAAUAAAAFAAAAAAAGAAYAAAAEAAAAAAAGAAcAAAADAAAAAAAHAAAAAAAEAAAAAAAHAAEAAAAEAAAAAAAHAAIAAAADAAAAAAAHAAMAAAADAAAAAAAHAAQAAAADAAAAAAAHAAUAAAADAAAAAAAHAAYAAAAFAAAAAAAHAAcAAAADAAAAAAAIAAAAAAAFAAAAAAAIAAEAAAAFAAAAAAAIAAIAAAAFAAAAAAAIAAMAAAADAAAAAAAIAAQAAAAEAAAAAAAIAAUAAAAEAAAAAAAIAAYAAAAEAAAAAAAIAAcAAAAFAAAAAAAJAAAAAAADAAAAAAAJAAEAAAADAAAAAAAJAAIAAAAFAAAAAAAJAAMAAAAEAAAAAAAJAAQAAAAFAAAAAAAJAAUAAAADAAAAAAAJAAYAAAADAAAAAAAJAAcAAAAFAAAAAAAKAAAAAAAFAAAAAAAKAAEAAAAEAAAAAAAKAAIAAAADAAAAAAAKAAMAAAAEAAAAAAAKAAQAAAAEAAAAAAAKAAUAAAAFAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAALAAAAAAADAAAAAAALAAEAAAAFAAAAAAALAAIAAAAFAAAAAAALAAMAAAAFAAAAAAALAAQAAAAEAAAAAAALAAUAAAAEAAAAAAALAAYAAAADAAAAAAALAAcAAAAEAAAAAAAMAAAAAAAFAAAAAAAMAAEAAAAFAAAAAAAMAAIAAAAEAAAAAAAMAAMAAAADAAAAAAAMAAQAAAAEAAAAAAAMAAUAAAAFAAAAAAAMAAYAAAAEAAAAAAAMAAcAAAAFAAAAAAANAAEAAAAEAAAAAAANAAIAAAAFAAAAAAANAAMAAAAFAAAAAAANAAQAAAAEAAAAAAANAAUAAAADAAAAAAANAAYAAAAFAAAAAAACAAgAAAADAAAAAAADAAgAAAADAAAAAAAEAAgAAAADAAAAAAAFAAgAAAAFAAAAAAAGAAgAAAADAAAAAAAHAAgAAAAFAAAAAAAIAAgAAAADAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAFAAAAAAD+/wIAAAAEAAAAAAD+/wMAAAAFAAAAAAD+/wQAAAAFAAAAAAD+/wUAAAAEAAAAAAD//wIAAAADAAAAAAD//wMAAAADAAAAAAD//wQAAAADAAAAAAD//wUAAAAEAAAAAAD//wYAAAAEAAAAAAADAP//AAADAAAAAAAEAP//AAADAAAAAAAFAP//AAADAAAAAAAGAP//AAAEAAAAAAAHAP//AAAEAAAAAAAIAP//AAAFAAAAAAAJAP//AAAFAAAAAAACAP//AAAFAAAAAAD//wEAAAADAAAAAAAKAP//AAAEAAAAAAADAAkAAAAFAAAAAAAEAAkAAAADAAAAAAAFAAkAAAADAAAAAAAGAAkAAAADAAAAAAAHAAkAAAADAAAAAAAIAAkAAAADAAAAAAAJAAkAAAADAAAAAAADAP7/AAADAAAAAAAEAP7/AAADAAAAAAAFAP7/AAADAAAAAAAGAP7/AAADAAAAAAAHAP7/AAADAAAAAAAIAP7/AAADAAAAAAAJAP7/AAADAAAAAAALAP//AAADAAAAAAAKAP7/AAADAAAAAAABAAgAAAADAAAAAAD+/wYAAAAFAAAAAAD//wcAAAAEAAAAAAD+/wcAAAADAAAAAAD+/wgAAAADAAAAAAD+/wkAAAADAAAAAAD//wgAAAADAAAAAAD//wkAAAAEAAAAAAAAAAgAAAAFAAAAAAAAAAkAAAADAAAAAAABAAkAAAAEAAAAAAABAAoAAAAFAAAAAAACAAkAAAAFAAAAAAACAAoAAAAEAAAAAAADAAoAAAAFAAAAAAAFAAoAAAAEAAAAAAAFAAsAAAAFAAAAAAAGAAoAAAADAAAAAAAGAAsAAAAFAAAAAAAHAAoAAAAEAAAAAAAHAAsAAAADAAAAAAAIAAoAAAAEAAAAAAAIAAsAAAADAAAAAAAEAAoAAAAEAAAAAAAEAAsAAAADAAAAAAAJAAoAAAAFAAAAAAAKAAkAAAADAAAAAAAKAAoAAAAFAAAAAAALAAgAAAADAAAAAAALAAkAAAAFAAAAAAALAAoAAAADAAAAAAAMAAgAAAAFAAAAAAAMAAkAAAAEAAAAAAANAAcAAAADAAAAAAANAAgAAAAFAAAAAAANAAkAAAADAAAAAAA=")
@@ -36,7 +117,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAABAAQAAAADAAIAAAABAAQAAAADAAMAAAABAAQ
 
 [node name="Floor" parent="." instance=ExtResource("2_7py7c")]
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAADAAIAAAAAAAAAAAADAAMAAAABAAAAAAADAAQAAAAAAAAAAAADAAUAAAACAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAACAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAAAAAAFAAUAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAACAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAABAAAAAAAHAAUAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAAAAQABwAEAAcAAAALAAMABwAEAAcAAAAKAAUABwAEAAcAAAAGAAAABwAFAAcAAAAJAP//BwAEAAcAAAACAAkABwAFAAcAAAD+/wcABwAEAAcAAAD//wgABwAEAAcAAAAMAAgABwADAAcAAAAEAP7/BwAFAAcAAAAIAP7/BwAFAAcAAAA=")
+tile_map_data = PackedByteArray("AAADAAIAAAAAAAAAAAADAAMAAAABAAAAAAADAAQAAAAAAAAAAAADAAUAAAACAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAACAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAAAAAAFAAUAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAACAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAABAAAAAAAHAAUAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAAAAQABwAEAAcAAAALAAMABwAEAAcAAAAKAAUABwAEAAcAAAAGAAAABwAFAAcAAAAJAP//BwAEAAcAAAACAAkABwAFAAcAAAD+/wcABwAEAAcAAAD//wgABwAEAAcAAAAMAAgABwADAAcAAAAEAP7/BwAFAAcAAAAIAP7/BwAFAAcAAAAGAAYAAAAAAAAAAAA=")
 
 [node name="World Objects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -81,7 +162,6 @@ position = Vector2(575.75, 424)
 shape = SubResource("RectangleShape2D_acv8r")
 
 [node name="World Boundaries" type="Node2D" parent="."]
-visible = false
 
 [node name="SpawnerRect2D" type="Node2D" parent="World Boundaries"]
 position = Vector2(388, 211)
@@ -91,20 +171,13 @@ region_type = 1
 outline_color = Color(0.678431, 0.623529, 0.913725, 0.321569)
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
-[node name="Spawn Regions" type="Node2D" parent="."]
-visible = false
-
-[node name="SpawnerRect2D" type="Node2D" parent="Spawn Regions"]
-position = Vector2(389, 210)
-scale = Vector2(3.565, 3.565)
-script = ExtResource("3_7b3m2")
-metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
-
 [node name="HUD" parent="." instance=ExtResource("7_wd5kf")]
+visible = false
 
 [node name="SubViewportContainer" parent="HUD" instance=ExtResource("8_acv8r")]
 
 [node name="Instructions" parent="HUD" instance=ExtResource("11_gkfty")]
+visible = false
 z_index = 5
 offset_left = 367.0
 offset_top = 20.0
@@ -112,9 +185,28 @@ offset_right = 421.0
 offset_bottom = 495.0
 scale = Vector2(1.15, 1.15)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Instructions"]
+libraries = {
+&"": SubResource("AnimationLibrary_q84xu")
+}
+
 [node name="Book UI" parent="." instance=ExtResource("9_gkfty")]
 visible = false
 
 [node name="SubViewportContainer" parent="Book UI" instance=ExtResource("8_acv8r")]
+
+[node name="FadeRect" type="ColorRect" parent="."]
+z_index = 10
+offset_left = -497.0
+offset_top = -535.0
+offset_right = 1640.0
+offset_bottom = 1176.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_olasf")
+}
 
 [editable path="Roof/Roof"]
