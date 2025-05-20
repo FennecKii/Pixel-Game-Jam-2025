@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var settings: Control = %Settings
+
 var ambient_audio_played: bool = false
 
 func _ready() -> void:
@@ -24,6 +26,8 @@ func _on_pressed_quit():
 
 func _on_settings_pressed() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)
+	settings.visible = true
+	SignalBus.settings_entered.emit()
 
 func _on_button_mouse_entered() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_HOVER)
