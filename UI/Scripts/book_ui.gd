@@ -13,6 +13,7 @@ extends Control
 
 @onready var left_button = $LeftPageButton
 @onready var right_button = $RightPageButton
+@onready var evidence_page_button = $EvidencePageButton
 
 @onready var option_buttons := [
 	$PageContainer/AnswerPage/AnswerButtons/OptionA,
@@ -95,7 +96,6 @@ func _update_page() -> void:
 	left_button.visible = current_page != 0
 	right_button.visible = current_page + 2 < pages.size()
 
-
 func _on_option_toggled(button_pressed: bool, toggled_button: Button) -> void:
 	if button_pressed:
 		AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
@@ -109,8 +109,8 @@ func _on_lock_in_pressed() -> void:
 			AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
 			_send_lockin_signal(b_index)
 			return
-	print("Please select a ghost first.")
-
+	AudioManager.play_sfx_global(SoundResource.SoundType.NEGATIVE_FEEDBACK)
+	
 func _on_behavior_changed() -> void:
 	var compatible := true
 
@@ -133,7 +133,6 @@ func _on_behavior_changed() -> void:
 
 		var label = ghost_labels[ghost_name]
 		label.modulate = Color(1, 1, 1, 1) if compatible else Color(0.5, 0.5, 0.5, 1)
-		print("Ghost", ghost_name, "is", "visible" if compatible else "greyed out")
 		
 func behavior_matches(ghost_value, expected_value: String) -> bool:
 	if typeof(ghost_value) == TYPE_STRING:
@@ -202,3 +201,22 @@ func _on_main_menu_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
+
+func _on_evidence_page_button_pressed() -> void:
+	current_page = pages.find($PageContainer/GhostChecklistPage)
+	if current_page % 2 != 0:
+		current_page -= 1  # ensure even-numbered left page (optional)
+	_update_page()
+
+func _on_main_menu_bookmark_pressed() -> void:
+	if current_page != 0:
+		current_page = 0
+		_update_page()
+
+func _on_story_1_bookmark_pressed() -> void:
+	current_page = 2
+	_update_page()
+
+func _on_story_2_bookmark_pressed() -> void:
+	current_page = 4
+	_update_page()

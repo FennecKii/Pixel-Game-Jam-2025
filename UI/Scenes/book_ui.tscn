@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=4 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=191 format=4 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/Themes/book_theme.tres" id="1_bb8yk"]
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/Scripts/book_ui.gd" id="1_t2tou"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyop4u5wnfgxy" path="res://Resources/Assets/picture.png" id="4_40o4i"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://Resources/Font/m3x6.ttf" id="5_7el6b"]
 [ext_resource type="Texture2D" uid="uid://b0cnocq6jbqw2" path="res://Resources/Assets/page_button_press.png" id="7_5o4lj"]
+[ext_resource type="Texture2D" uid="uid://d014yp8wdfvmh" path="res://Resources/Assets/bookmarks_pressed.png" id="8_36a7o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw7d"]
 atlas = ExtResource("2_jumva")
@@ -96,9 +97,39 @@ region = Rect2(71.944, 102.404, 48.5119, 19.4588)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6rro"]
 texture = SubResource("AtlasTexture_mi057")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygsa1"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(103.286, 0.119358, 16.8313, 31.7775)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b451w"]
+texture = SubResource("AtlasTexture_ygsa1")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_40o4i"]
 atlas = ExtResource("2_jumva")
 region = Rect2(290, 143, 94, 106)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15dfh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gt0h"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(7.7676, 31.9336, 16.9842, 16.0222)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4o081"]
+texture = SubResource("AtlasTexture_5gt0h")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupbw"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(7.76562, 32.0554, 16.4167, 16.4167)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygsa1"]
+texture = SubResource("AtlasTexture_kupbw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b451w"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.9717, 31.8985, 16.1933, 16.9751)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vof13"]
+texture = SubResource("AtlasTexture_b451w")
 
 [sub_resource type="Image" id="Image_7el6b"]
 data = {
@@ -2664,6 +2695,38 @@ CheckBox/icons/unchecked_disabled = SubResource("ImageTexture_610u5")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veooj"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36a7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75es2"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(40.1226, 32.0457, 16.1518, 16.0595)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwx7j"]
+texture = SubResource("AtlasTexture_75es2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15dfh"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(39.6611, 31.8611, 16.3364, 16.0595)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2uky"]
+texture = SubResource("AtlasTexture_15dfh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s70w"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(103.904, 31.9511, 16.0595, 16.2441)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wnlq"]
+texture = SubResource("AtlasTexture_1s70w")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwx7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdi4o"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.808, -0.0207586, 16.041, 16.8532)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gt0h"]
+texture = SubResource("AtlasTexture_kdi4o")
+
 [sub_resource type="Theme" id="Theme_7el6b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb8yk"]
@@ -2724,6 +2787,13 @@ region = Rect2(7.75986, 102.528, 48.0549, 19.0694)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2s0vc"]
 texture = SubResource("AtlasTexture_58swk")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_36a7o"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(103.931, 31.9016, 16.2441, 31.8421)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75es2"]
+texture = SubResource("AtlasTexture_36a7o")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxpr6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -2741,6 +2811,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="AtlasTexture" id="AtlasTexture_veooj"]
 atlas = ExtResource("2_jumva")
 region = Rect2(384, 15, 103, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o081"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(71.8825, 0.102977, 16.5294, 31.8841)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kupbw"]
+texture = SubResource("AtlasTexture_4o081")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17wqr"]
 atlas = ExtResource("4_40o4i")
@@ -2763,6 +2840,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tef4s"]
 atlas = ExtResource("2_jumva")
 region = Rect2(128, 143, 85, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vof13"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(72.0815, 31.9636, 16.2183, 31.8062)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_711ar"]
+texture = SubResource("AtlasTexture_vof13")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_is55y"]
 atlas = ExtResource("4_40o4i")
@@ -2813,6 +2897,29 @@ region = Rect2(44.5965, 13.6621, 15.2555, 18.2304)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrsa7"]
 texture = SubResource("AtlasTexture_2fn5x")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75es2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwx7j"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(39.8794, -0.141351, 16.157, 16.0877)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15dfh"]
+texture = SubResource("AtlasTexture_cwx7j")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2uky"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(39.8951, 0.0885334, 16.4371, 16.3616)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1s70w"]
+texture = SubResource("AtlasTexture_e2uky")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wnlq"]
+atlas = ExtResource("3_pcw7d")
+region = Rect2(103.911, -0.0180769, 16.0595, 16.4287)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdi4o"]
+texture = SubResource("AtlasTexture_3wnlq")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -2931,6 +3038,14 @@ offset_left = -78.0
 offset_right = 549.0
 offset_bottom = 708.0
 
+[node name="EvidencePage" type="Label" parent="BookUI/PageContainer/GhostChecklistPage"]
+layout_mode = 2
+offset_left = 1038.4
+offset_top = -5.80215
+offset_right = 1087.4
+offset_bottom = 105.198
+theme_override_styles/normal = SubResource("StyleBoxTexture_b451w")
+
 [node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/GhostChecklistPage"]
 z_index = -1
 layout_mode = 0
@@ -2939,6 +3054,16 @@ offset_top = 10.0
 offset_right = 616.0
 offset_bottom = 695.0
 texture = SubResource("AtlasTexture_40o4i")
+
+[node name="Story2Bookmark" type="Button" parent="BookUI/PageContainer/GhostChecklistPage"]
+offset_left = 224.0
+offset_top = -4.0
+offset_right = 277.0
+offset_bottom = 51.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15dfh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4o081")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ygsa1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vof13")
 
 [node name="CheckboxContainer" type="VBoxContainer" parent="BookUI/PageContainer/GhostChecklistPage"]
 layout_mode = 0
@@ -3127,6 +3252,24 @@ points = PackedVector2Array(-152, 48, 280, 48)
 width = 2.0
 default_color = Color(0, 0, 0, 1)
 
+[node name="MainMenuBookmark" type="Button" parent="BookUI/PageContainer/GhostChecklistPage"]
+offset_left = 478.21
+offset_top = -5.77368
+offset_right = 529.21
+offset_bottom = 46.2263
+theme_override_styles/focus = SubResource("StyleBoxEmpty_36a7o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwx7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e2uky")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wnlq")
+
+[node name="Story1Bookmark" type="Button" parent="BookUI/PageContainer/GhostChecklistPage"]
+offset_left = 366.082
+offset_top = -1.64012
+offset_right = 414.082
+offset_bottom = 49.3599
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cwx7j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5gt0h")
+
 [node name="Page1Blank" type="Panel" parent="BookUI/PageContainer"]
 visible = false
 layout_mode = 0
@@ -3156,10 +3299,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_17wqr")
 
 [node name="TextureRect" type="TextureRect" parent="BookUI/PageContainer/Page2_Menu"]
 layout_mode = 0
-offset_left = -122.0
-offset_top = -13.0
-offset_right = 429.0
-offset_bottom = 656.0
+offset_left = -125.252
+offset_top = -11.9616
+offset_right = 425.748
+offset_bottom = 657.038
 texture = SubResource("AtlasTexture_w75ed")
 
 [node name="Settings" type="Button" parent="BookUI/PageContainer/Page2_Menu"]
@@ -3186,6 +3329,34 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_onugc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_toeav")
 theme_override_styles/normal = SubResource("StyleBoxTexture_2s0vc")
 text = "Main Menu"
+
+[node name="MenuPage" type="Label" parent="BookUI/PageContainer/Page2_Menu"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -42.0
+offset_right = 14.0
+offset_bottom = 54.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_75es2")
+
+[node name="Story1Bookmark" type="Button" parent="BookUI/PageContainer/Page2_Menu"]
+layout_mode = 0
+offset_left = 64.3138
+offset_top = -42.0
+offset_right = 112.314
+offset_bottom = 9.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cwx7j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5gt0h")
+
+[node name="Story2Bookmark" type="Button" parent="BookUI/PageContainer/Page2_Menu"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = -44.0
+offset_right = 236.0
+offset_bottom = 4.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15dfh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4o081")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ygsa1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vof13")
 
 [node name="Page3_Story" type="Panel" parent="BookUI/PageContainer"]
 visible = false
@@ -3237,6 +3408,16 @@ theme_override_font_sizes/normal_font_size = 35
 text = "The Yuki Onna is a ghostly spirit of snow and ice, often appearing as a pale woman in white. Haunting frozen paths, she lures victims with eerie calm before draining their life with a breath as cold as death. Her presence brings sudden blizzards and unnatural silence.
 "
 
+[node name="MainMenuBookmark" type="Button" parent="BookUI/PageContainer/Page3_Story"]
+offset_left = 423.013
+offset_top = -26.7059
+offset_right = 474.013
+offset_bottom = 25.2941
+theme_override_styles/focus = SubResource("StyleBoxEmpty_36a7o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwx7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e2uky")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wnlq")
+
 [node name="Page4_Story" type="Panel" parent="BookUI/PageContainer"]
 visible = false
 layout_mode = 0
@@ -3253,6 +3434,14 @@ offset_top = -13.0
 offset_right = 438.0
 offset_bottom = 662.0
 texture = SubResource("AtlasTexture_veooj")
+
+[node name="StoryPage" type="Label" parent="BookUI/PageContainer/Page4_Story"]
+layout_mode = 0
+offset_left = 78.2018
+offset_top = -28.8865
+offset_right = 124.202
+offset_bottom = 88.1135
+theme_override_styles/normal = SubResource("StyleBoxTexture_kupbw")
 
 [node name="TextureRect2" type="TextureRect" parent="BookUI/PageContainer/Page4_Story"]
 layout_mode = 0
@@ -3286,6 +3475,16 @@ theme_override_fonts/normal_font = ExtResource("5_7el6b")
 theme_override_font_sizes/normal_font_size = 35
 text = "The Onryo is a vengeful spirit fueled by intense rage, often appearing as a woman but not always. Wronged in life, it returns from the grave to torment the living, spreading death and misfortune. Its presence is marked by a chilling aura and an overwhelming sense of dread.
 "
+
+[node name="Story2Bookmark" type="Button" parent="BookUI/PageContainer/Page4_Story"]
+offset_left = 193.518
+offset_top = -31.2276
+offset_right = 246.518
+offset_bottom = 16.7724
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15dfh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4o081")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ygsa1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vof13")
 
 [node name="Page5_Story" type="Panel" parent="BookUI/PageContainer"]
 visible = false
@@ -3337,6 +3536,24 @@ theme_override_font_sizes/normal_font_size = 35
 text = "The Jikininki is a cursed spirit doomed to feed on the dead. Once human, it now roams graveyards and battlefields, devouring corpses in secret. Though often monstrous in form, it can appear human to hide its shameful hunger.
 "
 
+[node name="MainMenuBookmark" type="Button" parent="BookUI/PageContainer/Page5_Story"]
+offset_left = 406.881
+offset_top = -21.0658
+offset_right = 457.881
+offset_bottom = 30.9342
+theme_override_styles/focus = SubResource("StyleBoxEmpty_36a7o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwx7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e2uky")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wnlq")
+
+[node name="Story1Bookmark" type="Button" parent="BookUI/PageContainer/Page5_Story"]
+offset_left = 294.055
+offset_top = -18.405
+offset_right = 342.055
+offset_bottom = 32.595
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cwx7j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5gt0h")
+
 [node name="Page6_Story" type="Panel" parent="BookUI/PageContainer"]
 visible = false
 layout_mode = 0
@@ -3353,6 +3570,14 @@ offset_top = -1.0
 offset_right = 430.0
 offset_bottom = 674.0
 texture = SubResource("AtlasTexture_tef4s")
+
+[node name="Story2Book" type="Label" parent="BookUI/PageContainer/Page6_Story"]
+layout_mode = 0
+offset_left = 190.29
+offset_top = -31.131
+offset_right = 243.29
+offset_bottom = 75.869
+theme_override_styles/normal = SubResource("StyleBoxTexture_711ar")
 
 [node name="TextureRect2" type="TextureRect" parent="BookUI/PageContainer/Page6_Story"]
 layout_mode = 0
@@ -3410,11 +3635,32 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7n05k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t7655")
 theme_override_styles/normal = SubResource("StyleBoxTexture_yrsa7")
 
+[node name="EvidencePageBookmark" type="Button" parent="BookUI"]
+layout_mode = 0
+offset_left = 1042.18
+offset_top = 0.197845
+offset_right = 1089.18
+offset_bottom = 48.1978
+theme_override_styles/focus = SubResource("StyleBoxEmpty_75es2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_15dfh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1s70w")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kdi4o")
+
+[connection signal="pressed" from="BookUI/PageContainer/GhostChecklistPage/Story2Bookmark" to="BookUI" method="_on_story_2_bookmark_pressed"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/BellSoundsMuted" to="BookUI" method="_on_bell_sounds_muted_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/BellSounds" to="BookUI" method="_on_bell_sounds_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/OfudaBurns" to="BookUI" method="_on_ofuda_burns_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/OfudaGlows" to="BookUI" method="_on_ofuda_glows_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/MirrorAppears" to="BookUI" method="_on_mirror_appears_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/MirrorCracks" to="BookUI" method="_on_mirror_cracks_toggled"]
+[connection signal="pressed" from="BookUI/PageContainer/GhostChecklistPage/MainMenuBookmark" to="BookUI" method="_on_main_menu_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/GhostChecklistPage/Story1Bookmark" to="BookUI" method="_on_story_1_bookmark_pressed"]
 [connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/Settings" to="BookUI" method="_on_settings_pressed"]
 [connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/MainMenu" to="BookUI" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/Story1Bookmark" to="BookUI" method="_on_story_1_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/Story2Bookmark" to="BookUI" method="_on_story_2_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page3_Story/MainMenuBookmark" to="BookUI" method="_on_main_menu_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page4_Story/Story2Bookmark" to="BookUI" method="_on_story_2_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page5_Story/MainMenuBookmark" to="BookUI" method="_on_main_menu_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page5_Story/Story1Bookmark" to="BookUI" method="_on_story_1_bookmark_pressed"]
+[connection signal="pressed" from="BookUI/EvidencePageBookmark" to="BookUI" method="_on_evidence_page_button_pressed"]
