@@ -23,31 +23,34 @@ extends Control
 
 var book_open := false
 
-@onready var bell_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/BellMuted
-@onready var ofuda_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/OfudaBurns
-@onready var mirror_cb := $PageContainer/GhostChecklistPage/BehaviourChecklist/MirrorShows
+@onready var bell_sounds_muted_cb := $PageContainer/GhostChecklistPage/CheckboxContainer/BellSoundsMuted
+@onready var bell_sounds_cb := $PageContainer/GhostChecklistPage/CheckboxContainer/BellSounds
+@onready var ofuda_burns_cb := $PageContainer/GhostChecklistPage/CheckboxContainer/OfudaBurns
+@onready var ofuda_glows_cb := $PageContainer/GhostChecklistPage/CheckboxContainer/OfudaGlows
+@onready var mirror_appears_cb := $PageContainer/GhostChecklistPage/CheckboxContainer/MirrorAppears
+@onready var mirror_crakcs_cb := $PageContainer/GhostChecklistPage/CheckboxContainer/MirrorCracks
 
 @onready var ghost_labels := {
-	"Yuki Onna": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost1,
-	"Onryo": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost2,
-	"Jikininki": $PageContainer/GhostChecklistPage/GhostDisplay/Ghost3
+	"Yuki Onna": $PageContainer/GhostChecklistPage/Ghost1,
+	"Onryo": $PageContainer/GhostChecklistPage/Ghost2,
+	"Jikininki": $PageContainer/GhostChecklistPage/Ghost3
 }
 
 const GHOST_BEHAVIORS = {
 	"Yuki Onna": {
 		"bell": "nothing",
-		"ofuda": "burns",
-		"mirror": "shows"
+		"ofuda": ["burns", "glows"],
+		"mirror": "appears"
 	},
 	"Onryo": {
 		"bell": "muted",
-		"ofuda": "nothing",
-		"mirror": "shows"
+		"ofuda": "glows",
+		"mirror": ["appears", "cracks"],
 	},
 	"Jikininki": {
-		"bell": "muted",
+		"bell": ["muted", "nothing"],
 		"ofuda": "burns",
-		"mirror": "nothing"
+		"mirror": "cracks"
 	}
 }
 
@@ -87,6 +90,11 @@ func _update_page() -> void:
 	
 	left_button.disabled = current_page == 0
 	right_button.disabled = current_page + 2 >= pages.size()
+	
+	# make page button invisible when on first or last page
+	left_button.visible = current_page != 0
+	right_button.visible = current_page + 2 < pages.size()
+
 
 func _on_option_toggled(button_pressed: bool, toggled_button: Button) -> void:
 	if button_pressed:
@@ -104,24 +112,36 @@ func _on_lock_in_pressed() -> void:
 	print("Please select a ghost first.")
 
 func _on_behavior_changed() -> void:
-	print("Bell Muted Toggled: ", bell_cb.button_pressed)
-	print("Ofuda Burns Toggled: ", ofuda_cb.button_pressed)
-	print("Mirror Shows Toggled: ", mirror_cb.button_pressed)
+	var compatible := true
 
 	for ghost_name in GHOST_BEHAVIORS:
 		var ghost = GHOST_BEHAVIORS[ghost_name]
-		var compatible := true
-		
-		if bell_cb.button_pressed and ghost["bell"] != "muted":
+		compatible = true
+
+		if bell_sounds_muted_cb.button_pressed and not behavior_matches(ghost["bell"], "muted"):
 			compatible = false
-		if ofuda_cb.button_pressed and ghost["ofuda"] != "burns":
+		if bell_sounds_cb.button_pressed and not behavior_matches(ghost["bell"], "nothing"):
 			compatible = false
-		if mirror_cb.button_pressed and ghost["mirror"] != "shows":
+		if ofuda_burns_cb.button_pressed and not behavior_matches(ghost["ofuda"], "burns"):
 			compatible = false
-		
+		if ofuda_glows_cb.button_pressed and not behavior_matches(ghost["ofuda"], "glows"):
+			compatible = false
+		if mirror_appears_cb.button_pressed and not behavior_matches(ghost["mirror"], "appears"):
+			compatible = false
+		if mirror_crakcs_cb.button_pressed and not behavior_matches(ghost["mirror"], "cracks"):
+			compatible = false
+
 		var label = ghost_labels[ghost_name]
 		label.modulate = Color(1, 1, 1, 1) if compatible else Color(0.5, 0.5, 0.5, 1)
 		print("Ghost", ghost_name, "is", "visible" if compatible else "greyed out")
+		
+func behavior_matches(ghost_value, expected_value: String) -> bool:
+	if typeof(ghost_value) == TYPE_STRING:
+		return ghost_value == expected_value
+	elif typeof(ghost_value) == TYPE_ARRAY:
+		return expected_value in ghost_value
+	return false
+
 
 func _send_lockin_signal(button_index: int) -> void:
 	if button_index == Global.GhostNames.YUKIONNA:
@@ -143,14 +163,25 @@ func _send_lockin_signal(button_index: int) -> void:
 		else:
 			SignalBus.ghost_alerted.emit()
 
-func _on_bell_muted_toggled(toggled_on: bool) -> void:
-	_on_behavior_changed()
-
 func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
-	_on_behavior_changed()
-
-func _on_mirror_shows_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed()
 
 func _on_toggle_button_pressed() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
+
+func _on_bell_sounds_muted_toggled(toggled_on: bool) -> void:
+	_on_behavior_changed() # Replace with function body.
+
+func _on_bell_sounds_toggled(toggled_on: bool) -> void:
+	_on_behavior_changed() # Replace with function body.
+
+func _on_ofuda_glows_toggled(toggled_on: bool) -> void:
+	_on_behavior_changed() # Replace with function body.
+
+
+func _on_mirror_appears_toggled(toggled_on: bool) -> void:
+	_on_behavior_changed() # Replace with function body.
+
+
+func _on_mirror_cracks_toggled(toggled_on: bool) -> void:
+	_on_behavior_changed() # Replace with function body.
