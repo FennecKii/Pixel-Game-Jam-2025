@@ -92,7 +92,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Disclaimer" parent="." instance=ExtResource("6_1ft4g")]
-visible = false
 
 [connection signal="mouse_entered" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]

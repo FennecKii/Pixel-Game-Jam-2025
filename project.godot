@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Pixel Game Jam 2025"
+config/name="Spirit Seeker"
 run/main_scene="uid://daqyk52il81xc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://gw81gq6qserl"
 
 [audio]
 
@@ -29,6 +29,7 @@ AudioManager="*res://Globals/audio_manager.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [global_group]
