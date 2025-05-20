@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MusicResource" load_steps=3 format=3 uid="uid://dhsjw8k3530xe"]
 
-[ext_resource type="Script" uid="uid://ccfhwjmvugxlp" path="res://Globals/MusicResource.gd" id="1_7fr6j"]
+[ext_resource type="Script" path="res://Globals/MusicResource.gd" id="1_7fr6j"]
 [ext_resource type="AudioStream" uid="uid://cy8ksjb4066bo" path="res://Audio/Music/DarkAmbient Unnatural Intensity 1.wav" id="2_6u2r4"]
 
 [resource]
