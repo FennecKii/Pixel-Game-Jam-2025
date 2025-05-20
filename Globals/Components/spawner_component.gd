@@ -32,3 +32,22 @@ func spawn_ghost():
 		world_objects.add_child(ghost_instance)
 	elif Global.world_node:
 		Global.world_node.add_child(ghost_instance)
+
+func spawn_mirror() -> void:
+	var spawn_region: SpawnerRect2D = spawn_regions.pick_random()
+	var mirror_instance = Global.mirror_scene.instantiate()
+	var rand_wall: int = randi_range(0, 2)
+	mirror_instance.mirror_type = rand_wall
+	mirror_instance.scale = Vector2(3, 3)
+	if rand_wall == 0:
+		mirror_instance.global_position = spawn_region.global_position + Vector2(spawn_region.rect_size.x/2, 20)
+	elif rand_wall == 1:
+		mirror_instance.global_position = spawn_region.global_position + Vector2(spawn_region.rect_size.x - 20, spawn_region.rect_size.y/2)
+	elif rand_wall == 2:
+		mirror_instance.global_position = spawn_region.global_position + Vector2(20, spawn_region.rect_size.y/2)
+	if Global.world_objects_node:
+		Global.world_objects_node.add_child(mirror_instance)
+	elif world_objects:
+		world_objects.add_child(mirror_instance)
+	elif Global.world_node:
+		Global.world_node.add_child(mirror_instance)

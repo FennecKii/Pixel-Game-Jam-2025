@@ -1,6 +1,7 @@
 class_name Map
 extends Node2D
 
+@export var is_tutorial: bool = false
 @export var spawner_component: SpawnerComponent
 @export var world_objects_node: Node2D
 @export var world_boundaries: Array[SpawnerRect2D]
@@ -37,6 +38,9 @@ func _ready() -> void:
 		Global.world_objects_node = world_objects_node
 		add_child(world_objects_node)
 	spawner_component.spawn_ghost()
+	
+	if not is_tutorial:
+		spawner_component.spawn_mirror()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_journal") and book_ui:

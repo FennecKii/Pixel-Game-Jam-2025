@@ -346,7 +346,7 @@ shape = SubResource("CircleShape2D_maca8")
 [node name="Mirror UI" type="CanvasLayer" parent="."]
 
 [node name="UI Animated Sprite" type="AnimatedSprite2D" parent="Mirror UI"]
-position = Vector2(1200, 620)
+position = Vector2(1056, 577)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ottcr")
 animation = &"idle"
@@ -359,7 +359,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="Mirror Ghost Silhouette" type="Sprite2D" parent="Mirror UI"]
-position = Vector2(1203, 617)
+position = Vector2(1059, 574)
 scale = Vector2(2, 2)
 texture = ExtResource("6_s2aci")
 hframes = 2
