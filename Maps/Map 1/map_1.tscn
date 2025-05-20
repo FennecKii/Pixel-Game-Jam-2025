@@ -78,7 +78,7 @@ world_objects = NodePath("../World Objects")
 
 [node name="GameTimerComponent" parent="." instance=ExtResource("3_ej0cx")]
 visible = false
-duration = 160.0
+duration = 180.0
 
 [node name="Grass" parent="." instance=ExtResource("1_gk4et")]
 z_index = -1
