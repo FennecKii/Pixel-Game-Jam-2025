@@ -4,6 +4,7 @@ var ambient_audio_played: bool = false
 var scene_iniatlized: bool = false
 
 func _ready() -> void:
+	$FadeRect/AnimationPlayer.play("fade_in")
 	AudioManager.play_background_track2(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
 	await get_tree().create_timer(1).timeout
 	AudioManager.play_sfx_global(randi_range(SoundResource.SoundType.AMBIENT_KNOCK_1, SoundResource.SoundType.AMBIENT_KNOCK_2))
