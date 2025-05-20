@@ -64,8 +64,8 @@ libraries = {
 }
 
 [node name="TextureRect" type="Sprite2D" parent="."]
-position = Vector2(641, 357)
-scale = Vector2(0.838542, 0.722656)
+position = Vector2(690, 357)
+scale = Vector2(0.902344, 0.722656)
 texture = ExtResource("2_qpj51")
 
 [node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
@@ -74,21 +74,21 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -972.0
-offset_top = -764.75
-offset_right = -564.0
-offset_bottom = -684.75
+offset_left = -1117.0
+offset_top = -810.0
+offset_right = -512.0
+offset_bottom = -685.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/CenterContainer"]
-custom_minimum_size = Vector2(300, 125)
+custom_minimum_size = Vector2(350, 125)
 layout_mode = 2
 
 [node name="Play Again" type="Button" parent="TextureRect/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(175, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("2_7c84e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oqmmh")
@@ -99,7 +99,7 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
 [node name="Main Menu" type="Button" parent="TextureRect/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(175, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("2_7c84e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mwi6r")
