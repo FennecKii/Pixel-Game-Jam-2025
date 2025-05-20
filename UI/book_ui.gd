@@ -13,6 +13,7 @@ extends Control
 
 @onready var left_button = $LeftPageButton
 @onready var right_button = $RightPageButton
+@onready var ghost_evidence_page_button = $EvidencePageButton
 
 @onready var option_buttons := [
 	$PageContainer/AnswerPage/AnswerButtons/OptionA,
@@ -94,6 +95,10 @@ func _update_page() -> void:
 	# make page button invisible when on first or last page
 	left_button.visible = current_page != 0
 	right_button.visible = current_page + 2 < pages.size()
+	if pages[current_page] == $PageContainer/GhostChecklistPage:
+		ghost_evidence_page_button.modulate = Color(1, 1, 1, 1)  # fully visible
+	else:
+		ghost_evidence_page_button.modulate = Color(1, 1, 1, 0.4)  # faded/partially transparent
 
 
 func _on_option_toggled(button_pressed: bool, toggled_button: Button) -> void:
@@ -109,7 +114,6 @@ func _on_lock_in_pressed() -> void:
 			AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
 			_send_lockin_signal(b_index)
 			return
-	print("Please select a ghost first.")
 
 func _on_behavior_changed() -> void:
 	var compatible := true
@@ -133,7 +137,6 @@ func _on_behavior_changed() -> void:
 
 		var label = ghost_labels[ghost_name]
 		label.modulate = Color(1, 1, 1, 1) if compatible else Color(0.5, 0.5, 0.5, 1)
-		print("Ghost", ghost_name, "is", "visible" if compatible else "greyed out")
 		
 func behavior_matches(ghost_value, expected_value: String) -> bool:
 	if typeof(ghost_value) == TYPE_STRING:
@@ -185,3 +188,10 @@ func _on_mirror_appears_toggled(toggled_on: bool) -> void:
 
 func _on_mirror_cracks_toggled(toggled_on: bool) -> void:
 	_on_behavior_changed() # Replace with function body.
+
+
+func _on_evidence_page_button_pressed() -> void:
+	current_page = pages.find($PageContainer/GhostChecklistPage)
+	if current_page % 2 != 0:
+		current_page -= 1  # ensure it opens on a left/right spread
+	_update_page()
