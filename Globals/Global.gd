@@ -31,7 +31,7 @@ var bell_equipped: bool = false
 var ofuda_equipped: bool = false
 var player_house_entered: bool = false
 var timer_alert_zone: bool = false
-
+var ghost_appearance: int
 var scene_tree: SceneTree
 var wincount: int = 0
 

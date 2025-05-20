@@ -68,9 +68,27 @@ func _process(_delta: float) -> void:
 
 func _on_player_dead() -> void:
 	player_dead = true
+	
+	$HUD/JumpScareLayer.visible = true
+	AudioManager.play_sfx_global(SoundResource.SoundType.AMBIENT_KNOCK_1)
+	$HUD/JumpScareLayer/Flash/AnimationPlayer.play("flash")
+	if Global.ghost_appearance == 0:
+		$HUD/JumpScareLayer/LadyScare.visible = true
+		$HUD/JumpScareLayer/LadyScare/AnimationPlayer.play("flash")
+	elif Global.ghost_appearance == 1:
+		$HUD/JumpScareLayer/BlueScare.visible = true
+		$HUD/JumpScareLayer/BlueScare/AnimationPlayer.play("flash")
+	else:
+		$HUD/JumpScareLayer/ZombieScare.visible = true
+		$HUD/JumpScareLayer/ZombieScare/AnimationPlayer.play("flash")
+		
+	
+	await get_tree().create_timer(2.0).timeout
+	
 	if not end_ui_audio_played:
 		end_ui_audio_played = true
 		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_END_UI)
+	
 	get_tree().change_scene_to_file("res://UI/Scenes/game_over.tscn")
 
 func _rand_ambient_audio() -> void:

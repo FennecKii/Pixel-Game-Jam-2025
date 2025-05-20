@@ -22,6 +22,7 @@ func spawn_ghost():
 	var ghost_instance = Global.ghost_scene.instantiate()
 	var position_variation: Vector2 = Vector2(randf_range(0, spawn_region.rect_size.x), randf_range(0, spawn_region.rect_size.y))
 	Global.current_ghost = ghost_type
+	Global.ghost_appearance = ghost_appearance
 	ghost_instance.global_position = spawn_region.global_position + position_variation
 	ghost_instance.ghost_type = ghost_type
 	ghost_instance.visible = false
