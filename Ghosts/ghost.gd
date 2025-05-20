@@ -22,9 +22,9 @@ var dead: bool = false
 var direction: Vector2
 var player_detected: bool = false
 var state_active: bool = false
-var state_weights: PackedFloat32Array = PackedFloat32Array([50, 50])
-var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([35, 25, 40])
-var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([30, 30, 40])
+var state_weights: PackedFloat32Array = PackedFloat32Array([55, 45])
+var undetectable_action_weights: PackedFloat32Array = PackedFloat32Array([30, 20, 50])
+var detectable_action_weights: PackedFloat32Array = PackedFloat32Array([38, 20, 42])
 var footstep_audio_played: bool = false
 var walk_audio_prob: float
 var play_walk_audio: bool = false
@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		if velocity:
 			_update_footstep_audio(true)
 		direction = (player_direction).normalized()
-		SPEED = 45000
+		SPEED = 50000
 		Global.ghost_detectable = true
 		collision_shape_2d.disabled = false
 		visible = true
@@ -101,13 +101,11 @@ func _update_state() -> void:
 		collision_shape_2d.disabled = false
 		var random_action_selection: int = rng.rand_weighted(detectable_action_weights)
 		if random_action_selection == GhostAction.DORMANT:
-			# Do dormant things (no velocity, sounds?)
-			if randf_range(0, 1) <= 0.3:
+			if randf_range(0, 1) <= 0.4:
 				AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_BREATH_1, SoundResource.SoundType.GHOST_CRY_2))
 			await _run_action_timer(rng.randf_range(1, 10))
 		elif random_action_selection == GhostAction.MOVE:
-			# Do moving things (move to a random position?)
-			if randf_range(0, 1) <= 0.6:
+			if randf_range(0, 1) <= 0.7:
 				AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_WOOSH_1, SoundResource.SoundType.GHOST_WOOSH_2))
 			walk_audio_prob = randf_range(0, 1)
 			if walk_audio_prob <= 0.1:
@@ -118,25 +116,22 @@ func _update_state() -> void:
 			play_walk_audio = false
 			if randf_range(0, 1) <= 0.6:
 				AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_WOOSH_1, SoundResource.SoundType.GHOST_WOOSH_2))
-			await _run_action_timer(rng.randf_range(1, 5))
+			await _run_action_timer(rng.randf_range(3, 7))
 		elif random_action_selection == GhostAction.TELEPORT:
-			# Do teleport things (change position to a spawn region)
 			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.GHOST_TELEPORT_KNOCK)
 			AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_LAUGH_1, SoundResource.SoundType.GHOST_LAUGH_2))
 			_rand_teleport_to_position()
-			await _run_action_timer()
+			await _run_action_timer(rng.randf_range(5, 8))
 	elif random_state_selection == GhostState.UNDETECTABLE:
 		if Global.ghost_detectable:
 			Global.ghost_detectable = false
 		collision_shape_2d.disabled = true
 		var random_action_selection: int = rng.rand_weighted(undetectable_action_weights)
 		if random_action_selection == GhostAction.DORMANT:
-			# Do dormant things (no velocity, sounds?)
 			if randf_range(0, 1) <= 0.3:
 				AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_BREATH_1, SoundResource.SoundType.GHOST_CRY_2))
 			await _run_action_timer(rng.randf_range(5, 10))
 		elif random_action_selection == GhostAction.MOVE:
-			# Do moving things (move to a random position?)
 			if randf_range(0, 1) <= 0.6:
 				AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_WOOSH_1, SoundResource.SoundType.GHOST_WOOSH_2))
 			walk_audio_prob = randf_range(0, 1)
@@ -150,7 +145,6 @@ func _update_state() -> void:
 				AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_WOOSH_1, SoundResource.SoundType.GHOST_WOOSH_2))
 			await _run_action_timer(rng.randf_range(1, 5))
 		elif random_action_selection == GhostAction.TELEPORT:
-			# Do teleport things (change position to a spawn region)
 			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.GHOST_TELEPORT_KNOCK)
 			AudioManager.play_sfx_at_location(global_position, randi_range(SoundResource.SoundType.GHOST_LAUGH_1, SoundResource.SoundType.GHOST_LAUGH_2))
 			_rand_teleport_to_position()
@@ -173,7 +167,7 @@ func _rand_move_to_position(speed: float = SPEED) -> void:
 func _rand_teleport_to_position() -> void:
 	var target_position: Vector2
 	var spawn_region = Global.spawn_regions.pick_random()
-	var position_variation: Vector2 = Vector2(randf_range(-50, spawn_region.rect_size.x + 50), randf_range(-50, spawn_region.rect_size.y + 50))
+	var position_variation: Vector2 = Vector2(randf_range(0, spawn_region.rect_size.x), randf_range(0, spawn_region.rect_size.y))
 	target_position = spawn_region.global_position + position_variation
 	global_position = target_position
 
