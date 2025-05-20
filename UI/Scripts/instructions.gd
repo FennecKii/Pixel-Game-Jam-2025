@@ -9,7 +9,7 @@ func _ready():
 	page2.visible = false
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Instructions"):
+	if Input.is_action_just_pressed("Instructions") and not visible:
 		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_OPEN)
 		visible = true
 

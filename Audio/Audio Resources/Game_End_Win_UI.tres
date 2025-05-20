@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://heyhmcqg7ryb"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_5t8su"]
+[ext_resource type="AudioStream" uid="uid://ioohcwlos60n" path="res://Audio/SFX/UI/old-zildjian-gong-quite-natural-34294.wav" id="2_5t8su"]
+
+[resource]
+script = ExtResource("1_5t8su")
+type = 50
+sound = ExtResource("2_5t8su")
+volume = -10.0
+pitch_scale = 0.9
+pitch_randomness = 0.05
+metadata/_custom_type_script = "uid://j0exrwx617ot"
