@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 
 func _on_pressed_play():
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)
-	get_tree().change_scene_to_file("res://UI/map_select.tscn")
+	get_tree().change_scene_to_file("res://UI/Scenes/map_select.tscn")
 
 func _on_pressed_quit():
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS)

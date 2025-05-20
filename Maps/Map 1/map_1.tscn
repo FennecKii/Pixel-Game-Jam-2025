@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=4 uid="uid://cbjy68oekfevd"]
 
 [ext_resource type="Script" uid="uid://ddkb5fdtjqh12" path="res://Maps/Map 1/map_1.gd" id="1_082kc"]
-[ext_resource type="PackedScene" path="res://Globals/Components/tilemap_layer.tscn" id="1_gk4et"]
+[ext_resource type="PackedScene" uid="uid://4j0bawmrtfit" path="res://Globals/Components/tilemap_layer.tscn" id="1_gk4et"]
 [ext_resource type="PackedScene" uid="uid://dvs2smsibprdv" path="res://Player/player.tscn" id="2_njmqy"]
 [ext_resource type="PackedScene" uid="uid://c2ua6ebxqmfkg" path="res://Globals/Components/spawner_component.tscn" id="2_yi8h1"]
-[ext_resource type="PackedScene" path="res://Globals/Components/game_timer_component.tscn" id="3_ej0cx"]
-[ext_resource type="PackedScene" path="res://Globals/Components/roof.tscn" id="5_emtie"]
-[ext_resource type="Script" path="res://Globals/Components/spawn_region.gd" id="5_yi8h1"]
+[ext_resource type="PackedScene" uid="uid://ct65glxsu1i3l" path="res://Globals/Components/game_timer_component.tscn" id="3_ej0cx"]
+[ext_resource type="PackedScene" uid="uid://gr1sptjguxr3" path="res://Globals/Components/roof.tscn" id="5_emtie"]
+[ext_resource type="Script" uid="uid://ci7fdnhdbxkw1" path="res://Globals/Components/spawn_region.gd" id="5_yi8h1"]
 [ext_resource type="PackedScene" uid="uid://cl060iceibg6o" path="res://UI/Scenes/book_ui.tscn" id="6_uihyl"]
 [ext_resource type="PackedScene" uid="uid://bueua6lfoyef6" path="res://UI/Scenes/HUD.tscn" id="9_iekto"]
-[ext_resource type="PackedScene" path="res://Globals/Components/CRT_viewport.tscn" id="10_2kjpy"]
+[ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="10_2kjpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iekto"]
 size = Vector2(1248, 828)

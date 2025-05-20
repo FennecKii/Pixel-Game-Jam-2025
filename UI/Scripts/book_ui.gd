@@ -146,21 +146,21 @@ func behavior_matches(ghost_value, expected_value: String) -> bool:
 func _send_lockin_signal(button_index: int) -> void:
 	if button_index == Global.GhostNames.YUKIONNA:
 		if Global.current_ghost == Global.GhostNames.YUKIONNA:
-			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
+			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
 			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
 	elif button_index == Global.GhostNames.ONRYO:
 		if Global.current_ghost == Global.GhostNames.ONRYO:
-			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
+			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
 			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
 			lock_in_button.disabled = true
 	elif button_index == Global.GhostNames.JIKININKI:
 		if Global.current_ghost == Global.GhostNames.JIKININKI:
-			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
+			get_tree().change_scene_to_file("res://UI/Scenes/win_screen.tscn")
 			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
@@ -198,7 +198,7 @@ func _on_mirror_cracks_toggled(toggled_on: bool) -> void:
 
 func _on_main_menu_pressed() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
-	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+	get_tree().change_scene_to_file("res://UI/Scenes/main_menu.tscn")
 
 func _on_settings_pressed() -> void:
 	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)

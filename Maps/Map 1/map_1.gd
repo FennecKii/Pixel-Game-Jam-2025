@@ -63,7 +63,7 @@ func _on_player_dead() -> void:
 	if not end_ui_audio_played:
 		end_ui_audio_played = true
 		AudioManager.play_sfx_global(SoundResource.SoundType.GAME_END_UI)
-	get_tree().change_scene_to_file("res://UI/game_over.tscn")
+	get_tree().change_scene_to_file("res://UI/Scenes/game_over.tscn")
 
 func _rand_ambient_audio() -> void:
 	if randf_range(0, 1) <= 0.5:
