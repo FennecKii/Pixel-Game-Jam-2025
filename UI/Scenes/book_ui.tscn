@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://Resources/Font/m3x6.ttf" id="5_7el6b"]
 [ext_resource type="Texture2D" uid="uid://b0cnocq6jbqw2" path="res://Resources/Assets/page_button_press.png" id="7_5o4lj"]
 [ext_resource type="Texture2D" uid="uid://d014yp8wdfvmh" path="res://Resources/Assets/bookmarks_pressed.png" id="8_36a7o"]
-[ext_resource type="PackedScene" uid="uid://cwcdjjpkkcd3e" path="res://UI/Scenes/settings.tscn" id="9_75es2"]
+[ext_resource type="PackedScene" path="res://UI/Scenes/settings.tscn" id="9_75es2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw7d"]
 atlas = ExtResource("2_jumva")

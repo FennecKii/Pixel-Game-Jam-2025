@@ -17,8 +17,8 @@
 script = ExtResource("1_tk8dj")
 
 [node name="TitleScreen" type="Sprite2D" parent="."]
-position = Vector2(641.749, 360.375)
-scale = Vector2(1.25244, 0.704346)
+position = Vector2(636, 363.5)
+scale = Vector2(0.847656, 0.731445)
 texture = ExtResource("2_tk8dj")
 
 [node name="CenterContainer" type="CenterContainer" parent="TitleScreen"]
