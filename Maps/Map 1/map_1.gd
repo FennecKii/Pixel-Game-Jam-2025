@@ -14,6 +14,7 @@ var end_ui_audio_played: bool = false
 var player_dead: bool = false
 
 func _ready() -> void:
+	Global.book_gone = false
 	Global.scene_tree = get_tree()
 	var scene_path = get_scene_file_path()
 	

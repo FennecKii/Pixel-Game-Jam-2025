@@ -257,7 +257,6 @@ metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="JumpScareLayer" parent="HUD" instance=ExtResource("10_arwfa")]
 visible = false
-z_index = 10
 
 [node name="BookLayer" parent="." instance=ExtResource("6_uihyl")]
 visible = false
