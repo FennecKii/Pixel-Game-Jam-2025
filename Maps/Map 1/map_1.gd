@@ -70,7 +70,7 @@ func _on_player_dead() -> void:
 	player_dead = true
 	
 	$HUD/JumpScareLayer.visible = true
-	AudioManager.play_sfx_global(SoundResource.SoundType.AMBIENT_KNOCK_1)
+	AudioManager.play_sfx_global(SoundResource.SoundType.JUMPSCARE_SOUND)
 	$HUD/JumpScareLayer/Flash/AnimationPlayer.play("flash")
 	if Global.ghost_appearance == 0:
 		$HUD/JumpScareLayer/LadyScare.visible = true

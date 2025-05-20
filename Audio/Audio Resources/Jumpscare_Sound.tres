@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://bc8dllcjbuqdf"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_orfpg"]
+[ext_resource type="AudioStream" uid="uid://cpocm1eyl35f7" path="res://Audio/SFX/UI/Metal Jumpscare 001.wav" id="2_mu5ai"]
+
+[resource]
+script = ExtResource("1_orfpg")
+type = 51
+sound = ExtResource("2_mu5ai")
+volume = 6.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"
