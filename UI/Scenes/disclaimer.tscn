@@ -3,21 +3,6 @@
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://Resources/Font/m3x6.ttf" id="1_hhv1g"]
 [ext_resource type="Theme" uid="uid://dyv31p4osbnfq" path="res://Resources/disclaimer.tres" id="2_4oddq"]
 
-[sub_resource type="Animation" id="Animation_hhv1g"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_4oddq"]
 length = 0.001
 tracks/0/type = "value"
@@ -33,20 +18,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_drgml"]
-_data = {
-&"RESET": SubResource("Animation_4oddq"),
-&"fade_out": SubResource("Animation_hhv1g")
-}
-
-[sub_resource type="Theme" id="Theme_drgml"]
-Label/colors/font_color = Color(1, 1, 0.0509804, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/constants/outline_size = 0
-Label/font_sizes/font_size = 60
-Label/fonts/font = ExtResource("1_hhv1g")
-
-[sub_resource type="Animation" id="Animation_vvoiv"]
+[sub_resource type="Animation" id="Animation_hhv1g"]
 resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -61,6 +33,19 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drgml"]
+_data = {
+&"RESET": SubResource("Animation_4oddq"),
+&"fade_out": SubResource("Animation_hhv1g")
+}
+
+[sub_resource type="Theme" id="Theme_drgml"]
+Label/colors/font_color = Color(1, 1, 0.0509804, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 0
+Label/font_sizes/font_size = 60
+Label/fonts/font = ExtResource("1_hhv1g")
+
 [sub_resource type="Animation" id="Animation_4ujno"]
 length = 0.001
 tracks/0/type = "value"
@@ -74,6 +59,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vvoiv"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_do1w7"]
@@ -138,6 +138,7 @@ libraries = {
 }
 
 [node name="Foreground" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1298.0
 offset_bottom = 740.0
 mouse_filter = 2

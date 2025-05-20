@@ -6,14 +6,19 @@ var ambient_audio_played: bool = false
 
 func _ready() -> void:
 	AudioManager.play_background_track2(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
-	await get_tree().create_timer(1.0).timeout
-	$Disclaimer/Foreground/AnimationPlayer.play("fade_out")
-	await get_tree().create_timer(9.0).timeout
-	$Disclaimer/Disclaimer/AnimationPlayer.play("fade_out")
-	await get_tree().create_timer(1.0).timeout
-	$Disclaimer/Background/AnimationPlayer.play("fade_out")
-	$Disclaimer/Disclaimer/VBoxContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
+	if Global.first_startup == true:
+		$Disclaimer.visible = false
+	
+	elif Global.first_startup == false:
+		await get_tree().create_timer(1.0).timeout
+		$Disclaimer/Foreground/AnimationPlayer.play("fade_out")
+		await get_tree().create_timer(9.0).timeout
+		$Disclaimer/Disclaimer/AnimationPlayer.play("fade_out")
+		await get_tree().create_timer(1.0).timeout
+		$Disclaimer/Background/AnimationPlayer.play("fade_out")
+		$Disclaimer/Disclaimer/VBoxContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		Global.first_startup = true
 
 func _process(_delta: float) -> void:
 	if not ambient_audio_played:

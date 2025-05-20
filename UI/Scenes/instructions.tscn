@@ -146,10 +146,10 @@ stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="Page1/TextureRect"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 15.0
-offset_right = 76.0
-offset_bottom = 88.0
+offset_left = 43.31
+offset_top = -79.0
+offset_right = 56.31
+offset_bottom = 179.0
 texture = ExtResource("7_cpkxv")
 expand_mode = 5
 stretch_mode = 5
@@ -176,6 +176,7 @@ texture_hover = SubResource("AtlasTexture_v8440")
 stretch_mode = 4
 
 [node name="Page2" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 453.0
 offset_bottom = 572.0
