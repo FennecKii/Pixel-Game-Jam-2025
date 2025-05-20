@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4oxyn3hkm3j6"]
+[gd_scene load_steps=6 format=3 uid="uid://4oxyn3hkm3j6"]
 
 [ext_resource type="Script" uid="uid://t6ifhh50oyw" path="res://Ghosts/ghost.gd" id="1_khqge"]
 [ext_resource type="PackedScene" uid="uid://bpa8bjbyqikuu" path="res://Globals/Components/ghost_animation_component.tscn" id="2_x438k"]
+[ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://Resources/Font/m3x6.ttf" id="3_w78af"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcmps"]
 radius = 6.41249
@@ -26,13 +27,15 @@ metadata/_edit_group_ = true
 
 [node name="Name" type="Label" parent="."]
 z_index = 1
-offset_left = -40.0
-offset_top = -110.0
-offset_right = 40.0
-offset_bottom = -87.0
+offset_left = -26.0
+offset_top = -107.0
+offset_right = 27.0
+offset_bottom = -87.875
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 11
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_w78af")
+theme_override_font_sizes/font_size = 24
 text = "Yuki Onna"
 
 [node name="Hitbox" type="Area2D" parent="."]
