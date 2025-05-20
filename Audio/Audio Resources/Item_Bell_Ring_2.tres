@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://fcxgplcuc6km"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_8e5rs"]
+[ext_resource type="AudioStream" uid="uid://buoq087twnfcb" path="res://Audio/SFX/Gameplay/Items/bell-173588.wav" id="2_2p3eq"]
+
+[resource]
+script = ExtResource("1_8e5rs")
+type = 48
+sound = ExtResource("2_2p3eq")
+volume = -10.0
+pitch_scale = 0.9
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://j0exrwx617ot"
