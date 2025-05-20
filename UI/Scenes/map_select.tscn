@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfpiv7vnwma7g" path="res://Resources/Assets/map.png" id="2_gnifp"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://Resources/Font/m3x6.ttf" id="3_d85ko"]
 [ext_resource type="StyleBox" uid="uid://81j545noeers" path="res://Resources/Themes/map_select.tres" id="4_4x2nx"]
-[ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="5_f2l4u"]
+[ext_resource type="PackedScene" path="res://Globals/Components/CRT_viewport.tscn" id="5_f2l4u"]
 
 [sub_resource type="Image" id="Image_qmxo0"]
 data = {
