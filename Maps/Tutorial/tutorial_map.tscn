@@ -15,10 +15,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acv8r"]
 size = Vector2(576.5, 464)
 
-[node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node")]
+[node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "book_ui")]
 script = ExtResource("1_7py7c")
 spawner_component = NodePath("SpawnerComponent")
 world_objects_node = NodePath("World Objects")
+book_ui = NodePath("Book UI")
 metadata/_custom_type_script = "uid://ddkb5fdtjqh12"
 
 [node name="SpawnerComponent" parent="." node_paths=PackedStringArray("world_objects") instance=ExtResource("6_7py7c")]
