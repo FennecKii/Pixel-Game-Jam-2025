@@ -7,7 +7,7 @@
 script = ExtResource("1_7vctl")
 type = 1
 sound = ExtResource("2_2ag3q")
-volume = 5.0
+volume = 6.0
 pitch_scale = 0.7
 pitch_randomness = 0.15
 metadata/_custom_type_script = "uid://j0exrwx617ot"

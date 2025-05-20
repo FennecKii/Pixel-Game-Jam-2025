@@ -59,11 +59,11 @@ func _update_item_response() -> void:
 		return
 	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.GhostNames.YUKIONNA:
 		if randf_range(0, 1) <= 0.75:
-			_update_bell_audio(0)
+			_update_bell_audio(1)
 			timer.start()
 	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.GhostNames.ONRYO:
 		if randf_range(0, 1) <= 0.75:
-			_update_bell_audio(1)
+			_update_bell_audio(0)
 			timer.start()
 	elif ghost_detection_component.ghost_detected and bell_rang and ghost_detection_component.ghost_type == Global.GhostNames.JIKININKI:
 		if randf_range(0, 1) <= 0.75:
