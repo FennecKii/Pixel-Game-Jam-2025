@@ -88,8 +88,7 @@ texture = ExtResource("3_o57o5")
 offset = Vector2(0, 6)
 
 [node name="Ghost Detection Component" parent="." instance=ExtResource("3_3u4i5")]
-visible = false
-scale = Vector2(0.198348, 0.19418)
+scale = Vector2(0.291616, 0.28598)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0

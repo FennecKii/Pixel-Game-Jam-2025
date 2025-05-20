@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://wxcynk3p2gjl"]
+[gd_scene load_steps=10 format=3 uid="uid://wxcynk3p2gjl"]
 
 [ext_resource type="Script" uid="uid://dl43yl3kcxqfo" path="res://UI/win_screen.gd" id="1_w024j"]
 [ext_resource type="Theme" uid="uid://cjk4ci1au4rg7" path="res://Resources/main_theme.tres" id="2_7c84e"]
 [ext_resource type="Texture2D" uid="uid://b7ebpt06cucos" path="res://UI/winscreen.png" id="2_qpj51"]
+[ext_resource type="PackedScene" uid="uid://hd2d0o02f711" path="res://Globals/Components/CRT_viewport.tscn" id="4_qpj51"]
 
 [sub_resource type="Animation" id="Animation_qpj51"]
 length = 0.001
@@ -102,6 +103,10 @@ layout_mode = 2
 theme = ExtResource("2_7c84e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mwi6r")
 text = "Menu"
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" parent="Shader" instance=ExtResource("4_qpj51")]
 
 [connection signal="mouse_entered" from="TextureRect/CenterContainer/HBoxContainer/Play Again" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="TextureRect/CenterContainer/HBoxContainer/Play Again" to="." method="_on_play_again_pressed"]

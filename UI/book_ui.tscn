@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cip674bptsba4" path="res://UI/Book_Buttons_UI.png" id="3_pcw7d"]
 [ext_resource type="Texture2D" uid="uid://cyop4u5wnfgxy" path="res://UI/picture.png" id="4_40o4i"]
 [ext_resource type="FontFile" uid="uid://biyv5cbuco82w" path="res://UI/m3x6.ttf" id="5_7el6b"]
-[ext_resource type="Texture2D" uid="uid://busglmb0bnhy2" path="res://UI/page_button_press.png" id="7_5o4lj"]
-[ext_resource type="Texture2D" uid="uid://b10fl146msftl" path="res://UI/bookmarks.png" id="8_17wqr"]
+[ext_resource type="Texture2D" uid="uid://b0cnocq6jbqw2" path="res://UI/page_button_press.png" id="7_5o4lj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw7d"]
 atlas = ExtResource("2_jumva")
@@ -3452,3 +3451,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_hkp6y")
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/MirrorAppears" to="BookUI" method="_on_mirror_appears_toggled"]
 [connection signal="toggled" from="BookUI/PageContainer/GhostChecklistPage/CheckboxContainer/MirrorCracks" to="BookUI" method="_on_mirror_cracks_toggled"]
 [connection signal="pressed" from="BookUI/EvidencePageButton" to="BookUI" method="_on_evidence_page_button_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/Settings" to="BookUI" method="_on_settings_pressed"]
+[connection signal="pressed" from="BookUI/PageContainer/Page2_Menu/MainMenu" to="BookUI" method="_on_main_menu_pressed"]

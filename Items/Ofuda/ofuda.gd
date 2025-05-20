@@ -93,33 +93,40 @@ func _ofuda_pickup() -> void:
 		queue_free()
 
 func _update_item_response() -> void:
-	if ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.YUKIONNA:
-		animation_player.play("burn")
-		if not ofuda_audio_played:
-			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_BURN)
-			ofuda_audio_played = true
-		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
-		pickup_collision.visible = false
-		await animation_player.animation_finished
-		queue_free()
+	if not ghost_detection_component.ghost_detected:
+		return
+	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.YUKIONNA:
+		if randf_range(0, 1) <= 0.5:
+			var anim_array: Array[String] = ["burn", "glow"]
+			var rand_anim: String = anim_array.pick_random()
+			animation_player.play(rand_anim)
+			if not ofuda_audio_played and rand_anim == "burn":
+				AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_BURN)
+				ofuda_audio_played = true
+			elif not ofuda_audio_played and rand_anim == "glow":
+				AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_GLOW)
+				ofuda_audio_played = true
+			pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
+			pickup_collision.visible = false
+			await animation_player.animation_finished
+			queue_free()
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.ONRYO:
-		animation_player.play("glow")
-		if not ofuda_audio_played:
-			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_GLOW)
-			ofuda_audio_played = true
-		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
-		pickup_collision.visible = false
-		await animation_player.animation_finished
-		queue_free()
+		if randf_range(0, 1) <= 0.5:
+			animation_player.play("glow")
+			if not ofuda_audio_played:
+				AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_GLOW)
+				ofuda_audio_played = true
+			pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
+			pickup_collision.visible = false
+			await animation_player.animation_finished
+			queue_free()
 	elif ghost_detection_component.ghost_detected and ghost_detection_component.ghost_type == Global.GhostNames.JIKININKI:
-		animation_player.play("burn")
-		if not ofuda_audio_played:
-			AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_BURN)
-			ofuda_audio_played = true
-		pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
-		pickup_collision.visible = false
-		await animation_player.animation_finished
-		queue_free()
-	elif not ghost_detection_component.ghost_detected:
-		pass
-		#print("Ghost not detected")
+		if randf_range(0, 1) <= 0.5:
+			animation_player.play("burn")
+			if not ofuda_audio_played:
+				AudioManager.play_sfx_at_location(global_position, SoundResource.SoundType.ITEM_ODFUA_BURN)
+				ofuda_audio_played = true
+			pickup_area.process_mode = Node.PROCESS_MODE_DISABLED
+			pickup_collision.visible = false
+			await animation_player.animation_finished
+			queue_free()

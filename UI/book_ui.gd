@@ -153,40 +153,50 @@ func _send_lockin_signal(button_index: int) -> void:
 			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
+			lock_in_button.disabled = true
 	elif button_index == Global.GhostNames.ONRYO:
 		if Global.current_ghost == Global.GhostNames.ONRYO:
 			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
 			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
+			lock_in_button.disabled = true
 	elif button_index == Global.GhostNames.JIKININKI:
 		if Global.current_ghost == Global.GhostNames.JIKININKI:
 			get_tree().change_scene_to_file("res://UI/win_screen.tscn")
 			Global.wincount += 1
 		else:
 			SignalBus.ghost_alerted.emit()
+			lock_in_button.disabled = true
 
 func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed()
 
-func _on_toggle_button_pressed() -> void:
-	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
-
 func _on_bell_sounds_muted_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
 func _on_bell_sounds_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
 func _on_ofuda_glows_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
-
 
 func _on_mirror_appears_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
-
 func _on_mirror_cracks_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
 
@@ -195,3 +205,9 @@ func _on_evidence_page_button_pressed() -> void:
 	if current_page % 2 != 0:
 		current_page -= 1  # ensure it opens on a left/right spread
 	_update_page()
+func _on_main_menu_pressed() -> void:
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+
+func _on_settings_pressed() -> void:
+	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)

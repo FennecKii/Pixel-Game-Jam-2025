@@ -11,10 +11,12 @@ enum SpriteDirection {UNKNOWN, DOWN, UP, SIDE}
 @onready var player_node: Node2D
 @onready var ghost_node: Node2D
 @onready var world_objects_node: Node2D
+@onready var bell_cooldown_label: Label
 
 # Preload Scenes
 @onready var ofuda_scene: PackedScene = preload("res://Items/Ofuda/ofuda.tscn")
 @onready var ghost_scene: PackedScene = preload("res://Ghosts/ghost.tscn")
+@onready var mirror_scene: PackedScene = preload("res://Objects/Mirror/mirror.tscn")
 
 # Global variables
 var spawn_regions: Array[SpawnerRect2D]
