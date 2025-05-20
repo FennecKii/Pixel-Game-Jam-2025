@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://nr8o63il26td" path="res://Items/Ofuda/ofuda.gd" id="1_2t8uu"]
 [ext_resource type="Texture2D" uid="uid://cy7gaibpq36v8" path="res://Items/Ofuda/Ofuda_Burn-Sheet (16x16).png" id="2_biji6"]
 [ext_resource type="Texture2D" uid="uid://bafotd4fbkgww" path="res://Items/Ofuda/Ofuda (16x16).png" id="2_od11a"]
-[ext_resource type="PackedScene" uid="uid://d13k3krjndysh" path="res://Globals/Components/ghost_detection_component.tscn" id="3_od11a"]
-[ext_resource type="Theme" uid="uid://ccxtvmga0ceek" path="res://Resources/HUD_theme.tres" id="4_udinp"]
+[ext_resource type="PackedScene" path="res://Globals/Components/ghost_detection_component.tscn" id="3_od11a"]
+[ext_resource type="Theme" uid="uid://ccxtvmga0ceek" path="res://Resources/Themes/HUD_theme.tres" id="4_udinp"]
 
 [sub_resource type="Animation" id="Animation_udinp"]
 length = 0.001

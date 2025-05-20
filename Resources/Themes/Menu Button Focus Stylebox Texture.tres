@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://bj0lt76kagd2u"]
+
+[ext_resource type="Texture2D" uid="uid://bhcsvnvknlivb" path="res://Resources/Assets/button_hover.png" id="1_lf5gl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ctay"]
+atlas = ExtResource("1_lf5gl")
+region = Rect2(127.118, 391.968, 767.086, 309.707)
+
+[resource]
+texture = SubResource("AtlasTexture_8ctay")
+modulate_color = Color(100, 100, 100, 0.4)

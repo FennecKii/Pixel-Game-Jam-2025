@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://bojajled7fp2c"]
+
+[ext_resource type="Texture2D" uid="uid://bhcsvnvknlivb" path="res://Resources/Assets/button_hover.png" id="1_mjsco"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ctay"]
+atlas = ExtResource("1_mjsco")
+region = Rect2(127.118, 391.968, 767.086, 309.707)
+
+[resource]
+texture = SubResource("AtlasTexture_8ctay")
