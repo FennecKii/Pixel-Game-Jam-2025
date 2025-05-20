@@ -15,6 +15,14 @@ var player_dead: bool = false
 
 func _ready() -> void:
 	Global.scene_tree = get_tree()
+	var scene_path = get_scene_file_path()
+	
+	$FadeRect/AnimationPlayer.play("fade_in")
+	await get_tree().create_timer(1.0).timeout
+	
+	if scene_path == "res://Maps/Tutorial/tutorial_map.tscn":
+		$HUD/Instructions/AnimationPlayer.play("fade_in")
+		$HUD/Instructions.visible = true
 	
 	AudioManager.play_background_track1(randi_range(MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_1, MusicResource.MusicType.BACKGROUND_AMBIENCE_TRACK_2))
 	AudioManager.play_background_track2(MusicResource.MusicType.BACKGROUND_AMBIENCE_LOOP)
