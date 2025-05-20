@@ -167,26 +167,33 @@ func _send_lockin_signal(button_index: int) -> void:
 			lock_in_button.disabled = true
 
 func _on_ofuda_burns_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed()
 
-func _on_toggle_button_pressed() -> void:
-	AudioManager.play_sfx_global(SoundResource.SoundType.BUTTON_PRESS_NOTEBOOK)
-
 func _on_bell_sounds_muted_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
 func _on_bell_sounds_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
 func _on_ofuda_glows_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
-
 
 func _on_mirror_appears_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
-
 func _on_mirror_cracks_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CHECKMARK_SCRIBBLE)
 	_on_behavior_changed() # Replace with function body.
 
 func _on_main_menu_pressed() -> void:

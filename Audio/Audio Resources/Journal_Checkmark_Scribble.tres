@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://cnaqvldlpg0m2"]
+
+[ext_resource type="Script" uid="uid://j0exrwx617ot" path="res://Globals/SoundResource.gd" id="1_n32fi"]
+[ext_resource type="AudioStream" uid="uid://dxgkgm1akrq5x" path="res://Audio/SFX/UI/pencil_check_mark_2-105940.mp3" id="2_ad4nc"]
+
+[resource]
+script = ExtResource("1_n32fi")
+type = 49
+sound = ExtResource("2_ad4nc")
+volume = -20.0
+pitch_scale = 1.0
+pitch_randomness = 0.2
+metadata/_custom_type_script = "uid://j0exrwx617ot"

@@ -84,7 +84,6 @@ layout_mode = 2
 [node name="Shader" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" parent="Shader" instance=ExtResource("4_4cwpn")]
-visible = false
 
 [connection signal="mouse_entered" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreen/CenterContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_pressed_play"]
