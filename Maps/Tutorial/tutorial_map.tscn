@@ -17,6 +17,7 @@ size = Vector2(576.5, 464)
 
 [node name="Tutorial_Map" type="Node2D" node_paths=PackedStringArray("spawner_component", "world_objects_node", "book_ui")]
 script = ExtResource("1_7py7c")
+is_tutorial = true
 spawner_component = NodePath("SpawnerComponent")
 world_objects_node = NodePath("World Objects")
 book_ui = NodePath("Book UI")
