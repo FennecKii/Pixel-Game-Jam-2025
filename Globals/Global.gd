@@ -34,6 +34,7 @@ var timer_alert_zone: bool = false
 var ghost_appearance: int
 var scene_tree: SceneTree
 var wincount: int = 0
+var book_gone: bool = false
 
 var master_volume: float = 0
 var music_volume: float = -6

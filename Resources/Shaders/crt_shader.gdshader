@@ -37,7 +37,7 @@ uniform float vignette_intensity : hint_range(0.0, 1.0) = 0.55;
 uniform float aberation_amount :hint_range(0.0, 1.0) = 0.2;
 uniform float roll_line_amount :hint_range(0.0, 1.0) = 0.2;
 uniform float roll_speed :hint_range(-8.0, 8.0) = 0.2;
-uniform float scan_line_strength :hint_range(-12.0, -1.0) = -6.0;
+uniform float scan_line_strength :hint_range(-12.0, -1.0) = -4.5;
 uniform float pixel_strength :hint_range(-4.0, 0.0) = -2.0;
 
 float random(vec2 uv){

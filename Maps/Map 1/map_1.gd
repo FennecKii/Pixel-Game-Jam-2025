@@ -51,13 +51,15 @@ func _ready() -> void:
 		spawner_component.spawn_mirror()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("toggle_journal") and book_ui:
+	if Global.book_gone:
+		book_ui.visible = false
+	if Input.is_action_just_pressed("toggle_journal") and book_ui and not Global.book_gone:
 		if not book_ui.visible:
 			AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_OPEN)
 		elif book_ui.visible:
 			AudioManager.play_sfx_global(SoundResource.SoundType.JOURNAL_CLOSE)
 		book_ui.visible = !book_ui.visible
-	elif Input.is_action_just_pressed("toggle_journal") and not book_ui:
+	elif Input.is_action_just_pressed("toggle_journal") and not book_ui and not Global.book_gone:
 		assert(false, "Book UI CanvasLayer not found in root node.")
 	
 	if not ambient_audio_played and not player_dead:
