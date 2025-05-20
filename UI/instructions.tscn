@@ -67,7 +67,6 @@ offset_bottom = 40.0
 script = ExtResource("1_my76x")
 
 [node name="Page1" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 453.0
 offset_bottom = 572.0
@@ -95,10 +94,11 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Steps" type="Label" parent="Page1"]
-offset_left = 25.0
-offset_top = 149.0
-offset_right = 430.0
-offset_bottom = 391.0
+layout_mode = 0
+offset_left = 20.0
+offset_top = 136.0
+offset_right = 425.0
+offset_bottom = 378.0
 theme = ExtResource("5_0ln1f")
 text = "1. Locating the spirit
 
@@ -112,17 +112,18 @@ text = "1. Locating the spirit
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="Page1"]
-offset_left = 25.0
-offset_top = 161.0
-offset_right = 308.0
-offset_bottom = 692.188
+layout_mode = 0
+offset_left = 24.0
+offset_top = 154.0
+offset_right = 318.0
+offset_bottom = 689.0
 theme = ExtResource("4_v8440")
 text = "
 Use the spiritual compass to help locate the spirt. The compass allows spiritual conductors to follow the presence of spiritual activity. The technology provided is still in development, so results can vary in accuracy.
 
 
 
-Use provided ofuda talismans to help ward off evil. Make sure to place your ofuda talismans close to spiritual activity. Depending on the spirits reaction to your ofuda talismans, you can check off results in your journal.
+Use provided ofuda talismans to help ward off evil. Make sure to place your ofuda talismans close to spiritual activity. Depending on the spirits reaction to your ofuda talismans, you can check off results in your journal by pressing TAB or J.
 
 
 
@@ -142,6 +143,7 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="Page1/TextureRect"]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 15.0
 offset_right = 76.0
@@ -151,6 +153,7 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="Page1"]
+layout_mode = 0
 offset_left = 305.0
 offset_top = 394.0
 offset_right = 403.0
@@ -171,38 +174,21 @@ texture_hover = SubResource("AtlasTexture_v8440")
 stretch_mode = 4
 
 [node name="Page2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_right = 453.0
 offset_bottom = 572.0
 texture = SubResource("AtlasTexture_uamrk")
 
-[node name="Title" type="RichTextLabel" parent="Page2"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 29.0
-offset_right = 427.0
-offset_bottom = 99.0
-theme = ExtResource("3_a2qus")
-text = "Field Guide: Spirit Identification"
-horizontal_alignment = 1
-
-[node name="Sub-Title" type="Label" parent="Page2"]
-layout_mode = 0
-offset_left = 71.0
-offset_top = 70.0
-offset_right = 357.0
-offset_bottom = 166.0
-theme = ExtResource("4_v8440")
-text = "The ultimate guide for locating and analyzing spiritual anamolies."
-horizontal_alignment = 1
-autowrap_mode = 3
-
 [node name="Steps" type="Label" parent="Page2"]
-offset_left = 117.0
-offset_top = 130.0
-offset_right = 522.0
-offset_bottom = 372.0
+layout_mode = 0
+offset_left = 99.0
+offset_top = 49.0
+offset_right = 504.0
+offset_bottom = 291.0
 theme = ExtResource("5_0ln1f")
 text = "3. Identifying the spirit (Spirit Bell)
+
 
 
 
@@ -213,38 +199,41 @@ text = "3. Identifying the spirit (Spirit Bell)
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="Page2"]
-offset_left = 143.0
-offset_top = 138.0
-offset_right = 426.0
-offset_bottom = 669.188
+layout_mode = 0
+offset_left = 113.0
+offset_top = 59.0
+offset_right = 396.0
+offset_bottom = 590.188
 theme = ExtResource("4_v8440")
 text = "
-Listen closely to the sounds around you. After locating the ghost, be sure to use your spirit bell to check for spiritual anomalies. Depending on what you hear, you may be able to narrow down the type of spirit in the area.
+Listen closely to the sounds around you. After locating the ghost, be sure to use your spirit bell to check for spiritual anomalies. Depending on what you hear, you may be able to narrow down the type of spirit in the area. Record findings in your journal by pressing TAB or J
 
 
-Spirits will also react highly to reflections in mirrors. If the location itself contains a mirror somewhere, be sure to use it to your advantage to see if you can detect any spiritual anomalies. Record your findings in your journa"
+Spirits will also react highly to reflections in mirrors. If the location itself contains a mirror somewhere, be sure to use it to your advantage to see if you can detect any spiritual anomalies. Record your findings in your journal by pressing TAB or J"
 autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="Page2"]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 167.0
-offset_right = 120.0
-offset_bottom = 267.0
+offset_left = 12.0
+offset_top = 92.0
+offset_right = 110.0
+offset_bottom = 192.0
 texture = ExtResource("10_nxod0")
 expand_mode = 5
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="Page2"]
-offset_left = 18.0
-offset_top = 326.0
-offset_right = 116.0
-offset_bottom = 426.0
+layout_mode = 0
+offset_left = 10.0
+offset_top = 317.0
+offset_right = 108.0
+offset_bottom = 417.0
 texture = ExtResource("11_uwdec")
 expand_mode = 5
 stretch_mode = 5
 
 [node name="BackButton" type="TextureButton" parent="Page2"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 504.0
 offset_right = 65.0
@@ -257,10 +246,10 @@ flip_h = true
 
 [node name="Warning" type="Label" parent="Page2"]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 502.0
-offset_right = 430.0
-offset_bottom = 546.438
+offset_left = 92.0
+offset_top = 484.0
+offset_right = 429.0
+offset_bottom = 528.438
 theme = SubResource("Theme_am5dv")
 text = "When confident, identify your spirit. 
 Be warned: a wrong answer may anger what lingers."

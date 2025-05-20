@@ -67,16 +67,7 @@ tile_map_data = PackedByteArray("AAADAAEAAQAAAAcAAAAIAAEAAQAAAAUAAAAFAAIAAQACAAU
 [node name="Player" parent="World Objects" instance=ExtResource("5_nw7x2")]
 position = Vector2(643, 959)
 
-[node name="Instructions" parent="World Objects/Player" instance=ExtResource("11_gkfty")]
-z_index = 1
-offset_left = -305.0
-offset_top = -371.0
-offset_right = -265.0
-offset_bottom = -331.0
-scale = Vector2(1.1, 1.1)
-
 [node name="Roof" type="Node2D" parent="."]
-visible = false
 
 [node name="Roof" parent="Roof" instance=ExtResource("6_acv8r")]
 
@@ -108,13 +99,20 @@ script = ExtResource("3_7b3m2")
 metadata/_custom_type_script = "uid://ci7fdnhdbxkw1"
 
 [node name="HUD" parent="." instance=ExtResource("7_wd5kf")]
-visible = false
 
 [node name="SubViewportContainer" parent="HUD" instance=ExtResource("8_acv8r")]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("9_gkfty")]
+[node name="Instructions" parent="HUD" instance=ExtResource("11_gkfty")]
+z_index = 5
+offset_left = 367.0
+offset_top = 20.0
+offset_right = 421.0
+offset_bottom = 495.0
+scale = Vector2(1.15, 1.15)
+
+[node name="Book UI" parent="." instance=ExtResource("9_gkfty")]
 visible = false
 
-[node name="SubViewportContainer" parent="CanvasLayer" instance=ExtResource("8_acv8r")]
+[node name="SubViewportContainer" parent="Book UI" instance=ExtResource("8_acv8r")]
 
 [editable path="Roof/Roof"]
