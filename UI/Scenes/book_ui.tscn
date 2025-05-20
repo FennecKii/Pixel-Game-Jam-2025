@@ -3231,32 +3231,32 @@ alignment = 1
 [node name="BellMuted" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-text = "Bell Sounds Muted"
+text = "Bell - Weak Sound"
 
 [node name="Bell" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-text = "Bell Sounds"
+text = "Bell - Chime Sound"
 
 [node name="OfudaBurns" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-text = "Ofuda Burns"
+text = "Ofuda - Burns"
 
 [node name="OfudaGlows" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-text = "Ofuda Glows"
+text = "Ofuda - Glows"
 
 [node name="MirrorAppears" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-text = "Ghost Appears in Mirror"
+text = "Mirror - Shows Spirit"
 
 [node name="MirrorCracks" type="Label" parent="BookUI/PageContainer/GhostChecklistPage/BehaviourChecklist"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-text = "Mirror Cracks"
+text = "Mirror - Cracks"
 
 [node name="Ghost1" type="Label" parent="BookUI/PageContainer/GhostChecklistPage"]
 layout_mode = 2
