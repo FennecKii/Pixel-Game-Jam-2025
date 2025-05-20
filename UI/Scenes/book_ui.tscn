@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=4 uid="uid://cl060iceibg6o"]
+[gd_scene load_steps=203 format=4 uid="uid://cl060iceibg6o"]
 
 [ext_resource type="Theme" uid="uid://b2vvg4e24btmm" path="res://Resources/Themes/book_theme.tres" id="1_bb8yk"]
 [ext_resource type="Script" uid="uid://y6hrmh2w1hb2" path="res://UI/Scripts/book_ui.gd" id="1_t2tou"]
@@ -2720,6 +2720,20 @@ texture = SubResource("AtlasTexture_1s70w")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwx7j"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_711ar"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(7.91187, 0.146435, 16.6133, 16.7811)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sdere"]
+texture = SubResource("AtlasTexture_711ar")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q07f"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(7.67159, 0.073019, 16.2263, 16.2263)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xld0"]
+texture = SubResource("AtlasTexture_0q07f")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdi4o"]
 atlas = ExtResource("3_pcw7d")
 region = Rect2(71.808, -0.0207586, 16.041, 16.8532)
@@ -2794,6 +2808,20 @@ region = Rect2(103.931, 31.9016, 16.2441, 31.8421)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75es2"]
 texture = SubResource("AtlasTexture_36a7o")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uxym"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(8.00007, -0.116774, 16.4344, 16.9198)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkpn6"]
+texture = SubResource("AtlasTexture_5uxym")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4xsq"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(8.00791, 0.0355797, 16.157, 16.365)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tcfwt"]
+texture = SubResource("AtlasTexture_q4xsq")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxpr6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -2833,6 +2861,20 @@ region = Rect2(40, 143, 88, 106)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxpr6"]
 atlas = ExtResource("4_40o4i")
 region = Rect2(5, 72, 52, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f2qu"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(8.00791, 0.144246, 16.5037, 16.9198)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_deum7"]
+texture = SubResource("AtlasTexture_4f2qu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iy5i"]
+atlas = ExtResource("8_36a7o")
+region = Rect2(7.79989, 0.0288463, 16.0183, 16.365)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qo8ry"]
+texture = SubResource("AtlasTexture_5iy5i")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpgap"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -3268,6 +3310,8 @@ offset_top = -1.64012
 offset_right = 414.082
 offset_bottom = 49.3599
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cwx7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sdere")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0xld0")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5gt0h")
 
 [node name="Page1Blank" type="Panel" parent="BookUI/PageContainer"]
@@ -3345,6 +3389,8 @@ offset_top = -42.0
 offset_right = 112.314
 offset_bottom = 9.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cwx7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hkpn6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tcfwt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5gt0h")
 
 [node name="Story2Bookmark" type="Button" parent="BookUI/PageContainer/Page2_Menu"]
@@ -3552,6 +3598,8 @@ offset_top = -18.405
 offset_right = 342.055
 offset_bottom = 32.595
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cwx7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_deum7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qo8ry")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5gt0h")
 
 [node name="Page6_Story" type="Panel" parent="BookUI/PageContainer"]
